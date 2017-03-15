@@ -54,25 +54,20 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _todoApp = __webpack_require__(159);
+	var _worksApp = __webpack_require__(159);
 
-	var _todoApp2 = _interopRequireDefault(_todoApp);
+	var _worksApp2 = _interopRequireDefault(_worksApp);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var model = new app.TodoModel('react-todos'); /*jshint quotmark:false */
+	var model = app.state.projects; /*jshint quotmark:false */
 	/*jshint white:false */
 	/*jshint trailing:false */
 	/*jshint newcap:false */
 	/*global React, Router*/
 
 
-	function render() {
-		_reactDom2.default.render(_react2.default.createElement(_todoApp2.default, { model: model }), document.getElementsByClassName('todoapp')[0]);
-	}
-
-	model.subscribe(render);
-	render();
+	_reactDom2.default.render(_react2.default.createElement(_worksApp2.default, { model: model }), document.getElementsByClassName('mainpage')[0]);
 
 /***/ },
 /* 1 */
@@ -14761,7 +14756,7 @@
 	 *
 	 * @providesModule shallowEqual
 	 * @typechecks
-	 *
+	 * 
 	 */
 
 	'use strict';
@@ -19840,9 +19835,9 @@
 
 	var _footer2 = _interopRequireDefault(_footer);
 
-	var _todoItem = __webpack_require__(163);
+	var _projectItem = __webpack_require__(163);
 
-	var _todoItem2 = _interopRequireDefault(_todoItem);
+	var _projectItem2 = _interopRequireDefault(_projectItem);
 
 	var _director = __webpack_require__(164);
 
@@ -19863,155 +19858,31 @@
 
 	var Router = _director2.default.Router;
 
-	var ALL_TODOS = 'all';
-	var ACTIVE_TODOS = 'active';
-	var COMPLETED_TODOS = 'completed';
-	var ENTER_KEY = 13;
+	var worksApp = function (_React$Component) {
+		_inherits(worksApp, _React$Component);
 
-	var TodoApp = function (_React$Component) {
-		_inherits(TodoApp, _React$Component);
+		function worksApp(props, context) {
+			_classCallCheck(this, worksApp);
 
-		function TodoApp() {
-			_classCallCheck(this, TodoApp);
-
-			var _this = _possibleConstructorReturn(this, (TodoApp.__proto__ || Object.getPrototypeOf(TodoApp)).call(this));
-
-			_this.handleChange = function (event) {
-				_this.setState({ newTodo: event.target.value });
-			};
-
-			_this.handleNewTodoKeyDown = function (event) {
-				if (event.keyCode !== ENTER_KEY) {
-					return;
-				}
-
-				event.preventDefault();
-
-				var val = _this.state.newTodo.trim();
-
-				if (val) {
-					_this.props.model.addTodo(val);
-					_this.setState({ newTodo: '' });
-				}
-			};
-
-			_this.toggleAll = function (event) {
-				var checked = event.target.checked;
-				_this.props.model.toggleAll(checked);
-			};
-
-			_this.toggle = function (todoToToggle) {
-				_this.props.model.toggle(todoToToggle);
-			};
-
-			_this.destroy = function (todo) {
-				_this.props.model.destroy(todo);
-			};
-
-			_this.edit = function (todo) {
-				_this.setState({ editing: todo.id });
-			};
-
-			_this.save = function (todoToSave, text) {
-				_this.props.model.save(todoToSave, text);
-				_this.setState({ editing: null });
-			};
-
-			_this.cancel = function () {
-				_this.setState({ editing: null });
-			};
-
-			_this.clearCompleted = function () {
-				_this.props.model.clearCompleted();
-			};
-
-			_this.state = {
-				nowShowing: ALL_TODOS,
-				editing: null,
-				newTodo: ''
-			};
-			_this.cancel = _this.cancel.bind(_this);
-			_this.clearCompleted = _this.clearCompleted.bind(_this);
-			_this.toggleAll = _this.toggleAll.bind(_this);
-			_this.handleNewTodoKeyDown = _this.handleNewTodoKeyDown.bind(_this);
-			_this.handleChange = _this.handleChange.bind(_this);
-			return _this;
+			return _possibleConstructorReturn(this, (worksApp.__proto__ || Object.getPrototypeOf(worksApp)).call(this, props, context));
 		}
 
-		_createClass(TodoApp, [{
-			key: 'componentDidMount',
-			value: function componentDidMount() {
-				var setState = this.setState;
-				var router = Router({
-					'/': setState.bind(this, { nowShowing: ALL_TODOS }),
-					'/active': setState.bind(this, { nowShowing: ACTIVE_TODOS }),
-					'/completed': setState.bind(this, { nowShowing: COMPLETED_TODOS })
-				});
-				router.init('/');
-			}
-		}, {
+		_createClass(worksApp, [{
 			key: 'render',
 			value: function render() {
-				var footer = void 0;
-				var main = void 0;
-				var todos = this.props.model.todos;
+				var projects = this.props.model;
 
-				var shownTodos = todos.filter(function (todo) {
-					switch (this.state.nowShowing) {
-						case ACTIVE_TODOS:
-							return !todo.completed;
-						case COMPLETED_TODOS:
-							return todo.completed;
-						default:
-							return true;
-					}
-				}, this);
-
-				var todoItems = shownTodos.map(function (todo) {
-					return _react2.default.createElement(_todoItem2.default, {
-						key: todo.id,
-						todo: todo,
-						onToggle: this.toggle.bind(this, todo),
-						onDestroy: this.destroy.bind(this, todo),
-						onEdit: this.edit.bind(this, todo),
-						editing: this.state.editing === todo.id,
-						onSave: this.save.bind(this, todo),
-						onCancel: this.cancel
+				var projectsItems = Object.values(projects).map(function (project, index) {
+					project.state = project.state || "";
+					return _react2.default.createElement(_projectItem2.default, {
+						key: index,
+						key2: Object.keys(projects)[index],
+						name: project.name,
+						type: project.type,
+						publish: project.publish,
+						state: project.state
 					});
 				}, this);
-
-				var activeTodoCount = todos.reduce(function (accum, todo) {
-					return todo.completed ? accum : accum + 1;
-				}, 0);
-
-				var completedCount = todos.length - activeTodoCount;
-
-				if (activeTodoCount || completedCount) {
-					footer = _react2.default.createElement(_footer2.default, {
-						count: activeTodoCount,
-						completedCount: completedCount,
-						nowShowing: this.state.nowShowing,
-						onClearCompleted: this.clearCompleted
-					});
-				}
-
-				if (todos.length) {
-					main = _react2.default.createElement(
-						'section',
-						{ className: 'main' },
-						_react2.default.createElement('input', {
-							className: 'toggle-all',
-							type: 'checkbox',
-							onChange: this.toggleAll,
-							checked: activeTodoCount === 0
-						}),
-						_react2.default.createElement(
-							'ul',
-							{ className: 'todo-list' },
-							todoItems
-						)
-					);
-				}
 
 				return _react2.default.createElement(
 					'div',
@@ -20022,29 +19893,28 @@
 						_react2.default.createElement(
 							'h1',
 							null,
-							'todos'
-						),
-						_react2.default.createElement('input', {
-							className: 'new-todo',
-							placeholder: 'What needs to be done?',
-							value: this.state.newTodo,
-							onKeyDown: this.handleNewTodoKeyDown,
-							onChange: this.handleChange,
-							autoFocus: true
-						})
+							'Antonio Campos - Works'
+						)
 					),
-					main,
-					footer
+					_react2.default.createElement(
+						'section',
+						{ className: 'main' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'projects' },
+							projectsItems
+						)
+					)
 				);
 			}
 		}]);
 
-		return TodoApp;
+		return worksApp;
 	}(_react2.default.Component);
 
 	;
 
-	exports.default = TodoApp;
+	exports.default = worksApp;
 
 /***/ },
 /* 160 */
@@ -20275,130 +20145,38 @@
 	/*global React */
 
 
-	var ESCAPE_KEY = 27;
-	var ENTER_KEY = 13;
+	var ProjectItem = function (_React$Component) {
+		_inherits(ProjectItem, _React$Component);
 
-	var TodoItem = function (_React$Component) {
-		_inherits(TodoItem, _React$Component);
+		function ProjectItem(props, context) {
+			_classCallCheck(this, ProjectItem);
 
-		function TodoItem(props, context) {
-			_classCallCheck(this, TodoItem);
-
-			var _this = _possibleConstructorReturn(this, (TodoItem.__proto__ || Object.getPrototypeOf(TodoItem)).call(this, props, context));
-
-			_this.handleSubmit = function (event) {
-				var val = _this.state.editText.trim();
-				if (val) {
-					_this.props.onSave(val);
-					_this.setState({ editText: val });
-				} else {
-					_this.props.onDestroy();
-				}
-			};
-
-			_this.handleEdit = function () {
-				_this.props.onEdit();
-				_this.setState({ editText: _this.props.todo.title });
-			};
-
-			_this.handleKeyDown = function (event) {
-				if (event.which === ESCAPE_KEY) {
-					_this.setState({ editText: _this.props.todo.title });
-					_this.props.onCancel(event);
-				} else if (event.which === ENTER_KEY) {
-					_this.handleSubmit(event);
-				}
-			};
-
-			_this.handleChange = function (event) {
-				if (_this.props.editing) {
-					_this.setState({ editText: event.target.value });
-				}
-			};
-
-			_this.state = { editText: props.todo.title };
-			_this.handleEdit = _this.handleEdit.bind(_this);
-			_this.handleSubmit = _this.handleSubmit.bind(_this);
-			_this.handleChange = _this.handleChange.bind(_this);
-			_this.handleKeyDown = _this.handleKeyDown.bind(_this);
-			return _this;
+			return _possibleConstructorReturn(this, (ProjectItem.__proto__ || Object.getPrototypeOf(ProjectItem)).call(this, props, context));
 		}
 
-		/**
-	  * This is a completely optional performance enhancement that you can
-	  * implement on any React component. If you were to delete this method
-	  * the app would still work correctly (and still be very performant!), we
-	  * just use it as an example of how little code it takes to get an order
-	  * of magnitude performance improvement.
-	  */
-
-
-		_createClass(TodoItem, [{
-			key: "shouldComponentUpdate",
-			value: function shouldComponentUpdate(nextProps, nextState) {
-				return nextProps.todo !== this.props.todo || nextProps.editing !== this.props.editing || nextState.editText !== this.state.editText;
-			}
-
-			/**
-	   * Safely manipulate the DOM after updating the state when invoking
-	   * `this.props.onEdit()` in the `handleEdit` method above.
-	   * For more info refer to notes at https://facebook.github.io/react/docs/component-api.html#setstate
-	   * and https://facebook.github.io/react/docs/component-specs.html#updating-componentdidupdate
-	   */
-
-		}, {
-			key: "componentDidUpdate",
-			value: function componentDidUpdate(prevProps) {
-				if (!prevProps.editing && this.props.editing) {
-					var node = _react2.default.findDOMNode(this.refs.editField);
-					node.focus();
-					node.setSelectionRange(node.value.length, node.value.length);
-				}
-			}
-		}, {
+		_createClass(ProjectItem, [{
 			key: "render",
 			value: function render() {
 
+				var classNameIcon = "icon-ico_" + this.props.key2;
+
 				return _react2.default.createElement(
-					"li",
+					"div",
 					{ className: (0, _index2.default)({
-							completed: this.props.todo.completed,
-							editing: this.props.editing
+							unpublish: !this.props.publish
 						}) },
-					_react2.default.createElement(
-						"div",
-						{ className: "view" },
-						_react2.default.createElement("input", {
-							className: "toggle",
-							type: "checkbox",
-							checked: this.props.todo.completed,
-							onChange: this.props.onToggle
-						}),
-						_react2.default.createElement(
-							"label",
-							{ onDoubleClick: this.handleEdit },
-							this.props.todo.title
-						),
-						_react2.default.createElement("button", { className: "destroy", onClick: this.props.onDestroy })
-					),
-					_react2.default.createElement("input", {
-						ref: "editField",
-						className: "edit",
-						value: this.state.editText,
-						onBlur: this.handleSubmit,
-						onChange: this.handleChange,
-						onKeyDown: this.handleKeyDown
-					})
+					this.props.name,
+					_react2.default.createElement("span", { className: classNameIcon })
 				);
 			}
 		}]);
 
-		return TodoItem;
+		return ProjectItem;
 	}(_react2.default.Component);
 
 	;
 
-	exports.default = TodoItem;
+	exports.default = ProjectItem;
 
 /***/ },
 /* 164 */

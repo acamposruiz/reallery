@@ -13,18 +13,9 @@ const Router = Director.Router;
 
 class worksApp extends React.Component {
 
-	constructor() {
-	}
-
-	componentDidMount() {
-		/*const setState = this.setState;
-		const router = Router({
-			'/': setState.bind(this, {nowShowing: ALL_TODOS}),
-			'/active': setState.bind(this, {nowShowing: ACTIVE_TODOS}),
-			'/completed': setState.bind(this, {nowShowing: COMPLETED_TODOS})
-		});
-		router.init('/');*/
-	}
+    constructor(props, context) {
+        super(props, context);
+    }
 
 	render() {
 		let projects = this.props.model;

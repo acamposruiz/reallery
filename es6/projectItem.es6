@@ -14,13 +14,13 @@ class ProjectItem extends React.Component {
 
 	render() {
 
-		const classNameIcon = "icon-ico_" + this.props.name;
+		const classNameIcon = "icon-ico_" + this.props.key2;
 
 		return <div className={classNames({
             		unpublish: !this.props.publish
 				})}>
             		{this.props.name}
-				<span className={classNameIcon}></span>
+					<span className={classNameIcon}></span>
 				</div>
 	}
 };
