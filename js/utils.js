@@ -2,6 +2,9 @@ var app = app || {};
 
 (function () {
 	'use strict';
+	var projects = {};
+
+	app.state = { projects: projects};
 
 	app.Utils = {
 		uuid: function () {
