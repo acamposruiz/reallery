@@ -5,16 +5,11 @@
 /*global React, Router*/
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TodoApp from './todoApp.es6';
+import WorksApp from './worksApp.es6';
 
-var model = new app.TodoModel('react-todos');
+var model = app.state.projects;
 
-function render() {
-	ReactDOM.render(
-		<TodoApp model={model}/>,
-		document.getElementsByClassName('todoapp')[0]
-	);
-}
-
-model.subscribe(render);
-render();
+ReactDOM.render(
+	<WorksApp model={model}/>,
+    document.getElementsByClassName('mainpage')[0]
+);
