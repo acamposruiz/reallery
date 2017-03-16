@@ -19831,17 +19831,21 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _footer = __webpack_require__(160);
+	var _projectButton = __webpack_require__(160);
 
-	var _footer2 = _interopRequireDefault(_footer);
+	var _projectButton2 = _interopRequireDefault(_projectButton);
 
-	var _projectItem = __webpack_require__(163);
+	var _projectGallery = __webpack_require__(163);
 
-	var _projectItem2 = _interopRequireDefault(_projectItem);
+	var _projectGallery2 = _interopRequireDefault(_projectGallery);
 
 	var _director = __webpack_require__(164);
 
 	var _director2 = _interopRequireDefault(_director);
+
+	var _index = __webpack_require__(161);
+
+	var _index2 = _interopRequireDefault(_index);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19864,17 +19868,40 @@
 		function worksApp(props, context) {
 			_classCallCheck(this, worksApp);
 
-			return _possibleConstructorReturn(this, (worksApp.__proto__ || Object.getPrototypeOf(worksApp)).call(this, props, context));
+			var _this = _possibleConstructorReturn(this, (worksApp.__proto__ || Object.getPrototypeOf(worksApp)).call(this));
+
+			_this.state = {
+				project: null
+			};
+			return _this;
 		}
 
 		_createClass(worksApp, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				var setState = this.setState.bind(this);
+				var projects = this.props.model;
+				var router = Router({
+					'/': this.setState.bind(this, { project: null }),
+					'/project/view/:projectId': function projectViewProjectId(projectId) {
+						setState({ project: projects[projectId] });
+					}
+				});
+				router.init('/');
+			}
+		}, {
+			key: 'componentWillUpdate',
+			value: function componentWillUpdate(nextProps, nextState) {
+				/*console.log(nextState.project? nextState.project: 'HOME');*/
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				var projects = this.props.model;
 
-				var projectsItems = Object.values(projects).map(function (project, index) {
+				var projectsButtosList = Object.values(projects).map(function (project, index) {
 					project.state = project.state || "";
-					return _react2.default.createElement(_projectItem2.default, {
+					return _react2.default.createElement(_projectButton2.default, {
 						key: index,
 						key2: Object.keys(projects)[index],
 						name: project.name,
@@ -19886,24 +19913,36 @@
 
 				return _react2.default.createElement(
 					'div',
-					null,
+					{ className: (0, _index2.default)({
+							home: !this.state.project,
+							gallery: !!this.state.project
+						}) },
 					_react2.default.createElement(
 						'header',
 						{ className: 'header' },
 						_react2.default.createElement(
 							'h1',
 							null,
-							'Antonio Campos - Works'
+							_react2.default.createElement(
+								'a',
+								{ href: '/#/' },
+								'Antonio Campos - Works'
+							)
 						)
 					),
 					_react2.default.createElement(
 						'section',
-						{ className: 'main' },
+						{ className: 'menu' },
 						_react2.default.createElement(
 							'div',
-							{ className: 'projects' },
-							projectsItems
+							{ className: 'project-list' },
+							projectsButtosList
 						)
+					),
+					_react2.default.createElement(
+						'section',
+						{ className: 'gallery' },
+						_react2.default.createElement(_projectGallery2.default, { project: this.state.project })
 					)
 				);
 			}
@@ -19920,7 +19959,7 @@
 /* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -19942,110 +19981,50 @@
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*jshint quotmark:false */
-	/*jshint white:false */
-	/*jshint trailing:false */
-	/*jshint newcap:false */
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*jshint quotmark: false */
+	/*jshint white: false */
+	/*jshint trailing: false */
+	/*jshint newcap: false */
 	/*global React */
 
 
-	var ALL_TODOS = 'all';
-	var ACTIVE_TODOS = 'active';
-	var COMPLETED_TODOS = 'completed';
+	var ProjectButton = function (_React$Component) {
+		_inherits(ProjectButton, _React$Component);
 
-	var TodoFooter = function (_React$Component) {
-		_inherits(TodoFooter, _React$Component);
+		function ProjectButton(props, context) {
+			_classCallCheck(this, ProjectButton);
 
-		function TodoFooter() {
-			_classCallCheck(this, TodoFooter);
-
-			return _possibleConstructorReturn(this, (TodoFooter.__proto__ || Object.getPrototypeOf(TodoFooter)).apply(this, arguments));
+			return _possibleConstructorReturn(this, (ProjectButton.__proto__ || Object.getPrototypeOf(ProjectButton)).call(this, props, context));
 		}
 
-		_createClass(TodoFooter, [{
-			key: 'render',
+		_createClass(ProjectButton, [{
+			key: "render",
 			value: function render() {
 
-				var activeTodoWord = app.Utils.pluralize(this.props.count, 'item');
-				var clearButton = null;
-
-				if (this.props.completedCount > 0) {
-					clearButton = _react2.default.createElement(
-						'button',
-						{
-							className: 'clear-completed',
-							onClick: this.props.onClearCompleted },
-						'Clear completed'
-					);
-				}
-
-				var nowShowing = this.props.nowShowing;
+				var classNameIcon = "icon-ico_" + this.props.key2;
+				var path = "/#/project/view/" + this.props.key2;
 
 				return _react2.default.createElement(
-					'footer',
-					{ className: 'footer' },
+					"div",
+					{ className: (0, _index2.default)({
+							unpublish: !this.props.publish
+						}) },
 					_react2.default.createElement(
-						'span',
-						{ className: 'todo-count' },
-						_react2.default.createElement(
-							'strong',
-							null,
-							this.props.count
-						),
-						' ',
-						activeTodoWord,
-						' left'
-					),
-					_react2.default.createElement(
-						'ul',
-						{ className: 'filters' },
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								'a',
-								{
-									href: '#/',
-									className: (0, _index2.default)({ selected: nowShowing === ALL_TODOS }) },
-								'All'
-							)
-						),
-						' ',
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								'a',
-								{
-									href: '#/active',
-									className: (0, _index2.default)({ selected: nowShowing === ACTIVE_TODOS }) },
-								'Active'
-							)
-						),
-						' ',
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								'a',
-								{
-									href: '#/completed',
-									className: (0, _index2.default)({ selected: nowShowing === COMPLETED_TODOS }) },
-								'Completed'
-							)
-						)
-					),
-					clearButton
+						"a",
+						{ href: path },
+						this.props.name,
+						_react2.default.createElement("span", { className: classNameIcon })
+					)
 				);
 			}
 		}]);
 
-		return TodoFooter;
+		return ProjectButton;
 	}(_react2.default.Component);
 
 	;
 
-	exports.default = TodoFooter;
+	exports.default = ProjectButton;
 
 /***/ },
 /* 161 */
@@ -20116,7 +20095,7 @@
 /* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -20127,10 +20106,6 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _index = __webpack_require__(161);
-
-	var _index2 = _interopRequireDefault(_index);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20145,38 +20120,37 @@
 	/*global React */
 
 
-	var ProjectItem = function (_React$Component) {
-		_inherits(ProjectItem, _React$Component);
+	var ProjectGallery = function (_React$Component) {
+		_inherits(ProjectGallery, _React$Component);
 
-		function ProjectItem(props, context) {
-			_classCallCheck(this, ProjectItem);
+		function ProjectGallery(props, context) {
+			_classCallCheck(this, ProjectGallery);
 
-			return _possibleConstructorReturn(this, (ProjectItem.__proto__ || Object.getPrototypeOf(ProjectItem)).call(this, props, context));
+			return _possibleConstructorReturn(this, (ProjectGallery.__proto__ || Object.getPrototypeOf(ProjectGallery)).call(this, props, context));
 		}
 
-		_createClass(ProjectItem, [{
-			key: "render",
+		_createClass(ProjectGallery, [{
+			key: 'render',
 			value: function render() {
 
-				var classNameIcon = "icon-ico_" + this.props.key2;
-
 				return _react2.default.createElement(
-					"div",
-					{ className: (0, _index2.default)({
-							unpublish: !this.props.publish
-						}) },
-					this.props.name,
-					_react2.default.createElement("span", { className: classNameIcon })
+					'div',
+					null,
+					_react2.default.createElement(
+						'h1',
+						null,
+						this.props.project && this.props.project.name
+					)
 				);
 			}
 		}]);
 
-		return ProjectItem;
+		return ProjectGallery;
 	}(_react2.default.Component);
 
 	;
 
-	exports.default = ProjectItem;
+	exports.default = ProjectGallery;
 
 /***/ },
 /* 164 */

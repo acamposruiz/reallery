@@ -5,25 +5,45 @@
 /*global React, Router*/
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TodoFooter from './footer.es6';
-import ProjectItem from './projectItem.es6';
+import ProjectButton from './projectButton.es6';
+import ProjectGallery from './projectGallery.es6';
 import Director from '../node_modules/director/build/director.js';
+import classNames from "../node_modules/classnames/index.js";
 
 const Router = Director.Router;
 
 class worksApp extends React.Component {
 
     constructor(props, context) {
-        super(props, context);
+        super();
+        this.state = {
+            project: null
+        };
     }
+
+    componentDidMount() {
+        const setState = this.setState.bind(this);
+        let projects = this.props.model;
+        const router = Router({
+            '/': this.setState.bind(this, {project: null}),
+            '/project/view/:projectId': (projectId) => {
+                setState({project: projects[projectId]});
+			}
+        });
+        router.init('/');
+    }
+
+    componentWillUpdate(nextProps, nextState){
+    	/*console.log(nextState.project? nextState.project: 'HOME');*/
+	}
 
 	render() {
 		let projects = this.props.model;
 
-		let projectsItems = Object.values(projects).map(function (project, index) {
+		let projectsButtosList = Object.values(projects).map(function (project, index) {
             project.state = project.state || "";
 			return (
-				<ProjectItem
+				<ProjectButton
 					key={index}
 					key2={Object.keys(projects)[index]}
 					name={project.name}
@@ -34,14 +54,20 @@ class worksApp extends React.Component {
 			);
 		}, this);
 
-		return <div>
+		return <div className={classNames({
+						home: !this.state.project,
+						gallery: !!this.state.project
+					})}>
 					<header className="header">
-						<h1>Antonio Campos - Works</h1>
+						<h1><a href="/#/">Antonio Campos - Works</a></h1>
 					</header>
-					<section className="main">
-						<div className="projects">
-							{projectsItems}
+					<section className="menu">
+						<div className="project-list">
+							{projectsButtosList}
 						</div>
+					</section>
+					<section className="gallery">
+						<ProjectGallery project={this.state.project}/>
 					</section>
 				</div>
 	}

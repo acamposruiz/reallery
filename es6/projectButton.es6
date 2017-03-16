@@ -6,7 +6,7 @@
 import React from 'react';
 import classNames from "../node_modules/classnames/index.js";
 
-class ProjectItem extends React.Component {
+class ProjectButton extends React.Component {
 
 	constructor(props, context) {
 		super(props, context);
@@ -15,14 +15,17 @@ class ProjectItem extends React.Component {
 	render() {
 
 		const classNameIcon = "icon-ico_" + this.props.key2;
+		const path = "/#/project/view/" + this.props.key2;
 
 		return <div className={classNames({
             		unpublish: !this.props.publish
 				})}>
-            		{this.props.name}
-					<span className={classNameIcon}></span>
+					<a href={path}>
+						{this.props.name}
+						<span className={classNameIcon}></span>
+					</a>
 				</div>
 	}
 };
 
-export default ProjectItem;
+export default ProjectButton;
