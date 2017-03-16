@@ -13,7 +13,10 @@ module.exports = {
 			{
 				test: /(\.js|\.jsx|\.es6)$/,
 				loader: 'babel',
-				query: { presets: ['babel-preset-es2015', 'babel-preset-stage-0', 'babel-preset-react'] }
+                query: {
+                    plugins: ['transform-decorators-legacy', "transform-class-properties", "syntax-decorators"],
+                    presets: ['babel-preset-es2015', 'babel-preset-stage-0', 'babel-preset-react']
+                }
 			}
 		]
 	}
