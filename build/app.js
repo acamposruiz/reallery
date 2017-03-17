@@ -19915,10 +19915,7 @@
 
 				return _react2.default.createElement(
 					'div',
-					{ className: (0, _index2.default)({
-							home: !this.state.project,
-							gallery: !!this.state.project
-						}) },
+					{ className: !this.state.project ? 'home' : 'project' },
 					_react2.default.createElement(
 						'header',
 						{ className: 'header' },
@@ -19949,15 +19946,15 @@
 								null,
 								'@acwrks'
 							)
-						)
-					),
-					_react2.default.createElement(
-						'section',
-						{ className: 'menu' },
+						),
 						_react2.default.createElement(
-							'div',
-							{ className: 'project-list' },
-							projectsButtosList
+							'section',
+							{ className: 'menu' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'project-list' },
+								projectsButtosList
+							)
 						)
 					),
 					_react2.default.createElement(
@@ -20051,13 +20048,13 @@
 						{ href: path },
 						_react2.default.createElement(
 							'div',
-							{ className: 'type' },
+							{ className: 'text type' },
 							this.props.type
 						),
 						_react2.default.createElement('div', { className: classNameIcon }),
 						_react2.default.createElement(
 							'div',
-							{ className: 'title' },
+							{ className: 'text title' },
 							this.props.name
 						)
 					)
@@ -27595,7 +27592,7 @@
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                _react2.default.createElement(_reactPhotoGallery2.default, { photos: PHOTO_SET, onClickPhoto: this.openLightbox })
+	                _react2.default.createElement(_reactPhotoGallery2.default, { photos: PHOTO_SET })
 	            );
 	        }
 	    }]);

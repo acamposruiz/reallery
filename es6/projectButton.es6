@@ -30,9 +30,9 @@ class ProjectButton extends React.Component {
 
 		return <div className={"project-button-container" + (this.props.active? " active":" no-active")}>
 					<a href={path}>
-						<div className="type">{this.props.type}</div>
+						<div className="text type">{this.props.type}</div>
 						<div className={classNameIcon}></div>
-						<div className="title">{this.props.name}</div>
+						<div className="text title">{this.props.name}</div>
 					</a>
 				</div>
 	}

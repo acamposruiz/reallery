@@ -64,7 +64,7 @@ class ProjectGallery extends React.Component {
         });
 
 		return <div>
-					<Gallery photos={PHOTO_SET} onClickPhoto={this.openLightbox}/>
+					<Gallery photos={PHOTO_SET}/>
 				</div>
 	}
 };

@@ -56,19 +56,17 @@ class worksApp extends React.Component {
 			);
 		}, this);
 
-		return <div className={classNames({
-						home: !this.state.project,
-						gallery: !!this.state.project
-					})}>
+		return <div className={!this.state.project? 'home':'project'}>
 					<header className="header">
 						<h1><a href="/#/">Antonio Campos's Works</a></h1>
 						<div className="contact"><span>acwrks@gmail.com</span><span>/</span><span>@acwrks</span></div>
+						<section className="menu">
+							<div className="project-list">
+                                {projectsButtosList}
+							</div>
+						</section>
 					</header>
-					<section className="menu">
-						<div className="project-list">
-							{projectsButtosList}
-						</div>
-					</section>
+
 					<section className="gallery">
 						{this.state.project && <ProjectGallery project={this.state.project}/> }
 					</section>
