@@ -1,5 +1,6 @@
 /* Import modules */
 var fs = require("fs");
+var sizeOf = require('image-size');
 
 /* Import JSON DATA */
 var projtsJson = JSON.parse(fs.readFileSync("projts/projts.json", "utf8"));
@@ -22,7 +23,12 @@ Object.keys(projtsJson).forEach(function (key) {
     var files = fs.readdirSync(imagesFolder);
     projtsJson[key]["images"] = [];
     files.forEach(file => {
-        projtsJson[key]["images"].push(imagesFolder + file);
+        var dimensions = sizeOf(imagesFolder + file);
+        projtsJson[key]["images"].push({
+            path:imagesFolder + file,
+            width:dimensions.width,
+            height:dimensions.height
+        });
     });
 
     /* include project */

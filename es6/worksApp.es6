@@ -70,7 +70,7 @@ class worksApp extends React.Component {
 						</div>
 					</section>
 					<section className="gallery">
-						<ProjectGallery project={this.state.project}/>
+						{this.state.project && <ProjectGallery project={this.state.project}/> }
 					</section>
 				</div>
 	}
