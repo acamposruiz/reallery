@@ -39,6 +39,7 @@ class worksApp extends React.Component {
 
 	render() {
 		let projects = this.props.model;
+		let projectSt = this.state.project || {};
 
 		let projectsButtosList = Object.values(projects).map(function (project, index) {
             project.state = project.state || "";
@@ -50,6 +51,7 @@ class worksApp extends React.Component {
 					type={project.type}
 					publish={project.publish}
 					state={project.state}
+					active={project.name == projectSt.name}
 				/>
 			);
 		}, this);
@@ -59,7 +61,8 @@ class worksApp extends React.Component {
 						gallery: !!this.state.project
 					})}>
 					<header className="header">
-						<h1><a href="/#/">Antonio Campos - Works</a></h1>
+						<h1><a href="/#/">Antonio Campos's Works</a></h1>
+						<div className="contact"><span>acwrks@gmail.com</span><span>/</span><span>@acwrks</span></div>
 					</header>
 					<section className="menu">
 						<div className="project-list">

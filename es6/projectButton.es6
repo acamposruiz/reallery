@@ -21,32 +21,18 @@ class ProjectButton extends React.Component {
 		const path = "/#/project/view/" + this.props.key2;
 
         var styles = {
-            base: {
-                color: '#fff',
-
-                // Adding interactive state couldn't be easier! Add a special key to your
-                // style object (:hover, :focus, :active, or @media) with the additional rules.
-                ':hover': {
-                    background: color('#0074d9').lighten(0.2).hex()
-                }
-            },
-
-            primary: {
-                background: '#0074D9'
-            },
-
-            warning: {
-                background: '#FF4136'
-            }
+            border: '1px solid #949494',
+			'border-radius': '9px',
+			margin: '5px',
+			padding: '5px',
+			float: 'left'
         };
 
-		return <div style={[
-						styles.base, styles.primary
-					]}>
+		return <div className={"project-button-container" + (this.props.active? " active":" no-active")}>
 					<a href={path}>
-						<h4 className="type">{this.props.type}</h4>
-						<span className={classNameIcon}></span>
-						<h3 className="title">{this.props.name}</h3>
+						<div className="type">{this.props.type}</div>
+						<div className={classNameIcon}></div>
+						<div className="title">{this.props.name}</div>
 					</a>
 				</div>
 	}

@@ -19898,6 +19898,7 @@
 			key: 'render',
 			value: function render() {
 				var projects = this.props.model;
+				var projectSt = this.state.project || {};
 
 				var projectsButtosList = Object.values(projects).map(function (project, index) {
 					project.state = project.state || "";
@@ -19907,7 +19908,8 @@
 						name: project.name,
 						type: project.type,
 						publish: project.publish,
-						state: project.state
+						state: project.state,
+						active: project.name == projectSt.name
 					});
 				}, this);
 
@@ -19926,7 +19928,26 @@
 							_react2.default.createElement(
 								'a',
 								{ href: '/#/' },
-								'Antonio Campos - Works'
+								'Antonio Campos\'s Works'
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'contact' },
+							_react2.default.createElement(
+								'span',
+								null,
+								'acwrks@gmail.com'
+							),
+							_react2.default.createElement(
+								'span',
+								null,
+								'/'
+							),
+							_react2.default.createElement(
+								'span',
+								null,
+								'@acwrks'
 							)
 						)
 					),
@@ -19962,7 +19983,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+		value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -19999,64 +20020,52 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var ProjectButton = (0, _radiumMin2.default)(_class = function (_React$Component) {
-	    _inherits(ProjectButton, _React$Component);
+		_inherits(ProjectButton, _React$Component);
 
-	    function ProjectButton(props, context) {
-	        _classCallCheck(this, ProjectButton);
+		function ProjectButton(props, context) {
+			_classCallCheck(this, ProjectButton);
 
-	        return _possibleConstructorReturn(this, (ProjectButton.__proto__ || Object.getPrototypeOf(ProjectButton)).call(this, props, context));
-	    }
+			return _possibleConstructorReturn(this, (ProjectButton.__proto__ || Object.getPrototypeOf(ProjectButton)).call(this, props, context));
+		}
 
-	    _createClass(ProjectButton, [{
-	        key: 'render',
-	        value: function render() {
+		_createClass(ProjectButton, [{
+			key: 'render',
+			value: function render() {
 
-	            var classNameIcon = "icon-ico_" + this.props.key2;
-	            var path = "/#/project/view/" + this.props.key2;
+				var classNameIcon = "icon-ico_" + this.props.key2;
+				var path = "/#/project/view/" + this.props.key2;
 
-	            var styles = {
-	                base: {
-	                    color: '#fff',
+				var styles = {
+					border: '1px solid #949494',
+					'border-radius': '9px',
+					margin: '5px',
+					padding: '5px',
+					float: 'left'
+				};
 
-	                    // Adding interactive state couldn't be easier! Add a special key to your
-	                    // style object (:hover, :focus, :active, or @media) with the additional rules.
-	                    ':hover': {
-	                        background: (0, _color2.default)('#0074d9').lighten(0.2).hex()
-	                    }
-	                },
+				return _react2.default.createElement(
+					'div',
+					{ className: "project-button-container" + (this.props.active ? " active" : " no-active") },
+					_react2.default.createElement(
+						'a',
+						{ href: path },
+						_react2.default.createElement(
+							'div',
+							{ className: 'type' },
+							this.props.type
+						),
+						_react2.default.createElement('div', { className: classNameIcon }),
+						_react2.default.createElement(
+							'div',
+							{ className: 'title' },
+							this.props.name
+						)
+					)
+				);
+			}
+		}]);
 
-	                primary: {
-	                    background: '#0074D9'
-	                },
-
-	                warning: {
-	                    background: '#FF4136'
-	                }
-	            };
-
-	            return _react2.default.createElement(
-	                'div',
-	                { style: [styles.base, styles.primary] },
-	                _react2.default.createElement(
-	                    'a',
-	                    { href: path },
-	                    _react2.default.createElement(
-	                        'h4',
-	                        { className: 'type' },
-	                        this.props.type
-	                    ),
-	                    _react2.default.createElement('span', { className: classNameIcon }),
-	                    _react2.default.createElement(
-	                        'h3',
-	                        { className: 'title' },
-	                        this.props.name
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-
-	    return ProjectButton;
+		return ProjectButton;
 	}(_react2.default.Component)) || _class;
 
 	;
