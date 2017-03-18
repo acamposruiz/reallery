@@ -4,11 +4,9 @@
 /*jshint newcap:false */
 /*global React, Router*/
 import React from 'react';
-import ReactDOM from 'react-dom';
 import ProjectButton from './projectButton.es6';
 import ProjectGallery from './projectGallery.es6';
 import Director from '../node_modules/director/build/director.js';
-import classNames from "../node_modules/classnames/index.js";
 
 const Router = Director.Router;
 
@@ -32,12 +30,6 @@ class worksApp extends React.Component {
         });
         router.init('/');
     }
-
-    componentWillUpdate(nextProps, nextState){
-
-    	return true;
-    	/*console.log(nextState.project? nextState.project: 'HOME');*/
-	}
 
 	render() {
 		let projects = this.props.model;

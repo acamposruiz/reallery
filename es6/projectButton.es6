@@ -5,8 +5,6 @@
 /*global React */
 import Radium from '../vendors/radium/dist/radium.min.js';
 import React from 'react';
-import color from 'color';
-import classNames from "../node_modules/classnames/index.js";
 
 @Radium
 class ProjectButton extends React.Component {
