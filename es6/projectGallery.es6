@@ -5,6 +5,7 @@
 /*global React */
 import React from 'react';
 import Gallery from 'react-photo-gallery';
+import YouTube from 'react-youtube';
 import Measure from 'react-measure';
 import Lightbox from 'react-images';
 
@@ -18,6 +19,7 @@ class ProjectGallery extends React.Component {
         this.gotoPrevious = this.gotoPrevious.bind(this);
 
         this.state = {
+            videos: this.props.project.videos,
             photos: this.props.project.images.map(image => {
                 return {
                     src: image.path,
@@ -31,6 +33,7 @@ class ProjectGallery extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         this.setState({
+            videos: nextProps.project.videos,
             photos: nextProps.project.images.map(image => {
                 return {
                     src: image.path,
@@ -87,11 +90,38 @@ class ProjectGallery extends React.Component {
         );
     }
 
+    renderVideos() {
+
+        function _onReady(event) {
+            // access to player in all event handlers via event.target
+            event.target.pauseVideo();
+        }
+
+        return this.state.videos.map(videoId => {
+
+            const opts = {
+                height: '390',
+                width: '640',
+                playerVars: { // https://developers.google.com/youtube/player_parameters
+                    autoplay: 0
+                }
+            };
+
+            return <YouTube
+                key={videoId}
+                videoId={videoId}
+                opts={opts}
+                onReady={_onReady}
+            />
+        });
+    }
+
     render() {
 
         if (this.state.photos) {
             return (
                 <div className="App">
+                    {this.renderVideos()}
                     {this.renderGallery()}
                     <Lightbox
                         images={this.state.photos}

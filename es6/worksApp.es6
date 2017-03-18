@@ -15,7 +15,7 @@ const Router = Director.Router;
 class worksApp extends React.Component {
 
     constructor(props, context) {
-        super();
+        super(props, context);
         this.state = {
             project: null
         };
