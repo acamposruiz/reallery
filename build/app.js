@@ -19901,8 +19901,11 @@
 			value: function render() {
 				var projects = this.props.model;
 				var projectSt = this.state.project || {};
+				var ObjVals = Object.keys(projects).map(function (key) {
+					return projects[key];
+				});;
 
-				var projectsButtosList = Object.values(projects).map(function (project, index) {
+				var projectsButtosList = ObjVals.map(function (project, index) {
 					project.state = project.state || "";
 					return _react2.default.createElement(_projectButton2.default, {
 						key: index,

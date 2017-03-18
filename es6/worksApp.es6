@@ -42,8 +42,11 @@ class worksApp extends React.Component {
 	render() {
 		let projects = this.props.model;
 		let projectSt = this.state.project || {};
+		let ObjVals = Object.keys(projects).map(function(key) {
+            return projects[key];
+        });;
 
-		let projectsButtosList = Object.values(projects).map(function (project, index) {
+		let projectsButtosList = ObjVals.map(function (project, index) {
             project.state = project.state || "";
 			return (
 				<ProjectButton
