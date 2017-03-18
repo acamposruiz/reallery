@@ -34,6 +34,8 @@ class worksApp extends React.Component {
     }
 
     componentWillUpdate(nextProps, nextState){
+
+    	return true;
     	/*console.log(nextState.project? nextState.project: 'HOME');*/
 	}
 
@@ -56,7 +58,11 @@ class worksApp extends React.Component {
 			);
 		}, this);
 
-		return <div className={!this.state.project? 'home':'project'}>
+
+
+		const gallery = this.state.project? <ProjectGallery project={this.state.project}/>: undefined;
+
+        return <div className={!this.state.project? 'home':'project'}>
 					<header className="header">
 						<h1><a href="/#/">Antonio Campos's Works</a></h1>
 						<div className="contact"><span>acwrks@gmail.com</span><span>/</span><span>@acwrks</span></div>
@@ -68,7 +74,7 @@ class worksApp extends React.Component {
 					</header>
 
 					<section className="gallery">
-						{this.state.project && <ProjectGallery project={this.state.project}/> }
+						{gallery}
 					</section>
 				</div>
 	}

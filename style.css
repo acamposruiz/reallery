@@ -26,6 +26,9 @@
     width: 100%;
 }
 
+.loading-msg {
+    color: white;
+}
 /* TEXT */
 
 body, body a {

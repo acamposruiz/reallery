@@ -20,14 +20,6 @@ class ProjectButton extends React.Component {
 		const classNameIcon = "icon-ico_" + this.props.key2;
 		const path = "/#/project/view/" + this.props.key2;
 
-        var styles = {
-            border: '1px solid #949494',
-			'border-radius': '9px',
-			margin: '5px',
-			padding: '5px',
-			float: 'left'
-        };
-
 		return <div className={"project-button-container" + (this.props.active? " active":" no-active")}>
 					<a href={path}>
 						<div className="text type">{this.props.type}</div>
