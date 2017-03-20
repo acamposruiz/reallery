@@ -10,39 +10,7 @@ var projtsJson = JSON.parse(fs.readFileSync("projts/projts.json", "utf8"));
 /* Declaration of vars */
 var ps = [];
 
-
-
 /* Generate responsive images */
-/*function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir) {
-    var dimensions = [2880, 1240, 620, 310, 160];
-    var srcset = [];
-    var dimTop;
-    var sourceImageDir = sourceImagesDir + file.split('.')[0] + '/';
-
-    if (!fs.existsSync(sourceImageDir)) fs.mkdirSync(sourceImageDir);
-
-    dimensions.some((d, key) => {
-        dimTop = key;
-        return dmsns.width >= d;
-    });
-
-    for (var i = dimTop; i <= 4; i++) {
-        var dim = dimensions[i];
-        var sourceImageDirFile = sourceImageDir + '/' + dim + '_' + file;
-
-        lwip.open(imagesFolder + file, function (err, image) {
-
-            image.batch()
-                .resize(this.dim, (this.dim/dmsns.width)*dmsns.height)
-                .writeFile(this.sourceImageDirFile, function (err) {
-                    srcset.push(this.sourceImageDirFile);
-                });
-
-        }.bind({sourceImageDirFile:sourceImageDirFile, dim:dim}));
-    }
-
-    return srcset;
-}*/
 function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir) {
     return new Promise((rs,rj)=>{
         var dimensions = [2880, 1240, 620, 310, 160];

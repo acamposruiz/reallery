@@ -23,6 +23,7 @@ class ProjectGallery extends React.Component {
             photos: this.props.project.images.map(image => {
                 return {
                     src: image.path,
+                    srcset: image.srcset,
                     width: image.width,
                     height: image.height
                 };
@@ -37,6 +38,7 @@ class ProjectGallery extends React.Component {
             photos: nextProps.project.images.map(image => {
                 return {
                     src: image.path,
+                    srcset: image.srcset,
                     width: image.width,
                     height: image.height
                 };
