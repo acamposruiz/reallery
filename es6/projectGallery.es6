@@ -8,19 +8,24 @@ import Gallery from 'react-photo-gallery';
 import YouTube from 'react-youtube';
 import Measure from 'react-measure';
 import Lightbox from 'react-images';
+import $ from 'jquery';
+import _ from 'lodash';
 
 class ProjectGallery extends React.Component {
 
 	constructor(props) {
 		super(props);
+        this.handleScroll = this.handleScroll.bind(this);
+        this.loadMorePhotos = this.loadMorePhotos.bind(this);
         this.closeLightbox = this.closeLightbox.bind(this);
         this.openLightbox = this.openLightbox.bind(this);
         this.gotoNext = this.gotoNext.bind(this);
         this.gotoPrevious = this.gotoPrevious.bind(this);
 
         this.state = {
+            photos: [],
             videos: this.props.project.videos,
-            photos: this.props.project.images.map(image => {
+            photosStore: this.props.project.images.map(image => {
                 return {
                     src: image.path,
                     srcset: image.srcset,
@@ -31,6 +36,29 @@ class ProjectGallery extends React.Component {
         };
 
 	}
+
+    componentDidMount() {
+        this.loadMorePhotos();
+        this.loadMorePhotos = _.debounce(this.loadMorePhotos, 200);
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll(){
+        let scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+        if ((window.innerHeight + scrollY) >= (document.body.offsetHeight - 50)) {
+            this.loadMorePhotos();
+        }
+    }
+
+    loadMorePhotos(){
+        if (this.state.photosStore.length == 0){
+            return;
+        }
+        this.setState({
+            photos: this.state.photos.concat(this.state.photosStore.slice(0, 10)),
+            photosStore: this.state.photosStore.slice(10)
+        });
+    }
 
     componentWillReceiveProps(nextProps) {
         this.setState({

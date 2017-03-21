@@ -32,7 +32,7 @@
 /* TEXT */
 
 :root {
-    font-size: calc(100vw / 40);
+    font-size: calc(100vw / 60);
 }
 
 body, body a {
