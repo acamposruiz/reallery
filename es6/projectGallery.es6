@@ -62,8 +62,9 @@ class ProjectGallery extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         this.setState({
+            photos: [],
             videos: nextProps.project.videos,
-            photos: nextProps.project.images.map(image => {
+            photosStore: nextProps.project.images.map(image => {
                 return {
                     src: image.path,
                     srcset: image.srcset,
@@ -72,7 +73,12 @@ class ProjectGallery extends React.Component {
                 };
             })
         });
+        this.loadMorePhotos();
     }
+
+    /*componentDidUpdate() {
+        this.loadMorePhotos();
+    }*/
 
     openLightbox(index, event){
         event.preventDefault();

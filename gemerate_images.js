@@ -3,7 +3,7 @@ var gd = require('node-gd');
 var randomColor = require('randomcolor');
 
 var colors = randomColor({
-    count: 10,
+    count: 50,
     luminosity: 'light',
     format: 'rgb'
 });
@@ -17,7 +17,7 @@ colors = colors.map(color => {
 
 colors.forEach( (color, key) => {
 
-        var dimensions = [160];
+        var dimensions = [2880];
         dimensions.forEach(w => {
             var h = Math.floor(w/2);
 
