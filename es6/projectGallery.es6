@@ -8,7 +8,7 @@ import Gallery from 'react-photo-gallery';
 import YouTube from 'react-youtube';
 import Measure from 'react-measure';
 import Lightbox from 'react-images';
-import $ from 'jquery';
+import Loading from 'react-loading';
 import _ from 'lodash';
 
 class ProjectGallery extends React.Component {
@@ -174,7 +174,7 @@ class ProjectGallery extends React.Component {
                         isOpen={this.state.lightboxIsOpen}
                         width={1600}
                     />
-                    {!this.state.loadedAll && <div className="loading-msg" id="msg-loading-more">Loading</div>}
+                    {!this.state.loadedAll && <div className="loading-msg" id="msg-loading-more"><Loading type='cylon' color='#d2d2d2' width="85"/><span className="loading-msg-text">Loading</span></div>}
                 </div>
             );
         }
