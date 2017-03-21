@@ -26,9 +26,39 @@
     width: 100%;
 }
 
-.loading-msg {
+/*.loading-msg {
     color: white;
+}*/
+
+.loading-msg{
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    color: #666;
+    width: 130px;
+    margin: 0 auto;
 }
+
+.loading-msg:after {
+    display: inline-block;
+    vertical-align: middle;
+    padding-bottom: 10px;
+    -webkit-animation: ellipsis steps(4,end) 900ms infinite;
+    animation: ellipsis steps(4,end) 900ms infinite;
+    content: "\2026"; /* ascii code for the ellipsis character */
+    width: 0px;
+}
+
+#msg-app-loading{
+    margin-top: 60px;
+}
+
+#msg-loading-more{
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
 /* TEXT */
 
 :root {

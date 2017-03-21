@@ -23,6 +23,7 @@ class ProjectGallery extends React.Component {
         this.gotoPrevious = this.gotoPrevious.bind(this);
 
         this.state = {
+            loadedAll: false,
             photos: [],
             videos: this.props.project.videos,
             photosStore: this.props.project.images.map(image => {
@@ -52,6 +53,9 @@ class ProjectGallery extends React.Component {
 
     loadMorePhotos(){
         if (this.state.photosStore.length == 0){
+            this.setState({
+                loadedAll: true
+            });
             return;
         }
         this.setState({
@@ -62,6 +66,7 @@ class ProjectGallery extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         this.setState({
+            loadedAll: false,
             photos: [],
             videos: nextProps.project.videos,
             photosStore: nextProps.project.images.map(image => {
