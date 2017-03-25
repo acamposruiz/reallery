@@ -1,0 +1,26 @@
+{
+  "001": {
+    "name": "Ducks",
+    "type": "sculpture",
+    "videos": ["vgfS0dUf7lo"],
+    "publish": true
+  },
+  "002": {
+    "name": "Temple with vagina",
+    "type": "sculpture",
+    "publish": false,
+    "state": "comming soon"
+  },
+  "003": {
+    "name": "Soldiers' heads",
+    "type": "sculpture",
+    "videos": ["cZ3DLvBxoZU", "wrr41cUdirQ"],
+    "publish": true
+  },
+  "004": {
+    "name": "University",
+    "type": "painting",
+    "videos": [],
+    "publish": true
+  }
+}
