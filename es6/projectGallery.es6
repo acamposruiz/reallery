@@ -22,63 +22,52 @@ class ProjectGallery extends React.Component {
         this.gotoNext = this.gotoNext.bind(this);
         this.gotoPrevious = this.gotoPrevious.bind(this);
 
-        this.state = {
-            loadedAll: false,
-            photos: [],
-            videos: this.props.project.videos,
-            photosStore: this.props.project.images.map(image => {
-                return {
-                    src: image.path,
-                    srcset: image.srcset,
-                    width: image.width,
-                    height: image.height
-                };
-            })
-        };
-
 	}
 
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.project){
+            this.setState({
+                loadedAll: false,
+                photos: [],
+                videos: nextProps.project.videos,
+                photosStore: nextProps.project.images.map(image => {
+                    return {
+                        src: image.path,
+                        srcset: image.srcset,
+                        width: image.width,
+                        height: image.height
+                    };
+                })
+            });
+            this.loadMorePhotos();
+        } else { this.setState({ loadedAll: false, photos: [], videos: [], photosStore: []}); }
+
+    }
+
     componentDidMount() {
-        this.loadMorePhotos();
         this.loadMorePhotos = _.debounce(this.loadMorePhotos, 200);
         window.addEventListener('scroll', this.handleScroll);
     }
 
     handleScroll(){
         let scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-        if ((window.innerHeight + scrollY) >= (document.body.offsetHeight - 50)) {
+        if (this.props.project && !this.state.loadedAll
+            && (window.innerHeight + scrollY) >= (document.body.offsetHeight - 50)) {
             this.loadMorePhotos();
         }
     }
 
     loadMorePhotos(){
-        if (this.state.photosStore.length == 0){
-            this.setState({
-                loadedAll: true
-            });
-            return;
-        }
-        this.setState({
-            photos: this.state.photos.concat(this.state.photosStore.slice(0, 10)),
-            photosStore: this.state.photosStore.slice(10)
-        });
-    }
+        
+        let newPhotos = this.state.photosStore.slice(0, 10);
+        let newStore = this.state.photosStore.slice(10);
+        let loadedAll = newStore.length? false:true;
 
-    componentWillReceiveProps(nextProps) {
         this.setState({
-            loadedAll: false,
-            photos: [],
-            videos: nextProps.project.videos,
-            photosStore: nextProps.project.images.map(image => {
-                return {
-                    src: image.path,
-                    srcset: image.srcset,
-                    width: image.width,
-                    height: image.height
-                };
-            })
+            photos: this.state.photos.concat(newPhotos),
+            photosStore: newStore,
+            loadedAll: loadedAll
         });
-        this.loadMorePhotos();
     }
 
     openLightbox(index, event){
@@ -155,32 +144,42 @@ class ProjectGallery extends React.Component {
 
     render() {
 
-        if (this.state.photos) {
-            return (
-                <div className="App">
-                    {this.renderVideos()}
-                    {this.renderGallery()}
-                    <Lightbox
-                        images={this.state.photos.concat(this.state.photosStore)}
-                        backdropClosesModal={true}
-                        onClose={this.closeLightbox}
-                        onClickPrev={this.gotoPrevious}
-                        onClickNext={this.gotoNext}
-                        currentImage={this.state.currentImage}
-                        isOpen={this.state.lightboxIsOpen}
-                        width={1600}
-                    />
-                    {!this.state.loadedAll && <div className="loading-msg" id="msg-loading-more"><Loading type='cylon' color='#d2d2d2' width="85"/><span className="loading-msg-text">Loading</span></div>}
-                </div>
-            );
+        if(this.props.project){
+            if (this.state.photos) {
+                return (
+                    <div className="App">
+                        {this.renderVideos()}
+                        {this.renderGallery()}
+                        <Lightbox
+                            images={this.state.photos.concat(this.state.photosStore)}
+                            backdropClosesModal={true}
+                            onClose={this.closeLightbox}
+                            onClickPrev={this.gotoPrevious}
+                            onClickNext={this.gotoNext}
+                            currentImage={this.state.currentImage}
+                            isOpen={this.state.lightboxIsOpen}
+                            width={1600}
+                        />
+                        {!this.state.loadedAll && <div className="loading-msg" id="msg-loading-more"><Loading type='cylon' color='#d2d2d2' width="85"/><span className="loading-msg-text">Loading</span></div>}
+                    </div>
+                );
+            }
+            else {
+                return (
+                    <div className="App">
+                        <div id="msg-app-loading" className="loading-msg">Loading</div>
+                    </div>
+                );
+            }
         }
         else {
             return (
-                <div className="App">
-                    <div id="msg-app-loading" className="loading-msg">Loading</div>
-                </div>
+                <div/>
+
             );
         }
+
+
 	}
 };
 

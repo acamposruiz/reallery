@@ -55,7 +55,7 @@ class worksApp extends React.Component {
 
 
 
-		const gallery = this.state.project? <ProjectGallery project={this.state.project}/>: undefined;
+		const gallery = <ProjectGallery project={this.state.project || null}/>;
 
         return <div className={!this.state.project? 'home':'project'}>
 					<header className="header">
