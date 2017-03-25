@@ -11,6 +11,9 @@ import Lightbox from 'react-images';
 import Loading from 'react-loading';
 import _ from 'lodash';
 
+const loadMorePhotosTimeLapse = 200;
+const photosSetLoad = 10;
+
 class ProjectGallery extends React.Component {
 
 	constructor(props) {
@@ -45,7 +48,7 @@ class ProjectGallery extends React.Component {
     }
 
     componentDidMount() {
-        this.loadMorePhotos = _.debounce(this.loadMorePhotos, 200);
+        this.loadMorePhotos = _.debounce(this.loadMorePhotos, loadMorePhotosTimeLapse);
         window.addEventListener('scroll', this.handleScroll);
     }
 
@@ -58,9 +61,9 @@ class ProjectGallery extends React.Component {
     }
 
     loadMorePhotos(){
-        
-        let newPhotos = this.state.photosStore.slice(0, 10);
-        let newStore = this.state.photosStore.slice(10);
+
+        let newPhotos = this.state.photosStore.slice(0, photosSetLoad);
+        let newStore = this.state.photosStore.slice(photosSetLoad);
         let loadedAll = newStore.length? false:true;
 
         this.setState({
@@ -103,12 +106,8 @@ class ProjectGallery extends React.Component {
                 {
                     ({ width }) => {
                         var cols = 1;
-                        if (width >= 480){
-                            cols = 2;
-                        }
-                        if (width >= 1024){
-                            cols = 3;
-                        }
+                        if (width >= 480){ cols = 2; }
+                        if (width >= 1024){ cols = 3; }
                         return <Gallery photos={this.state.photos} cols={cols} onClickPhoto={this.openLightbox} />
                     }
                 }
@@ -144,41 +143,27 @@ class ProjectGallery extends React.Component {
 
     render() {
 
-        if(this.props.project){
-            if (this.state.photos) {
-                return (
-                    <div className="App">
-                        {this.renderVideos()}
-                        {this.renderGallery()}
-                        <Lightbox
-                            images={this.state.photos.concat(this.state.photosStore)}
-                            backdropClosesModal={true}
-                            onClose={this.closeLightbox}
-                            onClickPrev={this.gotoPrevious}
-                            onClickNext={this.gotoNext}
-                            currentImage={this.state.currentImage}
-                            isOpen={this.state.lightboxIsOpen}
-                            width={1600}
-                        />
-                        {!this.state.loadedAll && <div className="loading-msg" id="msg-loading-more"><Loading type='cylon' color='#d2d2d2' width="85"/><span className="loading-msg-text">Loading</span></div>}
-                    </div>
-                );
-            }
-            else {
-                return (
-                    <div className="App">
-                        <div id="msg-app-loading" className="loading-msg">Loading</div>
-                    </div>
-                );
-            }
-        }
-        else {
-            return (
-                <div/>
+        if (!this.props.project) return <div/>;
 
-            );
-        }
-
+        return (
+            <div className="App">
+                {this.renderVideos()}
+                {this.renderGallery()}
+                <Lightbox
+                    images={this.state.photos.concat(this.state.photosStore)}
+                    backdropClosesModal={true}
+                    onClose={this.closeLightbox}
+                    onClickPrev={this.gotoPrevious}
+                    onClickNext={this.gotoNext}
+                    currentImage={this.state.currentImage}
+                    isOpen={this.state.lightboxIsOpen}
+                    width={1600}
+                />
+                {!this.state.loadedAll
+                && <div className="loading-msg" id="msg-loading-more"><Loading type='cylon' color='#d2d2d2' width="85"/>
+                    <span className="loading-msg-text">Loading</span></div>}
+            </div>
+        );
 
 	}
 };
