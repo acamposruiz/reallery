@@ -81,10 +81,6 @@ class ProjectGallery extends React.Component {
         this.loadMorePhotos();
     }
 
-    /*componentDidUpdate() {
-        this.loadMorePhotos();
-    }*/
-
     openLightbox(index, event){
         event.preventDefault();
         this.setState({
@@ -165,7 +161,7 @@ class ProjectGallery extends React.Component {
                     {this.renderVideos()}
                     {this.renderGallery()}
                     <Lightbox
-                        images={this.state.photos}
+                        images={this.state.photos.concat(this.state.photosStore)}
                         backdropClosesModal={true}
                         onClose={this.closeLightbox}
                         onClickPrev={this.gotoPrevious}
