@@ -1,5 +1,6 @@
 module.exports = {
     plugins: [
-        require('precss')
+        require('precss'),
+        require('postcss-fontpath')
     ]
 }

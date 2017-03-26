@@ -1,9 +1,12 @@
-
+var path = require('path');
 
 
 module.exports = {
 	resolve: {
-		extensions: ['.jsx', '.js', 'es6', 'css']
+		extensions: ['.jsx', '.js', 'es6', 'css'],
+        alias: {
+            Styles: path.resolve(__dirname, 'styles/')
+        }
 	},
 	entry:  './es6/app.es6',
 	output: {
@@ -20,6 +23,7 @@ module.exports = {
                     presets: ['babel-preset-es2015', 'babel-preset-stage-0', 'babel-preset-react']
                 }
 			},
+            { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
             {
                 test: /\.css$/,
                 exclude: /node_modules/,

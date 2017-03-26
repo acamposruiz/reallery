@@ -3,7 +3,8 @@
 /*jshint trailing:false */
 /*jshint newcap:false */
 /*global React, Router*/
-import styles from './styles.css';
+
+import styles from 'Styles/styles.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import WorksApp from './worksApp.es6';
