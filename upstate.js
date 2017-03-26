@@ -178,5 +178,5 @@ function writeRawState(data) {
     });
 }
 
-readConfigData("conf/projts.json").then(generateSourceImages).then(writeRawState);
+readConfigData("projts.json").then(generateSourceImages).then(writeRawState);
 

@@ -3,10 +3,8 @@
 /*jshint trailing: false */
 /*jshint newcap: false */
 /*global React */
-import Radium from '../vendors/radium/dist/radium.min.js';
 import React from 'react';
 
-@Radium
 class ProjectButton extends React.Component {
 
 	constructor(props, context) {

@@ -5,10 +5,10 @@ module.exports = {
 	resolve: {
 		extensions: ['.jsx', '.js', 'es6', 'css'],
         alias: {
-            Styles: path.resolve(__dirname, 'styles/')
+            Styles: path.resolve(__dirname, 'src/styles/')
         }
 	},
-	entry:  './es6/app.es6',
+	entry:  './src/es6/app.es6',
 	output: {
 		path: __dirname + '/build',
 		filename:'app.js'

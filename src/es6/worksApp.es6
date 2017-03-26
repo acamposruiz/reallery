@@ -6,7 +6,7 @@
 import React from 'react';
 import ProjectButton from './projectButton.es6';
 import ProjectGallery from './projectGallery.es6';
-import Director from '../node_modules/director/build/director.js';
+import Director from '../../node_modules/director/build/director.js';
 
 const Router = Director.Router;
 

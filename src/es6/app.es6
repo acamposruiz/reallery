@@ -5,7 +5,7 @@
 /*global React, Router*/
 
 import styles from 'Styles/styles.css';
-import state from '../state/state';
+import state from '../../state/state';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import WorksApp from './worksApp.es6';
