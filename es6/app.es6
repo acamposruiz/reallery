@@ -5,13 +5,12 @@
 /*global React, Router*/
 
 import styles from 'Styles/styles.css';
+import state from '../state/state';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import WorksApp from './worksApp.es6';
 
-var model = app.state.projects;
-
 ReactDOM.render(
-	<WorksApp model={model}/>,
+	<WorksApp model={state.projects}/>,
     document.getElementsByClassName('mainpage')[0]
 );

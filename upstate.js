@@ -126,7 +126,7 @@ function generateSourceImages(projtsJson) {
                 (function promRecur(index) {
 
                     if (index == 0) {
-                        rawData = "var app = app || {};";
+                        rawData = "var state = state || {};";
                         rawData += "(function () { 'use strict';";
                         rawData += "var projects = {};";
                     }
@@ -140,8 +140,9 @@ function generateSourceImages(projtsJson) {
                         if (++index < rawState.length) {
                             promRecur(index);
                         } else {
-                            rawData += "app.state = { projects: projects};";
+                            rawData += "state = { projects: projects};";
                             rawData += "})();";
+                            rawData += "export default state;";
                             /* Write the output */
                             sendData(rawData);
 
@@ -168,7 +169,7 @@ function readConfigData(path) {
 
 function writeRawState(data) {
 
-    fs.writeFile("js/state.js", data, function (err) {
+    fs.writeFile("state/state.js", data, function (err) {
         if (err) {
             return console.log(err);
         }
