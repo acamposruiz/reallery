@@ -9,6 +9,7 @@ import YouTube from 'react-youtube';
 import Measure from 'react-measure';
 import Lightbox from 'react-images';
 import Loading from 'react-loading';
+import utils from './utils.es6';
 import _ from 'lodash';
 
 const loadMorePhotosTimeLapse = 200;
@@ -71,6 +72,8 @@ class ProjectGallery extends React.Component {
             photosStore: newStore,
             loadedAll: loadedAll
         });
+
+        if (!loadedAll) utils.preload.gallery(newStore);
     }
 
     openLightbox(index, event){
