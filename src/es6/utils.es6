@@ -27,13 +27,11 @@ function preLoadGallery(imagesGallery) {
 }
 
 
-function preLoadHome(state) {
+function preLoadHome(projects) {
 
-    let Projects = Object.keys(state.projects).map(function (key) {
-        return state.projects[key];
-    });
-
-    Projects.forEach(proj => preLoadGallery(proj.images));
+    Object.keys(projects).map(function (key) {
+        return projects[key].images;
+    }).forEach(imagesGallery => preLoadGallery(imagesGallery));
 
 }
 

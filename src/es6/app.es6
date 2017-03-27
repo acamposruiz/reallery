@@ -16,4 +16,4 @@ ReactDOM.render(
     document.getElementsByClassName('mainpage')[0]
 );
 
-utils.preload.home(state);
+utils.preload.home(state.projects);
