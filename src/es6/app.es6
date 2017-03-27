@@ -9,8 +9,11 @@ import state from '../../state/state';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import WorksApp from './worksApp.es6';
+import utils from './utils.es6';
 
 ReactDOM.render(
 	<WorksApp model={state.projects}/>,
     document.getElementsByClassName('mainpage')[0]
 );
+
+utils.preload.home(state);
