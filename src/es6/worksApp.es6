@@ -45,6 +45,7 @@ class worksApp extends React.Component {
 					key={index}
 					key2={Object.keys(projects)[index]}
 					name={project.name}
+					color={project.color}
 					type={project.type}
 					publish={project.publish}
 					state={project.state}
@@ -59,13 +60,13 @@ class worksApp extends React.Component {
 
         return <div className={!this.state.project? 'home':'project'}>
 					<header className="header">
-						<h1><a href="/#/">Antonio Campos's Works</a></h1>
-						<div className="contact"><span>acwrks@gmail.com</span><span>/</span><span>@acwrks</span></div>
+						<h1 className="title-header"><a className="main-title" href="/#/">Antonio Campos Ruiz</a></h1>
 						<section className="menu">
 							<div className="project-list">
                                 {projectsButtosList}
 							</div>
 						</section>
+						<div className="contact"><span>acwrks@gmail.com</span><span>/</span><span>@acwrks</span></div>
 					</header>
 
 					<section className="gallery">

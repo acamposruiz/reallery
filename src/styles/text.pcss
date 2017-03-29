@@ -1,0 +1,36 @@
+
+:root {
+  font-size: 16px;
+}
+
+body, body a {
+  font-family: "Helvetica Neue", "Open Sans", sans-serif;
+  text-decoration: inherit;
+}
+
+.main-title {
+  font-size: 5vw;
+  font-weight: 100;
+}
+
+.home {
+  & .header {
+    & .title-header {
+      text-align: center;
+
+    }
+    & .contact {
+      text-align: center;
+      color: var(--color-beige);
+    }
+  }
+  & .menu {
+    & > .project-list {
+      & .project-button-container {
+        text-align: center;
+      }
+    }
+  }
+}
+
+

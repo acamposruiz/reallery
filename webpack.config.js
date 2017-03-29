@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
 	resolve: {
-		extensions: ['.jsx', '.js', 'es6', 'css'],
+		extensions: ['.jsx', '.js', 'es6', 'css', 'pcss'],
         alias: {
             Styles: path.resolve(__dirname, 'src/styles/')
         }
@@ -25,7 +25,7 @@ module.exports = {
 			},
             { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
             {
-                test: /\.css$/,
+                test: /(\.css|\.pcss)$/,
                 exclude: /node_modules/,
                 use: [
                     {
@@ -42,12 +42,6 @@ module.exports = {
                         loader: 'postcss-loader',
                         options: {
                             sourceMap: 'inline',
-                        }
-                    },
-                    {
-                        loader: "sass-loader",
-                        query: {
-                            plugins: ['precss']
                         }
                     }
                 ]

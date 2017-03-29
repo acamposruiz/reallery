@@ -1,24 +1,28 @@
 {
   "001": {
     "name": "Ducks",
+    "color": "F0B67F",
     "type": "sculpture",
     "videos": ["vgfS0dUf7lo"],
     "publish": true
   },
   "002": {
     "name": "Temple with vagina",
+    "color": "FE5F55",
     "type": "sculpture",
     "publish": false,
     "state": "comming soon"
   },
   "003": {
     "name": "Soldiers' heads",
+    "color": "D6D1B1",
     "type": "sculpture",
     "videos": ["cZ3DLvBxoZU", "wrr41cUdirQ"],
     "publish": true
   },
   "004": {
     "name": "University",
+    "color": "C7EFCF",
     "type": "painting",
     "videos": [],
     "publish": true

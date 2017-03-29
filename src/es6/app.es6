@@ -4,7 +4,7 @@
 /*jshint newcap:false */
 /*global React, Router*/
 
-import styles from 'Styles/styles.css';
+import styles from 'Styles/styles.pcss';
 import state from '../../state/state';
 import React from 'react';
 import ReactDOM from 'react-dom';
