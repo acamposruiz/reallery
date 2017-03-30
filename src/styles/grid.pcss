@@ -1,5 +1,5 @@
 .home {
-  position: fixed;
+  position: absolute;
   height: 100%;
   width: 100%;
   & .header {
@@ -12,24 +12,25 @@
 
     }
     & .menu {
-
+      height: calc(100% - 130px);
+      max-height:82%;
+      & > .project-list {
+        height: 100%;
+        & .project-button-container {
+          width: 25%;
+          float: left;
+          height: 100%;
+        }
+      }
     }
     & .contact {
       padding: 5px;
       height: 100%;
+      max-height:100px;
     }
   }
   & .menu {
-    height: calc(100% - 130px);
-    max-height:82%;
-    & > .project-list {
-      height: 100%;
-      & .project-button-container {
-        width: 25%;
-        float: left;
-        height: 100%;
-      }
-    }
+
   }
 }
 
