@@ -29,6 +29,17 @@ body, body a {
     & > .project-list {
       & .project-button-container {
         text-align: center;
+        & .text {
+          font-weight: 300;
+          font-size: 2.5vw;
+          &.title {
+            font-size: 3.5vw;
+            font-weight: 100;
+          }
+        }
+        & [class^="icon-"],& [class*=" icon-"] {
+          font-size: 13vw;
+        }
       }
     }
   }
@@ -36,20 +47,52 @@ body, body a {
 
 
 
+
 @media (--small-screen) {
   .main-title {
     font-size: 7vw;
   }
-}
+  .home {
+    & .menu {
+      & > .project-list {
+        & .project-button-container {
+          & .text {
+            font-size: 4.5vw;
+            &.title {
+              font-size: 6.5vw;
+            }
+          }
+          & [class^="icon-"],& [class*=" icon-"] {
+            font-size: 16vw;
+          }
 
-@media (--medium-screen) {
-  .main-title {
-    font-size: 5vw;
+        }
+      }
+    }
   }
+
 }
 
 @media (--large-screen) {
   .main-title {
     font-size: 3.5vw;
   }
+  .home {
+    & .menu {
+      & > .project-list {
+        & .project-button-container {
+          & .text {
+            &.title {
+              font-size: 3vw;
+            }
+          }
+          & [class^="icon-"],& [class*=" icon-"] {
+            font-size: 10vw;
+          }
+
+        }
+      }
+    }
+  }
+
 }

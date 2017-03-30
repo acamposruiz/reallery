@@ -18,17 +18,16 @@ body, body a {
   color: var(--color-beige);
 }
 
+
+
 @each $colorvalue in F0B67F, FE5F55, D6D1B1, C7EFCF, EEF5DB {
   .bg-color-$(colorvalue) {
   background: #$(colorvalue);
+  /*&:hover {
+    background-color: var(--color-beige);
+  }*/
   & [class^="icon-"], & [class*=" icon-"] {
     color: var(--dark-main);
-    /*color: color(#F0B67F whiteness(80%));*/
-    /*color: color(#$(colorvalue) blackness(50%));*/
-  }
-  & a, & .text {
-    color: var(--color-beige);
-    /*color: white;*/
   }
 }
   .color-$(colorvalue) {
@@ -37,8 +36,16 @@ body, body a {
 }
 
 .project-button-container {
+  /*transition: background-color 0.5s ease;
+  &:hover{
+    background-color: var(--color-beige);
+  }*/
+
   &.active {
     background: var(--dark-main);
+  }
+  & .text {
+    color: #000;
   }
 }
 
