@@ -10,6 +10,7 @@ import Director from '../../node_modules/director/build/director.js';
 import FaEnvelope from 'react-icons/fa/envelope';
 import FaTwitter from 'react-icons/fa/twitter';
 import FaInstagram from 'react-icons/fa/instagram';
+import utils from './utils.es6';
 
 const Router = Director.Router;
 
@@ -32,6 +33,7 @@ class worksApp extends React.Component {
 			}
         });
         router.init('/');
+        utils.preload.home(projects);
     }
 
 	render() {
