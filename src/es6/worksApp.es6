@@ -62,11 +62,11 @@ class worksApp extends React.Component {
 
         return <div className={!this.state.project? 'home':'project'}>
 					<header className="header">
-						<h1 className="title-header"><a className="main-title" href="/#/">Antonio Campos Ruiz</a></h1>
+						<h1 className="title-header bg-color-grey-general"><a className="main-title" href="/#/">Antonio Campos Ruiz</a></h1>
 						<section className="menu">
                             {projectsButtosList}
 						</section>
-						<div className="contact">
+						<div className="contact bg-color-grey-general">
 							<span className="mail-data"><FaEnvelope /><span className="data">antoniocamposru@gmail.com</span></span>
 							<span className="twitter-data"><FaTwitter /><span className="data">@antoniocamposru</span></span>
 						</div>
