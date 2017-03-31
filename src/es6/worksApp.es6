@@ -62,9 +62,7 @@ class worksApp extends React.Component {
 					<header className="header">
 						<h1 className="title-header"><a className="main-title" href="/#/">Antonio Campos Ruiz</a></h1>
 						<section className="menu">
-							<div className="project-list">
-                                {projectsButtosList}
-							</div>
+                            {projectsButtosList}
 						</section>
 						<div className="contact"><span>acwrks@gmail.com</span><span>/</span><span>@acwrks</span></div>
 					</header>

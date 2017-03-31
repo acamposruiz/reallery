@@ -13,7 +13,6 @@ body, body a {
   font-weight: 100;
 }
 
-
 .home {
   & .header {
     & .title-header {
@@ -26,47 +25,41 @@ body, body a {
     }
   }
   & .menu {
-    & > .project-list {
-      & .project-button-container {
-        text-align: center;
-        & .text {
-          font-weight: 300;
-          font-size: 2.5vw;
-          &.title {
-            font-size: 3.5vw;
-            font-weight: 100;
-          }
+    & .project-button-container {
+      text-align: center;
+      & .text {
+        font-weight: 300;
+        font-size: 2.5vw;
+        &.title {
+          font-size: 3.5vw;
+          font-weight: 100;
         }
-        & [class^="icon-"],& [class*=" icon-"] {
-          font-size: 13vw;
-        }
+      }
+      & [class^="icon-"], & [class*=" icon-"] {
+        font-size: 13vw;
       }
     }
   }
 }
 
-
-
-
 @media (--small-screen) {
   .main-title {
     font-size: 7vw;
   }
+
   .home {
     & .menu {
-      & > .project-list {
-        & .project-button-container {
-          & .text {
-            font-size: 4.5vw;
-            &.title {
-              font-size: 6.5vw;
-            }
+      & .project-button-container {
+        & .text {
+          font-size: 4.5vw;
+          &.title {
+            font-size: 6.5vw;
           }
-          & [class^="icon-"],& [class*=" icon-"] {
-            font-size: 16vw;
-          }
-
         }
+        & [class^="icon-"], & [class*=" icon-"] {
+          font-size: 16vw;
+        }
+
       }
     }
   }
@@ -77,20 +70,19 @@ body, body a {
   .main-title {
     font-size: 3.5vw;
   }
+
   .home {
     & .menu {
-      & > .project-list {
-        & .project-button-container {
-          & .text {
-            &.title {
-              font-size: 3vw;
-            }
+      & .project-button-container {
+        & .text {
+          &.title {
+            font-size: 3vw;
           }
-          & [class^="icon-"],& [class*=" icon-"] {
-            font-size: 10vw;
-          }
-
         }
+        & [class^="icon-"], & [class*=" icon-"] {
+          font-size: 10vw;
+        }
+
       }
     }
   }

@@ -7,36 +7,24 @@
     & .title-header {
       padding: 19px 0px;
       width: 100%;
-      display: block;
       margin: 0px;
-
     }
     & .menu {
       height: calc(100% - 130px);
       max-height: 82%;
-      & > .project-list {
-        height: 100%;
-        & .project-button-container {
-          width: 25%;
-          float: left;
-          height: 100%;
-          display: flex;
-
-          flex-direction: column;
-
-          justify-content:space-between;
-            & .text.type {
-              padding: 5vh 0vh;
-
-            }
-            & .project-icon {
-            }
-            & .text.title {
-              padding: 5vh 0vh;
-
-            }
-
+      display: flex;
+      flex-wrap: nowrap;
+      & .project-button-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        & .text {
+          padding: 5vh 0vh;
+          &.type { }
+          &.title { }
         }
+        & .project-icon { }
       }
     }
     & .contact {
@@ -46,7 +34,6 @@
     }
   }
   & .menu {
-
   }
 }
 
