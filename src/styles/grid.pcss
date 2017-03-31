@@ -3,15 +3,17 @@
   height: 100%;
   width: 100%;
   & .header {
+    display: flex;
     height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
     & .title-header {
-      padding: 19px 0px;
       width: 100%;
       margin: 0px;
+      padding: 19px 0px;
     }
     & .menu {
-      height: calc(100% - 130px);
-      max-height: 82%;
+      height: 100%;
       display: flex;
       flex-wrap: nowrap;
       & .project-button-container {
@@ -29,8 +31,7 @@
     }
     & .contact {
       padding: 5px;
-      height: 100%;
-      max-height: 100px;
+      height: 7%;
     }
   }
   & .menu {
