@@ -9,6 +9,7 @@ import ProjectGallery from './projectGallery.es6';
 import Director from '../../node_modules/director/build/director.js';
 import FaEnvelope from 'react-icons/fa/envelope';
 import FaTwitter from 'react-icons/fa/twitter';
+import FaInstagram from 'react-icons/fa/instagram';
 
 const Router = Director.Router;
 
@@ -69,6 +70,7 @@ class worksApp extends React.Component {
 						<div className="contact bg-color-grey-general">
 							<span className="mail-data"><FaEnvelope /><span className="data">antoniocamposru@gmail.com</span></span>
 							<span className="twitter-data"><FaTwitter /><span className="data">@antoniocamposru</span></span>
+							<span className="instagram-data"><FaInstagram /><span className="data">antoniocamposru</span></span>
 						</div>
 					</header>
 
