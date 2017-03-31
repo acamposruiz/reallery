@@ -7,6 +7,8 @@ import React from 'react';
 import ProjectButton from './projectButton.es6';
 import ProjectGallery from './projectGallery.es6';
 import Director from '../../node_modules/director/build/director.js';
+import FaEnvelope from 'react-icons/fa/envelope';
+import FaTwitter from 'react-icons/fa/twitter';
 
 const Router = Director.Router;
 
@@ -64,7 +66,10 @@ class worksApp extends React.Component {
 						<section className="menu">
                             {projectsButtosList}
 						</section>
-						<div className="contact"><span>acwrks@gmail.com</span><span>/</span><span>@acwrks</span></div>
+						<div className="contact">
+							<span className="mail-data"><FaEnvelope /><span className="data">antoniocamposru@gmail.com</span></span>
+							<span className="twitter-data"><FaTwitter /><span className="data">@antoniocamposru</span></span>
+						</div>
 					</header>
 
 					<section className="gallery">
