@@ -13,11 +13,11 @@
 }
 
 body, body a {
-  color: var(--dark-main);
+  color: #373737;
 }
 
 .main-title {
-  color: var(--color-beige);
+  color: white;
 }
 
 .bg-color-grey-general {
@@ -31,35 +31,42 @@ body, body a {
     background: #$(colorvalue);
 
   }
-  .color-$(colorvalue) {
-    color: #$(colorvalue);
+  .project-button-container [class*=" icon-"].color-$(colorvalue):hover {
+    background: #$(colorvalue);
   }
 }
 
-.project-button-container {
-  /*transition: background-color 0.5s ease;
-  &:hover{
-    background-color: var(--color-beige);
-  }*/
-  & [class^="icon-"], & [class*=" icon-"] {
-    color: var(--dark-main);
-  }
+.menu {
+  background: rgba(0, 0, 0, .2);
+  overflow: hidden;
+  & .project-button-container {
+    & [class^="icon-"], & [class*=" icon-"] {
+      color: white;
+    }
 
-  &.active {
-    background: var(--dark-main);
-  }
-  & .text {
-    color: #000;
+    & .project-icon {
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    &.active {
+      background: var(--dark-main);
+    }
+    & .text {
+      color: #fbfbfb;
+    }
   }
 }
+
 
 
 .home {
   & .header {
     & .title-header {
-      background-color: var(--dark-main-3);
+      background-color: #232323;
     }
     & .contact {
+      background-color: #000000;
+      color: white;
     }
   }
 }
