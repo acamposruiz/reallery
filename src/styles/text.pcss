@@ -16,6 +16,24 @@ body, body a {
 
 
 
+
+.container {
+  & .title-header {
+
+  }
+  & .contact {
+    text-align: center;
+
+    & .data {
+      font-weight: 100;
+      padding:10px;
+      letter-spacing: 0.1em;
+      font-size: 12px;
+    }
+  }
+}
+
+
 .home {
   &.container {
     & .title-header {
@@ -23,17 +41,43 @@ body, body a {
 
     }
     & .contact {
-      text-align: center;
 
       & .data {
-        font-weight: 100;
-        padding:10px;
-        letter-spacing: 0.1em;
-        font-size: 12px;
       }
     }
   }
-  & .menu {
+  & .menu.menu-content {
+    & .project-button-container {
+      text-align: center;
+      & .text {
+        font-weight: 300;
+        font-size: 1.5vw;
+        text-transform: capitalize;
+        &.title {
+          font-weight: 300;
+        }
+      }
+      & [class^="icon-"], & [class*=" icon-"] {
+        font-size: 8vw;
+      }
+    }
+  }
+}
+
+
+.project {
+  &.container {
+    & .title-header {
+      text-align: center;
+
+    }
+    & .contact {
+
+      & .data {
+      }
+    }
+  }
+  & .menu.menu-content {
     & .project-button-container {
       text-align: center;
       & .text {
@@ -63,7 +107,7 @@ body, body a {
   }
 
   .home {
-    & .menu {
+    & .menu.menu-content {
       & .project-button-container {
         & .text {
           font-size: 4vw;
@@ -86,7 +130,7 @@ body, body a {
   }
 
   .home {
-    & .menu {
+    & .menu.menu-content {
       & .project-button-container {
         & .text {
           &.title {

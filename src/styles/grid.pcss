@@ -1,22 +1,45 @@
-.home {
+.container {
   position: absolute;
-  height: 100%;
   width: 100%;
-  &.container {
-    display: flex;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  & .title-header {
+    width: 100%;
+    margin: 0px;
+    padding: 19px 0px;
+  }
+  & .menu.menu-content {
     height: 100%;
-    flex-direction: column;
-    justify-content: space-between;
-    & .title-header {
-      width: 100%;
-      margin: 0px;
-      padding: 19px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    & .project-button-container {
+      & .text {
+        &.type {
+          display: none;
+        }
+        &.title {
+        }
+      }
+      & .project-icon {
+      }
     }
-    & .menu {
-      height: 100%;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-around;
+  }
+  & .contact {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+}
+
+.home {
+  &.container {
+    & .title-header {
+    }
+    & .menu.menu-content {
       & .project-button-container {
         width: 15%;
         display: flex;
@@ -38,13 +61,41 @@
       }
     }
     & .contact {
-      justify-content: center;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 15px;
     }
   }
-  & .menu {
+  & .menu.menu-content {
+  }
+}
+
+.project {
+  &.container {
+    & .title-header {
+    }
+    & .menu.menu-content {
+      & .project-button-container {
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & .text {
+          padding: 0.5vh 0vh;
+          min-height: 15vh;
+          &.type {
+            display: none;
+          }
+          &.title {
+          }
+        }
+        & .project-icon {
+          padding: 23px;
+          border-radius: 8px;
+        }
+      }
+    }
+    & .contact {
+    }
+  }
+  & .menu.menu-content {
   }
 }
 
@@ -53,7 +104,7 @@
     &.container {
       & .title-header {
       }
-      & .menu {
+      & .menu.menu-content {
         & .project-button-container {
           width: 22%;
           & .text {
@@ -69,7 +120,7 @@
       & .contact {
       }
     }
-    & .menu {
+    & .menu.menu-content {
     }
   }
 }
