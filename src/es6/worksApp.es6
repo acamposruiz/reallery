@@ -37,6 +37,8 @@ class worksApp extends React.Component {
     }
 
 	render() {
+    	const movil = utils.is_mobile('any')? 'movil':'no-movil';
+    	const section = !this.state.project? 'home':'project';
 		let projects = this.props.model;
 		let projectSt = this.state.project || {};
 		let ObjVals = Object.keys(projects).map(function(key) {
@@ -63,7 +65,7 @@ class worksApp extends React.Component {
 
 		const gallery = <ProjectGallery project={this.state.project || null}/>;
 
-        return <div className={!this.state.project? 'home':'project'}>
+        return <div className={`project-root ${section} ${movil}`}>
 					<header className="header">
 						<h1 className="title-header bg-color-grey-general"><a className="main-title" href="/#/">Antonio Campos</a></h1>
 						<section className="menu">
