@@ -67,7 +67,7 @@ class worksApp extends React.Component {
 
         return <div className={`container ${section} ${movil}`}>
 
-						<header className="container'header">
+						<header className="container-header">
 							<h1 className="title-header"><a className="main-title" href="/#/">Antonio Campos</a></h1>
 							<section className="menu menu-header"> {this.state.project? projectsButtosList: null} </section>
 						</header>

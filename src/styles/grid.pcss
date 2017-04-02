@@ -1,11 +1,10 @@
 .container {
-  position: absolute;
   width: 100%;
   display: flex;
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
-  & .title-header {
+  & .container-header {
     width: 100%;
     margin: 0px;
     padding: 19px 0px;
@@ -37,7 +36,8 @@
 
 .home {
   &.container {
-    & .title-header {
+    position: absolute;
+    & .container-header {
     }
     & .menu.menu-content {
       & .project-button-container {
@@ -69,30 +69,25 @@
 
 .project {
   &.container {
-    & .title-header {
+    & .container-header {
+      position: fixed;
     }
     & .menu.menu-content {
       & .project-button-container {
-        width: 15%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         & .text {
-          padding: 0.5vh 0vh;
-          min-height: 15vh;
           &.type {
-            display: none;
           }
           &.title {
           }
         }
         & .project-icon {
-          padding: 23px;
-          border-radius: 8px;
         }
       }
     }
     & .contact {
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
     }
   }
   & .menu.menu-content {

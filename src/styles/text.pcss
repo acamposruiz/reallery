@@ -1,23 +1,14 @@
 
-:root {
-  font-size: 16px;
-}
-
-body, body a {
-  font-family: "Helvetica Neue", "Open Sans", sans-serif;
-  text-decoration: inherit;
-}
-
-.main-title {
-  font-size: 5vw;
-  font-weight: 100;
-  letter-spacing: 0.1em;
-}
-
-
 
 
 .container {
+
+  & .main-title {
+    font-size: 5vw;
+    font-weight: 100;
+    letter-spacing: 0.1em;
+  }
+
   & .title-header {
 
   }
@@ -68,7 +59,6 @@ body, body a {
 .project {
   &.container {
     & .title-header {
-      text-align: center;
 
     }
     & .contact {
@@ -77,19 +67,13 @@ body, body a {
       }
     }
   }
-  & .menu.menu-content {
+  & .menu.menu-header {
     & .project-button-container {
-      text-align: center;
       & .text {
-        font-weight: 300;
-        font-size: 1.5vw;
-        text-transform: capitalize;
         &.title {
-          font-weight: 300;
         }
       }
       & [class^="icon-"], & [class*=" icon-"] {
-        font-size: 8vw;
       }
     }
   }
@@ -98,51 +82,58 @@ body, body a {
 /* OVERWRITES */
 
 .icon-ico_004:before {
-  font-size: 6vw;
+  font-size: 6.5vw;
 }
 
 @media (--small-screen) {
-  .main-title {
-    font-size: 7vw;
-  }
 
-  .home {
-    & .menu.menu-content {
-      & .project-button-container {
-        & .text {
-          font-size: 4vw;
-          &.title {
+  .container {
+    & .main-title {
+      font-size: 7vw;
+    }
+
+    &.home {
+      & .menu.menu-content {
+        & .project-button-container {
+          & .text {
+            font-size: 4vw;
+            &.title {
+            }
           }
-        }
-        & [class^="icon-"], & [class*=" icon-"] {
-          font-size: 11vw;
-        }
+          & [class^="icon-"], & [class*=" icon-"] {
+            font-size: 11vw;
+          }
 
+        }
       }
     }
   }
+
 
 }
 
 @media (--large-screen) {
-  .main-title {
-    font-size: 3.5vw;
-  }
+  .container {
+    & .main-title {
+      font-size: 3.5vw;
+    }
 
-  .home {
-    & .menu.menu-content {
-      & .project-button-container {
-        & .text {
-          &.title {
+    &.home {
+      & .menu.menu-content {
+        & .project-button-container {
+          & .text {
+            &.title {
+            }
           }
-        }
-        & [class^="icon-"], & [class*=" icon-"] {
-          font-size: 6vw;
-        }
+          & [class^="icon-"], & [class*=" icon-"] {
+            font-size: 6vw;
+          }
 
+        }
       }
     }
   }
+
 
 }
 
