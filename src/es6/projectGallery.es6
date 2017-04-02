@@ -25,7 +25,6 @@ class ProjectGallery extends React.Component {
         this.openLightbox = this.openLightbox.bind(this);
         this.gotoNext = this.gotoNext.bind(this);
         this.gotoPrevious = this.gotoPrevious.bind(this);
-
 	}
 
     componentWillReceiveProps(nextProps) {

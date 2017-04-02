@@ -65,22 +65,21 @@ class worksApp extends React.Component {
 
 		const gallery = <ProjectGallery project={this.state.project || null}/>;
 
-        return <div className={`project-root ${section} ${movil}`}>
-					<header className="header">
-						<h1 className="title-header bg-color-grey-general"><a className="main-title" href="/#/">Antonio Campos</a></h1>
+        return <div className={`container ${section} ${movil}`}>
+						<header className="container'header">
+							<h1 className="title-header"><a className="main-title" href="/#/">Antonio Campos</a></h1>
+						</header>
 						<section className="menu">
                             {projectsButtosList}
+						</section>
+						<section className="gallery">
+                            {gallery}
 						</section>
 						<div className="contact">
 							<span className="mail-data"><FaEnvelope /><span className="data">acamposruiz@gmail.com</span></span>
 							<span className="twitter-data"><FaTwitter /><span className="data">@acwrks</span></span>
 							<span className="instagram-data"><FaInstagram /><span className="data">acwrks</span></span>
 						</div>
-					</header>
-
-					<section className="gallery">
-						{gallery}
-					</section>
 				</div>
 	}
 
