@@ -49,6 +49,7 @@ class worksApp extends React.Component {
             project.state = project.state || "";
 			return (
 				<ProjectButton
+					view={section}
 					key={index}
 					key2={Object.keys(projects)[index]}
 					name={project.name}
@@ -68,7 +69,7 @@ class worksApp extends React.Component {
         return <div className={`container ${section} ${movil}`}>
 
 						<header className="container-header">
-							<h1 className="title-header"><a className="main-title" href="/#/">Antonio Campos</a></h1>
+							<h1 className="title-header"><a className="main-title" href="/#/">Antonio {this.state.project? <br/> : null} Campos</a></h1>
 							<section className="menu menu-header"> {this.state.project? projectsButtosList: null} </section>
 						</header>
 
