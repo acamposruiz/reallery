@@ -17,6 +17,7 @@
     "image-size": "^0.5.1",
     "node-sass": "^4.5.1",
     "path": "^0.12.7",
+    "postcss-assets": "^4.1.0",
     "postcss-at-rules-variables": "0.0.27",
     "postcss-autoreset": "^1.2.1",
     "postcss-calc": "^5.3.1",

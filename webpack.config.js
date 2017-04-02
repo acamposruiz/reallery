@@ -23,7 +23,7 @@ module.exports = {
                     presets: ['babel-preset-es2015', 'babel-preset-stage-0', 'babel-preset-react']
                 }
 			},
-            { test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
+            { test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/, exclude: /node_modules/, loader: 'url-loader?limit=100000' },
             {
                 test: /(\.css|\.pcss)$/,
                 exclude: /node_modules/,
