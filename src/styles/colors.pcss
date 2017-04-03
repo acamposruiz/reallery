@@ -75,6 +75,20 @@ body, body a {
   }
 }
 
+@each $colorvalue in F0B67F, E0756F, D6D1B1, C7EFCF, EEF5DB {
+
+  .menu.menu-header {
+    & .project-button-container {
+      &.active {
+        & [class*=" icon-"].color-$(colorvalue), & [class*=" icon-"].color-$(colorvalue) ~ .text{
+          color: #$(colorvalue);
+        }
+      }
+    }
+  }
+
+}
+
 
 
 .container {
