@@ -31,7 +31,7 @@ colors.forEach( (color, key) => {
             var txtColor = img.colorAllocate(0, 0, 0);
 
 // Set full path to font file
-            var fontPath = 'assets/Noway-Regular-webfont/noway-regular-webfont.ttf';
+            var fontPath = 'fonts/Noway-Regular-webfont/noway-regular-webfont.ttf';
 
 // Render string in image
             img.stringFT(txtColor, fontPath, Math.floor(300*(h/1800)), 0, Math.floor(w/8), Math.floor(h/2), w+' x '+h);
@@ -62,7 +62,7 @@ dimensions.forEach(w => {
     var txtColor = img.colorAllocate(0, 0, 0);
 
 // Set full path to font file
-    var fontPath = 'assets/Noway-Regular-webfont/noway-regular-webfont.ttf';
+    var fontPath = 'fonts/Noway-Regular-webfont/noway-regular-webfont.ttf';
 
 // Render string in image
     img.stringFT(txtColor, fontPath, Math.floor(300*(h/1800)), 0, Math.floor(w/8), Math.floor(h/2), w+' x '+h);
