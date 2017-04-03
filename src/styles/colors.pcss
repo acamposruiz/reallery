@@ -79,7 +79,7 @@ body, body a {
 
   .menu.menu-header {
     & .project-button-container {
-      &.active {
+      &.active, &:hover {
         & [class*=" icon-"].color-$(colorvalue), & [class*=" icon-"].color-$(colorvalue) ~ .text{
           color: #$(colorvalue);
         }
