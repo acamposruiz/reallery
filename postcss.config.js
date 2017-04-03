@@ -5,7 +5,7 @@ function getAssetsLoadPaths() {
     let keysPrjts;
 
     function getKeysPrjts() {
-        keysPrjts = keysPrjts || Object.keys(JSON.parse(fs.readFileSync("projts.json", "utf8")));
+        keysPrjts = keysPrjts || Object.keys(JSON.parse(fs.readFileSync("model_conf.json", "utf8")));
         return keysPrjts;
     }
 
