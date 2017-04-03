@@ -2,9 +2,16 @@
   &.container {
     & .container-header {
       position: fixed;
+      display: flex;
+      padding: 9px 0px;
+      & .title-header {
+      }
     }
-    & .menu.menu-content {
+    & .menu.menu-header {
       & .project-button-container {
+        text-align: center;
+        margin: 4px;
+        padding: 8px;
         & .text {
           &.type {
           }
@@ -12,6 +19,7 @@
           }
         }
         & .project-icon {
+          font-size: 4vw;
         }
       }
     }
@@ -35,7 +43,10 @@
       }
     }
   }
-  & .menu.menu-content {
+  & .menu.menu-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 
