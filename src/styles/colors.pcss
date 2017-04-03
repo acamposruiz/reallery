@@ -31,7 +31,7 @@ body, body a {
     background: #$(colorvalue);
 
   }
-  .project-button-container [class*=" icon-"].color-$(colorvalue):hover {
+  .menu.menu-content .project-button-container [class*=" icon-"].color-$(colorvalue):hover {
     background: #$(colorvalue);
   }
 }
@@ -53,6 +53,24 @@ body, body a {
     }
     & .text {
       color: #fbfbfb;
+    }
+  }
+}
+
+.menu.menu-header {
+  & .project-button-container {
+    & [class^="icon-"], & [class*=" icon-"] {
+    }
+
+    & .project-icon {
+    }
+
+    &.active {
+      & [class^="icon-"], & [class*=" icon-"], & .text{
+        color: #f1f1f1;
+      }
+    }
+    & .text {
     }
   }
 }
