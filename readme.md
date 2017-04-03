@@ -1,1 +1,1 @@
-# Art Gallery to personal work
+# Art Gallery to show personal work
