@@ -1,0 +1,41 @@
+.project {
+  &.container {
+    & .container-header {
+      position: fixed;
+    }
+    & .menu.menu-content {
+      & .project-button-container {
+        & .text {
+          &.type {
+          }
+          &.title {
+          }
+        }
+        & .project-icon {
+        }
+      }
+    }
+    & .contact {
+      position: fixed;
+      width: 100%;
+    }
+
+    &.movil {
+      & .contact {
+        bottom: 0px;
+      }
+    }
+
+    &.no-movil {
+      & .container-header {
+        top: 27px;
+      }
+      & .contact {
+        top: 0px;
+      }
+    }
+  }
+  & .menu.menu-content {
+  }
+}
+
