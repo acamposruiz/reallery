@@ -37,7 +37,7 @@ class worksApp extends React.Component {
     }
 
 	render() {
-    	const movil = utils.is_mobile('any')? 'movil':'no-movil';
+    	const mobile = utils.is_mobile('any')? 'mobile':'no-mobile';
     	const section = !this.state.project? 'home':'project';
 		let projects = this.props.model;
 		let projectSt = this.state.project || {};
@@ -66,7 +66,7 @@ class worksApp extends React.Component {
 
 		const gallery = <ProjectGallery project={this.state.project || null}/>;
 
-        return <div className={`container ${section} ${movil}`}>
+        return <div className={`container ${section} ${mobile}`}>
 
 						<header className="container-header">
 							<h1 className="title-header"><a className="main-title" href="/#/">Antonio {this.state.project? <br/> : null} Campos</a></h1>

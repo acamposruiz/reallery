@@ -127,19 +127,20 @@ class ProjectGallery extends React.Component {
         return this.state.videos.map(videoId => {
 
             const opts = {
-                height: '390',
-                width: '640',
+                width: utils.is_mobile('phone')? window.innerWidth: Math.max((window.innerWidth/2) - 8, Math.min(window.innerWidth, 640)),
                 playerVars: { // https://developers.google.com/youtube/player_parameters
                     autoplay: 0
                 }
             };
 
-            return <YouTube
-                key={videoId}
-                videoId={videoId}
-                opts={opts}
-                onReady={_onReady}
-            />
+            return <div className="video-item">
+                <YouTube
+                    key={videoId}
+                    videoId={videoId}
+                    opts={opts}
+                    onReady={_onReady}
+                />
+            </div>
         });
     }
 
@@ -149,7 +150,9 @@ class ProjectGallery extends React.Component {
 
         return (
             <div className="App">
-                {this.renderVideos()}
+                <div className="video-gallery-container">
+                    {this.renderVideos()}
+                </div>
                 {this.renderGallery()}
                 <Lightbox
                     images={this.state.photos.concat(this.state.photosStore)}
