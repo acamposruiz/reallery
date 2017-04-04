@@ -6,6 +6,9 @@ function isMobileUtil(request) {
   if (request == 'any') {
       cache.is_mobile_any = cache.is_mobile_any || isMobile.any;
       return cache.is_mobile_any;
+  } else if (request == 'phone') {
+      cache.is_mobile_phone = cache.is_mobile_phone || isMobile.phone;
+      return cache.is_mobile_phone;
   }
 }
 

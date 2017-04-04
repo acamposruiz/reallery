@@ -13,7 +13,7 @@ import utils from './utils.es6';
 import _ from 'lodash';
 
 const loadMorePhotosTimeLapse = 200;
-const photosSetLoad = 10;
+const photosSetLoad = utils.is_mobile('phone')? 5: 10;
 
 class ProjectGallery extends React.Component {
 
