@@ -133,9 +133,8 @@ class ProjectGallery extends React.Component {
                 }
             };
 
-            return <div className="video-item">
+            return <div key={videoId} className="video-item">
                 <YouTube
-                    key={videoId}
                     videoId={videoId}
                     opts={opts}
                     onReady={_onReady}
