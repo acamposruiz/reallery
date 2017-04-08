@@ -5,11 +5,10 @@
 /*global React */
 import React from 'react';
 import Gallery from 'react-photo-gallery';
-import YouTube from 'react-youtube';
-import Measure from 'react-measure';
 import Lightbox from 'react-images';
 import Loading from 'react-loading';
 import utils from './utils.es6';
+import Videos from './videos.es6';
 import _ from 'lodash';
 
 const loadMorePhotosTimeLapse = 200;
@@ -20,6 +19,7 @@ class ProjectGallery extends React.Component {
 	constructor(props) {
 		super(props);
         this.handleScroll = this.handleScroll.bind(this);
+        this.handleResize = this.handleResize.bind(this);
         this.loadMorePhotos = this.loadMorePhotos.bind(this);
         this.closeLightbox = this.closeLightbox.bind(this);
         this.openLightbox = this.openLightbox.bind(this);
@@ -28,10 +28,12 @@ class ProjectGallery extends React.Component {
 	}
 
     componentWillReceiveProps(nextProps) {
+
         if(nextProps.project){
             this.setState({
                 loadedAll: false,
                 photos: [],
+                cols: this.getCols(),
                 videos: nextProps.project.videos,
                 photosStore: nextProps.project.images.map(image => {
                     return {
@@ -50,6 +52,13 @@ class ProjectGallery extends React.Component {
     componentDidMount() {
         this.loadMorePhotos = _.debounce(this.loadMorePhotos, loadMorePhotosTimeLapse);
         window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener("resize", this.handleResize);
+    }
+
+    handleResize(){
+        var cols = this.getCols();
+
+        this.setState({cols});
     }
 
     handleScroll(){
@@ -58,6 +67,13 @@ class ProjectGallery extends React.Component {
             && (window.innerHeight + scrollY) >= (document.body.offsetHeight - 50)) {
             this.loadMorePhotos();
         }
+    }
+
+    getCols() {
+        var cols = 1;
+        if (window.innerWidth >= 480){ cols = 2; }
+        if (window.innerWidth >= 1024){ cols = 3; }
+        return cols;
     }
 
     loadMorePhotos(){
@@ -102,57 +118,16 @@ class ProjectGallery extends React.Component {
         });
     }
 
-    renderGallery(){
-        return(
-			<Measure whitelist={['width']}>
-                {
-                    ({ width }) => {
-                        var cols = 1;
-                        if (width >= 480){ cols = 2; }
-                        if (width >= 1024){ cols = 3; }
-                        return <Gallery photos={this.state.photos} cols={cols} onClickPhoto={this.openLightbox} />
-                    }
-                }
-			</Measure>
-        );
-    }
-
-    renderVideos() {
-
-        function _onReady(event) {
-            // access to player in all event handlers via event.target
-            event.target.pauseVideo();
-        }
-
-        return this.state.videos.map(videoId => {
-
-            const opts = {
-                width: utils.is_mobile('phone')? window.innerWidth: Math.max((window.innerWidth/2) - 8, Math.min(window.innerWidth, 640)),
-                playerVars: { // https://developers.google.com/youtube/player_parameters
-                    autoplay: 0
-                }
-            };
-
-            return <div key={videoId} className="video-item">
-                <YouTube
-                    videoId={videoId}
-                    opts={opts}
-                    onReady={_onReady}
-                />
-            </div>
-        });
-    }
-
     render() {
 
         if (!this.props.project) return <div/>;
 
+
+
         return (
             <div className="App">
-                <div className="video-gallery-container">
-                    {this.renderVideos()}
-                </div>
-                {this.renderGallery()}
+                <Videos videos={this.state.videos}></Videos>
+                <Gallery photos={this.state.photos} cols={this.state.cols} onClickPhoto={this.openLightbox} />
                 <Lightbox
                     images={this.state.photos.concat(this.state.photosStore)}
                     backdropClosesModal={true}
