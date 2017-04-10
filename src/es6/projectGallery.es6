@@ -57,7 +57,7 @@ class ProjectGallery extends React.Component {
     }
 
     handleResize(){
-	    
+
         var cols = this.getCols();
 
         this.setState({cols});
