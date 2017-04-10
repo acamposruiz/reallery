@@ -11,7 +11,7 @@ import utils from './utils.es6';
 import Videos from './videos.es6';
 import _ from 'lodash';
 
-const loadMorePhotosTimeLapse = 200;
+const mainTimeLapse = 200;
 const photosSetLoad = utils.is_mobile('phone')? 5: 10;
 
 class ProjectGallery extends React.Component {
@@ -50,12 +50,14 @@ class ProjectGallery extends React.Component {
     }
 
     componentDidMount() {
-        this.loadMorePhotos = _.debounce(this.loadMorePhotos, loadMorePhotosTimeLapse);
+        this.loadMorePhotos = _.debounce(this.loadMorePhotos, mainTimeLapse);
+        this.handleResize = _.debounce(this.handleResize, mainTimeLapse);
         window.addEventListener('scroll', this.handleScroll);
         window.addEventListener("resize", this.handleResize);
     }
 
     handleResize(){
+	    
         var cols = this.getCols();
 
         this.setState({cols});
