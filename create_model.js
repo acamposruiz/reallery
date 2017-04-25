@@ -163,7 +163,14 @@ function generateSourceImages(projtsJson) {
 
 function readConfigData(path) {
 
-    return new Promise(sendJson => sendJson(JSON.parse(fs.readFileSync(path, "utf8"))));
+    return new Promise(sendJson => {
+        var depObjt = {};
+        var rawObj = JSON.parse(fs.readFileSync(path, "utf8"));
+        Object.keys(rawObj).forEach(value => {
+           if (!rawObj[value].hide) depObjt[value] = rawObj[value];
+        });
+        sendJson(depObjt);
+    });
 
 }
 

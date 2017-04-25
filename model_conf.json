@@ -7,6 +7,7 @@
     "publish": true
   },
   "002": {
+    "hide": true,
     "name": "Temple with vagina",
     "color": "E0756F",
     "type": "sculpture",
@@ -14,6 +15,7 @@
     "state": "comming soon"
   },
   "003": {
+    "hide": true,
     "name": "Soldiers' heads",
     "color": "D6D1B1",
     "type": "sculpture",
