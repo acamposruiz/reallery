@@ -161,16 +161,17 @@ function generateSourceImages(projtsJson) {
 
 }
 
+function filterByValue(paramName, valueParam , rawObj, invert) {
+    var depObjt = {};
+    Object.keys(rawObj).forEach(value => {
+        if ((invert? rawObj[value][paramName] != valueParam: rawObj[value][paramName] == valueParam)) depObjt[value] = rawObj[value];
+    });
+    return depObjt;
+}
+
 function readConfigData(path) {
 
-    return new Promise(sendJson => {
-        var depObjt = {};
-        var rawObj = JSON.parse(fs.readFileSync(path, "utf8"));
-        Object.keys(rawObj).forEach(value => {
-           if (!rawObj[value].hide) depObjt[value] = rawObj[value];
-        });
-        sendJson(depObjt);
-    });
+    return new Promise(sendJson => sendJson(filterByValue("hide", true, JSON.parse(fs.readFileSync(path, "utf8")), true)));
 
 }
 
