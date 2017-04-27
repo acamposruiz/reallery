@@ -11,9 +11,9 @@ import FaEnvelope from 'react-icons/fa/envelope';
 import FaTwitter from 'react-icons/fa/twitter';
 import FaInstagram from 'react-icons/fa/instagram';
 import utils from './utils.es6';
-import ReactGA from 'react-ga';
 
 const Router = Director.Router;
+
 
 class worksApp extends React.Component {
 
@@ -36,15 +36,11 @@ class worksApp extends React.Component {
         });
         router.init('/');
         utils.preload.home(projects);
-        ReactGA.initialize('UA-98183956-1');
     }
 
     logPageView() {
-    	console.log(window.location);
-        ReactGA.set({ page: window.location.hash });
-        ReactGA.pageview(window.location.hash);
-        ReactGA.set({ page: window.location.href });
-        ReactGA.pageview(window.location.href);
+        ga('set', 'page', '/' + window.location.hash);
+        ga('send', 'pageview');
     }
 
 	render() {
