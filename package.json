@@ -49,6 +49,7 @@
     "lodash": "^4.17.4",
     "react": "^0.14",
     "react-dom": "^0.14.0",
+    "react-ga": "^2.2.0",
     "react-icons": "^2.2.3",
     "react-images": "^0.5.2",
     "react-loading": "0.0.9",

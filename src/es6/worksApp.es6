@@ -11,6 +11,7 @@ import FaEnvelope from 'react-icons/fa/envelope';
 import FaTwitter from 'react-icons/fa/twitter';
 import FaInstagram from 'react-icons/fa/instagram';
 import utils from './utils.es6';
+import ReactGA from 'react-ga';
 
 const Router = Director.Router;
 
@@ -27,14 +28,20 @@ class worksApp extends React.Component {
         const setState = this.setState.bind(this);
         let projects = this.props.model;
         const router = Router({
-            '/video': this.setState.bind(this, {project: projects["001"]}),
-            '/': this.setState.bind(this, {project: null}),
-            '/project/view/:projectId': (projectId) => {
+            '/video': [this.setState.bind(this, {project: projects["001"]}), this.logPageView],
+            '/': [this.setState.bind(this, {project: null}),  this.logPageView],
+            '/project/view/:projectId': [(projectId) => {
                 setState({project: projects[projectId]});
-			}
+            }, this.logPageView]
         });
         router.init('/');
         utils.preload.home(projects);
+        ReactGA.initialize('UA-98183956-1');
+    }
+
+    logPageView() {
+        ReactGA.set({ page: window.location.pathname });
+        ReactGA.pageview(window.location.pathname);
     }
 
 	render() {
@@ -44,7 +51,7 @@ class worksApp extends React.Component {
 		let projectSt = this.state.project || {};
 		let ObjVals = Object.keys(projects).map(function(key) {
             return projects[key];
-        });;
+        });
 
 		let projectsButtosList = ObjVals.map(function (project, index) {
             project.state = project.state || "";
