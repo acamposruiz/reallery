@@ -27,6 +27,7 @@ class worksApp extends React.Component {
         const setState = this.setState.bind(this);
         let projects = this.props.model;
         const router = Router({
+            '/video': this.setState.bind(this, {project: projects["001"]}),
             '/': this.setState.bind(this, {project: null}),
             '/project/view/:projectId': (projectId) => {
                 setState({project: projects[projectId]});
