@@ -40,8 +40,11 @@ class worksApp extends React.Component {
     }
 
     logPageView() {
-        ReactGA.set({ page: window.location.pathname });
-        ReactGA.pageview(window.location.pathname);
+    	console.log(window.location);
+        ReactGA.set({ page: window.location.hash });
+        ReactGA.pageview(window.location.hash);
+        ReactGA.set({ page: window.location.href });
+        ReactGA.pageview(window.location.href);
     }
 
 	render() {
