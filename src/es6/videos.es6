@@ -5,7 +5,6 @@
 /*global React */
 import React from 'react';
 import utils from './utils.es6';
-import YouTube from 'react-youtube';
 
 function _onReady(event) {
     // access to player in all event handlers via event.target
@@ -30,20 +29,10 @@ class Videos extends React.Component {
 
         var videos = this.props.videos.map(videoId => {
 
-            const opts = {
-                width: width,
-                playerVars: { // https://developers.google.com/youtube/player_parameters
-                    autoplay: 0
-                }
-            };
+            return <div key={videoId} id={videoId} className="video-item">
 
-            return <div key={videoId} className="video-item">
-                <YouTube
-                    key={videoId}
-                    videoId={videoId}
-                    opts={opts}
-                    onReady={_onReady}
-                />
+                <iframe style={{border:'none'}} id={videoId} type="text/html" width={width}  height={(3*width)/4}
+                        src={`http://www.youtube.com/embed/${videoId}?autoplay=0&origin=http://antoniocamposruiz.com`}/>
             </div>
         });
 
