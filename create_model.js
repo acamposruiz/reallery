@@ -7,7 +7,7 @@ var rmdir = require('rmdir');
 var colors = require('colors');
 
 /* Generate responsive images */
-function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir) {
+function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir, imagesFolderWeb) {
     return new Promise((rs, rj) => {
         var dimensions = [2880, 1240, 620, 310, 160];
         var srcsetPromises = [];
@@ -25,6 +25,7 @@ function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir) {
             srcsetPromises.push(new Promise((rs2, rj2) => {
                 var dim = dimensions[i];
                 var sourceImageDirFile = sourceImageDir + dim + '_' + file;
+                var imageFolderWebFile = imagesFolderWeb + dim + '_' + file;
 
                 lwip.open(imagesFolder + file, function (err, image) {
 
@@ -33,10 +34,10 @@ function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir) {
                     image.batch()
                         .resize(this.dim, (this.dim / dmsns.width) * dmsns.height)
                         .writeFile(this.sourceImageDirFile, function (err) {
-                            rs2(this.sourceImageDirFile + ' ' + this.dim + 'w');
-                        }.bind({sourceImageDirFile: this.sourceImageDirFile, dim: this.dim}));
+                            rs2(this.imageFolderWebFile + ' ' + this.dim + 'w');
+                        }.bind({imageFolderWebFile: this.imageFolderWebFile, dim: this.dim}));
 
-                }.bind({sourceImageDirFile: sourceImageDirFile, dim: dim}));
+                }.bind({sourceImageDirFile: sourceImageDirFile, imageFolderWebFile: imageFolderWebFile, dim: dim}));
             }));
         }
 
@@ -61,6 +62,7 @@ function generateSourceImages(projtsJson) {
                         return new Promise(function (rslv, rjct) {
                             /* Declaration of vars */
                             var imagesFolder = 'projts/' + key + '/images/';
+                            var imagesFolderWeb = 'projts/' + key + '/imgweb/';
                             var sourceImagesDir = 'projts/' + key + '/source_images/';
 
                             fs.existsSync(sourceImagesDir)
@@ -80,10 +82,10 @@ function generateSourceImages(projtsJson) {
                                     if (file.split('.')[1] == 'jpg' || file.split('.')[1] == 'png') {
                                         imagesPromises.push(new Promise(function (rslv2, rjct2) {
                                             var dimensions = sizeOf(imagesFolder + file);
-                                            generateSourceResponsive(file, imagesFolder, dimensions, sourceImagesDir).then(srcset => {
+                                            generateSourceResponsive(file, imagesFolder, dimensions, sourceImagesDir, imagesFolderWeb).then(srcset => {
 
                                                 rslv2({
-                                                    path: imagesFolder + file,
+                                                    path: imagesFolderWeb + file,
                                                     srcset: srcset,
                                                     width: dimensions.width,
                                                     height: dimensions.height
