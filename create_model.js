@@ -188,5 +188,16 @@ function writeRawState(data) {
     });
 }
 
-readConfigData("model_conf.json").then(generateSourceImages).then(writeRawState);
+function filterArgsCommands(projtsJson) {
+    function processArgs(projtsJson) {
+        let depObjt = {};
+        process.argv.slice(2).forEach(value => {
+            depObjt[value] = projtsJson[value];
+        });
+        return depObjt;
+    }
+    return new Promise(sendJson => sendJson(!process.argv[2]?projtsJson:processArgs(projtsJson)));
+}
+
+readConfigData("model_conf.json").then(filterArgsCommands).then(generateSourceImages).then(writeRawState);
 
