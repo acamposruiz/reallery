@@ -3,10 +3,14 @@ var state = state || {};
     'use strict';
     var projects = {};
     projects["001"] = {
+        "strings": {
+            "en": {"name": "Ducks", "type": "sculpture"},
+            "es": {"name": "Patos", "type": "escultura"}
+        },
         "name": "Ducks",
         "color": "F0B67F",
         "type": "sculpture",
-        "videos": ["gfYmvPH6Umg"],
+        "videos": {"en": ["gfYmvPH6Umg"], "es": ["gfYmvPH6Umg"]},
         "publish": true,
         "images": [{
             "path": "projts/001/imgweb/5.jpg",
@@ -96,10 +100,14 @@ var state = state || {};
         }]
     };
     projects["003"] = {
+        "strings": {
+            "en": {"name": "Soldiers' heads", "type": "sculpture"},
+            "es": {"name": "Cabezas de Soldados", "type": "escultura"}
+        },
         "name": "Soldiers' heads",
         "color": "D6D1B1",
         "type": "sculpture",
-        "videos": ["tQ6htNIVDxk"],
+        "videos": {"en": ["tQ6htNIVDxk"], "es": ["Sky0Vyf7rj0"]},
         "publish": true,
         "images": [{
             "path": "projts/003/imgweb/6k-158_17_en_0302.jpg",
@@ -174,7 +182,11 @@ var state = state || {};
         }]
     };
     projects["004"] = {
-        "name": "Painting",
+        "strings": {
+            "en": {"name": "Paintings", "type": "painting"},
+            "es": {"name": "Pinturas", "type": "pintura"}
+        },
+        "name": "Paintings",
         "color": "C7EFCF",
         "type": "painting",
         "videos": [],

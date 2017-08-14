@@ -20,6 +20,7 @@ class worksApp extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
+            lng: 'en',
             project: null
         };
     }
@@ -28,13 +29,16 @@ class worksApp extends React.Component {
         const setState = this.setState.bind(this);
         let projects = this.props.model;
         const router = Router({
-            '/video': [this.setState.bind(this, {project: projects["001"]}), this.logPageView],
-            '/': [this.setState.bind(this, {project: null}),  this.logPageView],
-            '/project/view/:projectId': [(projectId) => {
-                setState({project: projects[projectId]});
+            //'/video': [this.setState.bind(this, {project: projects["001"]}), this.logPageView],
+            //'/': [this.setState.bind(this, {project: null}),  this.logPageView],
+            '/:lng/': [(lng) => {
+                setState({project: null, lng});
+            }, this.logPageView],
+            '/:lng/project/view/:projectId': [(lng, projectId) => {
+                setState({project: projects[projectId], lng});
             }, this.logPageView]
         });
-        router.init('/');
+        router.init('/en');
         utils.preload.home(projects);
     }
 
@@ -46,6 +50,8 @@ class worksApp extends React.Component {
 	render() {
     	const mobile = utils.is_mobile('any')? 'mobile':'no-mobile';
     	const section = !this.state.project? 'home':'project';
+    	const lng = this.state.lng;
+        const homePath = "/#/" + lng;
 		let projects = this.props.model;
 		let projectSt = this.state.project || {};
 		let ObjVals = Object.keys(projects).map(function(key) {
@@ -57,9 +63,11 @@ class worksApp extends React.Component {
 			return (
 				<ProjectButton
 					view={section}
+					lng={lng}
 					key={index}
 					key2={Object.keys(projects)[index]}
 					name={project.name}
+					strings={project.strings[lng]}
 					color={project.color}
 					type={project.type}
 					publish={project.publish}
@@ -71,12 +79,12 @@ class worksApp extends React.Component {
 
 
 
-		const gallery = <ProjectGallery project={this.state.project || null}/>;
+		const gallery = <ProjectGallery lng={lng} project={this.state.project || null}/>;
 
         return <div className={`container ${section} ${mobile}`}>
 
 						<header className="container-header">
-							<h1 className="title-header"><a className="main-title" href="/#/">Antonio {this.state.project? <br/> : null} Campos</a></h1>
+							<h1 className="title-header"><a className="main-title" href={homePath}>Antonio {this.state.project? <br/> : null} Campos</a></h1>
 							<section className="menu menu-header"> {this.state.project? projectsButtosList: null} </section>
 						</header>
 

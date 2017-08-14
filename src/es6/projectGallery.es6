@@ -34,7 +34,7 @@ class ProjectGallery extends React.Component {
                 loadedAll: false,
                 photos: [],
                 cols: this.getCols(),
-                videos: nextProps.project.videos,
+                videos: nextProps.project.videos[nextProps.lng] || [],
                 photosStore: nextProps.project.images.map(image => {
                     return {
                         src: image.path,

@@ -14,8 +14,8 @@ class ProjectButton extends React.Component {
     render() {
 
         const classNameIcon = "icon-ico_" + this.props.key2;
-        const path = "/#/project/view/" + this.props.key2;
-        const buttonText = <div className="text title">{this.props.name}</div>;
+        const path = "/#/" + this.props.lng + "/project/view/" + this.props.key2;
+        const buttonText = <div className="text title">{this.props.strings.name}</div>;
 
         return <div className={ `project-button-container ${(this.props.active ? " active" : " no-active")} home-project-button-${this.props.key2}` }>
 
