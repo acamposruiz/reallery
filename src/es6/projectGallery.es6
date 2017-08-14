@@ -30,12 +30,17 @@ class ProjectGallery extends React.Component {
     componentWillReceiveProps(nextProps) {
 
         if(nextProps.project){
+
+            const images = nextProps.project && (nextProps.project.images.length
+                    ? nextProps.project.images
+                    : nextProps.project.images[nextProps.lng]);
+
             this.setState({
                 loadedAll: false,
                 photos: [],
                 cols: this.getCols(),
                 videos: nextProps.project.videos[nextProps.lng] || [],
-                photosStore: nextProps.project.images.map(image => {
+                photosStore: images && images.map(image => {
                     return {
                         src: image.path,
                         srcset: image.srcset,
@@ -90,7 +95,7 @@ class ProjectGallery extends React.Component {
             loadedAll: loadedAll
         });
 
-        if (!loadedAll) utils.preload.gallery(newStore);
+        //if (!loadedAll) utils.preload.gallery(newStore);
     }
 
     openLightbox(index, event){

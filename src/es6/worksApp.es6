@@ -39,7 +39,7 @@ class worksApp extends React.Component {
             }, this.logPageView]
         });
         router.init('/en');
-        utils.preload.home(projects);
+        //utils.preload.home(projects);
     }
 
     logPageView() {
