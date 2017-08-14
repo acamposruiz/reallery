@@ -170,8 +170,7 @@ function generateSourceImages(projtsJson) {
                                 }
 
                             }
-
-
+                            
 
                         })
                     });
