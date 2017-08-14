@@ -61,53 +61,161 @@ function generateSourceImages(projtsJson) {
                     rawState.push(() => {
                         return new Promise(function (rslv, rjct) {
                             /* Declaration of vars */
-                            var imagesFolder = 'projts/' + key + '/images/';
-                            var imagesFolderWeb = 'projts/' + key + '/imgweb/';
-                            var sourceImagesDir = 'projts/' + key + '/source_images/';
+                            const imagesFolder = 'projts/' + key + '/images/';
+                            const imagesFolder_es = 'projts/' + key + '/images_es/';
+                            const imagesFolderWeb = 'projts/' + key + '/imgweb/';
+                            const imagesFolderWeb_es = 'projts/' + key + '/imgweb_es/';
+                            const sourceImagesDir = 'projts/' + key + '/source_images/';
+                            const sourceImagesDir_es = 'projts/' + key + '/source_images_es/';
 
-                            fs.existsSync(sourceImagesDir)
-                                ? rmdir(sourceImagesDir, () => generateSourceImages(sourceImagesDir))
-                                : generateSourceImages(sourceImagesDir);
+                            if (!fs.existsSync(imagesFolder_es)) {
+                                fs.existsSync(sourceImagesDir)
+                                    ? rmdir(sourceImagesDir, () => generateSourceImages(sourceImagesDir))
+                                    : generateSourceImages(sourceImagesDir);
 
-                            function generateSourceImages(sourceImagesDir) {
+                                function generateSourceImages(sourceImagesDir) {
 
-                                fs.mkdirSync(sourceImagesDir);
-                                console.log(('Created/Updated directory: ' + sourceImagesDir).cyan);
+                                    fs.mkdirSync(sourceImagesDir);
+                                    console.log(('Created/Updated directory: ' + sourceImagesDir).cyan);
 
-                                /* Get images info */
-                                var files = fs.readdirSync(imagesFolder);
-                                var imagesPromises = [];
+                                    /* Get images info */
+                                    var files = fs.readdirSync(imagesFolder);
+                                    var imagesPromises = [];
 
-                                files.forEach(file => {
-                                    if (file.split('.')[1] == 'jpg' || file.split('.')[1] == 'png') {
-                                        imagesPromises.push(new Promise(function (rslv2, rjct2) {
-                                            var dimensions = sizeOf(imagesFolder + file);
-                                            generateSourceResponsive(file, imagesFolder, dimensions, sourceImagesDir, imagesFolderWeb).then(srcset => {
+                                    files.forEach(file => {
+                                        if (file.split('.')[1] == 'jpg' || file.split('.')[1] == 'png') {
+                                            imagesPromises.push(new Promise(function (rslv2, rjct2) {
+                                                var dimensions = sizeOf(imagesFolder + file);
+                                                generateSourceResponsive(file, imagesFolder, dimensions, sourceImagesDir, imagesFolderWeb).then(srcset => {
 
-                                                rslv2({
-                                                    path: imagesFolderWeb + file,
-                                                    srcset: srcset,
-                                                    width: dimensions.width,
-                                                    height: dimensions.height
+                                                    rslv2({
+                                                        path: imagesFolderWeb + file,
+                                                        srcset: srcset,
+                                                        width: dimensions.width,
+                                                        height: dimensions.height
+                                                    });
                                                 });
-                                            });
 
-                                        }));
-                                    }
-                                });
+                                            }));
+                                        }
+                                    });
 
-                                Promise.all(imagesPromises).then(values => {
+                                    Promise.all(imagesPromises).then(values => {
 
-                                    projtsJson[key]["images"] = values;
+                                        projtsJson[key]["images"] = values;
 
-                                    /* include project */
-                                    var textCode = 'projects["' + key + '"]=' + JSON.stringify(projtsJson[key]) + ';';
+                                        /* include project */
+                                        var textCode = 'projects["' + key + '"]=' + JSON.stringify(projtsJson[key]) + ';';
 
 
-                                    rslv(textCode);
-                                });
+                                        rslv(textCode);
+                                    });
+
+                                }
+                            } else {
+
+                                fs.existsSync(sourceImagesDir)
+                                    ? rmdir(sourceImagesDir, () => {
+                                        fs.existsSync(sourceImagesDir_es)
+                                            ? rmdir(sourceImagesDir_es, () => generateSourceImagesAll())
+                                            : generateSourceImagesAll();
+                                    })
+                                    : fs.existsSync(sourceImagesDir_es)
+                                        ? rmdir(sourceImagesDir_es, () => generateSourceImagesAll())
+                                        : generateSourceImagesAll();
+
+                                function generateSourceImagesAll() {
+                                    generateSourceImages(sourceImagesDir).then(generateSourceImages_es).then(rslv);
+                                }
+
+
+                                function generateSourceImages_es(projtsJson) {
+
+                                    return new Promise(gsiresolve => {
+                                        fs.mkdirSync(sourceImagesDir_es);
+                                        console.log(('Created/Updated directory: ' + sourceImagesDir_es).cyan);
+
+                                        /* Get images info */
+                                        var files = fs.readdirSync(imagesFolder_es);
+                                        var imagesPromises = [];
+
+                                        files.forEach(file => {
+                                            if (file.split('.')[1] == 'jpg' || file.split('.')[1] == 'png') {
+                                                imagesPromises.push(new Promise(function (rslv2, rjct2) {
+                                                    var dimensions = sizeOf(imagesFolder_es + file);
+                                                    generateSourceResponsive(file, imagesFolder_es, dimensions, sourceImagesDir_es, imagesFolderWeb_es).then(srcset => {
+
+                                                        rslv2({
+                                                            path: imagesFolderWeb_es + file,
+                                                            srcset: srcset,
+                                                            width: dimensions.width,
+                                                            height: dimensions.height
+                                                        });
+                                                    });
+
+                                                }));
+                                            }
+                                        });
+
+
+                                        Promise.all(imagesPromises).then(values => {
+
+                                            projtsJson[key]["images"]["es"] = values;
+
+                                            gsiresolve('projects["' + key + '"]=' + JSON.stringify(projtsJson[key]) + ';');
+
+                                        });
+
+
+                                    });
+
+                                }
+
+                                function generateSourceImages(sourceImagesDir) {
+
+                                    return new Promise(gsiresolve => {
+                                        fs.mkdirSync(sourceImagesDir);
+                                        console.log(('Created/Updated directory: ' + sourceImagesDir).cyan);
+
+                                        /* Get images info */
+                                        var files = fs.readdirSync(imagesFolder);
+                                        var imagesPromises = [];
+
+                                        files.forEach(file => {
+                                            if (file.split('.')[1] == 'jpg' || file.split('.')[1] == 'png') {
+                                                imagesPromises.push(new Promise(function (rslv2, rjct2) {
+                                                    var dimensions = sizeOf(imagesFolder + file);
+                                                    generateSourceResponsive(file, imagesFolder, dimensions, sourceImagesDir, imagesFolderWeb).then(srcset => {
+
+                                                        rslv2({
+                                                            path: imagesFolderWeb + file,
+                                                            srcset: srcset,
+                                                            width: dimensions.width,
+                                                            height: dimensions.height
+                                                        });
+                                                    });
+
+                                                }));
+                                            }
+                                        });
+
+
+                                        Promise.all(imagesPromises).then(values => {
+
+                                            projtsJson[key]["images"] = {"en": values};
+
+                                            gsiresolve(projtsJson);
+
+                                        });
+
+
+                                    });
+
+                                }
 
                             }
+
+
 
                         })
                     });
