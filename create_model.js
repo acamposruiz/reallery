@@ -68,6 +68,36 @@ function generateSourceImages(projtsJson) {
                             const sourceImagesDir = 'projts/' + key + '/source_images/';
                             const sourceImagesDir_es = 'projts/' + key + '/source_images_es/';
 
+                            function processFiles(folder1, folder2, folder3) {
+
+                                fs.mkdirSync(folder1);
+                                console.log(('Created/Updated directory: ' + folder1).cyan);
+
+                                /* Get images info */
+                                var files = fs.readdirSync(folder2);
+                                var imagesPromises = [];
+
+                                files.forEach(file => {
+                                    if (file.split('.')[1] == 'jpg' || file.split('.')[1] == 'png') {
+                                        imagesPromises.push(new Promise(function (rslv2, rjct2) {
+                                            var dimensions = sizeOf(folder2 + file);
+                                            generateSourceResponsive(file, folder2, dimensions, folder1, folder3).then(srcset => {
+
+                                                rslv2({
+                                                    path: folder3 + file,
+                                                    srcset: srcset,
+                                                    width: dimensions.width,
+                                                    height: dimensions.height
+                                                });
+                                            });
+
+                                        }));
+                                    }
+                                });
+
+                                return imagesPromises;
+                            }
+
                             if (!fs.existsSync(imagesFolder_es)) {
                                 fs.existsSync(sourceImagesDir)
                                     ? rmdir(sourceImagesDir, () => generateSourceImages(sourceImagesDir))
@@ -75,32 +105,7 @@ function generateSourceImages(projtsJson) {
 
                                 function generateSourceImages(sourceImagesDir) {
 
-                                    fs.mkdirSync(sourceImagesDir);
-                                    console.log(('Created/Updated directory: ' + sourceImagesDir).cyan);
-
-                                    /* Get images info */
-                                    var files = fs.readdirSync(imagesFolder);
-                                    var imagesPromises = [];
-
-                                    files.forEach(file => {
-                                        if (file.split('.')[1] == 'jpg' || file.split('.')[1] == 'png') {
-                                            imagesPromises.push(new Promise(function (rslv2, rjct2) {
-                                                var dimensions = sizeOf(imagesFolder + file);
-                                                generateSourceResponsive(file, imagesFolder, dimensions, sourceImagesDir, imagesFolderWeb).then(srcset => {
-
-                                                    rslv2({
-                                                        path: imagesFolderWeb + file,
-                                                        srcset: srcset,
-                                                        width: dimensions.width,
-                                                        height: dimensions.height
-                                                    });
-                                                });
-
-                                            }));
-                                        }
-                                    });
-
-                                    Promise.all(imagesPromises).then(values => {
+                                    Promise.all(processFiles(sourceImagesDir, imagesFolder, imagesFolderWeb)).then(values => {
 
                                         projtsJson[key]["images"] = values;
 
@@ -132,33 +137,8 @@ function generateSourceImages(projtsJson) {
                                 function generateSourceImages_es(projtsJson) {
 
                                     return new Promise(gsiresolve => {
-                                        fs.mkdirSync(sourceImagesDir_es);
-                                        console.log(('Created/Updated directory: ' + sourceImagesDir_es).cyan);
 
-                                        /* Get images info */
-                                        var files = fs.readdirSync(imagesFolder_es);
-                                        var imagesPromises = [];
-
-                                        files.forEach(file => {
-                                            if (file.split('.')[1] == 'jpg' || file.split('.')[1] == 'png') {
-                                                imagesPromises.push(new Promise(function (rslv2, rjct2) {
-                                                    var dimensions = sizeOf(imagesFolder_es + file);
-                                                    generateSourceResponsive(file, imagesFolder_es, dimensions, sourceImagesDir_es, imagesFolderWeb_es).then(srcset => {
-
-                                                        rslv2({
-                                                            path: imagesFolderWeb_es + file,
-                                                            srcset: srcset,
-                                                            width: dimensions.width,
-                                                            height: dimensions.height
-                                                        });
-                                                    });
-
-                                                }));
-                                            }
-                                        });
-
-
-                                        Promise.all(imagesPromises).then(values => {
+                                        Promise.all(processFiles(sourceImagesDir_es, imagesFolder_es, imagesFolderWeb_es)).then(values => {
 
                                             projtsJson[key]["images"]["es"] = values;
 
@@ -174,33 +154,9 @@ function generateSourceImages(projtsJson) {
                                 function generateSourceImages(sourceImagesDir) {
 
                                     return new Promise(gsiresolve => {
-                                        fs.mkdirSync(sourceImagesDir);
-                                        console.log(('Created/Updated directory: ' + sourceImagesDir).cyan);
-
-                                        /* Get images info */
-                                        var files = fs.readdirSync(imagesFolder);
-                                        var imagesPromises = [];
-
-                                        files.forEach(file => {
-                                            if (file.split('.')[1] == 'jpg' || file.split('.')[1] == 'png') {
-                                                imagesPromises.push(new Promise(function (rslv2, rjct2) {
-                                                    var dimensions = sizeOf(imagesFolder + file);
-                                                    generateSourceResponsive(file, imagesFolder, dimensions, sourceImagesDir, imagesFolderWeb).then(srcset => {
-
-                                                        rslv2({
-                                                            path: imagesFolderWeb + file,
-                                                            srcset: srcset,
-                                                            width: dimensions.width,
-                                                            height: dimensions.height
-                                                        });
-                                                    });
-
-                                                }));
-                                            }
-                                        });
 
 
-                                        Promise.all(imagesPromises).then(values => {
+                                        Promise.all(processFiles(sourceImagesDir, imagesFolder, imagesFolderWeb)).then(values => {
 
                                             projtsJson[key]["images"] = {"en": values};
 
