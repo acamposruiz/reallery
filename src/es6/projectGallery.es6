@@ -4,7 +4,7 @@
 /*jshint newcap: false */
 /*global React */
 import React from 'react';
-import Gallery from 'react-photo-gallery';
+import Gallery from 'react-multimedia-gallery';
 import Lightbox from 'react-images';
 import Loading from 'react-loading';
 import utils from './utils.es6';

@@ -14,7 +14,6 @@ import utils from './utils.es6';
 
 const Router = Director.Router;
 
-
 class worksApp extends React.Component {
 
     constructor(props, context) {
