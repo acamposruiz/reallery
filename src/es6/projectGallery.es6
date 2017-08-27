@@ -5,7 +5,9 @@
 /*global React */
 import React from 'react';
 import Gallery from 'react-multimedia-gallery';
-import Lightbox from 'react-images';
+//import Gallery from './Gallery';
+//import Gallery from './Gallery';
+import Lightbox from 'react-images-texts-videos';
 import Loading from 'react-loading';
 import utils from './utils.es6';
 import Videos from './videos.es6';
@@ -38,14 +40,16 @@ class ProjectGallery extends React.Component {
             this.setState({
                 loadedAll: false,
                 photos: [],
+                items: [],
                 cols: this.getCols(),
                 videos: nextProps.project.videos[nextProps.lng] || [],
-                photosStore: images && images.map(image => {
+                photosStore: images && images.map((image,index) => {
                     return {
                         src: image.path,
                         srcset: image.srcset,
                         width: image.width,
-                        height: image.height
+                        height: image.height,
+                        type: image.type
                     };
                 })
             });
@@ -91,6 +95,7 @@ class ProjectGallery extends React.Component {
 
         this.setState({
             photos: this.state.photos.concat(newPhotos),
+            items: this.state.photos.concat(newPhotos),
             photosStore: newStore,
             loadedAll: loadedAll
         });
@@ -134,14 +139,14 @@ class ProjectGallery extends React.Component {
         return (
             <div className="App">
                 <Videos videos={this.state.videos}></Videos>
-                <Gallery photos={this.state.photos} cols={this.state.cols} onClickPhoto={this.openLightbox} />
+                <Gallery items={this.state.photos || []} cols={this.state.cols} onClickItem={this.openLightbox} />
                 <Lightbox
-                    images={this.state.photos.concat(this.state.photosStore)}
+                    items={{type:'images',items:this.state.photos.concat(this.state.photosStore)}}
                     backdropClosesModal={true}
                     onClose={this.closeLightbox}
                     onClickPrev={this.gotoPrevious}
                     onClickNext={this.gotoNext}
-                    currentImage={this.state.currentImage}
+                    currentItem={this.state.currentImage}
                     isOpen={this.state.lightboxIsOpen}
                     width={1600}
                 />

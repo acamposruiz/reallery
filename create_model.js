@@ -84,6 +84,7 @@ function generateSourceImages(projtsJson) {
                                             generateSourceResponsive(file, folder2, dimensions, folder1, folder3).then(srcset => {
 
                                                 rslv2({
+                                                    type: 'photo',
                                                     path: folder3 + file,
                                                     srcset: srcset,
                                                     width: dimensions.width,
