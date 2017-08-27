@@ -10,7 +10,24 @@ var state = state || {};
         "name": "Ducks",
         "color": "F0B67F",
         "type": "sculpture",
-        "videos": {"en": ["gfYmvPH6Umg"], "es": ["gfYmvPH6Umg"]},
+        "videos": {
+            "en": [{
+                "src": "https://i.ytimg.com/vi/gfYmvPH6Umg/sddefault.jpg",
+                "srcset": ["https://i.ytimg.com/vi/gfYmvPH6Umg/sddefault.jpg 1024w", "https://i.ytimg.com/vi/gfYmvPH6Umg/sddefault.jpg 800w", "https://i.ytimg.com/vi/gfYmvPH6Umg/mqdefault.jpg 500w", "https://i.ytimg.com/vi/gfYmvPH6Umg/default.jpg 320w"],
+                "width": 640,
+                "height": 480,
+                "content": "gfYmvPH6Umg",
+                "type": "video"
+            }],
+            "es": [{
+                "src": "https://i.ytimg.com/vi/gfYmvPH6Umg/sddefault.jpg",
+                "srcset": ["https://i.ytimg.com/vi/gfYmvPH6Umg/sddefault.jpg 1024w", "https://i.ytimg.com/vi/gfYmvPH6Umg/sddefault.jpg 800w", "https://i.ytimg.com/vi/gfYmvPH6Umg/mqdefault.jpg 500w", "https://i.ytimg.com/vi/gfYmvPH6Umg/default.jpg 320w"],
+                "width": 640,
+                "height": 480,
+                "content": "gfYmvPH6Umg",
+                "type": "video"
+            }]
+        },
         "publish": true,
         "images": [{
             "type": "photo",
@@ -124,7 +141,24 @@ var state = state || {};
         "name": "Soldiers' heads",
         "color": "D6D1B1",
         "type": "sculpture",
-        "videos": {"en": ["tQ6htNIVDxk"], "es": ["Sky0Vyf7rj0"]},
+        "videos": {
+            "en": [{
+                "src": "https://i.ytimg.com/vi/tQ6htNIVDxk/sddefault.jpg",
+                "srcset": ["https://i.ytimg.com/vi/tQ6htNIVDxk/sddefault.jpg 1024w", "https://i.ytimg.com/vi/tQ6htNIVDxk/sddefault.jpg 800w", "https://i.ytimg.com/vi/tQ6htNIVDxk/mqdefault.jpg 500w", "https://i.ytimg.com/vi/tQ6htNIVDxk/default.jpg 320w"],
+                "width": 640,
+                "height": 480,
+                "content": "tQ6htNIVDxk",
+                "type": "video"
+            }],
+            "es": [{
+                "src": "https://i.ytimg.com/vi/Sky0Vyf7rj0/sddefault.jpg",
+                "srcset": ["https://i.ytimg.com/vi/Sky0Vyf7rj0/sddefault.jpg 1024w", "https://i.ytimg.com/vi/Sky0Vyf7rj0/sddefault.jpg 800w", "https://i.ytimg.com/vi/Sky0Vyf7rj0/mqdefault.jpg 500w", "https://i.ytimg.com/vi/Sky0Vyf7rj0/default.jpg 320w"],
+                "width": 640,
+                "height": 480,
+                "content": "Sky0Vyf7rj0",
+                "type": "video"
+            }]
+        },
         "publish": true,
         "images": {
             "en": [{

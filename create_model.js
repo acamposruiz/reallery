@@ -5,6 +5,75 @@ var sizeOf = require('image-size');
 var lwip = require('lwip');
 var rmdir = require('rmdir');
 var colors = require('colors');
+var YouTube = require('youtube-node');
+
+
+
+
+function getYoutubeData(projtsJson) {
+
+    var youTube = new YouTube();
+
+    youTube.setKey('AIzaSyAPPDBVqSMFkX9UqTj1Nc_roz7oIKqowQc');
+
+    return new Promise(sendData => {
+        const arrayPromises = [];
+
+        Object.keys(projtsJson).forEach(projectKey => {
+
+            Object.keys(projtsJson[projectKey].videos).forEach(lang => {
+
+                projtsJson[projectKey].videos[lang].forEach((youtubeId, index) => {
+
+                    arrayPromises.push(new Promise(resolve => {
+
+                        youTube.getById(youtubeId, function(error, result) {
+
+                            if (error) {
+                                console.log(error);
+                            }
+                            else {
+                                const thumbnails = result.items[0].snippet.thumbnails;
+                                const data = {
+                                    src: thumbnails.standard.url,
+                                    srcset: [
+                                        `${thumbnails.standard.url} 1024w`,
+                                        `${thumbnails.standard.url} 800w`,
+                                        `${thumbnails.medium.url} 500w`,
+                                        `${thumbnails.default.url} 320w`,
+                                    ],
+                                    width: thumbnails.standard.width,
+                                    height: thumbnails.standard.height,
+                                    content: youtubeId,
+                                    type: 'video',
+                                };
+                                resolve({
+                                    index:index,
+                                    lang:lang,
+                                    projectKey:projectKey,
+                                    data:data
+                                });
+                            }
+
+                        });
+
+                    }));
+
+                });
+
+            });
+
+        });
+
+
+        Promise.all(arrayPromises).then(data => {
+            data.forEach(dataProject => {
+                projtsJson[dataProject.projectKey]['videos'][dataProject.lang][dataProject.index] = dataProject.data;
+            });
+            sendData(projtsJson);
+        });
+    });
+}
 
 /* Generate responsive images */
 function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir, imagesFolderWeb) {
@@ -109,6 +178,11 @@ function generateSourceImages(projtsJson) {
                                     Promise.all(processFiles(sourceImagesDir, imagesFolder, imagesFolderWeb)).then(values => {
 
                                         projtsJson[key]["images"] = values;
+                                        /*projtsJson[key]["videos"] = processVideos(projtsJson[key]["videos"]);
+
+                                        processVideos(projtsJson[key]["videos"]).then(videos => {
+                                            projtsJson[key]["videos"] = videos;
+                                        });*/
 
                                         /* include project */
                                         var textCode = 'projects["' + key + '"]=' + JSON.stringify(projtsJson[key]) + ';';
@@ -131,7 +205,7 @@ function generateSourceImages(projtsJson) {
                                         : generateSourceImagesAll();
 
                                 function generateSourceImagesAll() {
-                                    generateSourceImages(sourceImagesDir).then(generateSourceImages_es).then(rslv);
+                                    generateSourceImages_en(sourceImagesDir).then(generateSourceImages_es).then(rslv);
                                 }
 
 
@@ -152,7 +226,7 @@ function generateSourceImages(projtsJson) {
 
                                 }
 
-                                function generateSourceImages(sourceImagesDir) {
+                                function generateSourceImages_en(sourceImagesDir) {
 
                                     return new Promise(gsiresolve => {
 
@@ -185,7 +259,7 @@ function generateSourceImages(projtsJson) {
 
         function generateState(rawState) {
 
-            return new Promise(sendData => {
+            return new Promise(sendData2 => {
 
                 var rawData;
 
@@ -210,7 +284,7 @@ function generateSourceImages(projtsJson) {
                             rawData += "})();";
                             rawData += "export default state;";
                             /* Write the output */
-                            sendData(rawData);
+                            sendData2(rawData);
 
                         }
                     });
@@ -263,5 +337,9 @@ function filterArgsCommands(projtsJson) {
     return new Promise(sendJson => sendJson(!process.argv[2]?projtsJson:processArgs(projtsJson)));
 }
 
-readConfigData("model_conf.json").then(filterArgsCommands).then(generateSourceImages).then(writeRawState);
+readConfigData("model_conf.json")
+    .then(filterArgsCommands)
+    .then(getYoutubeData)
+    .then(generateSourceImages)
+    .then(writeRawState);
 
