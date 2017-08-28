@@ -10,19 +10,24 @@ import Gallery from 'react-multimedia-gallery';
 import Lightbox from 'react-images-texts-videos';
 import Loading from 'react-loading';
 import utils from './utils.es6';
-import Videos from './videos.es6';
 import _ from 'lodash';
 
 const mainTimeLapse = 200;
-const photosSetLoad = utils.is_mobile('phone')? 5: 10;
+const itemsSetLoad = utils.is_mobile('phone')? 5: 10;
 
 class ProjectGallery extends React.Component {
 
 	constructor(props) {
 		super(props);
+
+        this.state = { loadedAll: false, photos: [], videos: [], articles: null, items: [], itemsStore:[], itemsLightbox:{
+            type: 'images',
+            items: []
+        }};
+
         this.handleScroll = this.handleScroll.bind(this);
         this.handleResize = this.handleResize.bind(this);
-        this.loadMorePhotos = this.loadMorePhotos.bind(this);
+        this.loadMoreItems = this.loadMoreItems.bind(this);
         this.closeLightbox = this.closeLightbox.bind(this);
         this.openLightbox = this.openLightbox.bind(this);
         this.gotoNext = this.gotoNext.bind(this);
@@ -37,13 +42,8 @@ class ProjectGallery extends React.Component {
                     ? nextProps.project.images
                     : nextProps.project.images[nextProps.lng]);
 
-            this.setState({
-                loadedAll: false,
-                photos: [],
-                items: [],
-                cols: this.getCols(),
-                videos: nextProps.project.videos[nextProps.lng] || [],
-                photosStore: images && images.map((image,index) => {
+
+            const photos = images && images.map((image,index) => {
                     return {
                         src: image.path,
                         srcset: image.srcset,
@@ -51,15 +51,32 @@ class ProjectGallery extends React.Component {
                         height: image.height,
                         type: image.type
                     };
-                })
+                });
+
+            const videos = nextProps.project.videos[nextProps.lng];
+
+            const itemsStore = utils.merge(photos, videos);
+
+            this.setState({
+                loadedAll: false,
+                photos: photos,
+                videos:videos,
+                articles:null,
+                items: [],
+                itemsStore:itemsStore,
+                itemsLightbox:{
+                    type: 'images',
+                    items: []
+                },
+                cols: this.getCols()
             });
-            this.loadMorePhotos();
-        } else { this.setState({ loadedAll: false, photos: [], videos: [], photosStore: []}); }
+            this.loadMoreItems();
+        } else { this.setState({ loadedAll: false, photos: [], videos: [], itemsStore: []}); }
 
     }
 
     componentDidMount() {
-        this.loadMorePhotos = _.debounce(this.loadMorePhotos, mainTimeLapse);
+        this.loadMoreItems = _.debounce(this.loadMoreItems, mainTimeLapse);
         this.handleResize = _.debounce(this.handleResize, mainTimeLapse);
         window.addEventListener('scroll', this.handleScroll);
         window.addEventListener("resize", this.handleResize);
@@ -76,7 +93,7 @@ class ProjectGallery extends React.Component {
         let scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
         if (this.props.project && !this.state.loadedAll
             && (window.innerHeight + scrollY) >= (document.body.offsetHeight - 50)) {
-            this.loadMorePhotos();
+            this.loadMoreItems();
         }
     }
 
@@ -87,46 +104,51 @@ class ProjectGallery extends React.Component {
         return cols;
     }
 
-    loadMorePhotos(){
+    loadMoreItems(){
 
-        let newPhotos = this.state.photosStore.slice(0, photosSetLoad);
-        let newStore = this.state.photosStore.slice(photosSetLoad);
+        let newItems = this.state.itemsStore.slice(0, itemsSetLoad);
+        let newStore = this.state.itemsStore.slice(itemsSetLoad);
         let loadedAll = newStore.length? false:true;
 
         this.setState({
-            photos: this.state.photos.concat(newPhotos),
-            items: this.state.photos.concat(newPhotos),
-            photosStore: newStore,
+            items: this.state.items.concat(newItems),
+            itemsStore: newStore,
             loadedAll: loadedAll
         });
 
         //if (!loadedAll) utils.preload.gallery(newStore);
     }
 
-    openLightbox(index, event){
+    openLightbox(index, event, typeItem){
         event.preventDefault();
+
         this.setState({
-            currentImage: index,
+            itemsLightbox: {
+                type: (typeItem == 'photos')? 'images':(typeItem == 'articles')? 'texts':'videos',
+                items: (typeItem == 'photos')? this.state[typeItem]:this.state[typeItem].map(item => item.content)
+            },
+            currentItem: index,
             lightboxIsOpen: true
         });
+
     }
 
     closeLightbox(){
         this.setState({
-            currentImage: 0,
+            currentItem: 0,
             lightboxIsOpen: false,
         });
     }
 
     gotoPrevious(){
         this.setState({
-            currentImage: this.state.currentImage - 1,
+            currentItem: this.state.currentItem - 1,
         });
     }
 
     gotoNext(){
         this.setState({
-            currentImage: this.state.currentImage + 1,
+            currentItem: this.state.currentItem + 1,
         });
     }
 
@@ -138,15 +160,14 @@ class ProjectGallery extends React.Component {
 
         return (
             <div className="App">
-                <Videos videos={this.state.videos}></Videos>
-                <Gallery items={this.state.photos || []} cols={this.state.cols} onClickItem={this.openLightbox} />
+                <Gallery items={this.state.items} cols={this.state.cols} onClickItem={this.openLightbox} />
                 <Lightbox
-                    items={{type:'images',items:this.state.photos.concat(this.state.photosStore)}}
+                    items={this.state.itemsLightbox}
                     backdropClosesModal={true}
                     onClose={this.closeLightbox}
                     onClickPrev={this.gotoPrevious}
                     onClickNext={this.gotoNext}
-                    currentItem={this.state.currentImage}
+                    currentItem={this.state.currentItem}
                     isOpen={this.state.lightboxIsOpen}
                     width={1600}
                 />

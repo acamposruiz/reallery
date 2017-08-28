@@ -79,7 +79,7 @@ class worksApp extends React.Component {
 
 
 
-		const gallery = <ProjectGallery lng={lng} project={this.state.project || null}/>;
+		const gallery = <ProjectGallery lng={lng} project={this.state.project}/>;
 
         return <div className={`container ${section} ${mobile}`}>
 

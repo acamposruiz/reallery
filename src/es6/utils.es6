@@ -38,7 +38,33 @@ function preLoadHome(projects) {
 
 }
 
+function merge(array1 = [],array2 = []) {
+
+    let output = [];
+
+    const [arrayBase,arrayIntro] = (array1.length > array2.length)? [array1,array2]: [array2,array1];
+
+    const size = Math.floor(arrayBase.length / arrayIntro.length);
+
+
+    for (var i=0,j=0; i<arrayBase.length; i+=size, j++) {
+
+        if (j >= arrayIntro.length) {
+            output = output.concat(arrayBase.slice(i));
+            break;
+        } else {
+            output.push(arrayIntro[j]);
+            output = output.concat(arrayBase.slice(i,i+size));
+        }
+
+    }
+
+    return output;
+
+}
+
 const utils = {
+    merge: merge,
     is_mobile: isMobileUtil,
     preload: {gallery: preLoadGallery, home: preLoadHome}
 };
