@@ -8,6 +8,7 @@ import ProjectButton from './projectButton.es6';
 import ProjectGallery from './projectGallery.es6';
 import Director from '../../node_modules/director/build/director.js';
 import FaEnvelope from 'react-icons/fa/envelope';
+import FaPhone from 'react-icons/lib/fa/phone';
 import FaTwitter from 'react-icons/fa/twitter';
 import FaInstagram from 'react-icons/fa/instagram';
 import utils from './utils.es6';
@@ -94,7 +95,10 @@ class worksApp extends React.Component {
 
 						<footer className="contact">
 							<span className="mail-data"><FaEnvelope /><span className="data">acamposruiz@gmail.com</span></span>
-                            {/*
+							&nbsp;	&nbsp;	&nbsp;
+							<span className="mail-data"><FaPhone /><span className="data">(+34) 655 471 058</span></span>
+
+                            {/*<i class="material-icons">phone</i>
 							 <span className="twitter-data"><FaTwitter /><span className="data">@acwrks</span></span>
 							 <span className="instagram-data"><FaInstagram /><span className="data">acwrks</span></span>
 							 */}

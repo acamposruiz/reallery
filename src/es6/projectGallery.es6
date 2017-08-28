@@ -166,7 +166,7 @@ class ProjectGallery extends React.Component {
 
         return (
             <div className="App">
-                <Gallery items={this.state.items} cols={this.state.cols} onClickItem={this.openLightbox} />
+                <Gallery margin={4} items={this.state.items} cols={this.state.cols} onClickItem={this.openLightbox} />
                 <Lightbox
                     items={this.state.itemsLightbox}
                     backdropClosesModal={true}
