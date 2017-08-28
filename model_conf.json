@@ -17,6 +17,12 @@
       "en": ["gfYmvPH6Umg"],
       "es": ["gfYmvPH6Umg"]
     },
+    "articles": {
+      "en": ["This work says nothing that can be expressed in words. You can see how you listen to a song. It is seen to feel it and is understood with the emotions that provoke you. Nothing else.",
+      "Many teachers say that it is not possible to see ourselves, that we can only be ourselves. We can not see ourselves because that would imply that inside us there was someone who sees and someone seen, who would we be then? The seeing self or the self seen? The answer would be none, both are projections of our ego. The Ego is the supplanter of our identity. As long as the ego does not dissolve, we can not be ourselves. So what can we do to dissolve it? Very simple, just watch it. Do not judge it, do not try to get rid of it, just watch it and it will go away after manifesting its unreality by itself."],
+      "es": ["Esta obra no dice nada que se pueda expresar con palabras. Se observa como se escucha una música. Se ve para sentirla y se entiende con las emociones que te provocan. Nada más.",
+      "Muchos maestros dicen que no es posible vernos a nosotros mismos, que solo podemos ser nosotros mismos. No podemos vernos a nosotros mismos porque eso implicaría que dentro de nosotros hubiera alguien que ve y alguien visto, ¿quien seriamos entonces? ¿el yo que ve o el yo visto? La respuesta sería ninguno, ambos son proyecciones de nuestro ego. El Ego es el suplantador de nuestra identidad. Mientras no se disuelva el ego no podremos ser nosotros mismos. ¿Qué podemos hacer entonces para disolverlo? Muy simple, obsérvalo sin más. No lo juzgues, no intentes deshacerte de él, solo observalo y se irá tras manifestarse su irrealidad por sí misma."]
+    },
     "publish": true
   },
   "002": {
@@ -55,6 +61,16 @@
       "en": ["tQ6htNIVDxk"],
       "es": ["Sky0Vyf7rj0"]
     },
+    "articles": {
+      "en": ["Our society is the result of a history of continued wars. Many struggle to change this. Others assume it as inevitable. While others encourage them by interests of diverse nature, hatred, money, power, etc. [BR] War is a reality. Man kills man daily in a chaos of suffering and unreason. We know the motives that incite them. We know the low passions that feed them. But what I seek to emphasize here is the experience disconnected from suffering. The learning that the individual gets once he has overcome resentment. [BR] Let's watch the drama without suffering: Why do we kill each other?",
+      "What happens in war and nowhere else is the union of a whole people to destroy the army of the other. Wills against wills. In this confrontation there is an individual drama in each soldier, he has to assume his impending death. This is an atrocious experience, it is a leap into abandonment. The man here accepts his own tragedy. In this acceptance I feel a powerful energy leap.",
+      "The teachings of a multitude of scholars of the warlike world show a distancing from self-indulgence that thrills at what it is about detachment from oneself. I do not speak of justice but of injustice. Feeling the injustice in your flesh can make you humble. Because the world does not have to treat you well.",
+      "The result of a lack of awareness that allows a natural construction of society can end in a social implosion. A restoration of balance after decades of stagnant political conflicts. If we build in the social conflict we will be forced to the drama of war. The war reestablishes a new starting point."],
+      "es": ["Nuestra sociedad es el resultado de una historia de guerras continuadas. Muchos luchan por cambiar esto. Otros lo asumen como algo inevitable. Mientras que otros las incentivan por intereses de diversa naturaleza, odio, dinero, poder, etc.[BR] La Guerra es una realidad. El hombre mata al hombre diariamente en un caos de sufrimiento y sinrazón. Conocemos los motivos que las incitan. Conocemos las bajas pasiones que las alimentan. Pero lo que yo busco resaltar aquí es la experiencia desligada del sufrimiento. El aprendizaje que el individuo obtiene una vez superado el resentimiento.[BR] Observemos el drama sin sufrimiento: ¿Por qué nos matamos entre nosotros?...",
+      "Lo que se da en la guerra y en ningún otro lugar es la unión de todo un pueblo para acabar con el ejército del otro. Voluntades contra voluntades. En este enfrentamiento se da un drama individual en cada soldado, tiene que asumir su inminente muerte. Esto es una experiencia atroz, es un salto al abandono. El hombre aquí acepta su propia tragedia. En esta aceptación siento un salto energético poderoso.",
+      "Las enseñanzas de multitud de eruditos del mundo bélico muestran un distanciamiento al autocompadecimiento que emociona por lo que tiene de desapego a uno mismo. No hablo de justicia sino de injusticia. Sentir la injusticia en tus carnes te puede volver humilde. Porque el mundo no tiene por qué tratarte bien.",
+      "El resultado de una falta de conciencia que permita una natural construcción de la sociedad puede acabar en una implosión social. Un restablecimiento del equilibrio tras decenios de conflictos políticos estancados. Si construimos en el conflicto social nos veremos obligados al drama de la guerra. La guerra restablece un nuevo punto de partida."]
+    },
     "publish": true
   },
   "004": {
@@ -67,6 +83,10 @@
         "name": "Pinturas",
         "type": "pintura"
       }
+    },
+    "articles": {
+      "en": [],
+      "es": []
     },
     "name": "Paintings",
     "color": "C7EFCF",

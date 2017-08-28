@@ -20,7 +20,7 @@ class ProjectGallery extends React.Component {
 	constructor(props) {
 		super(props);
 
-        this.state = { loadedAll: false, photos: [], videos: [], articles: null, items: [], itemsStore:[], itemsLightbox:{
+        this.state = { loadedAll: false, photos: [], videos: [], articles: [], items: [], itemsStore:[], itemsLightbox:{
             type: 'images',
             items: []
         }};
@@ -54,14 +54,20 @@ class ProjectGallery extends React.Component {
                 });
 
             const videos = nextProps.project.videos[nextProps.lng];
+            const articles = nextProps.project.articles[nextProps.lng].map(text => {
+                return {
+                    type:'article',
+                    content: text
+                };
+            });
 
-            const itemsStore = utils.merge(photos, videos);
+            const itemsStore = utils.merge(utils.merge(articles, videos), photos);
 
             this.setState({
                 loadedAll: false,
                 photos: photos,
                 videos:videos,
-                articles:null,
+                articles:articles,
                 items: [],
                 itemsStore:itemsStore,
                 itemsLightbox:{
