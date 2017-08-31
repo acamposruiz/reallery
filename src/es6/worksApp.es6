@@ -47,66 +47,67 @@ class worksApp extends React.Component {
         ga('send', 'pageview');
     }
 
-	render() {
-    	const mobile = utils.is_mobile('any')? 'mobile':'no-mobile';
-    	const section = !this.state.project? 'home':'project';
-    	const lng = this.state.lng;
+    render() {
+        const mobile = utils.is_mobile('any')? 'mobile':'no-mobile';
+        const section = !this.state.project? 'home':'project';
+        const lng = this.state.lng;
         const homePath = "/#/" + lng;
-		let projects = this.props.model;
-		let projectSt = this.state.project || {};
-		let ObjVals = Object.keys(projects).map(function(key) {
+        let projects = this.props.model;
+        let projectSt = this.state.project || {};
+        let ObjVals = Object.keys(projects).map(function(key) {
             return projects[key];
         });
 
 
-		let projectsButtosList = ObjVals.map(function (project, index) {
+        let projectsButtosList = ObjVals.map(function (project, index) {
             project.state = project.state || "";
-			return (
-				<ProjectButton
-					view={section}
-					lng={lng}
-					key={index}
-					key2={Object.keys(projects)[index]}
-					name={project.name}
-					strings={project.strings[lng]}
-					color={project.color}
-					type={project.type}
-					publish={project.publish}
-					state={project.state}
-					active={project.name == projectSt.name}
-				/>
-			);
-		}, this);
+            return (
+                <ProjectButton
+                    view={section}
+                    lng={lng}
+                    key={index}
+                    key2={Object.keys(projects)[index]}
+                    name={project.name}
+                    strings={project.strings[lng]}
+                    color={project.color}
+                    type={project.type}
+                    publish={project.publish}
+                    state={project.state}
+                    active={project.name == projectSt.name}
+                />
+            );
+        }, this);
 
 
 
-		const gallery = <ProjectGallery lng={lng} project={this.state.project}/>;
+        const gallery = <ProjectGallery lng={lng} project={this.state.project}/>;
 
         return <div className={`container ${section} ${mobile}`}>
 
-						<header className="container-header">
-							<h1 className="title-header"><a className="main-title" href={homePath}>Antonio {this.state.project? <br/> : null} Campos</a></h1>
-							<section className="menu menu-header"> {this.state.project? projectsButtosList: null} </section>
-						</header>
+                        <header className="container-header">
+                            <h1 className="title-header"><a className="main-title" href={homePath}>Antonio {this.state.project? <br/> : null} Campos</a></h1>
+                            <section className="menu menu-header"> {this.state.project? projectsButtosList: null} </section>
+                        </header>
 
-						<section className="menu menu-content"> {!this.state.project? projectsButtosList: null} </section>
+                        <section className="menu menu-content"> {!this.state.project? projectsButtosList: null} </section>
 
-						<section className="gallery"> {gallery} </section>
+                        <section className="gallery"> {gallery} </section>
 
-						<footer className="contact">
-							<span className="mail-data"><FaEnvelope /><span className="data">acamposruiz@gmail.com</span></span>
-							&nbsp;	&nbsp;	&nbsp;
-							<span className="mail-data"><FaPhone /><span className="data">(+34) 655 471 058</span></span>
+                        <footer className="contact">
+                            <a href="mailto:acamposruiz@gmail.com" ><span className="mail-data"><FaEnvelope /><span className="data">acamposruiz@gmail.com</span></span></a>
+                            &nbsp;	&nbsp;	&nbsp;
+                            <a href="tel:+34-655-471-058" ><span className="mail-data"><FaPhone /><span className="data">(+34) 655 471 058</span></span></a>
+
 
                             {/*<i class="material-icons">phone</i>
-							 <span className="twitter-data"><FaTwitter /><span className="data">@acwrks</span></span>
-							 <span className="instagram-data"><FaInstagram /><span className="data">acwrks</span></span>
-							 */}
+                             <span className="twitter-data"><FaTwitter /><span className="data">@acwrks</span></span>
+                             <span className="instagram-data"><FaInstagram /><span className="data">acwrks</span></span>
+                             */}
 
-						</footer>
+                        </footer>
 
-				</div>
-	}
+                </div>
+    }
 
 };
 
