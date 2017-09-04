@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`projectButton 1`] = `
+<div
+  className="project-button-container  no-active home-project-button-001"
+>
+  <a
+    href="/#/en/project/view/001"
+  >
+    <div
+      className="project-icon color-red  icon-ico_001"
+    />
+  </a>
+  <div
+    className="text title"
+  >
+    Ducks
+  </div>
+</div>
+`;
