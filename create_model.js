@@ -335,7 +335,27 @@ function filterArgsCommands(projtsJson) {
     return new Promise(sendJson => sendJson(!process.argv[2]?projtsJson:processArgs(projtsJson)));
 }
 
+function writeStyles(projtsJson) {
+    const styles = `.home {
+  background: resolve("background/${projtsJson.meta.background}") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }`;
+
+    fs.writeFile("src/styles/config.pcss", styles, function (err) {
+        if (err) {
+            return console.log(err);
+        }
+
+        console.log("Styles was written!");
+    });
+
+    return new Promise(sendJson => sendJson(projtsJson));
+}
+
 readConfigData("model_conf.json")
+    .then(writeStyles)
     .then(filterArgsCommands)
     .then(getYoutubeData)
     .then(generateSourceImages)

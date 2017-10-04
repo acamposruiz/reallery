@@ -9,7 +9,7 @@ function getAssetsLoadPaths() {
         return keysPrjts;
     }
 
-    const loadPaths = ['projts']
+    const loadPaths = ['projts', 'content']
         .concat(getKeysPrjts().map(key => `projts/${key}/images`))
         .concat(getKeysPrjts().map(key => `projts/${key}/source_images`));
 
