@@ -11,7 +11,7 @@ import ReactDOM from 'react-dom';
 import WorksApp from './worksApp.es6';
 
 ReactDOM.render(
-	<WorksApp model={state.projects}/>,
+	<WorksApp meta={state.meta} model={state.projects}/>,
     document.getElementsByClassName('mainpage')[0]
 );
 

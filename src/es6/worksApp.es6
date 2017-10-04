@@ -21,6 +21,7 @@ class worksApp extends React.Component {
         super(props, context);
         this.state = {
             lng: 'en',
+            meta: props.meta || {},
             project: null
         };
     }
@@ -29,8 +30,6 @@ class worksApp extends React.Component {
         const setState = this.setState.bind(this);
         let projects = this.props.model;
         const router = Router({
-            //'/video': [this.setState.bind(this, {project: projects["001"]}), this.logPageView],
-            //'/': [this.setState.bind(this, {project: null}),  this.logPageView],
             '/:lng/': [(lng) => {
                 setState({project: null, lng});
             }, this.logPageView],
@@ -39,7 +38,6 @@ class worksApp extends React.Component {
             }, this.logPageView]
         });
         router.init('/en');
-        //utils.preload.home(projects);
     }
 
     logPageView() {
@@ -54,6 +52,7 @@ class worksApp extends React.Component {
         const homePath = "/#/" + lng;
         let projects = this.props.model;
         let projectSt = this.state.project || {};
+        let meta = this.props.meta || {};
         let ObjVals = Object.keys(projects).map(function(key) {
             return projects[key];
         });
@@ -85,7 +84,7 @@ class worksApp extends React.Component {
         return <div className={`container ${section} ${mobile}`}>
 
                         <header className="container-header">
-                            <h1 className="title-header"><a className="main-title" href={homePath}>Antonio {this.state.project? <br/> : null} Campos</a></h1>
+                            <h1 className="title-header"><a className="main-title" href={homePath}>{meta.title}</a></h1>
                             <section className="menu menu-header"> {this.state.project? projectsButtosList: null} </section>
                         </header>
 
@@ -94,9 +93,9 @@ class worksApp extends React.Component {
                         <section className="gallery"> {gallery} </section>
 
                         <footer className="contact">
-                            <a href="mailto:acamposruiz@gmail.com" ><span className="mail-data"><FaEnvelope /><span className="data">acamposruiz@gmail.com</span></span></a>
+                            <a href={`mailto:${meta.email}`} ><span className="mail-data"><FaEnvelope /><span className="data">{meta.email}</span></span></a>
                             &nbsp;	&nbsp;	&nbsp;
-                            <a href="tel:+34-655-471-058" ><span className="mail-data"><FaPhone /><span className="data">(+34) 655 471 058</span></span></a>
+                            <a href={`tel:${meta.tlf}`} ><span className="mail-data"><FaPhone /><span className="data">{meta.tlf}</span></span></a>
 
 
                             {/*<i class="material-icons">phone</i>

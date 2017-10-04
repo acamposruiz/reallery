@@ -19,7 +19,7 @@ function getYoutubeData(projtsJson) {
     return new Promise(sendData => {
         const arrayPromises = [];
 
-        Object.keys(projtsJson).forEach(projectKey => {
+        Object.keys(projtsJson).filter(key => key !== 'meta').forEach(projectKey => {
 
             Object.keys(projtsJson[projectKey].videos).forEach(lang => {
 
@@ -126,7 +126,7 @@ function generateSourceImages(projtsJson) {
                 var rawState = [];
 
                 /* Generate the projects output */
-                Object.keys(projtsJson).forEach(function (key) {
+                Object.keys(projtsJson).filter(key => key !== 'meta').forEach(function (key) {
                     rawState.push(() => {
                         return new Promise(function (rslv, rjct) {
                             /* Declaration of vars */
@@ -178,11 +178,6 @@ function generateSourceImages(projtsJson) {
                                     Promise.all(processFiles(sourceImagesDir, imagesFolder, imagesFolderWeb)).then(values => {
 
                                         projtsJson[key]["images"] = values;
-                                        /*projtsJson[key]["videos"] = processVideos(projtsJson[key]["videos"]);
-
-                                        processVideos(projtsJson[key]["videos"]).then(videos => {
-                                            projtsJson[key]["videos"] = videos;
-                                        });*/
 
                                         /* include project */
                                         var textCode = 'projects["' + key + '"]=' + JSON.stringify(projtsJson[key]) + ';';
@@ -266,9 +261,11 @@ function generateSourceImages(projtsJson) {
                 (function promRecur(index) {
 
                     if (index == 0) {
+                        const fileJson = JSON.parse(fs.readFileSync("model_conf.json", "utf8"));
                         rawData = "var state = state || {};";
                         rawData += "(function () { 'use strict';";
                         rawData += "var projects = {};";
+                        rawData += `var meta = ${JSON.stringify(fileJson.meta)};`;
                     }
 
                     rawState[index]().then(projectRawData => {
@@ -280,7 +277,7 @@ function generateSourceImages(projtsJson) {
                         if (++index < rawState.length) {
                             promRecur(index);
                         } else {
-                            rawData += "state = { projects: projects};";
+                            rawData += "state = { meta:meta, projects: projects};";
                             rawData += "})();";
                             rawData += "export default state;";
                             /* Write the output */
