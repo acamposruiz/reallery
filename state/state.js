@@ -2,603 +2,446 @@ var state = state || {};
 (function () {
     'use strict';
     var projects = {};
-    var meta = {"email": "acamposruiz@gmail.com", "tlf": "+34-655-471-058", "title": "Antonio Campos"};
-    projects["001"] = {
-        "strings": {
-            "en": {"name": "Ducks", "type": "sculpture"},
-            "es": {"name": "Patos", "type": "escultura"}
-        },
-        "name": "Ducks",
+    var meta = {"email": "renaissance@renaissance.com", "tlf": "+55-555-555-555", "title": "Renaissance"};
+    projects["paintings"] = {
+        "strings": {"en": {"name": "Paintings", "type": "paintings"}},
+        "name": "Paintings",
         "color": "F0B67F",
-        "type": "sculpture",
+        "type": "paintings",
         "videos": {
             "en": [{
-                "src": "https://i.ytimg.com/vi/gfYmvPH6Umg/sddefault.jpg",
-                "srcset": ["https://i.ytimg.com/vi/gfYmvPH6Umg/sddefault.jpg 1024w", "https://i.ytimg.com/vi/gfYmvPH6Umg/sddefault.jpg 800w", "https://i.ytimg.com/vi/gfYmvPH6Umg/mqdefault.jpg 500w", "https://i.ytimg.com/vi/gfYmvPH6Umg/default.jpg 320w"],
-                "width": 640,
-                "height": 480,
-                "content": "gfYmvPH6Umg",
+                "src": "https://i.ytimg.com/vi/bUUVA5OVaOw/default.jpg",
+                "srcset": ["https://i.ytimg.com/vi/bUUVA5OVaOw/default.jpg 1024w", "https://i.ytimg.com/vi/bUUVA5OVaOw/default.jpg 800w", "https://i.ytimg.com/vi/bUUVA5OVaOw/mqdefault.jpg 500w", "https://i.ytimg.com/vi/bUUVA5OVaOw/default.jpg 320w"],
+                "width": 120,
+                "height": 90,
+                "content": "bUUVA5OVaOw",
+                "type": "video"
+            }, {
+                "src": "https://i.ytimg.com/vi/YywCLksBdb4/default.jpg",
+                "srcset": ["https://i.ytimg.com/vi/YywCLksBdb4/default.jpg 1024w", "https://i.ytimg.com/vi/YywCLksBdb4/default.jpg 800w", "https://i.ytimg.com/vi/YywCLksBdb4/mqdefault.jpg 500w", "https://i.ytimg.com/vi/YywCLksBdb4/default.jpg 320w"],
+                "width": 120,
+                "height": 90,
+                "content": "YywCLksBdb4",
+                "type": "video"
+            }, {
+                "src": "https://i.ytimg.com/vi/lob0zb28_wM/default.jpg",
+                "srcset": ["https://i.ytimg.com/vi/lob0zb28_wM/default.jpg 1024w", "https://i.ytimg.com/vi/lob0zb28_wM/default.jpg 800w", "https://i.ytimg.com/vi/lob0zb28_wM/mqdefault.jpg 500w", "https://i.ytimg.com/vi/lob0zb28_wM/default.jpg 320w"],
+                "width": 120,
+                "height": 90,
+                "content": "lob0zb28_wM",
+                "type": "video"
+            }, {
+                "src": "https://i.ytimg.com/vi/xf2G2Il8crw/default.jpg",
+                "srcset": ["https://i.ytimg.com/vi/xf2G2Il8crw/default.jpg 1024w", "https://i.ytimg.com/vi/xf2G2Il8crw/default.jpg 800w", "https://i.ytimg.com/vi/xf2G2Il8crw/mqdefault.jpg 500w", "https://i.ytimg.com/vi/xf2G2Il8crw/default.jpg 320w"],
+                "width": 120,
+                "height": 90,
+                "content": "xf2G2Il8crw",
+                "type": "video"
+            }, {
+                "src": "https://i.ytimg.com/vi/FF5aAbCbLLk/default.jpg",
+                "srcset": ["https://i.ytimg.com/vi/FF5aAbCbLLk/default.jpg 1024w", "https://i.ytimg.com/vi/FF5aAbCbLLk/default.jpg 800w", "https://i.ytimg.com/vi/FF5aAbCbLLk/mqdefault.jpg 500w", "https://i.ytimg.com/vi/FF5aAbCbLLk/default.jpg 320w"],
+                "width": 120,
+                "height": 90,
+                "content": "FF5aAbCbLLk",
+                "type": "video"
+            }, {
+                "src": "https://i.ytimg.com/vi/TJ6AEet05pY/default.jpg",
+                "srcset": ["https://i.ytimg.com/vi/TJ6AEet05pY/default.jpg 1024w", "https://i.ytimg.com/vi/TJ6AEet05pY/default.jpg 800w", "https://i.ytimg.com/vi/TJ6AEet05pY/mqdefault.jpg 500w", "https://i.ytimg.com/vi/TJ6AEet05pY/default.jpg 320w"],
+                "width": 120,
+                "height": 90,
+                "content": "TJ6AEet05pY",
                 "type": "video"
             }],
             "es": [{
-                "src": "https://i.ytimg.com/vi/gfYmvPH6Umg/sddefault.jpg",
-                "srcset": ["https://i.ytimg.com/vi/gfYmvPH6Umg/sddefault.jpg 1024w", "https://i.ytimg.com/vi/gfYmvPH6Umg/sddefault.jpg 800w", "https://i.ytimg.com/vi/gfYmvPH6Umg/mqdefault.jpg 500w", "https://i.ytimg.com/vi/gfYmvPH6Umg/default.jpg 320w"],
-                "width": 640,
-                "height": 480,
-                "content": "gfYmvPH6Umg",
+                "src": "https://i.ytimg.com/vi/bUUVA5OVaOw/default.jpg",
+                "srcset": ["https://i.ytimg.com/vi/bUUVA5OVaOw/default.jpg 1024w", "https://i.ytimg.com/vi/bUUVA5OVaOw/default.jpg 800w", "https://i.ytimg.com/vi/bUUVA5OVaOw/mqdefault.jpg 500w", "https://i.ytimg.com/vi/bUUVA5OVaOw/default.jpg 320w"],
+                "width": 120,
+                "height": 90,
+                "content": ["bUUVA5OVaOw", "YywCLksBdb4", "lob0zb28_wM", "xf2G2Il8crw", "FF5aAbCbLLk", "TJ6AEet05pY"],
                 "type": "video"
             }]
         },
-        "articles": {
-            "en": ["This work says nothing that can be expressed in words. You can see how you listen to a song. It is seen to feel it and is understood with the emotions that provoke you. Nothing else.", "Many teachers say that it is not possible to see ourselves, that we can only be ourselves. We can not see ourselves because that would imply that inside us there was someone who sees and someone seen, who would we be then? The seeing self or the self seen? The answer would be none, both are projections of our ego. The Ego is the supplanter of our identity. As long as the ego does not dissolve, we can not be ourselves. So what can we do to dissolve it? Very simple, just watch it. Do not judge it, do not try to get rid of it, just watch it and it will go away after manifesting its unreality by itself.", "My work is the result of a research on the meaning of life. I am inspired by intuition and use any plastic or digital means to create images that bring me closer to a confrontation with the mystery of existence.", "I do not think this mystery is something that can be understood. It is something we can transform ourselves into. The mystery is not understood but lived. And when you live it transforms you, or rather, reconciles you with yourself. I think that the objective of each individual in this existence is to dissolve the duality that makes us suffer, which is the fruit of our ignorance. The ignorance of not knowing ourselves.", "I seek with my work to approach myself that I believe is the same as approaching the meaning of life. That is why this path is universal and objective. And this work I hope can serve anyone just as it serves me. Question me about what I am. Question me without waiting for an answer. Keep me waiting knowing something has to come. But that will not do it in the form of words. It will arrive like a transforming breeze that will change everything forever."],
-            "es": ["Esta obra no dice nada que se pueda expresar con palabras. Se observa como se escucha una música. Se ve para sentirla y se entiende con las emociones que te provocan. Nada más.", "Muchos maestros dicen que no es posible vernos a nosotros mismos, que solo podemos ser nosotros mismos. No podemos vernos a nosotros mismos porque eso implicaría que dentro de nosotros hubiera alguien que ve y alguien visto, ¿quien seriamos entonces? ¿el yo que ve o el yo visto? La respuesta sería ninguno, ambos son proyecciones de nuestro ego. El Ego es el suplantador de nuestra identidad. Mientras no se disuelva el ego no podremos ser nosotros mismos. ¿Qué podemos hacer entonces para disolverlo? Muy simple, obsérvalo sin más. No lo juzgues, no intentes deshacerte de él, solo observalo y se irá tras manifestarse su irrealidad por sí misma.", "Mi trabajo es el resultado de una investigación sobre sentido de la vida. Me inspiro en la intuición y me valgo de cualquier medio plástico o digital para crear imágenes que me acerquen a una confrontación frente al misterio de la existencia.", "No creo que este misterio sea algo que pueda comprenderse. Es algo en lo que podemos transformarnos. El misterio no se entiende sino que se vive. Y cuando se vive te transforma, o mejor dicho, te reconcilia contigo mismo. Pienso que el objetivo de cada individuo en esta existencia es disolver la dualidad que nos hace sufrir, que es el fruto de nuestra ignorancia. La ignorancia de no conocernos a nosotros mismos.", "Busco con mi obra acercarme a mí mismo que creo que es lo mismo que acercarme al sentido de la vida. Por ello este camino es universal y objetivo. Y esta obra espero que pueda servir a cualquiera igual que me sirve a mí. Cuestionarme sobre qué soy. Cuestionarme sin esperar una respuesta. Mantenerme en la espera sabiendo que algo tiene que llegar. Pero que no lo hará en forma de palabras. Llegará como una brisa transformadora que lo cambiará todo para siempre."]
-        },
+        "articles": {"en": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet, ligula id molestie consectetur, turpis lacus lacinia nisi, a mollis ante nisi id nisi. Nulla eget erat vestibulum, convallis risus at, tristique nisl. Proin vehicula nunc et ligula sagittis ullamcorper. Cras convallis congue lorem at pretium. In sollicitudin ornare egestas. In tristique, urna nec aliquet convallis, mauris sem aliquet nisi, ullamcorper tempor ex nisi vel lectus. Curabitur id nibh egestas, pulvinar urna hendrerit, efficitur arcu", "Duis tortor lectus, hendrerit quis iaculis quis, congue vitae turpis. Pellentesque ipsum leo, posuere et dui bibendum, consequat venenatis tellus. Vestibulum id metus lobortis, varius lorem quis, rutrum magna. Phasellus accumsan tortor urna, sit amet scelerisque nibh tincidunt id. Ut sit amet mauris odio. Suspendisse ac est semper, porttitor mauris at, facilisis lorem. Ut aliquam lacus non nulla aliquet mattis. Aliquam iaculis hendrerit mi eu sagittis. Donec ac arcu at tortor cursus commodo. Pellentesque ut ligula id leo feugiat tempus. Etiam cursus bibendum leo, ut hendrerit justo facilisis id. Cras id sagittis sapien, sed posuere est. In hac habitasse platea dictumst. Cras nulla nisi, fermentum quis metus ut, blandit vehicula eros. Nunc porttitor mi eleifend finibus pretium.", "Nulla eu varius velit, faucibus tincidunt purus. Nullam nec ante id nisi varius rhoncus. Sed laoreet orci et aliquet finibus. Integer turpis eros, scelerisque quis turpis in, interdum facilisis dui. Ut aliquam in risus at consectetur. Nam sed dui tempus ipsum tincidunt pellentesque a porta tellus. Aliquam erat volutpat. Vivamus dignissim consectetur quam, eget varius orci lobortis quis. Mauris suscipit et ipsum imperdiet pulvinar. Aliquam malesuada consequat turpis, ut fringilla nisi imperdiet eu.", "Curabitur hendrerit enim et tristique viverra. In egestas ornare risus, eu convallis turpis. In id vulputate lacus, quis maximus augue. Curabitur eget diam est. Fusce laoreet turpis vel purus aliquam pulvinar. Praesent lectus metus, dignissim vel pharetra id, tristique at lorem. Sed ullamcorper finibus nisl, vitae blandit nibh dictum quis. Phasellus ac sapien quis orci mattis cursus vitae ut tellus. Phasellus tincidunt porttitor nisi non molestie. Duis gravida, arcu in feugiat vestibulum, neque massa bibendum ante, id convallis dolor lorem eget magna. Nam in fermentum dui. Vestibulum porttitor nibh ac sollicitudin bibendum.", "Sed sagittis eu odio quis semper. Ut dapibus mauris blandit nulla feugiat ultricies. Donec nec odio quis mauris viverra ultricies. Phasellus semper id diam in aliquam. Proin et ante non urna vulputate aliquet ac ac massa. Sed tempor suscipit erat vitae pharetra. Integer finibus tellus a convallis efficitur. Sed cursus velit nec diam maximus sagittis. Duis quis neque dictum, dapibus mi ut, luctus enim."]},
         "publish": true,
         "images": [{
             "type": "photo",
-            "path": "projts/001/imgweb/5.jpg",
-            "srcset": ["projts/001/imgweb/2880_5.jpg 2880w", "projts/001/imgweb/1240_5.jpg 1240w", "projts/001/imgweb/620_5.jpg 620w", "projts/001/imgweb/310_5.jpg 310w", "projts/001/imgweb/160_5.jpg 160w"],
-            "width": 3008,
-            "height": 2000
+            "path": "content/paintings/images/133974-131-3A0B1352.jpg",
+            "srcset": ["content/paintings/source_images/133974-131-3A0B1352/620_133974-131-3A0B1352.jpg 620w", "content/paintings/source_images/133974-131-3A0B1352/310_133974-131-3A0B1352.jpg 310w", "content/paintings/source_images/133974-131-3A0B1352/160_133974-131-3A0B1352.jpg 160w"],
+            "width": 900,
+            "height": 675
         }, {
             "type": "photo",
-            "path": "projts/001/imgweb/6.jpg",
-            "srcset": ["projts/001/imgweb/2880_6.jpg 2880w", "projts/001/imgweb/1240_6.jpg 1240w", "projts/001/imgweb/620_6.jpg 620w", "projts/001/imgweb/310_6.jpg 310w", "projts/001/imgweb/160_6.jpg 160w"],
-            "width": 3008,
-            "height": 2000
+            "path": "content/paintings/images/330px-Giotto_-_Scrovegni_-_-36-_-_Lamentation_(The_Mourning_of_Christ)_adj.jpg",
+            "srcset": ["content/paintings/source_images/330px-Giotto_-_Scrovegni_-_-36-_-_Lamentation_(The_Mourning_of_Christ)_adj/310_330px-Giotto_-_Scrovegni_-_-36-_-_Lamentation_(The_Mourning_of_Christ)_adj.jpg 310w", "content/paintings/source_images/330px-Giotto_-_Scrovegni_-_-36-_-_Lamentation_(The_Mourning_of_Christ)_adj/160_330px-Giotto_-_Scrovegni_-_-36-_-_Lamentation_(The_Mourning_of_Christ)_adj.jpg 160w"],
+            "width": 330,
+            "height": 305
         }, {
             "type": "photo",
-            "path": "projts/001/imgweb/Cajapiedra-03.jpg",
-            "srcset": ["projts/001/imgweb/1240_Cajapiedra-03.jpg 1240w", "projts/001/imgweb/620_Cajapiedra-03.jpg 620w", "projts/001/imgweb/310_Cajapiedra-03.jpg 310w", "projts/001/imgweb/160_Cajapiedra-03.jpg 160w"],
-            "width": 2418,
-            "height": 1580
+            "path": "content/paintings/images/412px-Fra_Filippo_Lippi_-_Madonna_with_the_Child_and_two_Angels_-_WGA13307.jpg",
+            "srcset": ["content/paintings/source_images/412px-Fra_Filippo_Lippi_-_Madonna_with_the_Child_and_two_Angels_-_WGA13307/310_412px-Fra_Filippo_Lippi_-_Madonna_with_the_Child_and_two_Angels_-_WGA13307.jpg 310w", "content/paintings/source_images/412px-Fra_Filippo_Lippi_-_Madonna_with_the_Child_and_two_Angels_-_WGA13307/160_412px-Fra_Filippo_Lippi_-_Madonna_with_the_Child_and_two_Angels_-_WGA13307.jpg 160w"],
+            "width": 412,
+            "height": 599
         }, {
             "type": "photo",
-            "path": "projts/001/imgweb/Cajapiedra-04.jpg",
-            "srcset": ["projts/001/imgweb/2880_Cajapiedra-04.jpg 2880w", "projts/001/imgweb/1240_Cajapiedra-04.jpg 1240w", "projts/001/imgweb/620_Cajapiedra-04.jpg 620w", "projts/001/imgweb/310_Cajapiedra-04.jpg 310w", "projts/001/imgweb/160_Cajapiedra-04.jpg 160w"],
-            "width": 3005,
-            "height": 1394
+            "path": "content/paintings/images/4888fdb1547cd930dcc5d7beb3f1c2dc--art-renaissance-renaissance-art-paintings.jpg",
+            "srcset": ["content/paintings/source_images/4888fdb1547cd930dcc5d7beb3f1c2dc--art-renaissance-renaissance-art-paintings/310_4888fdb1547cd930dcc5d7beb3f1c2dc--art-renaissance-renaissance-art-paintings.jpg 310w", "content/paintings/source_images/4888fdb1547cd930dcc5d7beb3f1c2dc--art-renaissance-renaissance-art-paintings/160_4888fdb1547cd930dcc5d7beb3f1c2dc--art-renaissance-renaissance-art-paintings.jpg 160w"],
+            "width": 608,
+            "height": 720
         }, {
             "type": "photo",
-            "path": "projts/001/imgweb/Cajapiedra-07.jpg",
-            "srcset": ["projts/001/imgweb/1240_Cajapiedra-07.jpg 1240w", "projts/001/imgweb/620_Cajapiedra-07.jpg 620w", "projts/001/imgweb/310_Cajapiedra-07.jpg 310w", "projts/001/imgweb/160_Cajapiedra-07.jpg 160w"],
-            "width": 1810,
-            "height": 2052
+            "path": "content/paintings/images/704mona-lisa.jpg",
+            "srcset": ["content/paintings/source_images/704mona-lisa/160_704mona-lisa.jpg 160w"],
+            "width": 300,
+            "height": 447
         }, {
             "type": "photo",
-            "path": "projts/001/imgweb/IMGP0228.jpg",
-            "srcset": ["projts/001/imgweb/1240_IMGP0228.jpg 1240w", "projts/001/imgweb/620_IMGP0228.jpg 620w", "projts/001/imgweb/310_IMGP0228.jpg 310w", "projts/001/imgweb/160_IMGP0228.jpg 160w"],
+            "path": "content/paintings/images/800px-Birth_of_St_Mary_in_Santa_Maria_Novella_in_Firenze_by_Domenico_Ghirlandaio.jpg",
+            "srcset": ["content/paintings/source_images/800px-Birth_of_St_Mary_in_Santa_Maria_Novella_in_Firenze_by_Domenico_Ghirlandaio/620_800px-Birth_of_St_Mary_in_Santa_Maria_Novella_in_Firenze_by_Domenico_Ghirlandaio.jpg 620w", "content/paintings/source_images/800px-Birth_of_St_Mary_in_Santa_Maria_Novella_in_Firenze_by_Domenico_Ghirlandaio/310_800px-Birth_of_St_Mary_in_Santa_Maria_Novella_in_Firenze_by_Domenico_Ghirlandaio.jpg 310w", "content/paintings/source_images/800px-Birth_of_St_Mary_in_Santa_Maria_Novella_in_Firenze_by_Domenico_Ghirlandaio/160_800px-Birth_of_St_Mary_in_Santa_Maria_Novella_in_Firenze_by_Domenico_Ghirlandaio.jpg 160w"],
+            "width": 800,
+            "height": 467
+        }, {
+            "type": "photo",
+            "path": "content/paintings/images/Famous-Renaissance-Paintings-Featured-Image-The-Creation-of-Adam-932x310.jpg",
+            "srcset": ["content/paintings/source_images/Famous-Renaissance-Paintings-Featured-Image-The-Creation-of-Adam-932x310/620_Famous-Renaissance-Paintings-Featured-Image-The-Creation-of-Adam-932x310.jpg 620w", "content/paintings/source_images/Famous-Renaissance-Paintings-Featured-Image-The-Creation-of-Adam-932x310/310_Famous-Renaissance-Paintings-Featured-Image-The-Creation-of-Adam-932x310.jpg 310w", "content/paintings/source_images/Famous-Renaissance-Paintings-Featured-Image-The-Creation-of-Adam-932x310/160_Famous-Renaissance-Paintings-Featured-Image-The-Creation-of-Adam-932x310.jpg 160w"],
+            "width": 932,
+            "height": 310
+        }, {
+            "type": "photo",
+            "path": "content/paintings/images/Photography-To-Recreate-Renaissance-Paintings-3.jpg",
+            "srcset": ["content/paintings/source_images/Photography-To-Recreate-Renaissance-Paintings-3/620_Photography-To-Recreate-Renaissance-Paintings-3.jpg 620w", "content/paintings/source_images/Photography-To-Recreate-Renaissance-Paintings-3/310_Photography-To-Recreate-Renaissance-Paintings-3.jpg 310w", "content/paintings/source_images/Photography-To-Recreate-Renaissance-Paintings-3/160_Photography-To-Recreate-Renaissance-Paintings-3.jpg 160w"],
+            "width": 818,
+            "height": 1023
+        }, {
+            "type": "photo",
+            "path": "content/paintings/images/The-Birth-of-Venus-1486-Botticelli.jpg",
+            "srcset": ["content/paintings/source_images/The-Birth-of-Venus-1486-Botticelli/620_The-Birth-of-Venus-1486-Botticelli.jpg 620w", "content/paintings/source_images/The-Birth-of-Venus-1486-Botticelli/310_The-Birth-of-Venus-1486-Botticelli.jpg 310w", "content/paintings/source_images/The-Birth-of-Venus-1486-Botticelli/160_The-Birth-of-Venus-1486-Botticelli.jpg 160w"],
+            "width": 750,
+            "height": 472
+        }, {
+            "type": "photo",
+            "path": "content/paintings/images/The-Renaissance-paintings-wall-art-The-woman-in-the-war-home-decoration-oil-painting-on-canvas.jpg",
+            "srcset": ["content/paintings/source_images/The-Renaissance-paintings-wall-art-The-woman-in-the-war-home-decoration-oil-painting-on-canvas/620_The-Renaissance-paintings-wall-art-The-woman-in-the-war-home-decoration-oil-painting-on-canvas.jpg 620w", "content/paintings/source_images/The-Renaissance-paintings-wall-art-The-woman-in-the-war-home-decoration-oil-painting-on-canvas/310_The-Renaissance-paintings-wall-art-The-woman-in-the-war-home-decoration-oil-painting-on-canvas.jpg 310w", "content/paintings/source_images/The-Renaissance-paintings-wall-art-The-woman-in-the-war-home-decoration-oil-painting-on-canvas/160_The-Renaissance-paintings-wall-art-The-woman-in-the-war-home-decoration-oil-painting-on-canvas.jpg 160w"],
+            "width": 719,
+            "height": 518
+        }, {
+            "type": "photo",
+            "path": "content/paintings/images/celebrity-renaissance-painting-natalie-portman.jpg",
+            "srcset": ["content/paintings/source_images/celebrity-renaissance-painting-natalie-portman/310_celebrity-renaissance-painting-natalie-portman.jpg 310w", "content/paintings/source_images/celebrity-renaissance-painting-natalie-portman/160_celebrity-renaissance-painting-natalie-portman.jpg 160w"],
+            "width": 600,
+            "height": 772
+        }, {
+            "type": "photo",
+            "path": "content/paintings/images/cockatoo.jpg",
+            "srcset": ["content/paintings/source_images/cockatoo/620_cockatoo.jpg 620w", "content/paintings/source_images/cockatoo/310_cockatoo.jpg 310w", "content/paintings/source_images/cockatoo/160_cockatoo.jpg 160w"],
+            "width": 800,
+            "height": 600
+        }, {
+            "type": "photo",
+            "path": "content/paintings/images/e0e3e2b9d85568eac76628ea333d4974.jpg",
+            "srcset": ["content/paintings/source_images/e0e3e2b9d85568eac76628ea333d4974/1240_e0e3e2b9d85568eac76628ea333d4974.jpg 1240w", "content/paintings/source_images/e0e3e2b9d85568eac76628ea333d4974/620_e0e3e2b9d85568eac76628ea333d4974.jpg 620w", "content/paintings/source_images/e0e3e2b9d85568eac76628ea333d4974/310_e0e3e2b9d85568eac76628ea333d4974.jpg 310w", "content/paintings/source_images/e0e3e2b9d85568eac76628ea333d4974/160_e0e3e2b9d85568eac76628ea333d4974.jpg 160w"],
+            "width": 1495,
+            "height": 1080
+        }, {
+            "type": "photo",
+            "path": "content/paintings/images/img_3169.jpg",
+            "srcset": ["content/paintings/source_images/img_3169/1240_img_3169.jpg 1240w", "content/paintings/source_images/img_3169/620_img_3169.jpg 620w", "content/paintings/source_images/img_3169/310_img_3169.jpg 310w", "content/paintings/source_images/img_3169/160_img_3169.jpg 160w"],
             "width": 2000,
-            "height": 2333
+            "height": 1119
         }, {
             "type": "photo",
-            "path": "projts/001/imgweb/IMGP0239.jpg",
-            "srcset": ["projts/001/imgweb/2880_IMGP0239.jpg 2880w", "projts/001/imgweb/1240_IMGP0239.jpg 1240w", "projts/001/imgweb/620_IMGP0239.jpg 620w", "projts/001/imgweb/310_IMGP0239.jpg 310w", "projts/001/imgweb/160_IMGP0239.jpg 160w"],
-            "width": 3008,
-            "height": 2000
+            "path": "content/paintings/images/louvre_italian_painting_wedding_at_cana_veronese_louvre.jpg",
+            "srcset": ["content/paintings/source_images/louvre_italian_painting_wedding_at_cana_veronese_louvre/620_louvre_italian_painting_wedding_at_cana_veronese_louvre.jpg 620w", "content/paintings/source_images/louvre_italian_painting_wedding_at_cana_veronese_louvre/310_louvre_italian_painting_wedding_at_cana_veronese_louvre.jpg 310w", "content/paintings/source_images/louvre_italian_painting_wedding_at_cana_veronese_louvre/160_louvre_italian_painting_wedding_at_cana_veronese_louvre.jpg 160w"],
+            "width": 700,
+            "height": 321
         }, {
             "type": "photo",
-            "path": "projts/001/imgweb/IMGP0935.jpg",
-            "srcset": ["projts/001/imgweb/2880_IMGP0935.jpg 2880w", "projts/001/imgweb/1240_IMGP0935.jpg 1240w", "projts/001/imgweb/620_IMGP0935.jpg 620w", "projts/001/imgweb/310_IMGP0935.jpg 310w", "projts/001/imgweb/160_IMGP0935.jpg 160w"],
-            "width": 3008,
-            "height": 2000
+            "path": "content/paintings/images/paint4_1_02.jpg",
+            "srcset": ["content/paintings/source_images/paint4_1_02/310_paint4_1_02.jpg 310w", "content/paintings/source_images/paint4_1_02/160_paint4_1_02.jpg 160w"],
+            "width": 402,
+            "height": 260
         }, {
             "type": "photo",
-            "path": "projts/001/imgweb/altar-00copia.jpg",
-            "srcset": ["projts/001/imgweb/2880_altar-00copia.jpg 2880w", "projts/001/imgweb/1240_altar-00copia.jpg 1240w", "projts/001/imgweb/620_altar-00copia.jpg 620w", "projts/001/imgweb/310_altar-00copia.jpg 310w", "projts/001/imgweb/160_altar-00copia.jpg 160w"],
-            "width": 3008,
-            "height": 2000
+            "path": "content/paintings/images/renaissance-paintings-3872x2500_52825.jpg",
+            "srcset": ["content/paintings/source_images/renaissance-paintings-3872x2500_52825/620_renaissance-paintings-3872x2500_52825.jpg 620w", "content/paintings/source_images/renaissance-paintings-3872x2500_52825/310_renaissance-paintings-3872x2500_52825.jpg 310w", "content/paintings/source_images/renaissance-paintings-3872x2500_52825/160_renaissance-paintings-3872x2500_52825.jpg 160w"],
+            "width": 640,
+            "height": 413
         }, {
             "type": "photo",
-            "path": "projts/001/imgweb/altar-02.jpg",
-            "srcset": ["projts/001/imgweb/1240_altar-02.jpg 1240w", "projts/001/imgweb/620_altar-02.jpg 620w", "projts/001/imgweb/310_altar-02.jpg 310w", "projts/001/imgweb/160_altar-02.jpg 160w"],
-            "width": 2000,
-            "height": 3008
+            "path": "content/paintings/images/school-of-athens.jpg",
+            "srcset": ["content/paintings/source_images/school-of-athens/1240_school-of-athens.jpg 1240w", "content/paintings/source_images/school-of-athens/620_school-of-athens.jpg 620w", "content/paintings/source_images/school-of-athens/310_school-of-athens.jpg 310w", "content/paintings/source_images/school-of-athens/160_school-of-athens.jpg 160w"],
+            "width": 1600,
+            "height": 1067
         }, {
             "type": "photo",
-            "path": "projts/001/imgweb/cuadro-01-02.jpg",
-            "srcset": ["projts/001/imgweb/2880_cuadro-01-02.jpg 2880w", "projts/001/imgweb/1240_cuadro-01-02.jpg 1240w", "projts/001/imgweb/620_cuadro-01-02.jpg 620w", "projts/001/imgweb/310_cuadro-01-02.jpg 310w", "projts/001/imgweb/160_cuadro-01-02.jpg 160w"],
-            "width": 3008,
-            "height": 2000
-        }, {
-            "type": "photo",
-            "path": "projts/001/imgweb/cuadro-02copia.jpg",
-            "srcset": ["projts/001/imgweb/2880_cuadro-02copia.jpg 2880w", "projts/001/imgweb/1240_cuadro-02copia.jpg 1240w", "projts/001/imgweb/620_cuadro-02copia.jpg 620w", "projts/001/imgweb/310_cuadro-02copia.jpg 310w", "projts/001/imgweb/160_cuadro-02copia.jpg 160w"],
-            "width": 3008,
-            "height": 2000
-        }, {
-            "type": "photo",
-            "path": "projts/001/imgweb/cubos-03b.jpg",
-            "srcset": ["projts/001/imgweb/2880_cubos-03b.jpg 2880w", "projts/001/imgweb/1240_cubos-03b.jpg 1240w", "projts/001/imgweb/620_cubos-03b.jpg 620w", "projts/001/imgweb/310_cubos-03b.jpg 310w", "projts/001/imgweb/160_cubos-03b.jpg 160w"],
-            "width": 3008,
-            "height": 2000
-        }, {
-            "type": "photo",
-            "path": "projts/001/imgweb/cubos-06copia.jpg",
-            "srcset": ["projts/001/imgweb/2880_cubos-06copia.jpg 2880w", "projts/001/imgweb/1240_cubos-06copia.jpg 1240w", "projts/001/imgweb/620_cubos-06copia.jpg 620w", "projts/001/imgweb/310_cubos-06copia.jpg 310w", "projts/001/imgweb/160_cubos-06copia.jpg 160w"],
-            "width": 3008,
-            "height": 2000
-        }, {
-            "type": "photo",
-            "path": "projts/001/imgweb/cubos-12copia.jpg",
-            "srcset": ["projts/001/imgweb/1240_cubos-12copia.jpg 1240w", "projts/001/imgweb/620_cubos-12copia.jpg 620w", "projts/001/imgweb/310_cubos-12copia.jpg 310w", "projts/001/imgweb/160_cubos-12copia.jpg 160w"],
-            "width": 2000,
-            "height": 3008
-        }, {
-            "type": "photo",
-            "path": "projts/001/imgweb/obra4.jpg",
-            "srcset": ["projts/001/imgweb/310_obra4.jpg 310w", "projts/001/imgweb/160_obra4.jpg 160w"],
+            "path": "content/paintings/images/xthe-lady-with-an-ermine-leo.jpg.pagespeed.ic.YhOL4ftgP7.jpg",
+            "srcset": ["content/paintings/source_images/xthe-lady-with-an-ermine-leo/310_xthe-lady-with-an-ermine-leo.jpg.pagespeed.ic.YhOL4ftgP7.jpg 310w", "content/paintings/source_images/xthe-lady-with-an-ermine-leo/160_xthe-lady-with-an-ermine-leo.jpg.pagespeed.ic.YhOL4ftgP7.jpg 160w"],
             "width": 400,
-            "height": 487
-        }, {
-            "type": "photo",
-            "path": "projts/001/imgweb/patos-00.jpg",
-            "srcset": ["projts/001/imgweb/2880_patos-00.jpg 2880w", "projts/001/imgweb/1240_patos-00.jpg 1240w", "projts/001/imgweb/620_patos-00.jpg 620w", "projts/001/imgweb/310_patos-00.jpg 310w", "projts/001/imgweb/160_patos-00.jpg 160w"],
-            "width": 3008,
-            "height": 2000
+            "height": 542
         }]
     };
-    projects["003"] = {
-        "strings": {
-            "en": {"name": "Soldiers' heads", "type": "sculpture"},
-            "es": {"name": "Cabezas de Soldados", "type": "escultura"}
-        },
-        "name": "Soldiers' heads",
+    projects["sculptures"] = {
+        "strings": {"en": {"name": "Sculptures", "type": "sculpture"}},
+        "name": "Sculptures",
         "color": "D6D1B1",
         "type": "sculpture",
         "videos": {
             "en": [{
-                "src": "https://i.ytimg.com/vi/tQ6htNIVDxk/sddefault.jpg",
-                "srcset": ["https://i.ytimg.com/vi/tQ6htNIVDxk/sddefault.jpg 1024w", "https://i.ytimg.com/vi/tQ6htNIVDxk/sddefault.jpg 800w", "https://i.ytimg.com/vi/tQ6htNIVDxk/mqdefault.jpg 500w", "https://i.ytimg.com/vi/tQ6htNIVDxk/default.jpg 320w"],
-                "width": 640,
-                "height": 480,
-                "content": "tQ6htNIVDxk",
+                "src": "https://i.ytimg.com/vi/GC7p8F2E8mY/default.jpg",
+                "srcset": ["https://i.ytimg.com/vi/GC7p8F2E8mY/default.jpg 1024w", "https://i.ytimg.com/vi/GC7p8F2E8mY/default.jpg 800w", "https://i.ytimg.com/vi/GC7p8F2E8mY/mqdefault.jpg 500w", "https://i.ytimg.com/vi/GC7p8F2E8mY/default.jpg 320w"],
+                "width": 120,
+                "height": 90,
+                "content": "GC7p8F2E8mY",
                 "type": "video"
-            }],
-            "es": [{
-                "src": "https://i.ytimg.com/vi/Sky0Vyf7rj0/sddefault.jpg",
-                "srcset": ["https://i.ytimg.com/vi/Sky0Vyf7rj0/sddefault.jpg 1024w", "https://i.ytimg.com/vi/Sky0Vyf7rj0/sddefault.jpg 800w", "https://i.ytimg.com/vi/Sky0Vyf7rj0/mqdefault.jpg 500w", "https://i.ytimg.com/vi/Sky0Vyf7rj0/default.jpg 320w"],
-                "width": 640,
-                "height": 480,
-                "content": "Sky0Vyf7rj0",
+            }, {
+                "src": "https://i.ytimg.com/vi/Lx51QqUBmN0/default.jpg",
+                "srcset": ["https://i.ytimg.com/vi/Lx51QqUBmN0/default.jpg 1024w", "https://i.ytimg.com/vi/Lx51QqUBmN0/default.jpg 800w", "https://i.ytimg.com/vi/Lx51QqUBmN0/mqdefault.jpg 500w", "https://i.ytimg.com/vi/Lx51QqUBmN0/default.jpg 320w"],
+                "width": 120,
+                "height": 90,
+                "content": "Lx51QqUBmN0",
+                "type": "video"
+            }, {
+                "src": "https://i.ytimg.com/vi/OKMVGmApc9w/default.jpg",
+                "srcset": ["https://i.ytimg.com/vi/OKMVGmApc9w/default.jpg 1024w", "https://i.ytimg.com/vi/OKMVGmApc9w/default.jpg 800w", "https://i.ytimg.com/vi/OKMVGmApc9w/mqdefault.jpg 500w", "https://i.ytimg.com/vi/OKMVGmApc9w/default.jpg 320w"],
+                "width": 120,
+                "height": 90,
+                "content": "OKMVGmApc9w",
+                "type": "video"
+            }, {
+                "src": "https://i.ytimg.com/vi/UMIIncea5k4/default.jpg",
+                "srcset": ["https://i.ytimg.com/vi/UMIIncea5k4/default.jpg 1024w", "https://i.ytimg.com/vi/UMIIncea5k4/default.jpg 800w", "https://i.ytimg.com/vi/UMIIncea5k4/mqdefault.jpg 500w", "https://i.ytimg.com/vi/UMIIncea5k4/default.jpg 320w"],
+                "width": 120,
+                "height": 90,
+                "content": "UMIIncea5k4",
+                "type": "video"
+            }, {
+                "src": "https://i.ytimg.com/vi/gyWeksAo8VM/default.jpg",
+                "srcset": ["https://i.ytimg.com/vi/gyWeksAo8VM/default.jpg 1024w", "https://i.ytimg.com/vi/gyWeksAo8VM/default.jpg 800w", "https://i.ytimg.com/vi/gyWeksAo8VM/mqdefault.jpg 500w", "https://i.ytimg.com/vi/gyWeksAo8VM/default.jpg 320w"],
+                "width": 120,
+                "height": 90,
+                "content": "gyWeksAo8VM",
+                "type": "video"
+            }, {
+                "src": "https://i.ytimg.com/vi/pcc6kRr9u8k/default.jpg",
+                "srcset": ["https://i.ytimg.com/vi/pcc6kRr9u8k/default.jpg 1024w", "https://i.ytimg.com/vi/pcc6kRr9u8k/default.jpg 800w", "https://i.ytimg.com/vi/pcc6kRr9u8k/mqdefault.jpg 500w", "https://i.ytimg.com/vi/pcc6kRr9u8k/default.jpg 320w"],
+                "width": 120,
+                "height": 90,
+                "content": "pcc6kRr9u8k",
                 "type": "video"
             }]
         },
-        "articles": {
-            "en": ["Our society is the result of a history of continued wars. Many struggle to change this. Others assume it as inevitable. While others encourage them by interests of diverse nature, hatred, money, power, etc. [BR] War is a reality. Man kills man daily in a chaos of suffering and unreason. We know the motives that incite them. We know the low passions that feed them. But what I seek to emphasize here is the experience disconnected from suffering. The learning that the individual gets once he has overcome resentment. [BR] Let's watch the drama without suffering: Why do we kill each other?", "What happens in war and nowhere else is the union of a whole people to destroy the army of the other. Wills against wills. In this confrontation there is an individual drama in each soldier, he has to assume his impending death. This is an atrocious experience, it is a leap into abandonment. The man here accepts his own tragedy. In this acceptance I feel a powerful energy leap.", "The teachings of a multitude of scholars of the warlike world show a distancing from self-indulgence that thrills at what it is about detachment from oneself. I do not speak of justice but of injustice. Feeling the injustice in your flesh can make you humble. Because the world does not have to treat you well.", "The result of a lack of awareness that allows a natural construction of society can end in a social implosion. A restoration of balance after decades of stagnant political conflicts. If we build in the social conflict we will be forced to the drama of war. The war reestablishes a new starting point."],
-            "es": ["Nuestra sociedad es el resultado de una historia de guerras continuadas. Muchos luchan por cambiar esto. Otros lo asumen como algo inevitable. Mientras que otros las incentivan por intereses de diversa naturaleza, odio, dinero, poder, etc.[BR] La Guerra es una realidad. El hombre mata al hombre diariamente en un caos de sufrimiento y sinrazón. Conocemos los motivos que las incitan. Conocemos las bajas pasiones que las alimentan. Pero lo que yo busco resaltar aquí es la experiencia desligada del sufrimiento. El aprendizaje que el individuo obtiene una vez superado el resentimiento.[BR] Observemos el drama sin sufrimiento: ¿Por qué nos matamos entre nosotros?...", "Lo que se da en la guerra y en ningún otro lugar es la unión de todo un pueblo para acabar con el ejército del otro. Voluntades contra voluntades. En este enfrentamiento se da un drama individual en cada soldado, tiene que asumir su inminente muerte. Esto es una experiencia atroz, es un salto al abandono. El hombre aquí acepta su propia tragedia. En esta aceptación siento un salto energético poderoso.", "Las enseñanzas de multitud de eruditos del mundo bélico muestran un distanciamiento al autocompadecimiento que emociona por lo que tiene de desapego a uno mismo. No hablo de justicia sino de injusticia. Sentir la injusticia en tus carnes te puede volver humilde. Porque el mundo no tiene por qué tratarte bien.", "El resultado de una falta de conciencia que permita una natural construcción de la sociedad puede acabar en una implosión social. Un restablecimiento del equilibrio tras decenios de conflictos políticos estancados. Si construimos en el conflicto social nos veremos obligados al drama de la guerra. La guerra restablece un nuevo punto de partida."]
-        },
+        "articles": {"en": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet, ligula id molestie consectetur, turpis lacus lacinia nisi, a mollis ante nisi id nisi. Nulla eget erat vestibulum, convallis risus at, tristique nisl. Proin vehicula nunc et ligula sagittis ullamcorper. Cras convallis congue lorem at pretium. In sollicitudin ornare egestas. In tristique, urna nec aliquet convallis, mauris sem aliquet nisi, ullamcorper tempor ex nisi vel lectus. Curabitur id nibh egestas, pulvinar urna hendrerit, efficitur arcu", "Duis tortor lectus, hendrerit quis iaculis quis, congue vitae turpis. Pellentesque ipsum leo, posuere et dui bibendum, consequat venenatis tellus. Vestibulum id metus lobortis, varius lorem quis, rutrum magna. Phasellus accumsan tortor urna, sit amet scelerisque nibh tincidunt id. Ut sit amet mauris odio. Suspendisse ac est semper, porttitor mauris at, facilisis lorem. Ut aliquam lacus non nulla aliquet mattis. Aliquam iaculis hendrerit mi eu sagittis. Donec ac arcu at tortor cursus commodo. Pellentesque ut ligula id leo feugiat tempus. Etiam cursus bibendum leo, ut hendrerit justo facilisis id. Cras id sagittis sapien, sed posuere est. In hac habitasse platea dictumst. Cras nulla nisi, fermentum quis metus ut, blandit vehicula eros. Nunc porttitor mi eleifend finibus pretium.", "Nulla eu varius velit, faucibus tincidunt purus. Nullam nec ante id nisi varius rhoncus. Sed laoreet orci et aliquet finibus. Integer turpis eros, scelerisque quis turpis in, interdum facilisis dui. Ut aliquam in risus at consectetur. Nam sed dui tempus ipsum tincidunt pellentesque a porta tellus. Aliquam erat volutpat. Vivamus dignissim consectetur quam, eget varius orci lobortis quis. Mauris suscipit et ipsum imperdiet pulvinar. Aliquam malesuada consequat turpis, ut fringilla nisi imperdiet eu.", "Curabitur hendrerit enim et tristique viverra. In egestas ornare risus, eu convallis turpis. In id vulputate lacus, quis maximus augue. Curabitur eget diam est. Fusce laoreet turpis vel purus aliquam pulvinar. Praesent lectus metus, dignissim vel pharetra id, tristique at lorem. Sed ullamcorper finibus nisl, vitae blandit nibh dictum quis. Phasellus ac sapien quis orci mattis cursus vitae ut tellus. Phasellus tincidunt porttitor nisi non molestie. Duis gravida, arcu in feugiat vestibulum, neque massa bibendum ante, id convallis dolor lorem eget magna. Nam in fermentum dui. Vestibulum porttitor nibh ac sollicitudin bibendum.", "Sed sagittis eu odio quis semper. Ut dapibus mauris blandit nulla feugiat ultricies. Donec nec odio quis mauris viverra ultricies. Phasellus semper id diam in aliquam. Proin et ante non urna vulputate aliquet ac ac massa. Sed tempor suscipit erat vitae pharetra. Integer finibus tellus a convallis efficitur. Sed cursus velit nec diam maximus sagittis. Duis quis neque dictum, dapibus mi ut, luctus enim."]},
         "publish": true,
-        "images": {
-            "en": [{
-                "type": "photo",
-                "path": "projts/003/imgweb/6k-158_17_en_0302.jpg",
-                "srcset": ["projts/003/imgweb/1240_6k-158_17_en_0302.jpg 1240w", "projts/003/imgweb/620_6k-158_17_en_0302.jpg 620w", "projts/003/imgweb/310_6k-158_17_en_0302.jpg 310w", "projts/003/imgweb/160_6k-158_17_en_0302.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb/6k-158_17_en_0491.jpg",
-                "srcset": ["projts/003/imgweb/1240_6k-158_17_en_0491.jpg 1240w", "projts/003/imgweb/620_6k-158_17_en_0491.jpg 620w", "projts/003/imgweb/310_6k-158_17_en_0491.jpg 310w", "projts/003/imgweb/160_6k-158_17_en_0491.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb/6k-158_17_en_0686.jpg",
-                "srcset": ["projts/003/imgweb/1240_6k-158_17_en_0686.jpg 1240w", "projts/003/imgweb/620_6k-158_17_en_0686.jpg 620w", "projts/003/imgweb/310_6k-158_17_en_0686.jpg 310w", "projts/003/imgweb/160_6k-158_17_en_0686.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb/6k-158_17b_en_0750.jpg",
-                "srcset": ["projts/003/imgweb/1240_6k-158_17b_en_0750.jpg 1240w", "projts/003/imgweb/620_6k-158_17b_en_0750.jpg 620w", "projts/003/imgweb/310_6k-158_17b_en_0750.jpg 310w", "projts/003/imgweb/160_6k-158_17b_en_0750.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb/6k-158_28_1100.jpg",
-                "srcset": ["projts/003/imgweb/1240_6k-158_28_1100.jpg 1240w", "projts/003/imgweb/620_6k-158_28_1100.jpg 620w", "projts/003/imgweb/310_6k-158_28_1100.jpg 310w", "projts/003/imgweb/160_6k-158_28_1100.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb/6k-158_28_1234.jpg",
-                "srcset": ["projts/003/imgweb/1240_6k-158_28_1234.jpg 1240w", "projts/003/imgweb/620_6k-158_28_1234.jpg 620w", "projts/003/imgweb/310_6k-158_28_1234.jpg 310w", "projts/003/imgweb/160_6k-158_28_1234.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb/6k-158_28_1292.jpg",
-                "srcset": ["projts/003/imgweb/1240_6k-158_28_1292.jpg 1240w", "projts/003/imgweb/620_6k-158_28_1292.jpg 620w", "projts/003/imgweb/310_6k-158_28_1292.jpg 310w", "projts/003/imgweb/160_6k-158_28_1292.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb/6k-158_28c_en_1329.jpg",
-                "srcset": ["projts/003/imgweb/1240_6k-158_28c_en_1329.jpg 1240w", "projts/003/imgweb/620_6k-158_28c_en_1329.jpg 620w", "projts/003/imgweb/310_6k-158_28c_en_1329.jpg 310w", "projts/003/imgweb/160_6k-158_28c_en_1329.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb/6k-158_28c_en_1397.jpg",
-                "srcset": ["projts/003/imgweb/1240_6k-158_28c_en_1397.jpg 1240w", "projts/003/imgweb/620_6k-158_28c_en_1397.jpg 620w", "projts/003/imgweb/310_6k-158_28c_en_1397.jpg 310w", "projts/003/imgweb/160_6k-158_28c_en_1397.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb/6k-158_32_en_1584.jpg",
-                "srcset": ["projts/003/imgweb/1240_6k-158_32_en_1584.jpg 1240w", "projts/003/imgweb/620_6k-158_32_en_1584.jpg 620w", "projts/003/imgweb/310_6k-158_32_en_1584.jpg 310w", "projts/003/imgweb/160_6k-158_32_en_1584.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb/6k-158_35_en_1704.jpg",
-                "srcset": ["projts/003/imgweb/1240_6k-158_35_en_1704.jpg 1240w", "projts/003/imgweb/620_6k-158_35_en_1704.jpg 620w", "projts/003/imgweb/310_6k-158_35_en_1704.jpg 310w", "projts/003/imgweb/160_6k-158_35_en_1704.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb/6k-158_46_en_1800.jpg",
-                "srcset": ["projts/003/imgweb/1240_6k-158_46_en_1800.jpg 1240w", "projts/003/imgweb/620_6k-158_46_en_1800.jpg 620w", "projts/003/imgweb/310_6k-158_46_en_1800.jpg 310w", "projts/003/imgweb/160_6k-158_46_en_1800.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb/6k-158_49_en_1962.jpg",
-                "srcset": ["projts/003/imgweb/1240_6k-158_49_en_1962.jpg 1240w", "projts/003/imgweb/620_6k-158_49_en_1962.jpg 620w", "projts/003/imgweb/310_6k-158_49_en_1962.jpg 310w", "projts/003/imgweb/160_6k-158_49_en_1962.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb/6k-158_49_en_2191.jpg",
-                "srcset": ["projts/003/imgweb/1240_6k-158_49_en_2191.jpg 1240w", "projts/003/imgweb/620_6k-158_49_en_2191.jpg 620w", "projts/003/imgweb/310_6k-158_49_en_2191.jpg 310w", "projts/003/imgweb/160_6k-158_49_en_2191.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }],
-            "es": [{
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_17_es_0054.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_17_es_0054.jpg 1240w", "projts/003/imgweb_es/620_6k-158_17_es_0054.jpg 620w", "projts/003/imgweb_es/310_6k-158_17_es_0054.jpg 310w", "projts/003/imgweb_es/160_6k-158_17_es_0054.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_17_es_0303.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_17_es_0303.jpg 1240w", "projts/003/imgweb_es/620_6k-158_17_es_0303.jpg 620w", "projts/003/imgweb_es/310_6k-158_17_es_0303.jpg 310w", "projts/003/imgweb_es/160_6k-158_17_es_0303.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_17_es_0497.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_17_es_0497.jpg 1240w", "projts/003/imgweb_es/620_6k-158_17_es_0497.jpg 620w", "projts/003/imgweb_es/310_6k-158_17_es_0497.jpg 310w", "projts/003/imgweb_es/160_6k-158_17_es_0497.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_17_es_0556.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_17_es_0556.jpg 1240w", "projts/003/imgweb_es/620_6k-158_17_es_0556.jpg 620w", "projts/003/imgweb_es/310_6k-158_17_es_0556.jpg 310w", "projts/003/imgweb_es/160_6k-158_17_es_0556.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_17_es_0658.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_17_es_0658.jpg 1240w", "projts/003/imgweb_es/620_6k-158_17_es_0658.jpg 620w", "projts/003/imgweb_es/310_6k-158_17_es_0658.jpg 310w", "projts/003/imgweb_es/160_6k-158_17_es_0658.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_17_es_0732.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_17_es_0732.jpg 1240w", "projts/003/imgweb_es/620_6k-158_17_es_0732.jpg 620w", "projts/003/imgweb_es/310_6k-158_17_es_0732.jpg 310w", "projts/003/imgweb_es/160_6k-158_17_es_0732.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_17_es_0809.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_17_es_0809.jpg 1240w", "projts/003/imgweb_es/620_6k-158_17_es_0809.jpg 620w", "projts/003/imgweb_es/310_6k-158_17_es_0809.jpg 310w", "projts/003/imgweb_es/160_6k-158_17_es_0809.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_17_es_0867.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_17_es_0867.jpg 1240w", "projts/003/imgweb_es/620_6k-158_17_es_0867.jpg 620w", "projts/003/imgweb_es/310_6k-158_17_es_0867.jpg 310w", "projts/003/imgweb_es/160_6k-158_17_es_0867.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_28c_es_1159.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_28c_es_1159.jpg 1240w", "projts/003/imgweb_es/620_6k-158_28c_es_1159.jpg 620w", "projts/003/imgweb_es/310_6k-158_28c_es_1159.jpg 310w", "projts/003/imgweb_es/160_6k-158_28c_es_1159.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_28c_es_1324.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_28c_es_1324.jpg 1240w", "projts/003/imgweb_es/620_6k-158_28c_es_1324.jpg 620w", "projts/003/imgweb_es/310_6k-158_28c_es_1324.jpg 310w", "projts/003/imgweb_es/160_6k-158_28c_es_1324.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_32_es_1403.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_32_es_1403.jpg 1240w", "projts/003/imgweb_es/620_6k-158_32_es_1403.jpg 620w", "projts/003/imgweb_es/310_6k-158_32_es_1403.jpg 310w", "projts/003/imgweb_es/160_6k-158_32_es_1403.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_32_es_1597.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_32_es_1597.jpg 1240w", "projts/003/imgweb_es/620_6k-158_32_es_1597.jpg 620w", "projts/003/imgweb_es/310_6k-158_32_es_1597.jpg 310w", "projts/003/imgweb_es/160_6k-158_32_es_1597.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_32_es_1694.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_32_es_1694.jpg 1240w", "projts/003/imgweb_es/620_6k-158_32_es_1694.jpg 620w", "projts/003/imgweb_es/310_6k-158_32_es_1694.jpg 310w", "projts/003/imgweb_es/160_6k-158_32_es_1694.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_35_es_1797.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_35_es_1797.jpg 1240w", "projts/003/imgweb_es/620_6k-158_35_es_1797.jpg 620w", "projts/003/imgweb_es/310_6k-158_35_es_1797.jpg 310w", "projts/003/imgweb_es/160_6k-158_35_es_1797.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_49_es_1961.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_49_es_1961.jpg 1240w", "projts/003/imgweb_es/620_6k-158_49_es_1961.jpg 620w", "projts/003/imgweb_es/310_6k-158_49_es_1961.jpg 310w", "projts/003/imgweb_es/160_6k-158_49_es_1961.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }, {
-                "type": "photo",
-                "path": "projts/003/imgweb_es/6k-158_49_es_2183.jpg",
-                "srcset": ["projts/003/imgweb_es/1240_6k-158_49_es_2183.jpg 1240w", "projts/003/imgweb_es/620_6k-158_49_es_2183.jpg 620w", "projts/003/imgweb_es/310_6k-158_49_es_2183.jpg 310w", "projts/003/imgweb_es/160_6k-158_49_es_2183.jpg 160w"],
-                "width": 1280,
-                "height": 720
-            }]
-        }
+        "images": [{
+            "type": "photo",
+            "path": "content/sculptures/images/02_the-visitation_luca-della-robbia.jpg",
+            "srcset": ["content/sculptures/source_images/02_the-visitation_luca-della-robbia/620_02_the-visitation_luca-della-robbia.jpg 620w", "content/sculptures/source_images/02_the-visitation_luca-della-robbia/310_02_the-visitation_luca-della-robbia.jpg 310w", "content/sculptures/source_images/02_the-visitation_luca-della-robbia/160_02_the-visitation_luca-della-robbia.jpg 160w"],
+            "width": 1072,
+            "height": 1420
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/225dd78a7789bd38329231bd953e603a--sea-monsters-italian-renaissance.jpg",
+            "srcset": ["content/sculptures/source_images/225dd78a7789bd38329231bd953e603a--sea-monsters-italian-renaissance/310_225dd78a7789bd38329231bd953e603a--sea-monsters-italian-renaissance.jpg 310w", "content/sculptures/source_images/225dd78a7789bd38329231bd953e603a--sea-monsters-italian-renaissance/160_225dd78a7789bd38329231bd953e603a--sea-monsters-italian-renaissance.jpg 160w"],
+            "width": 534,
+            "height": 677
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/33ba2eb761b7d69e0a6f81bac229d0cb--michelangelo-artist-renaissance-art.jpg",
+            "srcset": ["content/sculptures/source_images/33ba2eb761b7d69e0a6f81bac229d0cb--michelangelo-artist-renaissance-art/310_33ba2eb761b7d69e0a6f81bac229d0cb--michelangelo-artist-renaissance-art.jpg 310w", "content/sculptures/source_images/33ba2eb761b7d69e0a6f81bac229d0cb--michelangelo-artist-renaissance-art/160_33ba2eb761b7d69e0a6f81bac229d0cb--michelangelo-artist-renaissance-art.jpg 160w"],
+            "width": 393,
+            "height": 500
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/434px-Lorenzo_Ghiberti_-_John_the_Baptist2.jpg",
+            "srcset": ["content/sculptures/source_images/434px-Lorenzo_Ghiberti_-_John_the_Baptist2/310_434px-Lorenzo_Ghiberti_-_John_the_Baptist2.jpg 310w", "content/sculptures/source_images/434px-Lorenzo_Ghiberti_-_John_the_Baptist2/160_434px-Lorenzo_Ghiberti_-_John_the_Baptist2.jpg 160w"],
+            "width": 434,
+            "height": 768
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/Florence_statue_hercules_killing_the_centaur.jpg",
+            "srcset": ["content/sculptures/source_images/Florence_statue_hercules_killing_the_centaur/620_Florence_statue_hercules_killing_the_centaur.jpg 620w", "content/sculptures/source_images/Florence_statue_hercules_killing_the_centaur/310_Florence_statue_hercules_killing_the_centaur.jpg 310w", "content/sculptures/source_images/Florence_statue_hercules_killing_the_centaur/160_Florence_statue_hercules_killing_the_centaur.jpg 160w"],
+            "width": 768,
+            "height": 1024
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/Laocoon_Pio-Clementino_Inv1059-1064-1067.jpg",
+            "srcset": ["content/sculptures/source_images/Laocoon_Pio-Clementino_Inv1059-1064-1067/1240_Laocoon_Pio-Clementino_Inv1059-1064-1067.jpg 1240w", "content/sculptures/source_images/Laocoon_Pio-Clementino_Inv1059-1064-1067/620_Laocoon_Pio-Clementino_Inv1059-1064-1067.jpg 620w", "content/sculptures/source_images/Laocoon_Pio-Clementino_Inv1059-1064-1067/310_Laocoon_Pio-Clementino_Inv1059-1064-1067.jpg 310w", "content/sculptures/source_images/Laocoon_Pio-Clementino_Inv1059-1064-1067/160_Laocoon_Pio-Clementino_Inv1059-1064-1067.jpg 160w"],
+            "width": 2600,
+            "height": 2500
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/Perseus-With-the-Head-Medusa-cellini.jpg",
+            "srcset": ["content/sculptures/source_images/Perseus-With-the-Head-Medusa-cellini/310_Perseus-With-the-Head-Medusa-cellini.jpg 310w", "content/sculptures/source_images/Perseus-With-the-Head-Medusa-cellini/160_Perseus-With-the-Head-Medusa-cellini.jpg 160w"],
+            "width": 500,
+            "height": 667
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/Sculpture_renaissance_1.jpg",
+            "srcset": ["content/sculptures/source_images/Sculpture_renaissance_1/620_Sculpture_renaissance_1.jpg 620w", "content/sculptures/source_images/Sculpture_renaissance_1/310_Sculpture_renaissance_1.jpg 310w", "content/sculptures/source_images/Sculpture_renaissance_1/160_Sculpture_renaissance_1.jpg 160w"],
+            "width": 800,
+            "height": 676
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/Sculpture_renaissance_intro.jpg",
+            "srcset": ["content/sculptures/source_images/Sculpture_renaissance_intro/310_Sculpture_renaissance_intro.jpg 310w", "content/sculptures/source_images/Sculpture_renaissance_intro/160_Sculpture_renaissance_intro.jpg 160w"],
+            "width": 544,
+            "height": 800
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/a-michelangelo_david_head.jpg",
+            "srcset": ["content/sculptures/source_images/a-michelangelo_david_head/620_a-michelangelo_david_head.jpg 620w", "content/sculptures/source_images/a-michelangelo_david_head/310_a-michelangelo_david_head.jpg 310w", "content/sculptures/source_images/a-michelangelo_david_head/160_a-michelangelo_david_head.jpg 160w"],
+            "width": 678,
+            "height": 808
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/article-2339475-1A43E58F000005DC-593_634x799.jpg",
+            "srcset": ["content/sculptures/source_images/article-2339475-1A43E58F000005DC-593_634x799/620_article-2339475-1A43E58F000005DC-593_634x799.jpg 620w", "content/sculptures/source_images/article-2339475-1A43E58F000005DC-593_634x799/310_article-2339475-1A43E58F000005DC-593_634x799.jpg 310w", "content/sculptures/source_images/article-2339475-1A43E58F000005DC-593_634x799/160_article-2339475-1A43E58F000005DC-593_634x799.jpg 160w"],
+            "width": 634,
+            "height": 799
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/article-2339475-1A43E9CD000005DC-240_634x861.jpg",
+            "srcset": ["content/sculptures/source_images/article-2339475-1A43E9CD000005DC-240_634x861/620_article-2339475-1A43E9CD000005DC-240_634x861.jpg 620w", "content/sculptures/source_images/article-2339475-1A43E9CD000005DC-240_634x861/310_article-2339475-1A43E9CD000005DC-240_634x861.jpg 310w", "content/sculptures/source_images/article-2339475-1A43E9CD000005DC-240_634x861/160_article-2339475-1A43E9CD000005DC-240_634x861.jpg 160w"],
+            "width": 634,
+            "height": 861
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/bfbab979c488f67485cc9757ecebf389--clay-sculptures-terracotta.jpg",
+            "srcset": ["content/sculptures/source_images/bfbab979c488f67485cc9757ecebf389--clay-sculptures-terracotta/620_bfbab979c488f67485cc9757ecebf389--clay-sculptures-terracotta.jpg 620w", "content/sculptures/source_images/bfbab979c488f67485cc9757ecebf389--clay-sculptures-terracotta/310_bfbab979c488f67485cc9757ecebf389--clay-sculptures-terracotta.jpg 310w", "content/sculptures/source_images/bfbab979c488f67485cc9757ecebf389--clay-sculptures-terracotta/160_bfbab979c488f67485cc9757ecebf389--clay-sculptures-terracotta.jpg 160w"],
+            "width": 736,
+            "height": 981
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/brutus-michelangelo-buonarroti-1540-marble-height-95-cm-with-base-1393833840_b.jpg",
+            "srcset": ["content/sculptures/source_images/brutus-michelangelo-buonarroti-1540-marble-height-95-cm-with-base-1393833840_b/310_brutus-michelangelo-buonarroti-1540-marble-height-95-cm-with-base-1393833840_b.jpg 310w", "content/sculptures/source_images/brutus-michelangelo-buonarroti-1540-marble-height-95-cm-with-base-1393833840_b/160_brutus-michelangelo-buonarroti-1540-marble-height-95-cm-with-base-1393833840_b.jpg 160w"],
+            "width": 600,
+            "height": 829
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/img061.jpg",
+            "srcset": ["content/sculptures/source_images/img061/310_img061.jpg 310w", "content/sculptures/source_images/img061/160_img061.jpg 160w"],
+            "width": 600,
+            "height": 962
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/rape-sabine-women-Giambologna.jpg",
+            "srcset": ["content/sculptures/source_images/rape-sabine-women-Giambologna/310_rape-sabine-women-Giambologna.jpg 310w", "content/sculptures/source_images/rape-sabine-women-Giambologna/160_rape-sabine-women-Giambologna.jpg 160w"],
+            "width": 500,
+            "height": 667
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/renaissance-sculpture-1.jpg",
+            "srcset": ["content/sculptures/source_images/renaissance-sculpture-1/1240_renaissance-sculpture-1.jpg 1240w", "content/sculptures/source_images/renaissance-sculpture-1/620_renaissance-sculpture-1.jpg 620w", "content/sculptures/source_images/renaissance-sculpture-1/310_renaissance-sculpture-1.jpg 310w", "content/sculptures/source_images/renaissance-sculpture-1/160_renaissance-sculpture-1.jpg 160w"],
+            "width": 1600,
+            "height": 1067
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/renaissance-sculpture.jpg",
+            "srcset": ["content/sculptures/source_images/renaissance-sculpture/310_renaissance-sculpture.jpg 310w", "content/sculptures/source_images/renaissance-sculpture/160_renaissance-sculpture.jpg 160w"],
+            "width": 450,
+            "height": 300
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/slide15.jpg",
+            "srcset": ["content/sculptures/source_images/slide15/310_slide15.jpg 310w", "content/sculptures/source_images/slide15/160_slide15.jpg 160w"],
+            "width": 511,
+            "height": 349
+        }, {
+            "type": "photo",
+            "path": "content/sculptures/images/tmp658704040951021570.jpg",
+            "srcset": ["content/sculptures/source_images/tmp658704040951021570/620_tmp658704040951021570.jpg 620w", "content/sculptures/source_images/tmp658704040951021570/310_tmp658704040951021570.jpg 310w", "content/sculptures/source_images/tmp658704040951021570/160_tmp658704040951021570.jpg 160w"],
+            "width": 702,
+            "height": 700
+        }]
     };
-    projects["004"] = {
+    projects["invents"] = {
         "strings": {
-            "en": {"name": "Paintings", "type": "painting"},
-            "es": {"name": "Pinturas", "type": "pintura"}
+            "en": {"name": "Invents", "type": "other"},
+            "es": {"name": "Invents", "type": "invents"}
         },
-        "articles": {"en": [], "es": []},
-        "name": "Paintings",
+        "articles": {"en": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet, ligula id molestie consectetur, turpis lacus lacinia nisi, a mollis ante nisi id nisi. Nulla eget erat vestibulum, convallis risus at, tristique nisl. Proin vehicula nunc et ligula sagittis ullamcorper. Cras convallis congue lorem at pretium. In sollicitudin ornare egestas. In tristique, urna nec aliquet convallis, mauris sem aliquet nisi, ullamcorper tempor ex nisi vel lectus. Curabitur id nibh egestas, pulvinar urna hendrerit, efficitur arcu", "Duis tortor lectus, hendrerit quis iaculis quis, congue vitae turpis. Pellentesque ipsum leo, posuere et dui bibendum, consequat venenatis tellus. Vestibulum id metus lobortis, varius lorem quis, rutrum magna. Phasellus accumsan tortor urna, sit amet scelerisque nibh tincidunt id. Ut sit amet mauris odio. Suspendisse ac est semper, porttitor mauris at, facilisis lorem. Ut aliquam lacus non nulla aliquet mattis. Aliquam iaculis hendrerit mi eu sagittis. Donec ac arcu at tortor cursus commodo. Pellentesque ut ligula id leo feugiat tempus. Etiam cursus bibendum leo, ut hendrerit justo facilisis id. Cras id sagittis sapien, sed posuere est. In hac habitasse platea dictumst. Cras nulla nisi, fermentum quis metus ut, blandit vehicula eros. Nunc porttitor mi eleifend finibus pretium.", "Nulla eu varius velit, faucibus tincidunt purus. Nullam nec ante id nisi varius rhoncus. Sed laoreet orci et aliquet finibus. Integer turpis eros, scelerisque quis turpis in, interdum facilisis dui. Ut aliquam in risus at consectetur. Nam sed dui tempus ipsum tincidunt pellentesque a porta tellus. Aliquam erat volutpat. Vivamus dignissim consectetur quam, eget varius orci lobortis quis. Mauris suscipit et ipsum imperdiet pulvinar. Aliquam malesuada consequat turpis, ut fringilla nisi imperdiet eu.", "Curabitur hendrerit enim et tristique viverra. In egestas ornare risus, eu convallis turpis. In id vulputate lacus, quis maximus augue. Curabitur eget diam est. Fusce laoreet turpis vel purus aliquam pulvinar. Praesent lectus metus, dignissim vel pharetra id, tristique at lorem. Sed ullamcorper finibus nisl, vitae blandit nibh dictum quis. Phasellus ac sapien quis orci mattis cursus vitae ut tellus. Phasellus tincidunt porttitor nisi non molestie. Duis gravida, arcu in feugiat vestibulum, neque massa bibendum ante, id convallis dolor lorem eget magna. Nam in fermentum dui. Vestibulum porttitor nibh ac sollicitudin bibendum.", "Sed sagittis eu odio quis semper. Ut dapibus mauris blandit nulla feugiat ultricies. Donec nec odio quis mauris viverra ultricies. Phasellus semper id diam in aliquam. Proin et ante non urna vulputate aliquet ac ac massa. Sed tempor suscipit erat vitae pharetra. Integer finibus tellus a convallis efficitur. Sed cursus velit nec diam maximus sagittis. Duis quis neque dictum, dapibus mi ut, luctus enim."]},
+        "name": "Invents",
         "color": "C7EFCF",
-        "type": "painting",
+        "type": "other",
         "videos": [],
         "publish": true,
         "images": [{
             "type": "photo",
-            "path": "projts/004/imgweb/Acrilico-y-en-caustica-sobre-telaRet.jpg",
-            "srcset": ["projts/004/imgweb/620_Acrilico-y-en-caustica-sobre-telaRet.jpg 620w", "projts/004/imgweb/310_Acrilico-y-en-caustica-sobre-telaRet.jpg 310w", "projts/004/imgweb/160_Acrilico-y-en-caustica-sobre-telaRet.jpg 160w"],
-            "width": 857,
-            "height": 1039
+            "path": "content/invents/images/114.jpg",
+            "srcset": ["content/invents/source_images/114/2880_114.jpg 2880w", "content/invents/source_images/114/1240_114.jpg 1240w", "content/invents/source_images/114/620_114.jpg 620w", "content/invents/source_images/114/310_114.jpg 310w", "content/invents/source_images/114/160_114.jpg 160w"],
+            "width": 3648,
+            "height": 2736
         }, {
             "type": "photo",
-            "path": "projts/004/imgweb/Oleo-sobre-tela-IIIRet.jpg",
-            "srcset": ["projts/004/imgweb/620_Oleo-sobre-tela-IIIRet.jpg 620w", "projts/004/imgweb/310_Oleo-sobre-tela-IIIRet.jpg 310w", "projts/004/imgweb/160_Oleo-sobre-tela-IIIRet.jpg 160w"],
-            "width": 1129,
-            "height": 714
+            "path": "content/invents/images/491768.jpg",
+            "srcset": ["content/invents/source_images/491768/160_491768.jpg 160w"],
+            "width": 239,
+            "height": 238
         }, {
             "type": "photo",
-            "path": "projts/004/imgweb/Oleo-sobre-tela-VRet.jpg",
-            "srcset": ["projts/004/imgweb/310_Oleo-sobre-tela-VRet.jpg 310w", "projts/004/imgweb/160_Oleo-sobre-tela-VRet.jpg 160w"],
-            "width": 600,
-            "height": 774
+            "path": "content/invents/images/592px-Siege_machine.jpg",
+            "srcset": ["content/invents/source_images/592px-Siege_machine/310_592px-Siege_machine.jpg 310w", "content/invents/source_images/592px-Siege_machine/160_592px-Siege_machine.jpg 160w"],
+            "width": 592,
+            "height": 599
         }, {
             "type": "photo",
-            "path": "projts/004/imgweb/PIC_0001Ret.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0001Ret.jpg 1240w", "projts/004/imgweb/620_PIC_0001Ret.jpg 620w", "projts/004/imgweb/310_PIC_0001Ret.jpg 310w", "projts/004/imgweb/160_PIC_0001Ret.jpg 160w"],
-            "width": 2359,
-            "height": 1564
+            "path": "content/invents/images/656ce49e72250e04d4769a5695e4a3a2--longbow-cannon.jpg",
+            "srcset": ["content/invents/source_images/656ce49e72250e04d4769a5695e4a3a2--longbow-cannon/160_656ce49e72250e04d4769a5695e4a3a2--longbow-cannon.jpg 160w"],
+            "width": 220,
+            "height": 172
         }, {
             "type": "photo",
-            "path": "projts/004/imgweb/PIC_0002.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0002.jpg 1240w", "projts/004/imgweb/620_PIC_0002.jpg 620w", "projts/004/imgweb/310_PIC_0002.jpg 310w", "projts/004/imgweb/160_PIC_0002.jpg 160w"],
-            "width": 2408,
-            "height": 1793
+            "path": "content/invents/images/96240-050-142cc589.jpg",
+            "srcset": ["content/invents/source_images/96240-050-142cc589/1240_96240-050-142cc589.jpg 1240w", "content/invents/source_images/96240-050-142cc589/620_96240-050-142cc589.jpg 620w", "content/invents/source_images/96240-050-142cc589/310_96240-050-142cc589.jpg 310w", "content/invents/source_images/96240-050-142cc589/160_96240-050-142cc589.jpg 160w"],
+            "width": 1600,
+            "height": 1229
         }, {
             "type": "photo",
-            "path": "projts/004/imgweb/PIC_0002b.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0002b.jpg 1240w", "projts/004/imgweb/620_PIC_0002b.jpg 620w", "projts/004/imgweb/310_PIC_0002b.jpg 310w", "projts/004/imgweb/160_PIC_0002b.jpg 160w"],
-            "width": 2356,
-            "height": 1468
+            "path": "content/invents/images/Armoured-Car.jpg",
+            "srcset": ["content/invents/source_images/Armoured-Car/620_Armoured-Car.jpg 620w", "content/invents/source_images/Armoured-Car/310_Armoured-Car.jpg 310w", "content/invents/source_images/Armoured-Car/160_Armoured-Car.jpg 160w"],
+            "width": 845,
+            "height": 492
         }, {
             "type": "photo",
-            "path": "projts/004/imgweb/PIC_0004.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0004.jpg 1240w", "projts/004/imgweb/620_PIC_0004.jpg 620w", "projts/004/imgweb/310_PIC_0004.jpg 310w", "projts/004/imgweb/160_PIC_0004.jpg 160w"],
-            "width": 1572,
-            "height": 2336
+            "path": "content/invents/images/Studia_szkieletu.jpg",
+            "srcset": ["content/invents/source_images/Studia_szkieletu/310_Studia_szkieletu.jpg 310w", "content/invents/source_images/Studia_szkieletu/160_Studia_szkieletu.jpg 160w"],
+            "width": 497,
+            "height": 746
         }, {
             "type": "photo",
-            "path": "projts/004/imgweb/PIC_0005.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0005.jpg 1240w", "projts/004/imgweb/620_PIC_0005.jpg 620w", "projts/004/imgweb/310_PIC_0005.jpg 310w", "projts/004/imgweb/160_PIC_0005.jpg 160w"],
-            "width": 1421,
-            "height": 2277
+            "path": "content/invents/images/da-vinci-multi-barrel-gun-designs-1481-science-source.jpg",
+            "srcset": ["content/invents/source_images/da-vinci-multi-barrel-gun-designs-1481-science-source/620_da-vinci-multi-barrel-gun-designs-1481-science-source.jpg 620w", "content/invents/source_images/da-vinci-multi-barrel-gun-designs-1481-science-source/310_da-vinci-multi-barrel-gun-designs-1481-science-source.jpg 310w", "content/invents/source_images/da-vinci-multi-barrel-gun-designs-1481-science-source/160_da-vinci-multi-barrel-gun-designs-1481-science-source.jpg 160w"],
+            "width": 628,
+            "height": 900
         }, {
             "type": "photo",
-            "path": "projts/004/imgweb/PIC_0005b.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0005b.jpg 1240w", "projts/004/imgweb/620_PIC_0005b.jpg 620w", "projts/004/imgweb/310_PIC_0005b.jpg 310w", "projts/004/imgweb/160_PIC_0005b.jpg 160w"],
-            "width": 1361,
-            "height": 2264
+            "path": "content/invents/images/flying-machine-leonardo-da-vinci.jpg",
+            "srcset": ["content/invents/source_images/flying-machine-leonardo-da-vinci/620_flying-machine-leonardo-da-vinci.jpg 620w", "content/invents/source_images/flying-machine-leonardo-da-vinci/310_flying-machine-leonardo-da-vinci.jpg 310w", "content/invents/source_images/flying-machine-leonardo-da-vinci/160_flying-machine-leonardo-da-vinci.jpg 160w"],
+            "width": 804,
+            "height": 1125
         }, {
             "type": "photo",
-            "path": "projts/004/imgweb/PIC_0007b.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0007b.jpg 1240w", "projts/004/imgweb/620_PIC_0007b.jpg 620w", "projts/004/imgweb/310_PIC_0007b.jpg 310w", "projts/004/imgweb/160_PIC_0007b.jpg 160w"],
-            "width": 2448,
-            "height": 1756
+            "path": "content/invents/images/robert_hookes_microscope.jpg",
+            "srcset": ["content/invents/source_images/robert_hookes_microscope/620_robert_hookes_microscope.jpg 620w", "content/invents/source_images/robert_hookes_microscope/310_robert_hookes_microscope.jpg 310w", "content/invents/source_images/robert_hookes_microscope/160_robert_hookes_microscope.jpg 160w"],
+            "width": 868,
+            "height": 960
         }, {
             "type": "photo",
-            "path": "projts/004/imgweb/PIC_00082Ret.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_00082Ret.jpg 1240w", "projts/004/imgweb/620_PIC_00082Ret.jpg 620w", "projts/004/imgweb/310_PIC_00082Ret.jpg 310w", "projts/004/imgweb/160_PIC_00082Ret.jpg 160w"],
-            "width": 2324,
-            "height": 1396
+            "path": "content/invents/images/tmp641614059803770880.jpg",
+            "srcset": ["content/invents/source_images/tmp641614059803770880/1240_tmp641614059803770880.jpg 1240w", "content/invents/source_images/tmp641614059803770880/620_tmp641614059803770880.jpg 620w", "content/invents/source_images/tmp641614059803770880/310_tmp641614059803770880.jpg 310w", "content/invents/source_images/tmp641614059803770880/160_tmp641614059803770880.jpg 160w"],
+            "width": 1240,
+            "height": 746
         }, {
             "type": "photo",
-            "path": "projts/004/imgweb/PIC_0008Ret.jpg",
-            "srcset": ["projts/004/imgweb/310_PIC_0008Ret.jpg 310w", "projts/004/imgweb/160_PIC_0008Ret.jpg 160w"],
-            "width": 397,
-            "height": 298
+            "path": "content/invents/images/tmp712649275976187906.jpg",
+            "srcset": ["content/invents/source_images/tmp712649275976187906/620_tmp712649275976187906.jpg 620w", "content/invents/source_images/tmp712649275976187906/310_tmp712649275976187906.jpg 310w", "content/invents/source_images/tmp712649275976187906/160_tmp712649275976187906.jpg 160w"],
+            "width": 674,
+            "height": 501
         }, {
             "type": "photo",
-            "path": "projts/004/imgweb/PIC_0009.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0009.jpg 1240w", "projts/004/imgweb/620_PIC_0009.jpg 620w", "projts/004/imgweb/310_PIC_0009.jpg 310w", "projts/004/imgweb/160_PIC_0009.jpg 160w"],
-            "width": 1888,
-            "height": 2372
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/PIC_0013-copia.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0013-copia.jpg 1240w", "projts/004/imgweb/620_PIC_0013-copia.jpg 620w", "projts/004/imgweb/310_PIC_0013-copia.jpg 310w", "projts/004/imgweb/160_PIC_0013-copia.jpg 160w"],
-            "width": 1854,
-            "height": 2262
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/PIC_0013.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0013.jpg 1240w", "projts/004/imgweb/620_PIC_0013.jpg 620w", "projts/004/imgweb/310_PIC_0013.jpg 310w", "projts/004/imgweb/160_PIC_0013.jpg 160w"],
-            "width": 1868,
-            "height": 1560
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/PIC_0014-copia.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0014-copia.jpg 1240w", "projts/004/imgweb/620_PIC_0014-copia.jpg 620w", "projts/004/imgweb/310_PIC_0014-copia.jpg 310w", "projts/004/imgweb/160_PIC_0014-copia.jpg 160w"],
-            "width": 2384,
-            "height": 1880
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/PIC_0014.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0014.jpg 1240w", "projts/004/imgweb/620_PIC_0014.jpg 620w", "projts/004/imgweb/310_PIC_0014.jpg 310w", "projts/004/imgweb/160_PIC_0014.jpg 160w"],
-            "width": 2388,
-            "height": 1576
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/PIC_0018.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0018.jpg 1240w", "projts/004/imgweb/620_PIC_0018.jpg 620w", "projts/004/imgweb/310_PIC_0018.jpg 310w", "projts/004/imgweb/160_PIC_0018.jpg 160w"],
-            "width": 2262,
-            "height": 1849
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/PIC_0019Ret.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0019Ret.jpg 1240w", "projts/004/imgweb/620_PIC_0019Ret.jpg 620w", "projts/004/imgweb/310_PIC_0019Ret.jpg 310w", "projts/004/imgweb/160_PIC_0019Ret.jpg 160w"],
-            "width": 2449,
-            "height": 1600
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/PIC_0023.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0023.jpg 1240w", "projts/004/imgweb/620_PIC_0023.jpg 620w", "projts/004/imgweb/310_PIC_0023.jpg 310w", "projts/004/imgweb/160_PIC_0023.jpg 160w"],
-            "width": 2560,
-            "height": 1920
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/PIC_0023b.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0023b.jpg 1240w", "projts/004/imgweb/620_PIC_0023b.jpg 620w", "projts/004/imgweb/310_PIC_0023b.jpg 310w", "projts/004/imgweb/160_PIC_0023b.jpg 160w"],
-            "width": 2352,
-            "height": 1632
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/PIC_0024.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0024.jpg 1240w", "projts/004/imgweb/620_PIC_0024.jpg 620w", "projts/004/imgweb/310_PIC_0024.jpg 310w", "projts/004/imgweb/160_PIC_0024.jpg 160w"],
-            "width": 1784,
-            "height": 1788
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/PIC_0024c.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0024c.jpg 1240w", "projts/004/imgweb/620_PIC_0024c.jpg 620w", "projts/004/imgweb/310_PIC_0024c.jpg 310w", "projts/004/imgweb/160_PIC_0024c.jpg 160w"],
-            "width": 1920,
-            "height": 2560
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/PIC_0025.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0025.jpg 1240w", "projts/004/imgweb/620_PIC_0025.jpg 620w", "projts/004/imgweb/310_PIC_0025.jpg 310w", "projts/004/imgweb/160_PIC_0025.jpg 160w"],
-            "width": 2208,
-            "height": 1752
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/PIC_0028Ret.jpg",
-            "srcset": ["projts/004/imgweb/1240_PIC_0028Ret.jpg 1240w", "projts/004/imgweb/620_PIC_0028Ret.jpg 620w", "projts/004/imgweb/310_PIC_0028Ret.jpg 310w", "projts/004/imgweb/160_PIC_0028Ret.jpg 160w"],
-            "width": 1796,
-            "height": 1872
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/Tempera-sobre-madera-I.jpg",
-            "srcset": ["projts/004/imgweb/620_Tempera-sobre-madera-I.jpg 620w", "projts/004/imgweb/310_Tempera-sobre-madera-I.jpg 310w", "projts/004/imgweb/160_Tempera-sobre-madera-I.jpg 160w"],
-            "width": 816,
-            "height": 560
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/Tempera-sobre-papel-VII.jpg",
-            "srcset": ["projts/004/imgweb/620_Tempera-sobre-papel-VII.jpg 620w", "projts/004/imgweb/310_Tempera-sobre-papel-VII.jpg 310w", "projts/004/imgweb/160_Tempera-sobre-papel-VII.jpg 160w"],
-            "width": 1232,
-            "height": 816
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/cuadro-1Ret.jpg",
-            "srcset": ["projts/004/imgweb/620_cuadro-1Ret.jpg 620w", "projts/004/imgweb/310_cuadro-1Ret.jpg 310w", "projts/004/imgweb/160_cuadro-1Ret.jpg 160w"],
-            "width": 1000,
-            "height": 830
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/cuadro-2Ret.jpg",
-            "srcset": ["projts/004/imgweb/620_cuadro-2Ret.jpg 620w", "projts/004/imgweb/310_cuadro-2Ret.jpg 310w", "projts/004/imgweb/160_cuadro-2Ret.jpg 160w"],
-            "width": 893,
-            "height": 1066
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/cuadro-3Ret.jpg",
-            "srcset": ["projts/004/imgweb/620_cuadro-3Ret.jpg 620w", "projts/004/imgweb/310_cuadro-3Ret.jpg 310w", "projts/004/imgweb/160_cuadro-3Ret.jpg 160w"],
-            "width": 839,
-            "height": 1346
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/cuadro-4Ret.jpg",
-            "srcset": ["projts/004/imgweb/620_cuadro-4Ret.jpg 620w", "projts/004/imgweb/310_cuadro-4Ret.jpg 310w", "projts/004/imgweb/160_cuadro-4Ret.jpg 160w"],
-            "width": 1068,
-            "height": 892
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/cuadro-5Ret.jpg",
-            "srcset": ["projts/004/imgweb/1240_cuadro-5Ret.jpg 1240w", "projts/004/imgweb/620_cuadro-5Ret.jpg 620w", "projts/004/imgweb/310_cuadro-5Ret.jpg 310w", "projts/004/imgweb/160_cuadro-5Ret.jpg 160w"],
-            "width": 1374,
-            "height": 808
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/cuadro-6Ret.jpg",
-            "srcset": ["projts/004/imgweb/1240_cuadro-6Ret.jpg 1240w", "projts/004/imgweb/620_cuadro-6Ret.jpg 620w", "projts/004/imgweb/310_cuadro-6Ret.jpg 310w", "projts/004/imgweb/160_cuadro-6Ret.jpg 160w"],
-            "width": 1288,
-            "height": 874
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/cuadro-7Ret.jpg",
-            "srcset": ["projts/004/imgweb/620_cuadro-7Ret.jpg 620w", "projts/004/imgweb/310_cuadro-7Ret.jpg 310w", "projts/004/imgweb/160_cuadro-7Ret.jpg 160w"],
-            "width": 870,
-            "height": 1268
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/cuadro-8Ret.jpg",
-            "srcset": ["projts/004/imgweb/620_cuadro-8Ret.jpg 620w", "projts/004/imgweb/310_cuadro-8Ret.jpg 310w", "projts/004/imgweb/160_cuadro-8Ret.jpg 160w"],
-            "width": 890,
-            "height": 1098
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/cuadro-9Ret.jpg",
-            "srcset": ["projts/004/imgweb/620_cuadro-9Ret.jpg 620w", "projts/004/imgweb/310_cuadro-9Ret.jpg 310w", "projts/004/imgweb/160_cuadro-9Ret.jpg 160w"],
-            "width": 783,
-            "height": 1241
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/cuadro15Ret.jpg",
-            "srcset": ["projts/004/imgweb/620_cuadro15Ret.jpg 620w", "projts/004/imgweb/310_cuadro15Ret.jpg 310w", "projts/004/imgweb/160_cuadro15Ret.jpg 160w"],
-            "width": 876,
-            "height": 1336
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/cuadro16.jpg",
-            "srcset": ["projts/004/imgweb/1240_cuadro16.jpg 1240w", "projts/004/imgweb/620_cuadro16.jpg 620w", "projts/004/imgweb/310_cuadro16.jpg 310w", "projts/004/imgweb/160_cuadro16.jpg 160w"],
-            "width": 1282,
-            "height": 810
-        }, {
-            "type": "photo",
-            "path": "projts/004/imgweb/mi-pintorRet.jpg",
-            "srcset": ["projts/004/imgweb/620_mi-pintorRet.jpg 620w", "projts/004/imgweb/310_mi-pintorRet.jpg 310w", "projts/004/imgweb/160_mi-pintorRet.jpg 160w"],
-            "width": 1099,
-            "height": 929
+            "path": "content/invents/images/tmp731200739468115968.jpg",
+            "srcset": ["content/invents/source_images/tmp731200739468115968/620_tmp731200739468115968.jpg 620w", "content/invents/source_images/tmp731200739468115968/310_tmp731200739468115968.jpg 310w", "content/invents/source_images/tmp731200739468115968/160_tmp731200739468115968.jpg 160w"],
+            "width": 660,
+            "height": 559
         }]
     };
     state = {meta: meta, projects: projects};

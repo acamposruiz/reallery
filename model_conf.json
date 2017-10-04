@@ -1,107 +1,75 @@
 {
   "meta": {
-    "email": "acamposruiz@gmail.com",
-    "tlf": "+34-655-471-058",
-    "title": "Antonio Campos"
+    "email": "renaissance@renaissance.com",
+    "tlf": "+55-555-555-555",
+    "title": "Renaissance"
   },
-  "001": {
-    "strings": {
-      "en": {
-        "name": "Ducks",
-        "type": "sculpture"
-      },
-      "es": {
-        "name": "Patos",
-        "type": "escultura"
-      }
-    },
-    "name": "Ducks",
-    "color": "F0B67F",
-    "type": "sculpture",
-    "videos": {
-      "en": ["gfYmvPH6Umg"],
-      "es": ["gfYmvPH6Umg"]
-    },
-    "articles": {
-      "en": ["This work says nothing that can be expressed in words. You can see how you listen to a song. It is seen to feel it and is understood with the emotions that provoke you. Nothing else.",
-      "Many teachers say that it is not possible to see ourselves, that we can only be ourselves. We can not see ourselves because that would imply that inside us there was someone who sees and someone seen, who would we be then? The seeing self or the self seen? The answer would be none, both are projections of our ego. The Ego is the supplanter of our identity. As long as the ego does not dissolve, we can not be ourselves. So what can we do to dissolve it? Very simple, just watch it. Do not judge it, do not try to get rid of it, just watch it and it will go away after manifesting its unreality by itself.",
-        "My work is the result of a research on the meaning of life. I am inspired by intuition and use any plastic or digital means to create images that bring me closer to a confrontation with the mystery of existence.",
-        "I do not think this mystery is something that can be understood. It is something we can transform ourselves into. The mystery is not understood but lived. And when you live it transforms you, or rather, reconciles you with yourself. I think that the objective of each individual in this existence is to dissolve the duality that makes us suffer, which is the fruit of our ignorance. The ignorance of not knowing ourselves.",
-        "I seek with my work to approach myself that I believe is the same as approaching the meaning of life. That is why this path is universal and objective. And this work I hope can serve anyone just as it serves me. Question me about what I am. Question me without waiting for an answer. Keep me waiting knowing something has to come. But that will not do it in the form of words. It will arrive like a transforming breeze that will change everything forever."],
-      "es": ["Esta obra no dice nada que se pueda expresar con palabras. Se observa como se escucha una música. Se ve para sentirla y se entiende con las emociones que te provocan. Nada más.",
-      "Muchos maestros dicen que no es posible vernos a nosotros mismos, que solo podemos ser nosotros mismos. No podemos vernos a nosotros mismos porque eso implicaría que dentro de nosotros hubiera alguien que ve y alguien visto, ¿quien seriamos entonces? ¿el yo que ve o el yo visto? La respuesta sería ninguno, ambos son proyecciones de nuestro ego. El Ego es el suplantador de nuestra identidad. Mientras no se disuelva el ego no podremos ser nosotros mismos. ¿Qué podemos hacer entonces para disolverlo? Muy simple, obsérvalo sin más. No lo juzgues, no intentes deshacerte de él, solo observalo y se irá tras manifestarse su irrealidad por sí misma.",
-        "Mi trabajo es el resultado de una investigación sobre sentido de la vida. Me inspiro en la intuición y me valgo de cualquier medio plástico o digital para crear imágenes que me acerquen a una confrontación frente al misterio de la existencia.",
-        "No creo que este misterio sea algo que pueda comprenderse. Es algo en lo que podemos transformarnos. El misterio no se entiende sino que se vive. Y cuando se vive te transforma, o mejor dicho, te reconcilia contigo mismo. Pienso que el objetivo de cada individuo en esta existencia es disolver la dualidad que nos hace sufrir, que es el fruto de nuestra ignorancia. La ignorancia de no conocernos a nosotros mismos.",
-        "Busco con mi obra acercarme a mí mismo que creo que es lo mismo que acercarme al sentido de la vida. Por ello este camino es universal y objetivo. Y esta obra espero que pueda servir a cualquiera igual que me sirve a mí. Cuestionarme sobre qué soy. Cuestionarme sin esperar una respuesta. Mantenerme en la espera sabiendo que algo tiene que llegar. Pero que no lo hará en forma de palabras. Llegará como una brisa transformadora que lo cambiará todo para siempre."]
-    },
-    "publish": true
-  },
-  "002": {
-    "strings": {
-      "en": {
-        "name": "Temple with vagina",
-        "type": "sculpture"
-      },
-      "es": {
-        "name": "Templo con vaginas",
-        "type": "escultura"
-      }
-    },
-    "hide": true,
-    "name": "Temple with vagina",
-    "color": "E0756F",
-    "type": "sculpture",
-    "publish": false,
-    "state": "comming soon"
-  },
-  "003": {
-    "strings": {
-      "en": {
-        "name": "Soldiers' heads",
-        "type": "sculpture"
-      },
-      "es": {
-        "name": "Cabezas de Soldados",
-        "type": "escultura"
-      }
-    },
-    "name": "Soldiers' heads",
-    "color": "D6D1B1",
-    "type": "sculpture",
-    "videos": {
-      "en": ["tQ6htNIVDxk"],
-      "es": ["Sky0Vyf7rj0"]
-    },
-    "articles": {
-      "en": ["Our society is the result of a history of continued wars. Many struggle to change this. Others assume it as inevitable. While others encourage them by interests of diverse nature, hatred, money, power, etc. [BR] War is a reality. Man kills man daily in a chaos of suffering and unreason. We know the motives that incite them. We know the low passions that feed them. But what I seek to emphasize here is the experience disconnected from suffering. The learning that the individual gets once he has overcome resentment. [BR] Let's watch the drama without suffering: Why do we kill each other?",
-      "What happens in war and nowhere else is the union of a whole people to destroy the army of the other. Wills against wills. In this confrontation there is an individual drama in each soldier, he has to assume his impending death. This is an atrocious experience, it is a leap into abandonment. The man here accepts his own tragedy. In this acceptance I feel a powerful energy leap.",
-      "The teachings of a multitude of scholars of the warlike world show a distancing from self-indulgence that thrills at what it is about detachment from oneself. I do not speak of justice but of injustice. Feeling the injustice in your flesh can make you humble. Because the world does not have to treat you well.",
-      "The result of a lack of awareness that allows a natural construction of society can end in a social implosion. A restoration of balance after decades of stagnant political conflicts. If we build in the social conflict we will be forced to the drama of war. The war reestablishes a new starting point."],
-      "es": ["Nuestra sociedad es el resultado de una historia de guerras continuadas. Muchos luchan por cambiar esto. Otros lo asumen como algo inevitable. Mientras que otros las incentivan por intereses de diversa naturaleza, odio, dinero, poder, etc.[BR] La Guerra es una realidad. El hombre mata al hombre diariamente en un caos de sufrimiento y sinrazón. Conocemos los motivos que las incitan. Conocemos las bajas pasiones que las alimentan. Pero lo que yo busco resaltar aquí es la experiencia desligada del sufrimiento. El aprendizaje que el individuo obtiene una vez superado el resentimiento.[BR] Observemos el drama sin sufrimiento: ¿Por qué nos matamos entre nosotros?...",
-      "Lo que se da en la guerra y en ningún otro lugar es la unión de todo un pueblo para acabar con el ejército del otro. Voluntades contra voluntades. En este enfrentamiento se da un drama individual en cada soldado, tiene que asumir su inminente muerte. Esto es una experiencia atroz, es un salto al abandono. El hombre aquí acepta su propia tragedia. En esta aceptación siento un salto energético poderoso.",
-      "Las enseñanzas de multitud de eruditos del mundo bélico muestran un distanciamiento al autocompadecimiento que emociona por lo que tiene de desapego a uno mismo. No hablo de justicia sino de injusticia. Sentir la injusticia en tus carnes te puede volver humilde. Porque el mundo no tiene por qué tratarte bien.",
-      "El resultado de una falta de conciencia que permita una natural construcción de la sociedad puede acabar en una implosión social. Un restablecimiento del equilibrio tras decenios de conflictos políticos estancados. Si construimos en el conflicto social nos veremos obligados al drama de la guerra. La guerra restablece un nuevo punto de partida."]
-    },
-    "publish": true
-  },
-  "004": {
+  "paintings": {
     "strings": {
       "en": {
         "name": "Paintings",
-        "type": "painting"
+        "type": "paintings"
+      }
+    },
+    "name": "Paintings",
+    "color": "F0B67F",
+    "type": "paintings",
+    "videos": {
+      "en": ["bUUVA5OVaOw", "YywCLksBdb4", "lob0zb28_wM", "xf2G2Il8crw", "FF5aAbCbLLk", "TJ6AEet05pY"],
+      "es": [["bUUVA5OVaOw", "YywCLksBdb4", "lob0zb28_wM", "xf2G2Il8crw", "FF5aAbCbLLk", "TJ6AEet05pY"]]
+    },
+    "articles": {
+      "en": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet, ligula id molestie consectetur, turpis lacus lacinia nisi, a mollis ante nisi id nisi. Nulla eget erat vestibulum, convallis risus at, tristique nisl. Proin vehicula nunc et ligula sagittis ullamcorper. Cras convallis congue lorem at pretium. In sollicitudin ornare egestas. In tristique, urna nec aliquet convallis, mauris sem aliquet nisi, ullamcorper tempor ex nisi vel lectus. Curabitur id nibh egestas, pulvinar urna hendrerit, efficitur arcu",
+      "Duis tortor lectus, hendrerit quis iaculis quis, congue vitae turpis. Pellentesque ipsum leo, posuere et dui bibendum, consequat venenatis tellus. Vestibulum id metus lobortis, varius lorem quis, rutrum magna. Phasellus accumsan tortor urna, sit amet scelerisque nibh tincidunt id. Ut sit amet mauris odio. Suspendisse ac est semper, porttitor mauris at, facilisis lorem. Ut aliquam lacus non nulla aliquet mattis. Aliquam iaculis hendrerit mi eu sagittis. Donec ac arcu at tortor cursus commodo. Pellentesque ut ligula id leo feugiat tempus. Etiam cursus bibendum leo, ut hendrerit justo facilisis id. Cras id sagittis sapien, sed posuere est. In hac habitasse platea dictumst. Cras nulla nisi, fermentum quis metus ut, blandit vehicula eros. Nunc porttitor mi eleifend finibus pretium.",
+        "Nulla eu varius velit, faucibus tincidunt purus. Nullam nec ante id nisi varius rhoncus. Sed laoreet orci et aliquet finibus. Integer turpis eros, scelerisque quis turpis in, interdum facilisis dui. Ut aliquam in risus at consectetur. Nam sed dui tempus ipsum tincidunt pellentesque a porta tellus. Aliquam erat volutpat. Vivamus dignissim consectetur quam, eget varius orci lobortis quis. Mauris suscipit et ipsum imperdiet pulvinar. Aliquam malesuada consequat turpis, ut fringilla nisi imperdiet eu.",
+        "Curabitur hendrerit enim et tristique viverra. In egestas ornare risus, eu convallis turpis. In id vulputate lacus, quis maximus augue. Curabitur eget diam est. Fusce laoreet turpis vel purus aliquam pulvinar. Praesent lectus metus, dignissim vel pharetra id, tristique at lorem. Sed ullamcorper finibus nisl, vitae blandit nibh dictum quis. Phasellus ac sapien quis orci mattis cursus vitae ut tellus. Phasellus tincidunt porttitor nisi non molestie. Duis gravida, arcu in feugiat vestibulum, neque massa bibendum ante, id convallis dolor lorem eget magna. Nam in fermentum dui. Vestibulum porttitor nibh ac sollicitudin bibendum.",
+        "Sed sagittis eu odio quis semper. Ut dapibus mauris blandit nulla feugiat ultricies. Donec nec odio quis mauris viverra ultricies. Phasellus semper id diam in aliquam. Proin et ante non urna vulputate aliquet ac ac massa. Sed tempor suscipit erat vitae pharetra. Integer finibus tellus a convallis efficitur. Sed cursus velit nec diam maximus sagittis. Duis quis neque dictum, dapibus mi ut, luctus enim."]
+    },
+    "publish": true
+  },
+  "sculptures": {
+    "strings": {
+      "en": {
+        "name": "Sculptures",
+        "type": "sculpture"
+      }
+    },
+    "name": "Sculptures",
+    "color": "D6D1B1",
+    "type": "sculpture",
+    "videos": {
+      "en": ["GC7p8F2E8mY", "Lx51QqUBmN0", "OKMVGmApc9w", "UMIIncea5k4", "gyWeksAo8VM", "pcc6kRr9u8k"]
+    },
+    "articles": {
+      "en": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet, ligula id molestie consectetur, turpis lacus lacinia nisi, a mollis ante nisi id nisi. Nulla eget erat vestibulum, convallis risus at, tristique nisl. Proin vehicula nunc et ligula sagittis ullamcorper. Cras convallis congue lorem at pretium. In sollicitudin ornare egestas. In tristique, urna nec aliquet convallis, mauris sem aliquet nisi, ullamcorper tempor ex nisi vel lectus. Curabitur id nibh egestas, pulvinar urna hendrerit, efficitur arcu",
+        "Duis tortor lectus, hendrerit quis iaculis quis, congue vitae turpis. Pellentesque ipsum leo, posuere et dui bibendum, consequat venenatis tellus. Vestibulum id metus lobortis, varius lorem quis, rutrum magna. Phasellus accumsan tortor urna, sit amet scelerisque nibh tincidunt id. Ut sit amet mauris odio. Suspendisse ac est semper, porttitor mauris at, facilisis lorem. Ut aliquam lacus non nulla aliquet mattis. Aliquam iaculis hendrerit mi eu sagittis. Donec ac arcu at tortor cursus commodo. Pellentesque ut ligula id leo feugiat tempus. Etiam cursus bibendum leo, ut hendrerit justo facilisis id. Cras id sagittis sapien, sed posuere est. In hac habitasse platea dictumst. Cras nulla nisi, fermentum quis metus ut, blandit vehicula eros. Nunc porttitor mi eleifend finibus pretium.",
+        "Nulla eu varius velit, faucibus tincidunt purus. Nullam nec ante id nisi varius rhoncus. Sed laoreet orci et aliquet finibus. Integer turpis eros, scelerisque quis turpis in, interdum facilisis dui. Ut aliquam in risus at consectetur. Nam sed dui tempus ipsum tincidunt pellentesque a porta tellus. Aliquam erat volutpat. Vivamus dignissim consectetur quam, eget varius orci lobortis quis. Mauris suscipit et ipsum imperdiet pulvinar. Aliquam malesuada consequat turpis, ut fringilla nisi imperdiet eu.",
+        "Curabitur hendrerit enim et tristique viverra. In egestas ornare risus, eu convallis turpis. In id vulputate lacus, quis maximus augue. Curabitur eget diam est. Fusce laoreet turpis vel purus aliquam pulvinar. Praesent lectus metus, dignissim vel pharetra id, tristique at lorem. Sed ullamcorper finibus nisl, vitae blandit nibh dictum quis. Phasellus ac sapien quis orci mattis cursus vitae ut tellus. Phasellus tincidunt porttitor nisi non molestie. Duis gravida, arcu in feugiat vestibulum, neque massa bibendum ante, id convallis dolor lorem eget magna. Nam in fermentum dui. Vestibulum porttitor nibh ac sollicitudin bibendum.",
+        "Sed sagittis eu odio quis semper. Ut dapibus mauris blandit nulla feugiat ultricies. Donec nec odio quis mauris viverra ultricies. Phasellus semper id diam in aliquam. Proin et ante non urna vulputate aliquet ac ac massa. Sed tempor suscipit erat vitae pharetra. Integer finibus tellus a convallis efficitur. Sed cursus velit nec diam maximus sagittis. Duis quis neque dictum, dapibus mi ut, luctus enim."]
+    },
+    "publish": true
+  },
+  "invents": {
+    "strings": {
+      "en": {
+        "name": "Invents",
+        "type": "other"
       },
       "es": {
-        "name": "Pinturas",
-        "type": "pintura"
+        "name": "Invents",
+        "type": "invents"
       }
     },
     "articles": {
-      "en": [],
-      "es": []
+      "en": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet, ligula id molestie consectetur, turpis lacus lacinia nisi, a mollis ante nisi id nisi. Nulla eget erat vestibulum, convallis risus at, tristique nisl. Proin vehicula nunc et ligula sagittis ullamcorper. Cras convallis congue lorem at pretium. In sollicitudin ornare egestas. In tristique, urna nec aliquet convallis, mauris sem aliquet nisi, ullamcorper tempor ex nisi vel lectus. Curabitur id nibh egestas, pulvinar urna hendrerit, efficitur arcu",
+        "Duis tortor lectus, hendrerit quis iaculis quis, congue vitae turpis. Pellentesque ipsum leo, posuere et dui bibendum, consequat venenatis tellus. Vestibulum id metus lobortis, varius lorem quis, rutrum magna. Phasellus accumsan tortor urna, sit amet scelerisque nibh tincidunt id. Ut sit amet mauris odio. Suspendisse ac est semper, porttitor mauris at, facilisis lorem. Ut aliquam lacus non nulla aliquet mattis. Aliquam iaculis hendrerit mi eu sagittis. Donec ac arcu at tortor cursus commodo. Pellentesque ut ligula id leo feugiat tempus. Etiam cursus bibendum leo, ut hendrerit justo facilisis id. Cras id sagittis sapien, sed posuere est. In hac habitasse platea dictumst. Cras nulla nisi, fermentum quis metus ut, blandit vehicula eros. Nunc porttitor mi eleifend finibus pretium.",
+        "Nulla eu varius velit, faucibus tincidunt purus. Nullam nec ante id nisi varius rhoncus. Sed laoreet orci et aliquet finibus. Integer turpis eros, scelerisque quis turpis in, interdum facilisis dui. Ut aliquam in risus at consectetur. Nam sed dui tempus ipsum tincidunt pellentesque a porta tellus. Aliquam erat volutpat. Vivamus dignissim consectetur quam, eget varius orci lobortis quis. Mauris suscipit et ipsum imperdiet pulvinar. Aliquam malesuada consequat turpis, ut fringilla nisi imperdiet eu.",
+        "Curabitur hendrerit enim et tristique viverra. In egestas ornare risus, eu convallis turpis. In id vulputate lacus, quis maximus augue. Curabitur eget diam est. Fusce laoreet turpis vel purus aliquam pulvinar. Praesent lectus metus, dignissim vel pharetra id, tristique at lorem. Sed ullamcorper finibus nisl, vitae blandit nibh dictum quis. Phasellus ac sapien quis orci mattis cursus vitae ut tellus. Phasellus tincidunt porttitor nisi non molestie. Duis gravida, arcu in feugiat vestibulum, neque massa bibendum ante, id convallis dolor lorem eget magna. Nam in fermentum dui. Vestibulum porttitor nibh ac sollicitudin bibendum.",
+        "Sed sagittis eu odio quis semper. Ut dapibus mauris blandit nulla feugiat ultricies. Donec nec odio quis mauris viverra ultricies. Phasellus semper id diam in aliquam. Proin et ante non urna vulputate aliquet ac ac massa. Sed tempor suscipit erat vitae pharetra. Integer finibus tellus a convallis efficitur. Sed cursus velit nec diam maximus sagittis. Duis quis neque dictum, dapibus mi ut, luctus enim."]
     },
-    "name": "Paintings",
+    "name": "Invents",
     "color": "C7EFCF",
-    "type": "painting",
+    "type": "other",
     "videos": [],
     "publish": true
   }

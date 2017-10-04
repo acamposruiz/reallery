@@ -35,15 +35,15 @@ function getYoutubeData(projtsJson) {
                             else {
                                 const thumbnails = result.items[0].snippet.thumbnails;
                                 const data = {
-                                    src: thumbnails.standard.url,
+                                    src: thumbnails.default.url,
                                     srcset: [
-                                        `${thumbnails.standard.url} 1024w`,
-                                        `${thumbnails.standard.url} 800w`,
+                                        `${thumbnails.default.url} 1024w`,
+                                        `${thumbnails.default.url} 800w`,
                                         `${thumbnails.medium.url} 500w`,
                                         `${thumbnails.default.url} 320w`,
                                     ],
-                                    width: thumbnails.standard.width,
-                                    height: thumbnails.standard.height,
+                                    width: thumbnails.default.width,
+                                    height: thumbnails.default.height,
                                     content: youtubeId,
                                     type: 'video',
                                 };
@@ -102,9 +102,10 @@ function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir, im
 
                     image.batch()
                         .resize(this.dim, (this.dim / dmsns.width) * dmsns.height)
-                        .writeFile(this.sourceImageDirFile, function (err) {
-                            rs2(this.imageFolderWebFile + ' ' + this.dim + 'w');
-                        }.bind({imageFolderWebFile: this.imageFolderWebFile, dim: this.dim}));
+                        .writeFile(
+                            this.sourceImageDirFile, function (err) {
+                            rs2(this.sourceImageDirFile + ' ' + this.dim + 'w');
+                        }.bind({sourceImageDirFile: this.sourceImageDirFile, dim: this.dim}));
 
                 }.bind({sourceImageDirFile: sourceImageDirFile, imageFolderWebFile: imageFolderWebFile, dim: dim}));
             }));
@@ -130,12 +131,12 @@ function generateSourceImages(projtsJson) {
                     rawState.push(() => {
                         return new Promise(function (rslv, rjct) {
                             /* Declaration of vars */
-                            const imagesFolder = 'projts/' + key + '/images/';
-                            const imagesFolder_es = 'projts/' + key + '/images_es/';
-                            const imagesFolderWeb = 'projts/' + key + '/imgweb/';
-                            const imagesFolderWeb_es = 'projts/' + key + '/imgweb_es/';
-                            const sourceImagesDir = 'projts/' + key + '/source_images/';
-                            const sourceImagesDir_es = 'projts/' + key + '/source_images_es/';
+                            const imagesFolder = 'content/' + key + '/images/';
+                            const imagesFolder_es = 'content/' + key + '/images_es/';
+                            const imagesFolderWeb = 'content/' + key + '/imgweb/';
+                            const imagesFolderWeb_es = 'content/' + key + '/imgweb_es/';
+                            const sourceImagesDir = 'content/' + key + '/source_images/';
+                            const sourceImagesDir_es = 'content/' + key + '/source_images_es/';
 
                             function processFiles(folder1, folder2, folder3) {
 
@@ -154,7 +155,7 @@ function generateSourceImages(projtsJson) {
 
                                                 rslv2({
                                                     type: 'photo',
-                                                    path: folder3 + file,
+                                                    path: folder2 + file,
                                                     srcset: srcset,
                                                     width: dimensions.width,
                                                     height: dimensions.height
