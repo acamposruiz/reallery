@@ -9,6 +9,7 @@ import ProjectGallery from './projectGallery.es6';
 import Director from '../../node_modules/director/build/director.js';
 import FaEnvelope from 'react-icons/fa/envelope';
 import FaPhone from 'react-icons/lib/fa/phone';
+import FaGithubAlt from 'react-icons/lib/fa/github-alt';
 import FaTwitter from 'react-icons/fa/twitter';
 import FaInstagram from 'react-icons/fa/instagram';
 import utils from './utils.es6';
@@ -93,9 +94,12 @@ class worksApp extends React.Component {
                         <section className="gallery"> {gallery} </section>
 
                         <footer className="contact">
+                            { (meta.github)? <a target="_blank" href={meta.github} ><span className="mail-data"><FaGithubAlt /><span className="data">Github.com</span></span></a>: null}
+
                             <a href={`mailto:${meta.email}`} ><span className="mail-data"><FaEnvelope /><span className="data">{meta.email}</span></span></a>
                             &nbsp;	&nbsp;	&nbsp;
                             <a href={`tel:${meta.tlf}`} ><span className="mail-data"><FaPhone /><span className="data">{meta.tlf}</span></span></a>
+
 
 
                             {/*<i class="material-icons">phone</i>
