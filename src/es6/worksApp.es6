@@ -63,6 +63,7 @@ class worksApp extends React.Component {
             project.state = project.state || "";
             return (
                 <ProjectButton
+                    icon={project.icon}
                     view={section}
                     lng={lng}
                     key={index}

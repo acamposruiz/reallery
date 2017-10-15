@@ -16,6 +16,10 @@
     "name": "Paintings",
     "color": "F0B67F",
     "type": "paintings",
+    "icon": {
+      "family": "FontAwesome",
+      "icon": "FaPaintBrush"
+    },
     "videos": {
       "en": ["bUUVA5OVaOw", "YywCLksBdb4", "lob0zb28_wM", "xf2G2Il8crw", "FF5aAbCbLLk", "TJ6AEet05pY"],
       "es": [["bUUVA5OVaOw", "YywCLksBdb4", "lob0zb28_wM", "xf2G2Il8crw", "FF5aAbCbLLk", "TJ6AEet05pY"]]
@@ -39,6 +43,10 @@
     "name": "Sculptures",
     "color": "D6D1B1",
     "type": "sculpture",
+    "icon": {
+      "family": "FontAwesome",
+      "icon": "FaCube"
+    },
     "videos": {
       "en": ["GC7p8F2E8mY", "Lx51QqUBmN0", "OKMVGmApc9w", "UMIIncea5k4", "gyWeksAo8VM", "pcc6kRr9u8k"]
     },
@@ -61,6 +69,10 @@
         "name": "Invents",
         "type": "invents"
       }
+    },
+    "icon": {
+      "family": "FontAwesome",
+      "icon": "FaPaperclip"
     },
     "articles": {
       "en": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet, ligula id molestie consectetur, turpis lacus lacinia nisi, a mollis ante nisi id nisi. Nulla eget erat vestibulum, convallis risus at, tristique nisl. Proin vehicula nunc et ligula sagittis ullamcorper. Cras convallis congue lorem at pretium. In sollicitudin ornare egestas. In tristique, urna nec aliquet convallis, mauris sem aliquet nisi, ullamcorper tempor ex nisi vel lectus. Curabitur id nibh egestas, pulvinar urna hendrerit, efficitur arcu",
