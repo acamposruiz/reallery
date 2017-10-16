@@ -7,6 +7,7 @@ Framework to easy create your own gallery webpage just with a JSON file configur
 1. Npm install
 1. Create a folder for each secction of your gallery inside ./content
     - Name eah folder as the name of the section and put inside its images
+    - This is the moment to put your background image as a file here: content/background/background_image.jpg
 1. Config each secction in the JSON site configuration file: ./model_conf.json
     - Each section has a name, color, icon, videos (on youtube), texts, etc. All this just in the JSON configuration file.
 1. Npm run create && webpack
