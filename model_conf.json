@@ -1,15 +1,13 @@
 {
   "meta": {
+    "title": "",
     "email": "",
     "tlf": "",
-    "github": "",
-    "title": "",
     "background": ""
   },
-  "<PROJECT_KEY_01>": {
+  "section_key_1": {
     "name": "",
     "color": "",
-    "type": "",
     "icon": {
       "family": "",
       "icon": ""
@@ -18,8 +16,8 @@
       "en": []
     },
     "articles": {
-      "en": []    },
+      "en": []
+    },
     "publish": true
-  },
-  "<PROJECT_KEY_02>": { ... }
+  }
 }
