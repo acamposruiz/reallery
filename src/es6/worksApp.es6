@@ -61,6 +61,12 @@ class worksApp extends React.Component {
 
         let projectsButtosList = ObjVals.map(function (project, index) {
             project.state = project.state || "";
+            project.strings = project.strings || {
+                "en": {
+                    "name": project.name,
+                    "type": project.name
+                }
+            };
             return (
                 <ProjectButton
                     icon={project.icon}
