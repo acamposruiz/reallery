@@ -105,4 +105,5 @@ Create a folder for each section of your gallery inside ./content/<SECTION_KEY_X
 # Run Example
 If you want to run [reallery.com](http://www.reallery.com/) locally it's simple.
 1. Switch branch: **git checkout example/mbuonarroti**
+1. Run webpack on console
 1. Start any server on local finder. As for example http-server npm package or anything else.
