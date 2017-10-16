@@ -2,7 +2,10 @@
 Framework to easy create your own gallery webpage just with a JSON file configuration. Made with ReactJS. You can put images, videos and texts. Fast, elegant, responsive.
 
 
-# Steps
+  View online Example on [reallery.com](http://www.reallery.com/)
+
+
+# Steps to build your project
 1. Clone the project
 1. Npm install
 1. Config project and each section in the JSON site configuration file: ./model_conf.json
@@ -98,3 +101,8 @@ Framework to easy create your own gallery webpage just with a JSON file configur
 ## Step 4: Image files
 
 Create a folder for each section of your gallery inside ./content/<SECTION_KEY_X>/images/. Inside this folder you have to copy all the images files.
+
+# Run Example
+If you want to run [reallery.com](http://www.reallery.com/) locally it's simple.
+1. Switch branch: **git checkout example/mbuonarroti**
+1. Start any server on local finder. As for example http-server npm package or anything else.
