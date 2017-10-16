@@ -35,15 +35,15 @@ function getYoutubeData(projtsJson) {
                             else {
                                 const thumbnails = result.items[0].snippet.thumbnails;
                                 const data = {
-                                    src: thumbnails.default.url,
+                                    src: thumbnails.high.url,
                                     srcset: [
-                                        `${thumbnails.default.url} 1024w`,
-                                        `${thumbnails.default.url} 800w`,
-                                        `${thumbnails.medium.url} 500w`,
-                                        `${thumbnails.default.url} 320w`,
+                                        `${thumbnails.high.url} 1024w`,
+                                        `${thumbnails.high.url} 800w`,
+                                        `${thumbnails.high.url} 500w`,
+                                        `${thumbnails.high.url} 320w`,
                                     ],
-                                    width: thumbnails.default.width,
-                                    height: thumbnails.default.height,
+                                    width: thumbnails.high.width,
+                                    height: thumbnails.high.height,
                                     content: youtubeId,
                                     type: 'video',
                                 };
