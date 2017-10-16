@@ -48,7 +48,10 @@
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.0",
     "url-loader": "^0.5.8",
-    "webpack": "^2.3.2"
+    "webpack": "^2.3.2",
+    "prop-types": "file:./vendors/prop-types",
+    "babel-plugin-syntax-class-properties": "file:./vendors/babel-plugin-syntax-class-properties",
+    "babel-plugin-transform-class-properties": "file:./vendors/babel-plugin-transform-class-properties"
   },
   "dependencies": {
     "classnames": "^2.1.5",
