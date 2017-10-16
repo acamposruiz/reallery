@@ -49,6 +49,10 @@
     "style-loader": "^0.16.0",
     "url-loader": "^0.5.8",
     "webpack": "^2.3.2",
+    "lodash-node": "file:./vendors/lodash-node",
+    "decree": "file:./vendors/decree",
+    "bindings": "file:./vendors/bindings",
+    "lwip": "file:./vendors/lwip",
     "prop-types": "file:./vendors/prop-types",
     "babel-plugin-syntax-class-properties": "file:./vendors/babel-plugin-syntax-class-properties",
     "babel-plugin-transform-class-properties": "file:./vendors/babel-plugin-transform-class-properties"
