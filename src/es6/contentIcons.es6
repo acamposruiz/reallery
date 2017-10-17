@@ -4,10 +4,8 @@
 /*jshint newcap: false */
 /*global React */
 import React from 'react';
-import * as MaterialDesignIcons from 'react-icons/md'
-import * as FontAwesome from 'react-icons/fa'
-import * as Typicons from 'react-icons/ti'
-import * as GithubOcticons from 'react-icons/go'
+import * as icons from './icons.es6'
+
 
 class ContentIcons extends React.Component {
 
@@ -16,8 +14,7 @@ class ContentIcons extends React.Component {
     }
 
     render() {
-        const icons = {MaterialDesignIcons, FontAwesome, Typicons, GithubOcticons};
-        return React.createElement(icons[this.props.dataicon.family][this.props.dataicon.icon], null)
+        return React.createElement(icons[this.props.dataicon.icon], null);
     }
 };
 

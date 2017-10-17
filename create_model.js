@@ -7,7 +7,7 @@ var rmdir = require('rmdir');
 var colors = require('colors');
 var YouTube = require('youtube-node');
 
-
+var errors = [];
 
 
 function getYoutubeData(projtsJson) {
@@ -322,6 +322,8 @@ function writeRawState(data) {
 
         console.log("The code was written!");
     });
+
+    return new Promise(sendJson => sendJson());
 }
 
 function filterArgsCommands(projtsJson) {
@@ -351,7 +353,36 @@ function writeStyles(projtsJson) {
         console.log("Styles was written!");
     });
 
+    const iconsMap = {
+        MaterialDesignIcons: 'react-icons/md',
+        FontAwesome: 'react-icons/fa',
+        Typicons: 'react-icons/ti',
+        GithubOcticons: 'react-icons/go'};
+
+    let icons = '';
+
+    for ( let key in projtsJson ) {
+        if (key != 'meta') {
+            if (!projtsJson[key].icon.icon || !iconsMap[projtsJson[key].icon.family])
+                errors.push(`Icons configuration fatal error in ${key} section. 
+                Please check correct icon names in 'reallery_conf.json'`);
+            icons += `export {${ projtsJson[key].icon.icon }} from '${ iconsMap[projtsJson[key].icon.family] }';`;
+        }
+    }
+
+    fs.writeFile("src/es6/icons.es6", icons, function (err) {
+        if (err) {
+            return console.log(err);
+        }
+
+        console.log("Styles was written!");
+    });
+
     return new Promise(sendJson => sendJson(projtsJson));
+}
+
+function printErrors() {
+    errors.forEach(error => console.log((error).red));
 }
 
 readConfigData("reallery_conf.json")
@@ -359,5 +390,6 @@ readConfigData("reallery_conf.json")
     .then(filterArgsCommands)
     .then(getYoutubeData)
     .then(generateSourceImages)
-    .then(writeRawState);
+    .then(writeRawState)
+    .then(printErrors);
 
