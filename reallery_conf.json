@@ -3,7 +3,8 @@
     "title": "Michelangelo Buonarroti",
     "email": "mbuonarroti@reallery.com",
     "tlf": "555-555-555",
-    "background": "bg.jpg"
+    "background": "bg.jpg",
+    "github": "https://github.com/acamposruiz/reallery"
   },
   "paintings": {
     "name": "Paintings",
