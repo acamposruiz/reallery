@@ -1,17 +1,17 @@
 # Reallery
-Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need for data services. Responsive and very very fast. Focus on develop gallery applications.
+Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need for data services. Responsive and very very fast. It's focusing on develop gallery applications.
 
 
   View online demo on [demo.reallery.com](http://www.demo.reallery.com/)
 
 
 # Steps to build your project
-1. Clone this project
+1. Clone this repository
 1. Npm install
-1. Config project on ./reallery_conf.json
+1. Config your project on ./reallery_conf.json
 1. Save your images in ./content/<SECTION_KEY_X>/images/
-    - Name eah folder as the name of the section and put inside its images
-1. Npm run create && webpack
+    - Name each folder as the name of the section and put inside the images
+1. Npm run create & webpack
 1. Config the server and go ahead. Your project is online :)
 
 
@@ -59,8 +59,8 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
 
     ```
 
-    - *title:* Here you put the web page main title will appear in the main head display
-    - *background:* Here you put the file name that will be displayed as a home page background. This file has to stay:  ./content/background/<"<FILE_NAME_BACKGROUND_IMAGE>
+    - *title:* Here you have to put the name of your project that will appear in the UI
+    - *background:* Here you have to put the file name that will be displayed as a home page background. This file has to stay inside:  ./content/background/<"<FILE_NAME_BACKGROUND_IMAGE>
 
 1. Edit sections configuration
 
@@ -87,13 +87,13 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
 
     ```
 
-    - *<SECTION_KEY_X>:* Here you put this section key name. This name will be the key that refer to this section and it has to check with the folder name that will contain the images of the section gallery here: ./content/<SECTION_KEY_X>/images/.
-    - *name:* Here you put this section name. This name will appear in each button that link to this section.
-    - *color:* Color in the section styles
-    - *icon:* Select an icon from [react-icons](https://gorangajic.github.io/react-icons/fa.html), select a family and a icon from there.
-    - *videos:* Array of strings equal to youtube ID videos
-    - *articles.en:* Array of strings that are the articles yout want to publish in your site
-    - *publish:* This has to be set as true or false value. True publish the section whereas false hide it.
+    - *<SECTION_KEY_X>:* Section key name. This name will be the key that refer to this section in the code and it has to check with the folder name that will contain the images of the section gallery here: ./content/<SECTION_KEY_X>/images/.
+    - *name:* Section public name. This name will appear in the UI.
+    - *color:* Button color
+    - *icon:* Object with two keys: {"family":"", "icon":""}. Select an icon from [react-icons](https://gorangajic.github.io/react-icons/fa.html), select a family and a icon from there.
+    - *videos:* Array of strings that correspond to youtube ID videos
+    - *articles.en:* Array of strings that are the articles you want to publish in your site
+    - *publish:* This has to be equal to true or false value. True publish the section whereas false hide it.
 
 
 ## Step 4: Image files
