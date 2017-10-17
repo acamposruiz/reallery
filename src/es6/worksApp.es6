@@ -42,8 +42,11 @@ class worksApp extends React.Component {
     }
 
     logPageView() {
-        ga('set', 'page', '/' + window.location.hash);
-        ga('send', 'pageview');
+        const ga = ga || false;
+        if (ga) {
+            ga('set', 'page', '/' + window.location.hash);
+            ga('send', 'pageview');
+        }
     }
 
     render() {
