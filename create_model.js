@@ -10,7 +10,7 @@ var YouTube = require('youtube-node');
 var errors = [];
 
 
-function getYoutubeData(projtsJson) {
+function youtube(projtsJson) {
 
     var youTube = new YouTube();
 
@@ -117,7 +117,7 @@ function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir, im
 }
 
 
-function generateSourceImages(projtsJson) {
+function images(projtsJson) {
     return new Promise(sendData => {
 
         function createImages(projtsJson) {
@@ -313,7 +313,7 @@ function readConfigData(path) {
 
 }
 
-function writeRawState(data) {
+function state(data) {
 
     fs.writeFile("state/state.js", data, function (err) {
         if (err) {
@@ -337,59 +337,113 @@ function filterArgsCommands(projtsJson) {
     return new Promise(sendJson => sendJson(!process.argv[2]?projtsJson:processArgs(projtsJson)));
 }
 
-function writeStyles(projtsJson) {
-    const styles = `.home {
-  background: resolve("background/${projtsJson.meta.background}") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }`;
+function config(projtsJson) {
+    function stylesPromise() {
+        /* STYLES CSS */
+        return new Promise((ok,fail) => {
+            const styles = `.home {
+                      background: resolve("background/${projtsJson.meta.background}") no-repeat center center fixed;
+                      -webkit-background-size: cover;
+                      -moz-background-size: cover;
+                      -o-background-size: cover;
+                      background-size: cover; }`;
 
-    fs.writeFile("src/styles/config.pcss", styles, function (err) {
-        if (err) {
-            return console.log(err);
-        }
+            fs.writeFile("src/styles/config.pcss", styles, function (err) {
+                if (err) {
+                    fail("FAil Styles configuration");
+                }
 
-        console.log("Styles was written!");
-    });
+                console.log("Styles was written!");
+                ok();
+            });
+        });
 
-    const iconsMap = {
-        MaterialDesignIcons: 'react-icons/md',
-        FontAwesome: 'react-icons/fa',
-        Typicons: 'react-icons/ti',
-        GithubOcticons: 'react-icons/go'};
-
-    let icons = '';
-
-    for ( let key in projtsJson ) {
-        if (key != 'meta') {
-            if (!projtsJson[key].icon.icon || !iconsMap[projtsJson[key].icon.family])
-                errors.push(`Icons configuration fatal error in ${key} section. 
-                Please check correct icon names in 'reallery_conf.json'`);
-            icons += `export {${ projtsJson[key].icon.icon }} from '${ iconsMap[projtsJson[key].icon.family] }';`;
-        }
     }
 
-    fs.writeFile("src/es6/icons.es6", icons, function (err) {
-        if (err) {
-            return console.log(err);
-        }
+    function jsDependenciesPromise() {
+        /* JS DEPENDENCES */
+        return new Promise((ok, fail) => {
+            const iconsMap = {
+                MaterialDesignIcons: 'react-icons/md',
+                FontAwesome: 'react-icons/fa',
+                Typicons: 'react-icons/ti',
+                GithubOcticons: 'react-icons/go'};
 
-        console.log("Styles was written!");
+            let icons = '';
+
+            for ( let key in projtsJson ) {
+                if (key != 'meta') {
+                    if (!projtsJson[key].icon.icon || !iconsMap[projtsJson[key].icon.family])
+                        errors.push(`Icons configuration fatal error in ${key} section. 
+                Please check correct icon names in 'reallery_conf.json'`);
+                    icons += `export {${ projtsJson[key].icon.icon }} from '${ iconsMap[projtsJson[key].icon.family] }';`;
+                }
+            }
+
+            fs.writeFile("src/es6/icons.es6", icons, function (err) {
+                if (err) {
+                    fail("FAil JS DEPENDENCES configuration");
+                }
+
+                ok();
+
+            });
+        });
+    }
+
+    function htmlAndThenPromise() {
+        /* HTML AND THEN */
+        return new Promise((ok, fail) => {
+            let indexHtml = `<!doctype html>
+                            <html lang="en" data-framework="react">
+                                <head>
+                                    <meta charset="utf-8">
+                                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                                    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+                                    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+                                    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400" rel="stylesheet">
+                                    <title>${ projtsJson.meta.title }</title>
+                                </head>
+                                </head>
+                              <body>
+                                <section class="mainpage"></section>
+                            
+                                <script src="build/app.js"></script>
+                            
+                              </body>
+                            </html>`;
+
+
+
+            fs.writeFile("./index.html", indexHtml, function (err) {
+                if (err) {
+                    fail("FAil HTML configuration");
+                }
+
+                ok();
+            });
+        });
+    }
+
+    return new Promise(sendJson => {
+        Promise.all([stylesPromise(), jsDependenciesPromise(), htmlAndThenPromise()]).then(values => {
+            sendJson(projtsJson);
+        }).catch(reason => {
+            errors.push(reason);
+        });
+
     });
-
-    return new Promise(sendJson => sendJson(projtsJson));
 }
 
-function printErrors() {
+function errors() {
     errors.forEach(error => console.log((error).red));
 }
 
 readConfigData("reallery_conf.json")
-    .then(writeStyles)
+    .then(config)
     .then(filterArgsCommands)
-    .then(getYoutubeData)
-    .then(generateSourceImages)
-    .then(writeRawState)
-    .then(printErrors);
+    .then(youtube)
+    .then(images)
+    .then(state)
+    .then(errors);
 
