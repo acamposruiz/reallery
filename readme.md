@@ -1,24 +1,22 @@
 # Reallery
-Framework to easy create your own gallery webpage just with a JSON file configuration. Made with ReactJS. You can put images, videos and texts. Fast, elegant, responsive.
+Reallery is a MobileFirst framework based on ReactJS. Easy configuration. No need for data services. Responsive and very very fast. Focus on develop gallery applications.
 
 
-  View online Example on [reallery.com](http://www.reallery.com/)
+  View online demo on [demo.reallery.com](http://www.demo.reallery.com/)
 
 
 # Steps to build your project
-1. Clone the project
+1. Clone this project
 1. Npm install
-1. Config project and each section in the JSON site configuration file: ./model_conf.json
-    - Fill in the metadata project info: email, tlf, title (project name) and background file name (this file has to be located in: ./content/background/"<FILE_NAME_BACKGROUND_IMAGE>)
-    - Each section has a name, color, icon, videos (on youtube), texts, etc. All this just in the JSON configuration file.
-1. Create a folder for each section of your gallery inside ./content
+1. Config project on ./reallery_conf.json
+1. Save your images in ./content/<SECTION_KEY_X>/images/
     - Name eah folder as the name of the section and put inside its images
 1. Npm run create && webpack
 1. Config the server and go ahead. Your project is online :)
 
 
 ## Step 3: Config your project
-1. Open ./model_conf.json
+1. Open ./reallery_conf.json
     ```javascript
         {
           "meta": {
@@ -100,10 +98,10 @@ Framework to easy create your own gallery webpage just with a JSON file configur
 
 ## Step 4: Image files
 
-Create a folder for each section of your gallery inside ./content/<SECTION_KEY_X>/images/. Inside this folder you have to copy all the images files.
+Create a folder for each section of your gallery inside ./content/<SECTION_KEY_X>/images/. Make sure the name of the folder <SECTION_KEY_X> is the same as the key you put in the Json. Inside this folder you have to copy all the images files.
 
 # Run Example
-If you want to run [reallery.com](http://www.reallery.com/) locally it's simple.
+If you want to run [demo.reallery.com](http://www.demo.reallery.com/) locally it's simple.
 1. Switch branch: **git checkout example/mbuonarroti**
 1. Run webpack on console
 1. Start any server on local finder. As for example http-server npm package or anything else.

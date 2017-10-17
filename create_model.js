@@ -262,7 +262,7 @@ function generateSourceImages(projtsJson) {
                 (function promRecur(index) {
 
                     if (index == 0) {
-                        const fileJson = JSON.parse(fs.readFileSync("model_conf.json", "utf8"));
+                        const fileJson = JSON.parse(fs.readFileSync("reallery_conf.json", "utf8"));
                         rawData = "var state = state || {};";
                         rawData += "(function () { 'use strict';";
                         rawData += "var projects = {};";
@@ -354,7 +354,7 @@ function writeStyles(projtsJson) {
     return new Promise(sendJson => sendJson(projtsJson));
 }
 
-readConfigData("model_conf.json")
+readConfigData("reallery_conf.json")
     .then(writeStyles)
     .then(filterArgsCommands)
     .then(getYoutubeData)
