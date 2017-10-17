@@ -104,7 +104,7 @@ class worksApp extends React.Component {
                         <section className="gallery"> {gallery} </section>
 
                         <footer className="contact">
-                            { (meta.github)? <a target="_blank" href={meta.github} ><span className="mail-data"><FaGithubAlt /><span className="data">Github.com</span></span></a>: null}
+                            { (meta.github)? <a target="_blank" href={meta.github} ><span className="mail-data"><FaGithubAlt /><span className="data">View on github</span></span></a>: null}
 
                             <a href={`mailto:${meta.email}`} ><span className="mail-data"><FaEnvelope /><span className="data">{meta.email}</span></span></a>
                             &nbsp;	&nbsp;	&nbsp;
