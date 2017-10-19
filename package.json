@@ -26,7 +26,6 @@
     "file-loader": "^0.10.1",
     "image-size": "^0.5.1",
     "jest": "^20.0.4",
-    "lwip": "0.0.9",
     "node-sass": "^4.5.1",
     "path": "^0.12.7",
     "postcss-assets": "^4.1.0",
@@ -52,7 +51,6 @@
     "lodash-node": "file:./vendors/lodash-node",
     "decree": "file:./vendors/decree",
     "bindings": "file:./vendors/bindings",
-    "lwip": "file:./vendors/lwip",
     "prop-types": "file:./vendors/prop-types",
     "babel-plugin-syntax-class-properties": "file:./vendors/babel-plugin-syntax-class-properties",
     "babel-plugin-transform-class-properties": "file:./vendors/babel-plugin-transform-class-properties"
