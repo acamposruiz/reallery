@@ -51,6 +51,7 @@
     "lodash-node": "file:./vendors/lodash-node",
     "decree": "file:./vendors/decree",
     "bindings": "file:./vendors/bindings",
+    "lwip": "acamposruiz/lwip",
     "prop-types": "file:./vendors/prop-types",
     "babel-plugin-syntax-class-properties": "file:./vendors/babel-plugin-syntax-class-properties",
     "babel-plugin-transform-class-properties": "file:./vendors/babel-plugin-transform-class-properties"
