@@ -23,6 +23,7 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
             "title": "<WEBPAGE_NAME>",
             "email": "<PUBLIC_EMAIL_WEBPAGE>",
             "tlf": "<PUBLIC_TLF_WEBPAGE>",
+            "google_analytics_id": "<GOOGLE_ANALYTICS_ID>",
             "background": "<FILE_NAME_BACKGROUND_IMAGE>"
           },
           "<SECTION_KEY_01>": {
@@ -52,6 +53,7 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
             "title": "<WEBPAGE_NAME>",
             "email": "<PUBLIC_EMAIL_WEBPAGE>",
             "tlf": "<PUBLIC_TLF_WEBPAGE>",
+            "google_analytics_id": "<GOOGLE_ANALYTICS_ID>",
             "background": "<FILE_NAME_BACKGROUND_IMAGE>"
           },
           ...
@@ -61,6 +63,7 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
 
     - *title:* Here you have to put the name of your project that will appear in the UI
     - *background:* Here you have to put the file name that will be displayed as a home page background. This file has to stay inside:  ./content/background/<"<FILE_NAME_BACKGROUND_IMAGE>
+    - *google_analytics_id:* If you have configured an analytics account by google you can put here your ID so you can take track of your site.
 
 1. Edit sections configuration
 
