@@ -7,79 +7,101 @@ var rmdir = require('rmdir');
 var colors = require('colors');
 var YouTube = require('youtube-node');
 
-var errors = [];
+var warnings = [];
 
 
 function youtube(projtsJson) {
 
-    const youTubeKey = projtsJson.meta.youTubeKey;
+  const youTubeKey = projtsJson.meta.youTubeKey;
 
-    if (youTubeKey) {
+
+  function anyVideo(projtsJson) {
+
+    var videos = [];
+
+    for (var key in projtsJson) {
+      let projVideo = projtsJson[key].videos && projtsJson[key].videos.en;
+      videos = (projVideo)? videos.concat(projtsJson[key].videos.en): videos;
+    }
+
+    return videos.length > 0;
+
+  }
+
+
+
+  return new Promise((sendData, fail) => {
+
+    if (!youTubeKey && anyVideo(projtsJson)) {
+      fail('No youtube key in configuration file');
+    } else {
       var youTube = new YouTube();
       youTube.setKey(youTubeKey);
+      const arrayPromises = [];
 
-      return new Promise(sendData => {
-        const arrayPromises = [];
+      Object.keys(projtsJson).filter(key => key !== 'meta').forEach(projectKey => {
 
-        Object.keys(projtsJson).filter(key => key !== 'meta').forEach(projectKey => {
+        Object.keys(projtsJson[projectKey].videos).forEach(lang => {
 
-          Object.keys(projtsJson[projectKey].videos).forEach(lang => {
+          projtsJson[projectKey].videos[lang].forEach((youtubeId, index) => {
 
-            projtsJson[projectKey].videos[lang].forEach((youtubeId, index) => {
+            arrayPromises.push(new Promise(resolve => {
 
-              arrayPromises.push(new Promise(resolve => {
+              youTube.getById(youtubeId, function (error, result) {
 
-                youTube.getById(youtubeId, function(error, result) {
+                if (error) {
+                  console.log(error);
+                }
+                else {
+                  const thumbnails = result.items[0].snippet.thumbnails;
+                  const data = {
+                    src: thumbnails.high.url,
+                    srcset: [
+                      `${thumbnails.high.url} 1024w`,
+                      `${thumbnails.high.url} 800w`,
+                      `${thumbnails.high.url} 500w`,
+                      `${thumbnails.high.url} 320w`,
+                    ],
+                    width: thumbnails.high.width,
+                    height: thumbnails.high.height,
+                    content: youtubeId,
+                    type: 'video',
+                  };
+                  resolve({
+                    index: index,
+                    lang: lang,
+                    projectKey: projectKey,
+                    data: data
+                  });
+                }
 
-                  if (error) {
-                    console.log(error);
-                  }
-                  else {
-                    const thumbnails = result.items[0].snippet.thumbnails;
-                    const data = {
-                      src: thumbnails.high.url,
-                      srcset: [
-                        `${thumbnails.high.url} 1024w`,
-                        `${thumbnails.high.url} 800w`,
-                        `${thumbnails.high.url} 500w`,
-                        `${thumbnails.high.url} 320w`,
-                      ],
-                      width: thumbnails.high.width,
-                      height: thumbnails.high.height,
-                      content: youtubeId,
-                      type: 'video',
-                    };
-                    resolve({
-                      index:index,
-                      lang:lang,
-                      projectKey:projectKey,
-                      data:data
-                    });
-                  }
+              });
 
-                });
-
-              }));
-
-            });
+            }));
 
           });
 
         });
 
-
-        Promise.all(arrayPromises).then(data => {
-          data.forEach(dataProject => {
-            projtsJson[dataProject.projectKey]['videos'][dataProject.lang][dataProject.index] = dataProject.data;
-          });
-          sendData(projtsJson);
-        });
       });
+
+
+      Promise.all(arrayPromises).then(data => {
+        data.forEach(dataProject => {
+          projtsJson[dataProject.projectKey]['videos'][dataProject.lang][dataProject.index] = dataProject.data;
+        });
+        sendData(projtsJson);
+      });
+
+
     }
-    else {
-      errors.push('No youtube key in configuration file');
-      return new Promise(sendData => sendData(projtsJson));
-    }
+
+  });
+  /*}
+  else {
+    warnings.push('No youtube key in configuration file');
+    return new Promise(sendData => sendData(projtsJson));
+  }*/
 
 }
 
@@ -323,15 +345,19 @@ function readConfigData(path) {
 
 function state(data) {
 
-    fs.writeFile("state/state.js", data, function (err) {
+
+
+    return new Promise(sendJson => {
+      fs.writeFile("state/state.js", data, function (err) {
         if (err) {
-            return console.log(err);
+          return console.log(err);
         }
 
-        console.log("The code was written!");
-    });
 
-    return new Promise(sendJson => sendJson());
+        sendJson("The code was written!")
+      });
+
+    });
 }
 
 function filterArgsCommands(projtsJson) {
@@ -382,7 +408,7 @@ function config(projtsJson) {
             for ( let key in projtsJson ) {
                 if (key != 'meta') {
                     if (!projtsJson[key].icon.icon || !iconsMap[projtsJson[key].icon.family])
-                        errors.push(`Icons configuration fatal error in ${key} section. 
+                        warnings.push(`Icons configuration fatal error in ${key} section. 
                 Please check correct icon names in 'reallery_conf.json'`);
                     icons += `export {${ projtsJson[key].icon.icon }} from '${ iconsMap[projtsJson[key].icon.family] }';`;
                 }
@@ -449,14 +475,10 @@ function config(projtsJson) {
         Promise.all([stylesPromise(), jsDependenciesPromise(), htmlAndThenPromise()]).then(values => {
             sendJson(projtsJson);
         }).catch(reason => {
-            errors.push(reason);
+            warnings.push(reason);
         });
 
     });
-}
-
-function errors() {
-    errors.forEach(error => console.log((error).red));
 }
 
 readConfigData("reallery_conf.json")
@@ -465,5 +487,9 @@ readConfigData("reallery_conf.json")
     .then(youtube)
     .then(images)
     .then(state)
-    .then(errors);
+    .then(function() {
+      warnings.forEach(warning => console.log((warning).red));
+    }).catch(error => {
+      console.log((error).red);
+});
 
