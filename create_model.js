@@ -32,69 +32,68 @@ function youtube(projtsJson) {
 
   return new Promise((sendData, fail) => {
 
-    if (!youTubeKey && anyVideo(projtsJson)) {
-      fail('No youtube key in configuration file');
-    } else {
-      var youTube = new YouTube();
-      youTube.setKey(youTubeKey);
-      const arrayPromises = [];
+    if (!youTubeKey && anyVideo(projtsJson)) fail('No youtube key in configuration file');
 
-      Object.keys(projtsJson).filter(key => key !== 'meta').forEach(projectKey => {
+    var youTube = new YouTube();
+    youTube.setKey(youTubeKey);
+    const arrayPromises = [];
 
-        Object.keys(projtsJson[projectKey].videos).forEach(lang => {
+    Object.keys(projtsJson).filter(key => key !== 'meta').forEach(projectKey => {
 
-          projtsJson[projectKey].videos[lang].forEach((youtubeId, index) => {
+      Object.keys(projtsJson[projectKey].videos).forEach(lang => {
 
-            arrayPromises.push(new Promise(resolve => {
+        projtsJson[projectKey].videos[lang].forEach((youtubeId, index) => {
 
-              youTube.getById(youtubeId, function (error, result) {
+          arrayPromises.push(new Promise(resolve => {
 
-                if (error) {
-                  console.log(error);
-                }
-                else {
-                  const thumbnails = result.items[0].snippet.thumbnails;
-                  const data = {
-                    src: thumbnails.high.url,
-                    srcset: [
-                      `${thumbnails.high.url} 1024w`,
-                      `${thumbnails.high.url} 800w`,
-                      `${thumbnails.high.url} 500w`,
-                      `${thumbnails.high.url} 320w`,
-                    ],
-                    width: thumbnails.high.width,
-                    height: thumbnails.high.height,
-                    content: youtubeId,
-                    type: 'video',
-                  };
-                  resolve({
-                    index: index,
-                    lang: lang,
-                    projectKey: projectKey,
-                    data: data
-                  });
-                }
+            youTube.getById(youtubeId, function (error, result) {
 
-              });
+              if (error) {
+                console.log(error);
+              }
+              else {
+                const thumbnails = result.items[0].snippet.thumbnails;
+                const data = {
+                  src: thumbnails.high.url,
+                  srcset: [
+                    `${thumbnails.high.url} 1024w`,
+                    `${thumbnails.high.url} 800w`,
+                    `${thumbnails.high.url} 500w`,
+                    `${thumbnails.high.url} 320w`,
+                  ],
+                  width: thumbnails.high.width,
+                  height: thumbnails.high.height,
+                  content: youtubeId,
+                  type: 'video',
+                };
+                resolve({
+                  index: index,
+                  lang: lang,
+                  projectKey: projectKey,
+                  data: data
+                });
+              }
 
-            }));
+            });
 
-          });
+          }));
 
         });
 
       });
 
+    });
 
-      Promise.all(arrayPromises).then(data => {
-        data.forEach(dataProject => {
-          projtsJson[dataProject.projectKey]['videos'][dataProject.lang][dataProject.index] = dataProject.data;
-        });
-        sendData(projtsJson);
+
+    Promise.all(arrayPromises).then(data => {
+      data.forEach(dataProject => {
+        projtsJson[dataProject.projectKey]['videos'][dataProject.lang][dataProject.index] = dataProject.data;
       });
+      sendData(projtsJson);
+    });
 
 
-    }
+
 
   });
   /*}
