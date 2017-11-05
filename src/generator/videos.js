@@ -101,7 +101,7 @@ function youtube(dataJSON) {
 
     if (!youTubeKey) resolve(dataJSON);
 
-    getVideos(youTubeKey, dataJSON).then(dataWithVideos => resolve(dataWithVideos));
+    getVideos(youTubeKey, Object.assign({}, dataJSON)).then(dataWithVideos => resolve(dataWithVideos));
 
   });
 
