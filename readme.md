@@ -34,12 +34,8 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
               "family": "<SECTION_ICON_FAMILY>",
               "icon": "<SECTION_ICON_NAME>"
             },
-            "videos": {
-              "en": [<SECTION_YOUTUBE_IDS_VIDEOS>]
-            },
-            "articles": {
-              "en": [<SECTION_ARTICLES>]
-              },
+            "videos": [<SECTION_YOUTUBE_IDS_VIDEOS>],
+            "articles": [<SECTION_ARTICLES>],
             "publish": true/false
           },
           "<SECTION_KEY_02>": { ... }
@@ -80,12 +76,8 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
                       "family": "<SECTION_ICON_FAMILY>",
                       "icon": "<SECTION_ICON_NAME>"
                     },
-                    "videos": {
-                      "en": [<SECTION_YOUTUBE_IDS_VIDEOS>]
-                    },
-                    "articles": {
-                      "en": [<SECTION_ARTICLES>]
-                      },
+                    "videos": [<SECTION_YOUTUBE_IDS_VIDEOS>],
+                    "articles": [<SECTION_ARTICLES>],
                     "publish": true/false
                   },
                   "<SECTION_KEY_02>": { ... }
@@ -98,7 +90,7 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
     - *color:* Button color
     - *icon:* Object with two keys: {"family":"", "icon":""}. Select an icon from [react-icons](https://gorangajic.github.io/react-icons/fa.html), select a family and a icon from there.
     - *videos:* Array of strings that correspond to youtube ID videos
-    - *articles.en:* Array of strings that are the articles you want to publish in your site
+    - *articles:* Array of strings that are the articles you want to publish in your site
     - *publish:* This has to be equal to true or false value. True publish the section whereas false hide it.
 
 

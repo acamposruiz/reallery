@@ -20,29 +20,24 @@ function youtube(projtsJson) {
     var videos = [];
 
     for (var key in projtsJson) {
-      let projVideo = projtsJson[key].videos && projtsJson[key].videos.en;
-      videos = (projVideo)? videos.concat(projtsJson[key].videos.en): videos;
+      let projVideo = projtsJson[key].videos;
+      videos = (projVideo)? videos.concat(projVideo): videos;
     }
 
     return videos.length > 0;
 
   }
 
+  function getVideos(youTubeKey) {
 
+    return new Promise(ok => {
 
-  return new Promise((sendData, fail) => {
+      var youTube = new YouTube();
+      youTube.setKey(youTubeKey);
+      const arrayPromises = [];
 
-    if (!youTubeKey && anyVideo(projtsJson)) fail('No youtube key in configuration file');
-
-    var youTube = new YouTube();
-    youTube.setKey(youTubeKey);
-    const arrayPromises = [];
-
-    Object.keys(projtsJson).filter(key => key !== 'meta').forEach(projectKey => {
-
-      Object.keys(projtsJson[projectKey].videos).forEach(lang => {
-
-        projtsJson[projectKey].videos[lang].forEach((youtubeId, index) => {
+      function getIdPromise(lang, projectKey) {
+        return function(youtubeId, index) {
 
           arrayPromises.push(new Promise(resolve => {
 
@@ -78,29 +73,45 @@ function youtube(projtsJson) {
 
           }));
 
+        };
+      }
+
+      Object.keys(projtsJson).filter(key => key !== 'meta').forEach(projectKey => {
+        if (!projtsJson.meta.languages) {
+          projtsJson[projectKey].videos.forEach(getIdPromise(false, projectKey));
+        } else {
+          Object.keys(projtsJson[projectKey].videos).forEach(lang => {
+
+            projtsJson[projectKey].videos[lang].forEach(getIdPromise(lang, projectKey));
+
+          });
+        }
+      });
+
+      Promise.all(arrayPromises).then(data => {
+        data.forEach(dataProject => {
+          if (dataProject.lang) {
+            projtsJson[dataProject.projectKey]['videos'][dataProject.lang][dataProject.index] = dataProject.data;
+          } else {
+            projtsJson[dataProject.projectKey]['videos'][dataProject.index] = dataProject.data;
+          }
         });
-
+        ok(projtsJson);
       });
 
     });
+  }
 
 
-    Promise.all(arrayPromises).then(data => {
-      data.forEach(dataProject => {
-        projtsJson[dataProject.projectKey]['videos'][dataProject.lang][dataProject.index] = dataProject.data;
-      });
-      sendData(projtsJson);
-    });
+  return new Promise((sendData, fail) => {
 
+    if (!youTubeKey && anyVideo(projtsJson)) fail('No youtube key in configuration file');
 
+    if (!youTubeKey) sendData(projtsJson);
 
+    getVideos(youTubeKey).then(dataWithVideos => sendData(dataWithVideos));
 
   });
-  /*}
-  else {
-    warnings.push('No youtube key in configuration file');
-    return new Promise(sendData => sendData(projtsJson));
-  }*/
 
 }
 
