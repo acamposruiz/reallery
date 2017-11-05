@@ -69,20 +69,19 @@ function getVideos(youTubeKey, dataJSON) {
       if (!dataJSON.meta.languages) {
         dataJSON[projectKey].videos.forEach(getIdPromise(false, projectKey, arrayPromises, youTube));
       } else {
-        Object.keys(dataJSON[projectKey].videos).forEach(lang => {
-
+        for (const lang in dataJSON[projectKey].videos) {
           dataJSON[projectKey].videos[lang].forEach(getIdPromise(lang, projectKey, arrayPromises, youTube));
-
-        });
+        }
       }
     });
 
     Promise.all(arrayPromises).then(data => {
       data.forEach(dataProject => {
+        const videos = dataJSON[dataProject.projectKey]['videos'];
         if (dataProject.lang) {
-          dataJSON[dataProject.projectKey]['videos'][dataProject.lang][dataProject.index] = dataProject.data;
+          videos[dataProject.lang][dataProject.index] = dataProject.data;
         } else {
-          dataJSON[dataProject.projectKey]['videos'][dataProject.index] = dataProject.data;
+          videos[dataProject.index] = dataProject.data;
         }
       });
       resolve(dataJSON);
