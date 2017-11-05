@@ -12,67 +12,75 @@ var errors = [];
 
 function youtube(projtsJson) {
 
-    var youTube = new YouTube();
+    const youTubeKey = projtsJson.meta.youTubeKey;
 
-    youTube.setKey('AIzaSyAPPDBVqSMFkX9UqTj1Nc_roz7oIKqowQc');
+    if (youTubeKey) {
+      var youTube = new YouTube();
+      youTube.setKey(youTubeKey);
 
-    return new Promise(sendData => {
+      return new Promise(sendData => {
         const arrayPromises = [];
 
         Object.keys(projtsJson).filter(key => key !== 'meta').forEach(projectKey => {
 
-            Object.keys(projtsJson[projectKey].videos).forEach(lang => {
+          Object.keys(projtsJson[projectKey].videos).forEach(lang => {
 
-                projtsJson[projectKey].videos[lang].forEach((youtubeId, index) => {
+            projtsJson[projectKey].videos[lang].forEach((youtubeId, index) => {
 
-                    arrayPromises.push(new Promise(resolve => {
+              arrayPromises.push(new Promise(resolve => {
 
-                        youTube.getById(youtubeId, function(error, result) {
+                youTube.getById(youtubeId, function(error, result) {
 
-                            if (error) {
-                                console.log(error);
-                            }
-                            else {
-                                const thumbnails = result.items[0].snippet.thumbnails;
-                                const data = {
-                                    src: thumbnails.high.url,
-                                    srcset: [
-                                        `${thumbnails.high.url} 1024w`,
-                                        `${thumbnails.high.url} 800w`,
-                                        `${thumbnails.high.url} 500w`,
-                                        `${thumbnails.high.url} 320w`,
-                                    ],
-                                    width: thumbnails.high.width,
-                                    height: thumbnails.high.height,
-                                    content: youtubeId,
-                                    type: 'video',
-                                };
-                                resolve({
-                                    index:index,
-                                    lang:lang,
-                                    projectKey:projectKey,
-                                    data:data
-                                });
-                            }
-
-                        });
-
-                    }));
+                  if (error) {
+                    console.log(error);
+                  }
+                  else {
+                    const thumbnails = result.items[0].snippet.thumbnails;
+                    const data = {
+                      src: thumbnails.high.url,
+                      srcset: [
+                        `${thumbnails.high.url} 1024w`,
+                        `${thumbnails.high.url} 800w`,
+                        `${thumbnails.high.url} 500w`,
+                        `${thumbnails.high.url} 320w`,
+                      ],
+                      width: thumbnails.high.width,
+                      height: thumbnails.high.height,
+                      content: youtubeId,
+                      type: 'video',
+                    };
+                    resolve({
+                      index:index,
+                      lang:lang,
+                      projectKey:projectKey,
+                      data:data
+                    });
+                  }
 
                 });
 
+              }));
+
             });
+
+          });
 
         });
 
 
         Promise.all(arrayPromises).then(data => {
-            data.forEach(dataProject => {
-                projtsJson[dataProject.projectKey]['videos'][dataProject.lang][dataProject.index] = dataProject.data;
-            });
-            sendData(projtsJson);
+          data.forEach(dataProject => {
+            projtsJson[dataProject.projectKey]['videos'][dataProject.lang][dataProject.index] = dataProject.data;
+          });
+          sendData(projtsJson);
         });
-    });
+      });
+    }
+    else {
+      errors.push('No youtube key in configuration file');
+      return new Promise(sendData => sendData(projtsJson));
+    }
+
 }
 
 /* Generate responsive images */
