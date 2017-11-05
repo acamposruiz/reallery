@@ -1,11 +1,12 @@
 {
   "meta": {
-    "title": "",
-    "email": "",
-    "tlf": "",
-    "google_analytics_id": "",
-    "youTubeKey": "",
-    "background": ""
+    "title": "Michelangelo Buonarroti",
+    "email": "mbuonarroti@reallery.com",
+    "tlf": "555-555-555",
+    "background": "bg.jpg",
+    "google_analytics_id": "UA-98183956-2",
+    "youTubeKey": "AIzaSyAPPDBVqSMFkX9UqTj1Nc_roz7oIKqowQc",
+    "github": "https://github.com/acamposruiz/reallery"
   },
   "paintings": {
     "name": "Paintings",
