@@ -18,109 +18,110 @@ const Router = Director.Router;
 
 class worksApp extends React.Component {
 
-    constructor(props, context) {
-        super(props, context);
-        this.state = {
-            lng: 'en',
-            meta: props.meta || {},
-            project: null
-        };
-    }
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      lng: 'en',
+      meta: props.meta || {},
+      project: null
+    };
+  }
 
-    componentDidMount() {
-        const setState = this.setState.bind(this);
-        let projects = this.props.model;
-        const router = Router({
-            '/:lng/': [(lng) => {
-                setState({project: null, lng});
-            }, this.logPageView],
-            '/:lng/project/view/:projectId': [(lng, projectId) => {
-                setState({project: projects[projectId], lng});
-            }, this.logPageView]
-        });
-        router.init('/en');
-    }
+  componentDidMount() {
+    const setState = this.setState.bind(this);
+    let projects = this.props.model;
+    const router = Router({
+      '/:lng/': [(lng) => {
+        setState({project: null, lng});
+      }, this.logPageView],
+      '/:lng/project/view/:projectId': [(lng, projectId) => {
+        setState({project: projects[projectId], lng});
+      }, this.logPageView]
+    });
+    router.init('/en');
+  }
 
-    logPageView() {
-        const ga = ga || false;
-        if (ga) {
-            ga('set', 'page', '/' + window.location.hash);
-            ga('send', 'pageview');
+  logPageView() {
+    const ga = ga || false;
+    if (ga) {
+      ga('set', 'page', '/' + window.location.hash);
+      ga('send', 'pageview');
+    }
+  }
+
+  render() {
+    const mobile = utils.is_mobile('any') ? 'mobile' : 'no-mobile';
+    const section = !this.state.project ? 'home' : 'project';
+    const lng = this.state.lng;
+    const homePath = "/#/" + lng;
+    let projects = this.props.model;
+    let projectSt = this.state.project || {};
+    let meta = this.props.meta || {};
+    let ObjVals = Object.keys(projects).map(function (key) {
+      return projects[key];
+    });
+
+
+    let projectsButtosList = ObjVals.map(function (project, index) {
+      project.state = project.state || "";
+      project.strings = project.strings || {
+        "en": {
+          "name": project.name,
+          "type": project.name
         }
-    }
-
-    render() {
-        const mobile = utils.is_mobile('any')? 'mobile':'no-mobile';
-        const section = !this.state.project? 'home':'project';
-        const lng = this.state.lng;
-        const homePath = "/#/" + lng;
-        let projects = this.props.model;
-        let projectSt = this.state.project || {};
-        let meta = this.props.meta || {};
-        let ObjVals = Object.keys(projects).map(function(key) {
-            return projects[key];
-        });
-
-
-        let projectsButtosList = ObjVals.map(function (project, index) {
-            project.state = project.state || "";
-            project.strings = project.strings || {
-                "en": {
-                    "name": project.name,
-                    "type": project.name
-                }
-            };
-            return (
-                <ProjectButton
-                    icon={project.icon}
-                    view={section}
-                    lng={lng}
-                    key={index}
-                    key2={Object.keys(projects)[index]}
-                    name={project.name}
-                    strings={project.strings[lng]}
-                    color={project.color}
-                    type={project.type}
-                    publish={project.publish}
-                    state={project.state}
-                    active={project.name == projectSt.name}
-                />
-            );
-        }, this);
+      };
+      return (
+        <ProjectButton
+          icon={project.icon}
+          view={section}
+          lng={lng}
+          key={index}
+          key2={Object.keys(projects)[index]}
+          name={project.name}
+          strings={project.strings[lng]}
+          color={project.color}
+          type={project.type}
+          publish={project.publish}
+          state={project.state}
+          active={project.name == projectSt.name}
+        />
+      );
+    }, this);
 
 
+    const gallery = <ProjectGallery lng={lng} project={this.state.project}/>;
 
-        const gallery = <ProjectGallery lng={lng} project={this.state.project}/>;
+    return <div className={`container ${section} ${mobile}`}>
 
-        return <div className={`container ${section} ${mobile}`}>
+      <header className="container-header">
+        <h1 className="title-header"><a className="main-title" href={homePath}>{meta.title}</a></h1>
+        <section className="menu menu-header"> {this.state.project ? projectsButtosList : null} </section>
+      </header>
 
-                        <header className="container-header">
-                            <h1 className="title-header"><a className="main-title" href={homePath}>{meta.title}</a></h1>
-                            <section className="menu menu-header"> {this.state.project? projectsButtosList: null} </section>
-                        </header>
+      <section className="menu menu-content"> {!this.state.project ? projectsButtosList : null} </section>
 
-                        <section className="menu menu-content"> {!this.state.project? projectsButtosList: null} </section>
+      <section className="gallery"> {gallery} </section>
 
-                        <section className="gallery"> {gallery} </section>
+      <footer className="contact">
+        {(meta.github) ?
+          <a target="_blank" href={meta.github}><span className="mail-data"><FaGithubAlt/><span className="data">View on github</span></span></a> : null}
 
-                        <footer className="contact">
-                            { (meta.github)? <a target="_blank" href={meta.github} ><span className="mail-data"><FaGithubAlt /><span className="data">View on github</span></span></a>: null}
-
-                            <a href={`mailto:${meta.email}`} ><span className="mail-data"><FaEnvelope /><span className="data">{meta.email}</span></span></a>
-                            &nbsp;	&nbsp;	&nbsp;
-                            <a href={`tel:${meta.tlf}`} ><span className="mail-data"><FaPhone /><span className="data">{meta.tlf}</span></span></a>
+        <a href={`mailto:${meta.email}`}><span className="mail-data"><FaEnvelope/><span
+          className="data">{meta.email}</span></span></a>
+        &nbsp;  &nbsp;  &nbsp;
+        <a href={`tel:${meta.tlf}`}><span className="mail-data"><FaPhone/><span
+          className="data">{meta.tlf}</span></span></a>
 
 
-
-                            {/*<i class="material-icons">phone</i>
+        {/*<i class="material-icons">phone</i>
                              <span className="twitter-data"><FaTwitter /><span className="data">@acwrks</span></span>
                              <span className="instagram-data"><FaInstagram /><span className="data">acwrks</span></span>
                              */}
 
-                        </footer>
+      </footer>
 
-                </div>
-    }
+    </div>
+  }
 
 };
 
