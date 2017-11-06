@@ -55,8 +55,8 @@ class ProjectGallery extends React.Component {
                     };
                 });
 
-            const videos = nextProps.project.videos[nextProps.lng];
-            const articles = nextProps.project.articles[nextProps.lng].map(text => {
+            const videos = (nextProps.lng)? nextProps.project.videos[nextProps.lng]: nextProps.project.videos
+            const articles = ((nextProps.lng)? nextProps.project.articles[nextProps.lng]: nextProps.project.articles).map(text => {
                 return {
                     type: 'article',
                     content: text

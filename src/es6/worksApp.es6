@@ -21,24 +21,42 @@ class worksApp extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      lng: 'en',
       meta: props.meta || {},
       project: null
     };
+
+    if (props.meta.languageDefault) this.state.lng = props.meta.languageDefault;
   }
 
   componentDidMount() {
+    this.configRoute(this.props.meta.languageDefault);
+  }
+
+  configRoute(lngParam) {
     const setState = this.setState.bind(this);
     let projects = this.props.model;
-    const router = Router({
-      '/:lng/': [(lng) => {
-        setState({project: null, lng});
-      }, this.logPageView],
-      '/:lng/project/view/:projectId': [(lng, projectId) => {
-        setState({project: projects[projectId], lng});
-      }, this.logPageView]
-    });
-    router.init('/en');
+
+    if (lngParam) {
+      const router = Router({
+        '/:lng/': [(lng) => {
+          setState({project: null, lng});
+        }, this.logPageView],
+        '/:lng/project/view/:projectId': [(lng, projectId) => {
+          setState({project: projects[projectId], lng});
+        }, this.logPageView]
+      });
+      router.init(`/${lngParam}`);
+    } else {
+      const router = Router({
+        '/': [() => {
+          setState({project: null});
+        }, this.logPageView],
+        '/project/view/:projectId': [(projectId) => {
+          setState({project: projects[projectId]});
+        }, this.logPageView]
+      });
+      router.init('/');
+    }
   }
 
   logPageView() {
@@ -53,7 +71,7 @@ class worksApp extends React.Component {
     const mobile = utils.is_mobile('any') ? 'mobile' : 'no-mobile';
     const section = !this.state.project ? 'home' : 'project';
     const lng = this.state.lng;
-    const homePath = "/#/" + lng;
+    const homePath = "/#/" + (lng || "");
     let projects = this.props.model;
     let projectSt = this.state.project || {};
     let meta = this.props.meta || {};
@@ -78,7 +96,7 @@ class worksApp extends React.Component {
           key={index}
           key2={Object.keys(projects)[index]}
           name={project.name}
-          strings={project.strings[lng]}
+          strings={(lng)? project.strings[lng]: project.strings}
           color={project.color}
           type={project.type}
           publish={project.publish}
