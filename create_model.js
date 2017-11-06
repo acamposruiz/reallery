@@ -380,11 +380,11 @@ function config(projtsJson) {
         });
     }
 
-    return new Promise(sendJson => {
+    return new Promise((resolve, reject) => {
         Promise.all([stylesPromise(), jsDependenciesPromise(), htmlAndThenPromise()]).then(values => {
-            sendJson(projtsJson);
+          resolve(projtsJson);
         }).catch(reason => {
-            warnings.push(reason);
+          reject(reason);
         });
 
     });
