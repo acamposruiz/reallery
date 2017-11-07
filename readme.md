@@ -17,47 +17,47 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
 
 ## Step 3: Config your project
 1. Open ./reallery_conf.json
-    ```javascript
-        {
-          "meta": {
-            "title": "<WEBPAGE_NAME>",
-            "email": "<PUBLIC_EMAIL_WEBPAGE>",
-            "tlf": "<PUBLIC_TLF_WEBPAGE>",
-            "google_analytics_id": "<GOOGLE_ANALYTICS_ID>",
-            "youTubeKey": "<YOUTUBE_ID>",
-            "background": "<FILE_NAME_BACKGROUND_IMAGE>"
-          },
-          "<SECTION_KEY_01>": {
-            "name": "<SECTION_NAME>",
-            "color": "<SECTION_COLOR>",
-            "icon": {
-              "family": "<SECTION_ICON_FAMILY>",
-              "icon": "<SECTION_ICON_NAME>"
-            },
-            "videos": [<SECTION_YOUTUBE_IDS_VIDEOS>],
-            "articles": [<SECTION_ARTICLES>],
-            "publish": true/false
-          },
-          "<SECTION_KEY_02>": { ... }
-        }
+```javascript
+    {
+      "meta": {
+        "title": "<WEBPAGE_NAME>",
+        "email": "<PUBLIC_EMAIL_WEBPAGE>",
+        "tlf": "<PUBLIC_TLF_WEBPAGE>",
+        "google_analytics_id": "<GOOGLE_ANALYTICS_ID>",
+        "youTubeKey": "<YOUTUBE_ID>",
+        "background": "<FILE_NAME_BACKGROUND_IMAGE>"
+      },
+      "<SECTION_KEY_01>": {
+        "name": "<SECTION_NAME>",
+        "color": "<SECTION_COLOR>",
+        "icon": {
+          "family": "<SECTION_ICON_FAMILY>",
+          "icon": "<SECTION_ICON_NAME>"
+        },
+        "videos": [<SECTION_YOUTUBE_IDS_VIDEOS>],
+        "articles": [<SECTION_ARTICLES>],
+        "publish": true/false
+      },
+      "<SECTION_KEY_02>": { ... }
+    }
 
-    ```
+```
 
 1. Fill metadata general project configuration
-    ```javascript
-        {
-          "meta": {
-            "title": "<WEBPAGE_NAME>",
-            "email": "<PUBLIC_EMAIL_WEBPAGE>",
-            "tlf": "<PUBLIC_TLF_WEBPAGE>",
-            "google_analytics_id": "<GOOGLE_ANALYTICS_ID>",
-            "youTubeKey": "<YOUTUBE_ID>",
-            "background": "<FILE_NAME_BACKGROUND_IMAGE>"
-          },
-          ...
-        }
+```javascript
+    {
+      "meta": {
+        "title": "<WEBPAGE_NAME>",
+        "email": "<PUBLIC_EMAIL_WEBPAGE>",
+        "tlf": "<PUBLIC_TLF_WEBPAGE>",
+        "google_analytics_id": "<GOOGLE_ANALYTICS_ID>",
+        "youTubeKey": "<YOUTUBE_ID>",
+        "background": "<FILE_NAME_BACKGROUND_IMAGE>"
+      },
+      ...
+    }
 
-    ```
+```
 
     - *title:* Here you have to put the name of your project that will appear in the UI
     - *background:* Here you have to put the file name that will be displayed as a home page background. This file has to stay inside:  ./content/background/<"<FILE_NAME_BACKGROUND_IMAGE>
@@ -66,24 +66,24 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
 
 1. Edit sections configuration
 
-    ```javascript
-                {
-                  ...
-                  "<SECTION_KEY_01>": {
-                    "name": "<SECTION_NAME>",
-                    "color": "<SECTION_COLOR>",
-                    "icon": {
-                      "family": "<SECTION_ICON_FAMILY>",
-                      "icon": "<SECTION_ICON_NAME>"
-                    },
-                    "videos": [<SECTION_YOUTUBE_IDS_VIDEOS>],
-                    "articles": [<SECTION_ARTICLES>],
-                    "publish": true/false
-                  },
-                  "<SECTION_KEY_02>": { ... }
-                }
+```javascript
+    {
+      ...
+      "<SECTION_KEY_01>": {
+        "name": "<SECTION_NAME>",
+        "color": "<SECTION_COLOR>",
+        "icon": {
+          "family": "<SECTION_ICON_FAMILY>",
+          "icon": "<SECTION_ICON_NAME>"
+        },
+        "videos": [<SECTION_YOUTUBE_IDS_VIDEOS>],
+        "articles": [<SECTION_ARTICLES>],
+        "publish": true/false
+      },
+      "<SECTION_KEY_02>": { ... }
+    }
 
-    ```
+```
 
     - *<SECTION_KEY_X>:* Section key name. This name will be the key that refer to this section in the code and it has to check with the folder name that will contain the images of the section gallery here: ./content/<SECTION_KEY_X>/images/.
     - *name:* Section public name. This name will appear in the UI.
@@ -103,3 +103,55 @@ If you want to run [demo.reallery.com](http://www.demo.reallery.com/) locally it
 1. Switch branch: **git checkout example/mbuonarroti**
 1. Run webpack on console
 1. Start any server on local finder. As for example http-server npm package or anything else.
+
+# Multilanguege Configuration
+
+You can set up your webpage as multilanguage by adding multilanguage options in ./reallery_conf.json inside 'meta' section this way:
+
+```javascript
+    {
+      "meta": {
+        [...]
+        "languages": {
+            "en": "English"
+            "ge": "German",
+            "es": "Spanish",
+        },
+        "default_language": "en",
+        [...]
+      },
+      ...
+    }
+
+```
+
+You have to make sure you have set both *languages* and *default_language* configuration.
+Once you have set language options inside meta section you have to set the content to make it relate to each language. So you have to config the videos and articles content in a different way from said before.
+Like this:
+
+
+```javascript
+    {
+      ...
+      "<SECTION_KEY_01>": {
+        [...]
+        "videos": {
+          "en": [<SECTION_YOUTUBE_IDS_VIDEOS>],
+          "ge": [<SECTION_YOUTUBE_IDS_VIDEOS>],
+          "es": [<SECTION_YOUTUBE_IDS_VIDEOS>]
+        },
+        "articles": {
+            "en": [<SECTION_ARTICLES>],
+            "ge": [<SECTION_ARTICLES>],
+            "es": [<SECTION_ARTICLES>]
+        },
+        [...]
+      },
+      "<SECTION_KEY_02>": { ... }
+    }
+
+```
+
+
+Now the data type of both *videos* and *articles* are not an array but a object as you may have appreciate. Also you have to change the way you name the images folder. So now you need to called each one as *./content/<SECTION_KEY_X>/images_<LANGUAGE>/*.
+Whera *<LANGUAGE>* may be something like *en* or *es* or anything that fix with any of the keys declared in *meta.languages*
