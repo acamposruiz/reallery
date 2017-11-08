@@ -126,7 +126,7 @@ You can set up your webpage as multilanguage by adding multilanguage options in 
 ```
 
 You have to make sure you have set both *languages* and *languageDefault* configuration.
-Once you have set language options inside meta section you have to set the content to make it relate to each language. So you have to config the videos and articles content in a different way from said before.
+Once you have set language options inside meta section you have to set the content to make it relate to each language. So you have to config  videos and articles content as well as the name of each section in a different way from said before.
 Like this:
 
 
@@ -135,6 +135,11 @@ Like this:
       ...
       "<SECTION_KEY_01>": {
         [...]
+        "name": {
+            "en": "<ENGLISH_SECTION_NAME>"
+            "ge": "<GERMAN_SECTION_NAME>",
+            "es": "<SPANISH_SECTION_NAME>",
+        },
         "videos": {
           "en": [<SECTION_YOUTUBE_IDS_VIDEOS>],
           "ge": [<SECTION_YOUTUBE_IDS_VIDEOS>],
