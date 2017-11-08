@@ -164,10 +164,10 @@ function generateState(rawState) {
 
       if (index == 0) {
         const fileJson = JSON.parse(fs.readFileSync("reallery_conf.json", "utf8"));
-        rawData = "var state = state || {};";
-        rawData += "(function () { 'use strict';";
-        rawData += "var projects = {};";
-        rawData += `var meta = ${JSON.stringify(fileJson.meta)};`;
+        rawData = `var state = state || {};
+                  (function () { 'use strict';
+                  var projects = {};
+                  var meta = ${JSON.stringify(fileJson.meta)};`;
       }
 
       rawState[index]().then(projectRawData => {
@@ -179,9 +179,9 @@ function generateState(rawState) {
         if (++index < rawState.length) {
           promRecur(index);
         } else {
-          rawData += "state = { meta:meta, projects: projects};";
-          rawData += "})();";
-          rawData += "export default state;";
+          rawData += `state = { meta:meta, projects: projects};
+                      })();
+                      export default state;`;
           /* Write the output */
           sendData2(rawData);
         }
