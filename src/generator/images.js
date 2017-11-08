@@ -5,7 +5,7 @@ var lwip = require('lwip');
 //var colors = require('colors');
 
 /* Generate responsive images */
-function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir, imagesFolderWeb) {
+function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir) {
   return new Promise(resolve => {
     var dimensions = [2880, 1240, 620, 310, 160];
     var srcsetPromises = [];
@@ -23,7 +23,6 @@ function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir, im
       srcsetPromises.push(new Promise(resolve => {
         var dim = dimensions[i];
         var sourceImageDirFile = sourceImageDir + dim + '_' + file;
-        var imageFolderWebFile = imagesFolderWeb + dim + '_' + file;
 
         lwip.open(imagesFolder + file, function (err, image) {
 
@@ -36,7 +35,7 @@ function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir, im
                 resolve(this.sourceImageDirFile + ' ' + this.dim + 'w');
               }.bind({sourceImageDirFile: this.sourceImageDirFile, dim: this.dim}));
 
-        }.bind({sourceImageDirFile: sourceImageDirFile, imageFolderWebFile: imageFolderWebFile, dim: dim}));
+        }.bind({sourceImageDirFile: sourceImageDirFile, dim: dim}));
       }));
     }
 
@@ -46,15 +45,11 @@ function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir, im
 }
 
 function generateProject(key, dataJSON) {
-  return function() {
-    return new Promise(function (rslv, rjct) {
+  return function () {
+    return new Promise(resolve => {
       /* Declaration of vars */
       const imagesFolder = 'content/' + key + '/images/';
-      const imagesFolder_es = 'content/' + key + '/images_es/';
-      const imagesFolderWeb = 'content/' + key + '/imgweb/';
-      const imagesFolderWeb_es = 'content/' + key + '/imgweb_es/';
       const sourceImagesDir = 'content/' + key + '/source_images/';
-      const sourceImagesDir_es = 'content/' + key + '/source_images_es/';
 
       function processFiles(folder1, folder2, folder3) {
 
@@ -67,11 +62,11 @@ function generateProject(key, dataJSON) {
 
         files.forEach(file => {
           if (file.split('.')[1] == 'jpg' || file.split('.')[1] == 'png') {
-            imagesPromises.push(new Promise(function (rslv2, rjct2) {
+            imagesPromises.push(new Promise(resolve => {
               var dimensions = sizeOf(folder2 + file);
               generateSourceResponsive(file, folder2, dimensions, folder1, folder3).then(srcset => {
 
-                rslv2({
+                resolve({
                   type: 'photo',
                   path: folder2 + file,
                   srcset: srcset,
@@ -87,60 +82,25 @@ function generateProject(key, dataJSON) {
         return imagesPromises;
       }
 
-      if (!fs.existsSync(imagesFolder_es)) {
-        fs.existsSync(sourceImagesDir)
-          ? rmdir(sourceImagesDir, () => generateSourceImages(sourceImagesDir))
-          : generateSourceImages(sourceImagesDir);
+      fs.existsSync(sourceImagesDir)
+        ? rmdir(sourceImagesDir, () => generateSourceImages(sourceImagesDir))
+        : generateSourceImages(sourceImagesDir);
 
-        function generateSourceImages(sourceImagesDir) {
+      function generateSourceImages(sourceImagesDir) {
 
-          Promise.all(processFiles(sourceImagesDir, imagesFolder, imagesFolderWeb)).then(values => {
+        Promise.all(processFiles(sourceImagesDir, imagesFolder)).then(values => {
 
-            dataJSON[key]["images"] = values;
+          dataJSON[key]["images"] = values;
 
-            /* include project */
-            var textCode = 'projects["' + key + '"]=' + JSON.stringify(dataJSON[key]) + ';';
+          /* include project */
+          var textCode = 'projects["' + key + '"]=' + JSON.stringify(dataJSON[key]) + ';';
 
 
-            rslv(textCode);
-          });
+          resolve(textCode);
+        });
 
-        }
-      } else {
-
-        fs.existsSync(sourceImagesDir)
-          ? rmdir(sourceImagesDir, () => {
-            fs.existsSync(sourceImagesDir_es)
-              ? rmdir(sourceImagesDir_es, () => generateSourceImagesAll())
-              : generateSourceImagesAll();
-          })
-          : fs.existsSync(sourceImagesDir_es)
-          ? rmdir(sourceImagesDir_es, () => generateSourceImagesAll())
-          : generateSourceImagesAll();
-
-        function generateSourceImagesAll() {
-          generateSourceImages_en(sourceImagesDir).then(generateSourceImages_es).then(rslv);
-        }
-
-        function generateSourceImages_es(dataJSON) {
-          return new Promise(gsiresolve => {
-            Promise.all(processFiles(sourceImagesDir_es, imagesFolder_es, imagesFolderWeb_es)).then(values => {
-              dataJSON[key]["images"]["es"] = values;
-              gsiresolve('projects["' + key + '"]=' + JSON.stringify(dataJSON[key]) + ';');
-            });
-          });
-        }
-
-        function generateSourceImages_en(sourceImagesDir) {
-          return new Promise(gsiresolve => {
-            Promise.all(processFiles(sourceImagesDir, imagesFolder, imagesFolderWeb)).then(values => {
-              dataJSON[key]["images"] = {"en": values};
-              gsiresolve(dataJSON);
-
-            });
-          });
-        }
       }
+
     })
 
   }
