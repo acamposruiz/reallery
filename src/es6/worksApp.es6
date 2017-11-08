@@ -82,12 +82,9 @@ class worksApp extends React.Component {
 
     let projectsButtosList = ObjVals.map(function (project, index) {
       project.state = project.state || "";
-      project.strings = project.strings || {
-        "en": {
-          "name": project.name,
-          "type": project.name
-        }
-      };
+      const name = (!lng)? project.name: project.name[lng];
+
+
       return (
         <ProjectButton
           icon={project.icon}
@@ -95,8 +92,7 @@ class worksApp extends React.Component {
           lng={lng}
           key={index}
           key2={Object.keys(projects)[index]}
-          name={project.name}
-          strings={(lng)? project.strings[lng]: project.strings}
+          name={name}
           color={project.color}
           type={project.type}
           publish={project.publish}
