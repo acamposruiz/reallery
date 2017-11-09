@@ -2,7 +2,11 @@ var fs = require("fs");
 var rmdir = require('rmdir');
 var sizeOf = require('image-size');
 var lwip = require('lwip');
-//var colors = require('colors');
+
+const {IMAGESCONTAINERFOLDER,
+      IMAGESSOURCECONTAINERFOLDER,
+      CONTENTCONTAINERFOLDER,
+      FILENAMECONFIGURATION} = require('./constants');
 
 /* Generate responsive images */
 function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir) {
@@ -48,8 +52,8 @@ function generateProject(key, dataJSON) {
   return function () {
     return new Promise(resolve => {
       /* Declaration of vars */
-      const imagesFolder = 'content/' + key + '/images/';
-      const sourceImagesDir = 'content/' + key + '/source_images/';
+      const IMAGESFOLDER = `${[CONTENTCONTAINERFOLDER, key, IMAGESCONTAINERFOLDER].join('/')}/`;
+      const SOURCEIMAGESDIR = `${[CONTENTCONTAINERFOLDER, key, IMAGESSOURCECONTAINERFOLDER].join('/')}/`;
 
       function processFiles(folder1, folder2, folder3) {
 
@@ -65,7 +69,6 @@ function generateProject(key, dataJSON) {
             imagesPromises.push(new Promise(resolve => {
               var dimensions = sizeOf(folder2 + file);
               generateSourceResponsive(file, folder2, dimensions, folder1, folder3).then(srcset => {
-
                 resolve({
                   type: 'photo',
                   path: folder2 + file,
@@ -82,20 +85,16 @@ function generateProject(key, dataJSON) {
         return imagesPromises;
       }
 
-      fs.existsSync(sourceImagesDir)
-        ? rmdir(sourceImagesDir, () => generateSourceImages(sourceImagesDir))
-        : generateSourceImages(sourceImagesDir);
+      fs.existsSync(SOURCEIMAGESDIR)
+        ? rmdir(SOURCEIMAGESDIR, () => generateSourceImages(SOURCEIMAGESDIR))
+        : generateSourceImages(SOURCEIMAGESDIR);
 
       function generateSourceImages(sourceImagesDir) {
 
-        Promise.all(processFiles(sourceImagesDir, imagesFolder)).then(values => {
-
+        Promise.all(processFiles(sourceImagesDir, IMAGESFOLDER)).then(values => {
           dataJSON[key]["images"] = values;
-
           /* include project */
           var textCode = 'projects["' + key + '"]=' + JSON.stringify(dataJSON[key]) + ';';
-
-
           resolve(textCode);
         });
 
@@ -115,15 +114,12 @@ function createImages(dataJSON) {
 }
 
 function generateState(rawState) {
-
   return new Promise(sendData2 => {
-
     var rawData;
-
     (function promRecur(index) {
 
       if (index == 0) {
-        const fileJson = JSON.parse(fs.readFileSync("reallery_conf.json", "utf8"));
+        const fileJson = JSON.parse(fs.readFileSync(FILENAMECONFIGURATION, "utf8"));
         rawData = `var state = state || {};
                   (function () { 'use strict';
                   var projects = {};

@@ -3,6 +3,8 @@ var fs = require("fs");
 var videos = require('./src/generator/videos');
 var imagesLib = require('./src/generator/images');
 
+const {FILENAMECONFIGURATION} = require('./src/generator/constants');
+
 var warnings = [];
 var youtube = videos.youtube;
 var images = imagesLib.images;
@@ -81,7 +83,7 @@ function config(projtsJson) {
         if (key != 'meta') {
           if (!projtsJson[key].icon.icon || !iconsMap[projtsJson[key].icon.family])
             warnings.push(`Icons configuration fatal error in ${key} section. 
-                Please check correct icon names in 'reallery_conf.json'`);
+                Please check correct icon names in '${FILENAMECONFIGURATION}'`);
           icons += `export {${ projtsJson[key].icon.icon }} from '${ iconsMap[projtsJson[key].icon.family] }';`;
         }
       }
@@ -151,7 +153,7 @@ function config(projtsJson) {
   });
 }
 
-readConfigData("reallery_conf.json")
+readConfigData(FILENAMECONFIGURATION)
   .then(config)
   .then(filterArgsCommands)
   .then(youtube)
