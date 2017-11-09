@@ -14,21 +14,13 @@ const getDirectories = source =>
   readdirSync(source).map(name => join(source, name)).filter(isDirectory);
 
 const {
-  IMAGESCONTAINERFOLDER,
   CONTENTCONTAINERFOLDER,
   FILENAMECONFIGURATION
 } = require('./constants');
 
-const IMAGESSOURCECONTAINERFOLDER = `${IMAGESCONTAINERFOLDER}_src`;
-
-function getFoldersIMG(projtKey) {
-  const source = path.resolve(ROOTPATH, `${[CONTENTCONTAINERFOLDER, projtKey].join('/')}/`);
-  return getDirectories(source).filter(directoryName => /images/.test(directoryName));
-}
-
-function getFoldersSRC(projtKey) {
-  const source = path.resolve(ROOTPATH, `${[CONTENTCONTAINERFOLDER, projtKey].join('/')}/`);
-  return getDirectories(source).filter(directoryName => /_src/.test(directoryName));
+function getFoldersNames(key, isSource) {
+  const source = path.resolve(ROOTPATH, `${[CONTENTCONTAINERFOLDER, key].join('/')}/`);
+  return getDirectories(source).filter(directoryName => (isSource?/_src/:/images/).test(directoryName));
 }
 
 /* Generate responsive images */
@@ -73,8 +65,6 @@ function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir) {
 
 function generateProject(key, data) {
 
-  const IMAGESFOLDER = `${[CONTENTCONTAINERFOLDER, key, IMAGESCONTAINERFOLDER].join('/')}`;
-
   return function () {
     return new Promise(resolve => {
       function processFiles(sourceFolder, imagesFolder) {
@@ -109,17 +99,17 @@ function generateProject(key, data) {
         const filesPromises = [];
 
         imagesfolder_array.forEach(imgFolder => {
-          let lng;
           const sourceImagesDir = imgFolder + '_src/';
-          if (data.meta.languages && Object.keys(data.meta.languages).some(lngItem => {
+          let lng;
+          if (!(data.meta.languages && Object.keys(data.meta.languages).some(lngItem => {
               lng = lngItem;
               return imgFolder.includes('_' + lngItem);
-            })) {} else {lng = false;}
+            }))) lng = false;
 
           filesPromises.push(new Promise(resolve => {
             const [sd, im] = [sourceImagesDir, imgFolder].map(getRelativeContent);
             Promise.all(processFiles(sd, im + '/')).then(values => {
-              _.set(data, `${key}.images.${lng? lng: 'all'}`, values);
+              _.set(data, `${key}.images.${lng ? lng : 'all'}`, values);
               resolve();
             });
           }));
@@ -132,7 +122,7 @@ function generateProject(key, data) {
         });
       }
 
-      generateSourceImages(getFoldersIMG(key));
+      generateSourceImages(getFoldersNames(key));
     })
   }
 }
@@ -140,7 +130,7 @@ function generateProject(key, data) {
 function cleanImages(data) {
   return new Promise(resolve => {
     Promise.all(_.flatten(Object.keys(data).filter(key => key !== 'meta')
-      .map(projtKey => getFoldersSRC(projtKey)))
+      .map(projtKey => getFoldersNames(projtKey, true)))
       .map(directory => new Promise(resolve => rmdir(directory, () => resolve(directory)))))
       .then(directoriesRemoved => resolve(data));
   });
