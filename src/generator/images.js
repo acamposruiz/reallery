@@ -6,16 +6,18 @@ var lwip = require('lwip');
 var path = require('path');
 
 const ROOTPATH = __dirname + "/../../";
-const { lstatSync, readdirSync } = fs;
-const { join } = path;
+const {lstatSync, readdirSync} = fs;
+const {join} = path;
 
 const isDirectory = source => lstatSync(source).isDirectory();
 const getDirectories = source =>
   readdirSync(source).map(name => join(source, name)).filter(isDirectory);
 
-const {IMAGESCONTAINERFOLDER,
-      CONTENTCONTAINERFOLDER,
-      FILENAMECONFIGURATION} = require('./constants');
+const {
+  IMAGESCONTAINERFOLDER,
+  CONTENTCONTAINERFOLDER,
+  FILENAMECONFIGURATION
+} = require('./constants');
 
 const IMAGESSOURCECONTAINERFOLDER = `source_${IMAGESCONTAINERFOLDER}`;
 
@@ -122,6 +124,16 @@ function generateProject(key, data) {
   }
 }
 
+function cleanImages(data) {
+  return new Promise(resolve => {
+    Promise.all(_.flatten(Object.keys(data).filter(key => key !== 'meta')
+      .map(projtKey => getFoldersSRC(projtKey)))
+      .map(directory => new Promise(resolve => rmdir(directory, () => resolve(directory)))))
+      .then(directoriesRemoved => resolve(data));
+  });
+}
+
+
 function createImages(data) {
   return new Promise(resolve => {
     var rawState = [];
@@ -162,16 +174,6 @@ function generateState(rawState) {
     })(0);
   })
 }
-
-function cleanImages(data) {
-  return new Promise(resolve => {
-    Promise.all(_.flatten(Object.keys(data).filter(key => key !== 'meta')
-      .map(projtKey => getFoldersSRC(projtKey)))
-      .map(directory => new Promise(resolve => rmdir(directory, () => resolve(directory)))))
-      .then(directoriesRemoved => resolve(data));
-  });
-}
-
 
 function images(data) {
   return new Promise(resolve => {
