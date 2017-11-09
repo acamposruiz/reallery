@@ -19,16 +19,16 @@ const {
   FILENAMECONFIGURATION
 } = require('./constants');
 
-const IMAGESSOURCECONTAINERFOLDER = `source_${IMAGESCONTAINERFOLDER}`;
+const IMAGESSOURCECONTAINERFOLDER = `${IMAGESCONTAINERFOLDER}_src`;
 
-/*function getMultilngFoldersIMG(projtKey) {
+function getFoldersIMG(projtKey) {
   const source = path.resolve(ROOTPATH, `${[CONTENTCONTAINERFOLDER, projtKey].join('/')}/`);
   return getDirectories(source).filter(directoryName => /images/.test(directoryName));
-}*/
+}
 
 function getFoldersSRC(projtKey) {
   const source = path.resolve(ROOTPATH, `${[CONTENTCONTAINERFOLDER, projtKey].join('/')}/`);
-  return getDirectories(source).filter(directoryName => /source/.test(directoryName));
+  return getDirectories(source).filter(directoryName => /_src/.test(directoryName));
 }
 
 /* Generate responsive images */
@@ -73,53 +73,44 @@ function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir) {
 
 function generateProject(key, data) {
 
-  const IMAGESFOLDER = `${[CONTENTCONTAINERFOLDER, key, IMAGESCONTAINERFOLDER].join('/')}/`;
-  const SOURCEIMAGESDIR = `${[CONTENTCONTAINERFOLDER, key, IMAGESSOURCECONTAINERFOLDER].join('/')}/`;
+  const IMAGESFOLDER = `${[CONTENTCONTAINERFOLDER, key, IMAGESCONTAINERFOLDER].join('/')}`;
 
   return function () {
     return new Promise(resolve => {
-
-      function processFiles(folder1, folder2, folder3) {
-
-        fs.mkdirSync(folder1);
-        console.log((`Created/Updated directory:  ${folder1}`).cyan);
-
-        /* Get images info */
-        var files = fs.readdirSync(folder2);
+      function processFiles(sourceFolder, imagesFolder) {
+        fs.mkdirSync(sourceFolder);
+        console.log((`Created/Updated directory:  ${sourceFolder}`).cyan);
+        var files = fs.readdirSync(imagesFolder);
         var imagesPromises = [];
-
         files.forEach(file => {
           if (file.split('.')[1] == 'jpg' || file.split('.')[1] == 'png') {
             imagesPromises.push(new Promise(resolve => {
-              var dimensions = sizeOf(folder2 + file);
-              generateSourceResponsive(file, folder2, dimensions, folder1, folder3).then(srcset => {
+              var dimensions = sizeOf(imagesFolder + file);
+              generateSourceResponsive(file, imagesFolder, dimensions, sourceFolder).then(srcset => {
                 resolve({
                   type: 'photo',
-                  path: folder2 + file,
+                  path: imagesFolder + file,
                   srcset: srcset,
                   width: dimensions.width,
                   height: dimensions.height
                 });
               });
-
             }));
           }
         });
-
         return imagesPromises;
       }
 
-      generateSourceImages(SOURCEIMAGESDIR);
-
-      function generateSourceImages(sourceImagesDir) {
-
-        Promise.all(processFiles(sourceImagesDir, IMAGESFOLDER)).then(values => {
+      function generateSourceImages(IMAGESFOLDER) {
+        const sourceImagesDir = IMAGESFOLDER + '_src/';
+        Promise.all(processFiles(sourceImagesDir, IMAGESFOLDER + '/')).then(values => {
           _.set(data, `${key}.images.all`, values);
-          /* include project */
           var textCode = `projects["${key}"]=${JSON.stringify(data[key])};`;
           resolve(textCode);
         });
       }
+
+      generateSourceImages(IMAGESFOLDER);
     })
   }
 }
