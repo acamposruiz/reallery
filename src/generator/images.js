@@ -3,11 +3,31 @@ var _ = require('lodash');
 var rmdir = require('rmdir');
 var sizeOf = require('image-size');
 var lwip = require('lwip');
+var path = require('path');
+
+const ROOTPATH = __dirname + "/../../";
+const { lstatSync, readdirSync } = fs;
+const { join } = path;
+
+const isDirectory = source => lstatSync(source).isDirectory();
+const getDirectories = source =>
+  readdirSync(source).map(name => join(source, name)).filter(isDirectory);
 
 const {IMAGESCONTAINERFOLDER,
-      IMAGESSOURCECONTAINERFOLDER,
       CONTENTCONTAINERFOLDER,
       FILENAMECONFIGURATION} = require('./constants');
+
+const IMAGESSOURCECONTAINERFOLDER = `source_${IMAGESCONTAINERFOLDER}`;
+
+/*function getMultilngFoldersIMG(projtKey) {
+  const source = path.resolve(ROOTPATH, `${[CONTENTCONTAINERFOLDER, projtKey].join('/')}/`);
+  return getDirectories(source).filter(directoryName => /images/.test(directoryName));
+}*/
+
+function getFoldersSRC(projtKey) {
+  const source = path.resolve(ROOTPATH, `${[CONTENTCONTAINERFOLDER, projtKey].join('/')}/`);
+  return getDirectories(source).filter(directoryName => /source/.test(directoryName));
+}
 
 /* Generate responsive images */
 function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir) {
@@ -50,11 +70,12 @@ function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir) {
 }
 
 function generateProject(key, data) {
+
+  const IMAGESFOLDER = `${[CONTENTCONTAINERFOLDER, key, IMAGESCONTAINERFOLDER].join('/')}/`;
+  const SOURCEIMAGESDIR = `${[CONTENTCONTAINERFOLDER, key, IMAGESSOURCECONTAINERFOLDER].join('/')}/`;
+
   return function () {
     return new Promise(resolve => {
-      /* Declaration of vars */
-      const IMAGESFOLDER = `${[CONTENTCONTAINERFOLDER, key, IMAGESCONTAINERFOLDER].join('/')}/`;
-      const SOURCEIMAGESDIR = `${[CONTENTCONTAINERFOLDER, key, IMAGESSOURCECONTAINERFOLDER].join('/')}/`;
 
       function processFiles(folder1, folder2, folder3) {
 
@@ -85,9 +106,8 @@ function generateProject(key, data) {
 
         return imagesPromises;
       }
-      fs.existsSync(SOURCEIMAGESDIR)
-        ? rmdir(SOURCEIMAGESDIR, () => generateSourceImages(SOURCEIMAGESDIR))
-        : generateSourceImages(SOURCEIMAGESDIR);
+
+      generateSourceImages(SOURCEIMAGESDIR);
 
       function generateSourceImages(sourceImagesDir) {
 
@@ -143,10 +163,22 @@ function generateState(rawState) {
   })
 }
 
+function cleanImages(data) {
+  return new Promise(resolve => {
+    Promise.all(_.flatten(Object.keys(data).filter(key => key !== 'meta')
+      .map(projtKey => getFoldersSRC(projtKey)))
+      .map(directory => new Promise(resolve => rmdir(directory, () => resolve(directory)))))
+      .then(directoriesRemoved => resolve(data));
+  });
+}
+
 
 function images(data) {
   return new Promise(resolve => {
-    createImages(data).then(generateState).then(resolve);
+    cleanImages(data)
+      .then(createImages)
+      .then(generateState)
+      .then(resolve);
   });
 }
 
