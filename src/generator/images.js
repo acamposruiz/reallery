@@ -30,7 +30,7 @@ function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir) {
 
         lwip.open(imagesFolder + file, function (err, image) {
 
-          console.log('Generating -> ' + imagesFolder + file + ' to width = ' + this.dim);
+          console.log(`Generating ->  ${imagesFolder + file} to width = ${this.dim}`);
 
           image.batch()
             .resize(this.dim, (this.dim / dmsns.width) * dmsns.height)
@@ -58,7 +58,7 @@ function generateProject(key, data) {
       function processFiles(folder1, folder2, folder3) {
 
         fs.mkdirSync(folder1);
-        console.log(('Created/Updated directory: ' + folder1).cyan);
+        console.log((`Created/Updated directory:  ${folder1}`).cyan);
 
         /* Get images info */
         var files = fs.readdirSync(folder2);
@@ -114,7 +114,7 @@ function createImages(data) {
 }
 
 function generateState(rawState) {
-  return new Promise(sendData2 => {
+  return new Promise(resolve => {
     var rawData;
     (function promRecur(index) {
 
@@ -130,7 +130,7 @@ function generateState(rawState) {
 
         rawData += projectRawData;
 
-        console.log(('Generated raw code of project with key: ' + (index + 1)).green);
+        console.log((`Generated raw code of project with key:  ${index + 1}`).green);
 
         if (++index < rawState.length) {
           promRecur(index);
@@ -139,7 +139,7 @@ function generateState(rawState) {
                       })();
                       export default state;`;
           /* Write the output */
-          sendData2(rawData);
+          resolve(rawData);
         }
       });
     })(0);
