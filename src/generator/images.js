@@ -48,7 +48,7 @@ function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir) {
 
 }
 
-function generateProject(key, dataJSON) {
+function generateProject(key, data) {
   return function () {
     return new Promise(resolve => {
       /* Declaration of vars */
@@ -92,9 +92,9 @@ function generateProject(key, dataJSON) {
       function generateSourceImages(sourceImagesDir) {
 
         Promise.all(processFiles(sourceImagesDir, IMAGESFOLDER)).then(values => {
-          dataJSON[key]["images"] = values;
+          data[key]["images"] = values;
           /* include project */
-          var textCode = 'projects["' + key + '"]=' + JSON.stringify(dataJSON[key]) + ';';
+          var textCode = 'projects["' + key + '"]=' + JSON.stringify(data[key]) + ';';
           resolve(textCode);
         });
 
@@ -105,10 +105,10 @@ function generateProject(key, dataJSON) {
   }
 }
 
-function createImages(dataJSON) {
+function createImages(data) {
   return new Promise(resolve => {
     var rawState = [];
-    Object.keys(dataJSON).filter(key => key !== 'meta').forEach(key => rawState.push(generateProject(key, dataJSON)));
+    Object.keys(data).filter(key => key !== 'meta').forEach(key => rawState.push(generateProject(key, data)));
     resolve(rawState);
   });
 }
@@ -147,9 +147,9 @@ function generateState(rawState) {
 }
 
 
-function images(dataJSON) {
+function images(data) {
   return new Promise(resolve => {
-    createImages(dataJSON).then(generateState).then(resolve);
+    createImages(data).then(generateState).then(resolve);
   });
 }
 
