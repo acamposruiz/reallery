@@ -5,8 +5,6 @@
 /*global React */
 import React from 'react';
 import Gallery from 'react-multimedia-gallery';
-//import Gallery from './Gallery';
-//import Gallery from './Gallery';
 import Lightbox from 'react-images-texts-videos';
 import Loading from 'react-loading';
 import utils from './utils.es6';
@@ -40,23 +38,17 @@ class ProjectGallery extends React.Component {
 
         if (nextProps.project) {
 
-            const images = nextProps.project && (nextProps.project.images.length
-                    ? nextProps.project.images
-                    : nextProps.project.images[nextProps.lng]);
-
-
-            const photos = images && images.map((image, index) => {
-                    return {
-                        src: image.path,
-                        srcset: image.srcset,
-                        width: image.width,
-                        height: image.height,
-                        type: image.type
-                    };
-                });
+            const photos = _.get(nextProps, `project.images.all`)
+              .concat(nextProps.lng
+                ? _.get(nextProps, `project.images.${nextProps.lng}`)
+                : [])
+              .map(image => _.pick(image, ['src', 'srcset', 'width', 'height', 'type']));
 
             const videos = (nextProps.lng)? nextProps.project.videos[nextProps.lng]: nextProps.project.videos
-            const articles = ((nextProps.lng)? nextProps.project.articles[nextProps.lng]: nextProps.project.articles).map(text => {
+
+            const articles = ((nextProps.lng)
+              ? nextProps.project.articles[nextProps.lng]
+              : nextProps.project.articles).map(text => {
                 return {
                     type: 'article',
                     content: text

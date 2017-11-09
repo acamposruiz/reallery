@@ -1,4 +1,5 @@
 var fs = require("fs");
+var _ = require('lodash');
 var rmdir = require('rmdir');
 var sizeOf = require('image-size');
 var lwip = require('lwip');
@@ -84,7 +85,6 @@ function generateProject(key, data) {
 
         return imagesPromises;
       }
-
       fs.existsSync(SOURCEIMAGESDIR)
         ? rmdir(SOURCEIMAGESDIR, () => generateSourceImages(SOURCEIMAGESDIR))
         : generateSourceImages(SOURCEIMAGESDIR);
@@ -92,16 +92,13 @@ function generateProject(key, data) {
       function generateSourceImages(sourceImagesDir) {
 
         Promise.all(processFiles(sourceImagesDir, IMAGESFOLDER)).then(values => {
-          data[key]["images"] = values;
+          _.set(data, `${key}.images.all`, values);
           /* include project */
-          var textCode = 'projects["' + key + '"]=' + JSON.stringify(data[key]) + ';';
+          var textCode = `projects["${key}"]=${JSON.stringify(data[key])};`;
           resolve(textCode);
         });
-
       }
-
     })
-
   }
 }
 
