@@ -101,16 +101,38 @@ function generateProject(key, data) {
         return imagesPromises;
       }
 
-      function generateSourceImages(IMAGESFOLDER) {
-        const sourceImagesDir = IMAGESFOLDER + '_src/';
-        Promise.all(processFiles(sourceImagesDir, IMAGESFOLDER + '/')).then(values => {
-          _.set(data, `${key}.images.all`, values);
+      function getRelativeContent(directory) {
+        return directory.substr(directory.indexOf(CONTENTCONTAINERFOLDER));
+      }
+
+      function generateSourceImages(imagesfolder_array) {
+        const filesPromises = [];
+
+        imagesfolder_array.forEach(imgFolder => {
+          let lng;
+          const sourceImagesDir = imgFolder + '_src/';
+          if (data.meta.languages && Object.keys(data.meta.languages).some(lngItem => {
+              lng = lngItem;
+              return imgFolder.includes('_' + lngItem);
+            })) {} else {lng = false;}
+
+          filesPromises.push(new Promise(resolve => {
+            const [sd, im] = [sourceImagesDir, imgFolder].map(getRelativeContent);
+            Promise.all(processFiles(sd, im + '/')).then(values => {
+              _.set(data, `${key}.images.${lng? lng: 'all'}`, values);
+              resolve();
+            });
+          }));
+
+        });
+
+        Promise.all(filesPromises).then(() => {
           var textCode = `projects["${key}"]=${JSON.stringify(data[key])};`;
           resolve(textCode);
         });
       }
 
-      generateSourceImages(IMAGESFOLDER);
+      generateSourceImages(getFoldersIMG(key));
     })
   }
 }
