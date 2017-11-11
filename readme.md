@@ -43,7 +43,7 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
 
 ```
 
-1. Fill metadata general project configuration
+2. Fill metadata general project configuration
 ```javascript
     {
       "meta": {
@@ -64,7 +64,7 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
     - google_analytics_id: If you have configured an analytics account on google you can put here your ID so you can take track of your site.
     - youTubeKey: Key from your youtube account. It's necessary to let the project manage your videos.
 
-1. Edit sections configuration
+3. Edit sections configuration
 
 ```javascript
     {
