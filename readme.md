@@ -166,4 +166,5 @@ Whera *<LANGUAGE_KEY>* may be something like *en* or *es* or anything that fix w
 The option of config a switsh language modal in your project is comming soon. But now you have to follow another aproach to let users navegate along the different languages in you project.
 The default language navegation mode will be the *meta.languageDefault* value in your configuration. And every user will keep this language. So you will have to config your site to enable diferents domains extensions that link to each language path root, so after the user comes to your site in this language they will keep in it.
 For instance you can config your *domain.com* as default so it will enter your site as the default language and then config a *domain.ge* tha link to your *domain.com/#/ge* so after the first access the user will keep in the german language.
+If you want to see an example of a multilanguage configuration you can go to *example/mbuonarroti-multilangage* branch by exec con console: *git checkout example/mbuonarroti-multilangage*
 
