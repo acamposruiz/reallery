@@ -10,7 +10,7 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
 1. Npm install
 1. Config your project on ./reallery_conf.json
 1. Save your images in ./content/<SECTION_KEY_X>/images/
-    - Name each folder as the name of the section and put the images
+    - Name each folder (<SECTION_KEY_X>) as the name key of the section and put the images
 1. Npm run create & webpack
 1. Config the server and go ahead. Your project is online :)
 
@@ -167,4 +167,4 @@ Like this:
 - The option of setting a modal to easily switching language in your project is coming soon. But now you have to follow another approach to let users navigate among the different languages in your project.
 - The default language navigation mode will be the *meta.languageDefault* value in your configuration. And every user will keep this language. So you will have to configure your site to enable different domains extensions that link to each language root, so after the user comes to your site in this language they will keep in it.
 - For instance, you can configure your **domain.com** by default so it will enter your site as the default language and then config a **domain.ge** that links to your **domain.com/#/ge** so after the first access the user will keep in the German language.
-- If you want to see an example of a multilanguage configuration you can go to **example/mbuonarroti-multilangage** branch by exec with console: *git checkout example / mbuonarroti-multilangage*
+- If you want to see an example of a multilanguage configuration you can go to **example/mbuonarroti-multilangage** branch by exec with console: *git checkout example/mbuonarroti-multilangage*
