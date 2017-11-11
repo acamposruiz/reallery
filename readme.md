@@ -106,7 +106,7 @@ If you want to run [demo.reallery.com](http://www.demo.reallery.com/) locally it
 
 # Multilanguege Configuration
 
-You can set up your webpage as multilanguage by adding multilanguage options in ./reallery_conf.json inside 'meta' section this way:
+You can set up your webpage as multilanguage by adding multilanguage configuration in ./reallery_conf.json inside 'meta' section this way:
 
 ```javascript
     {
@@ -126,7 +126,7 @@ You can set up your webpage as multilanguage by adding multilanguage options in 
 ```
 
 You have to make sure you have set both *languages* and *languageDefault* configuration.
-Once you have set language options inside meta section you have to set the content to make it relate to each language. So you have to config  videos and articles content as well as the name of each section in a different way from said before.
+Once you have set language options inside meta section you have to config the content to make it fit each language. So you have to config  videos and articles content as well as the name of each section in a particular way.
 Like this:
 
 
@@ -158,5 +158,12 @@ Like this:
 ```
 
 
-Now the data type of both *videos* and *articles* are not an array but a object as you may have appreciate. Also you have to change the way you name the images folder. So now you need to called each one as *./content/<SECTION_KEY_X>/images_<LANGUAGE>/*.
-Whera *<LANGUAGE>* may be something like *en* or *es* or anything that fix with any of the keys declared in *meta.languages*
+Now the data type of both *videos* and *articles* are not an array but a object as you may have appreciated. Also you have to change the way you name the images folder. So now you need to called each one as *./content/<SECTION_KEY_X>/images_<LANGUAGE_KEY>/*.
+Whera *<LANGUAGE_KEY>* may be something like *en* or *es* or anything that fix with any of the keys declared in *meta.languages*. The images inside *./content/<SECTION_KEY_X>/images/* will still be showed in all the languages. So you can keep the common content along all languages in *.../images* and put language specific content in *.../images_<LANGUAGE_KEY>*
+
+# MULTILANGUAGE PHILOSOPHY
+
+The option of config a switsh language modal in your project is comming soon. But now you have to follow another aproach to let users navegate along the different languages in you project.
+The default language navegation mode will be the *meta.languageDefault* value in your configuration. And every user will keep this language. So you will have to config your site to enable diferents domains extensions that link to each language path root, so after the user comes to your site in this language they will keep in it.
+For instance you can config your *domain.com* as default so it will enter your site as the default language and then config a *domain.ge* tha link to your *domain.com/#/ge* so after the first access the user will keep in the german language.
+
