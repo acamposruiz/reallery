@@ -59,10 +59,10 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
 
 ```
 
-    - *title:* Here you have to put the name of your project that will appear in the UI
-    - *background:* Here you have to put the file name that will be displayed as a homepage background. This file has to stay inside:  ./content/background/<"<FILE_NAME_BACKGROUND_IMAGE>
-    - *google_analytics_id:* If you have configured an analytics account on google you can put here your ID so you can take track of your site.
-    - *youTubeKey:* Key from your youtube account. It's necessary to let the project manage your videos.
+    - title: Here you have to put the name of your project that will appear in the UI
+    - background: Here you have to put the file name that will be displayed as a homepage background. This file has to stay inside:  ./content/background/<"<FILE_NAME_BACKGROUND_IMAGE>
+    - google_analytics_id: If you have configured an analytics account on google you can put here your ID so you can take track of your site.
+    - youTubeKey: Key from your youtube account. It's necessary to let the project manage your videos.
 
 1. Edit sections configuration
 
@@ -85,13 +85,13 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
 
 ```
 
-    - *<SECTION_KEY_X>:* Section key name. This name will be the key that refers to this section in the code and it has to check with the folder name that will contain the images of the section gallery here: ./content/<SECTION_KEY_X>/images/.
-    - *name:* Section public name. This name will appear in the UI.
-    - *color:* Button color
-    - *icon:* Object with two keys: {"family":"", "icon":""}. Select an icon from [react-icons](https://gorangajic.github.io/react-icons/fa.html), select a family and an icon from there.
-    - *videos:* Array of strings that correspond to youtube ID videos
-    - *articles:* Array of strings that are the articles you want to publish on your site
-    - *publish:* This has to be equal to true or false value. True publish the section whereas false hide it.
+    - <SECTION_KEY_X>: Section key name. This name will be the key that refers to this section in the code and it has to check with the folder name that will contain the images of the section gallery here: ./content/<SECTION_KEY_X>/images/.
+    - name: Section public name. This name will appear in the UI.
+    - color: Button color
+    - icon: Object with two keys: {"family":"", "icon":""}. Select an icon from [react-icons](https://gorangajic.github.io/react-icons/fa.html), select a family and an icon from there.
+    - videos: Array of strings that correspond to youtube ID videos
+    - articles: Array of strings that are the articles you want to publish on your site
+    - publish: This has to be equal to true or false value. True publish the section whereas false hide it.
 
 
 ## Step 4: Image files
