@@ -3,15 +3,22 @@ var fs = require("fs");
 function getAssetsLoadPaths() {
 
     let keysPrjts;
+    const conf = JSON.parse(fs.readFileSync("reallery_conf.json", "utf8"));
 
     function getKeysPrjts() {
-        keysPrjts = keysPrjts || Object.keys(JSON.parse(fs.readFileSync("reallery_conf.json", "utf8")));
+        keysPrjts = keysPrjts || Object.keys(conf);
         return keysPrjts;
     }
 
-    const loadPaths = ['projts', 'content']
-        .concat(getKeysPrjts().map(key => `projts/${key}/images`))
-        .concat(getKeysPrjts().map(key => `projts/${key}/source_images`));
+    let loadPaths = ['projts', 'content']
+        .concat(getKeysPrjts().map(key => `content/${key}/images`))
+        .concat(getKeysPrjts().map(key => `content/${key}/images_src`));
+
+    if (conf.meta.languages)
+      Object.keys(conf.meta.languages).forEach(lng => {
+        loadPaths = loadPaths.concat(getKeysPrjts().map(key => `content/${key}/images_${lng}`))
+          .concat(getKeysPrjts().map(key => `content/${key}/images_src_${lng}`));
+      });
 
     return loadPaths;
 }
