@@ -158,10 +158,11 @@ Like this:
 ```
 
 
-Now the data type of both *videos* and *articles* are not an array but an object as you may have appreciated. Also you have to change the way you name the images folder. So now you need to called each one as *./content/<SECTION_KEY_X>/images_<LANGUAGE_KEY>/*.
-Where *<LANGUAGE_KEY>* may be something like *en* or *es* or anything that fix with any of the keys declared in *meta.languages*. The images inside *./content/<SECTION_KEY_X>/images/* will still be showed in all the languages. So you can keep the common content among all languages in *.../images* and put language-specific content in *.../images_<LANGUAGE_KEY>*
+- Now the data type of both *videos* and *articles* are not an array but an object as you may have appreciated.
+- Also you have to change the way you name the images folder. So now you need to called each one as *./content/<SECTION_KEY_X>/images_<LANGUAGE_KEY>/*. Where *<LANGUAGE_KEY>* may be something like *en* or *es* or anything that fix with any of the keys declared in *meta.languages*.
+- The images inside *./content/<SECTION_KEY_X>/images/* will still be showed in all the languages. So you can keep the common content among all languages in *.../images* and put language-specific content in *.../images_<LANGUAGE_KEY>*
 
-# MULTILANGUAGE PHILOSOPHY
+# Multilanguage Philosophy
 
 - The option of setting a modal to easily switching language in your project is coming soon. But now you have to follow another approach to let users navigate among the different languages in your project.
 - The default language navigation mode will be the *meta.languageDefault* value in your configuration. And every user will keep this language. So you will have to configure your site to enable different domains extensions that link to each language root, so after the user comes to your site in this language they will keep in it.
