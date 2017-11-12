@@ -7,11 +7,11 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
 
 # Steps to build your project
 1. Clone this repository
-1. Npm install
+1. yarn install
 1. Config your project on ./reallery_conf.json
 1. Save your images in ./content/<SECTION_KEY_X>/images/
     - Name each folder (<SECTION_KEY_X>) as the name key of the section and put the images
-1. Npm run create & webpack
+1. npm run create & webpack
 1. Config the server and go ahead. Your project is online :)
 
 
@@ -101,7 +101,7 @@ Create a folder for each section of your gallery inside ./content/<SECTION_KEY_X
 # Run Example
 If you want to run [demo.reallery.com](http://www.demo.reallery.com/) locally it's simple.
 1. Switch branch: **git checkout example/mbuonarroti**
-1. Run webpack on console
+1. Run yarn install; npm run create; webpack; on console
 1. Start any server on local finder. As for example http-server npm package or anything else.
 
 # Multilanguege Configuration
