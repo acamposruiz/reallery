@@ -61,7 +61,7 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
 
     - title: Here you have to put the name of your project that will appear in the UI
     - background: Here you have to put the file name that will be displayed as a homepage background. This file has to stay inside:  ./content/background/<"<FILE_NAME_BACKGROUND_IMAGE>
-    - google_analytics_id: If you have configured an analytics account on google you can put here your ID so you can take track of your site.
+    - google_analytics_id: If you have configured an analytics account on google you can put your ID here so you can keep track of your site.
     - youTubeKey: Key from your youtube account. It's necessary to let the project manage your videos.
 
 3. Edit sections configuration
@@ -91,7 +91,7 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
     - icon: Object with two keys: {"family":"", "icon":""}. Select an icon from [react-icons](https://gorangajic.github.io/react-icons/fa.html), select a family and an icon from there.
     - videos: Array of strings that correspond to youtube ID videos
     - articles: Array of strings that are the articles you want to publish on your site
-    - publish: This has to be equal to true or false value. True publish the section whereas false hide it.
+    - publish: This has to be equal to true or false value. True publishes the section whereas false hides it.
 
 
 ## Step 4: Image files
@@ -159,12 +159,12 @@ Like this:
 
 
 - Now the data type of both *videos* and *articles* are not an array but an object as you may have appreciated.
-- Also you have to change the way you name the images folder. So now you need to called each one as **./content/<SECTION_KEY_X>/images_<LANGUAGE_KEY>/**. Where **<LANGUAGE_KEY>** may be something like **en** or **es** or anything that fix with any of the keys declared in *meta.languages*.
-- The images inside **./content/<SECTION_KEY_X>/images/** will still be showed in all the languages. So you can keep the common content among all languages in *.../images* and put language-specific content in *.../images_<LANGUAGE_KEY>*
+- Also you have to change the way you name the images folder. So now you need to called each one as **./content/<SECTION_KEY_X>/images_<LANGUAGE_KEY>/**. Where **<LANGUAGE_KEY>** it may be something like **en** or **es** or anything that works with any of the keys declared in *meta.languages*.
+- The images inside **./content/<SECTION_KEY_X>/images/** will still be showed in all the languages. So you can keep the common content among all the languages in *.../images* and put language-specific content in *.../images_<LANGUAGE_KEY>*
 
 # Multilanguage Philosophy
 
-- The option of setting a modal to easily switching language in your project is coming soon. But now you have to follow another approach to let users navigate among the different languages in your project.
+- The option of setting a modal to easily switch language in your project is coming soon. But now you have to follow another approach to let users navigate among the different languages in your project.
 - The default language navigation mode will be the *meta.languageDefault* value in your configuration. And every user will keep this language. So you will have to configure your site to enable different domains extensions that link to each language root, so after the user comes to your site in this language they will keep in it.
 - For instance, you can configure your **domain.com** by default so it will enter your site as the default language and then config a **domain.ge** that links to your **domain.com/#/ge** so after the first access the user will keep in the German language.
 - If you want to see an example of a multilanguage configuration you can go to **example/mbuonarroti-multilangage** branch by exec with console: *git checkout example/mbuonarroti-multilangage*
