@@ -71,10 +71,10 @@ function config(projtsJson) {
     /* JS DEPENDENCES */
     return new Promise((ok, fail) => {
       const iconsMap = {
-        MaterialDesignIcons: 'react-icons/md',
-        FontAwesome: 'react-icons/fa',
-        Typicons: 'react-icons/ti',
-        GithubOcticons: 'react-icons/go'
+        MaterialDesignIcons: 'react-icons/lib/md',
+        FontAwesome: 'react-icons/lib/fa',
+        Typicons: 'react-icons/lib/ti',
+        GithubOcticons: 'react-icons/lib/go'
       };
 
       let icons = '';
