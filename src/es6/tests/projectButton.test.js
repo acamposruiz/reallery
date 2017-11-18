@@ -1,8 +1,10 @@
 import React from 'react';
-import ProjectButton from '../../es6/projectButton.es6';
+import ProjectButton from '../projectButton.es6';
 import renderer from 'react-test-renderer';
 
-test('projectButton', () => {
+jest.mock('../contentIcons', () => { return 'ContentIcons'; });
+
+test('ProjectButton', () => {
     const stringParam = {"name": "Ducks", "type": "sculpture"};
     const component = renderer.create(
         <ProjectButton

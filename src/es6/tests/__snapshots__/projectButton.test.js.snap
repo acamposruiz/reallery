@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`projectButton 1`] = `
+exports[`ProjectButton 1`] = `
 <div
   className="project-button-container  no-active home-project-button-001"
 >
@@ -9,12 +9,21 @@ exports[`projectButton 1`] = `
   >
     <div
       className="project-icon color-red  icon-ico_001"
-    />
+    >
+      <ContentIcons
+        dataicon={
+          Object {
+            "family": "FontAwesome",
+            "icon": "FaAsterisk",
+          }
+        }
+      />
+    </div>
   </a>
   <div
     className="text title"
   >
-    Ducks
+    Project name
   </div>
 </div>
 `;
