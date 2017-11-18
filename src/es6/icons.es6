@@ -1,1 +1,1 @@
-export {FaPaintBrush} from 'react-icons/fa';export {FaCube} from 'react-icons/fa';export {FaBank} from 'react-icons/fa';
+export {FaPaintBrush} from 'react-icons/lib/fa';export {FaCube} from 'react-icons/lib/fa';export {FaBank} from 'react-icons/lib/fa';
