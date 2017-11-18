@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectGallery 1`] = `
+<div
+  className="App"
+>
+  <Gallery
+    cols={undefined}
+    items={Array []}
+    margin={4}
+    onClickItem={[Function]}
+  />
+  <div
+    className="loading-msg"
+    id="msg-loading-more"
+  >
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<svg class=\\"icon-blank\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 32 32\\"></svg>
+",
+        }
+      }
+      style={
+        Object {
+          "fill": "#d2d2d2",
+          "height": 64,
+          "width": "85",
+        }
+      }
+    />
+    <span
+      className="loading-msg-text"
+    >
+      Loading
+    </span>
+  </div>
+</div>
+`;
