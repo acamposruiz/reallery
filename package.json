@@ -93,6 +93,10 @@
       "js",
       "jsx"
     ],
+    "modulePathIgnorePatterns": [
+      "vendors",
+      "node_modules"
+    ],
     "moduleDirectories": [
       "node_modules"
     ]
