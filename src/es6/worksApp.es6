@@ -7,11 +7,11 @@ import React from 'react';
 import ProjectButton from './projectButton.es6';
 import ProjectGallery from './projectGallery.es6';
 import Director from '../../node_modules/director/build/director.js';
-import FaEnvelope from 'react-icons/fa/envelope';
+import FaEnvelope from 'react-icons/lib/fa/envelope';
 import FaPhone from 'react-icons/lib/fa/phone';
 import FaGithubAlt from 'react-icons/lib/fa/github-alt';
-import FaTwitter from 'react-icons/fa/twitter';
-import FaInstagram from 'react-icons/fa/instagram';
+import FaTwitter from 'react-icons/lib/fa/twitter';
+import FaInstagram from 'react-icons/lib/fa/instagram';
 import utils from './utils.es6';
 
 const Router = Director.Router;
