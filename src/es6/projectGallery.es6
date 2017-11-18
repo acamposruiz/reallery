@@ -3,6 +3,9 @@
 /*jshint trailing: false */
 /*jshint newcap: false */
 /*global React */
+import 'raf/polyfill';
+import 'core-js/es6/map';
+import 'core-js/es6/set';
 import React from 'react';
 import Gallery from 'react-multimedia-gallery';
 import Lightbox from 'react-images-texts-videos';
