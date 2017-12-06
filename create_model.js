@@ -1,13 +1,19 @@
 /* Import modules */
 var fs = require("fs");
 var videos = require('./src/generator/videos');
-var imagesLib = require('./src/generator/images');
+var imagesDep = require('./src/generator/images');
 
-const {FILENAMECONFIGURATION} = require('./src/generator/constants');
+const constants = require('./src/generator/constants');
+
+const {FILENAMECONFIGURATION,
+  CONTENTCONTAINERFOLDER} = constants;
+
+const filenameConfiguration = process.argv[0] || FILENAMECONFIGURATION;
+const contentContainerFolder = process.argv[1] || CONTENTCONTAINERFOLDER;
 
 var warnings = [];
 var youtube = videos.youtube;
-var images = imagesLib.images;
+var images = imagesDep.imagesGen(contentContainerFolder, filenameConfiguration);
 
 function filterByValue(paramName, valueParam, rawObj, invert) {
   var depObjt = {};
@@ -83,7 +89,7 @@ function config(projtsJson) {
         if (key != 'meta') {
           if (!projtsJson[key].icon.icon || !iconsMap[projtsJson[key].icon.family])
             warnings.push(`Icons configuration fatal error in ${key} section. 
-                Please check correct icon names in '${FILENAMECONFIGURATION}'`);
+                Please check correct icon names in '${filenameConfiguration}'`);
           icons += `export {${ projtsJson[key].icon.icon }} from '${ iconsMap[projtsJson[key].icon.family] }';`;
         }
       }
@@ -153,7 +159,7 @@ function config(projtsJson) {
   });
 }
 
-readConfigData(FILENAMECONFIGURATION)
+readConfigData(filenameConfiguration)
   .then(config)
   .then(filterArgsCommands)
   .then(youtube)
