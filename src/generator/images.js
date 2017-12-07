@@ -6,9 +6,9 @@ var lwip = require('lwip');
 var path = require('path');
 
 
-function imagesGen(contentContainerFolder, filenameConfiguration, rootPath) {
+function imagesGen(contentContainerFolder, filenameConfiguration) {
 
-  const ROOTPATH = __dirname + `/../../${rootPath}`;
+  const ROOTPATH = __dirname + "/../../";
   const {lstatSync, readdirSync} = fs;
   const {join} = path;
 
@@ -18,7 +18,7 @@ function imagesGen(contentContainerFolder, filenameConfiguration, rootPath) {
 
 
   function getFoldersNames(key, isSource) {
-    const source = path.resolve(ROOTPATH, `${[CONTENT_CONTAINER_FOLDER, key].join('/')}/`);
+    const source = path.resolve(ROOTPATH, `${[contentContainerFolder, key].join('/')}/`);
     return getDirectories(source).filter(directoryName => (isSource?/_src/:/images/).test(directoryName));
   }
 

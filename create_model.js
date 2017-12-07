@@ -6,16 +6,22 @@ var imagesDep = require('./src/generator/images');
 const constants = require('./src/generator/constants');
 const {SITE_CONFIGURATION,
   CONTENT_FOLDER} = constants;
-const rootPath = getRootPathFromArgs() || "./";
+const rootPath = getRootPathFromArgs() || "";
 const filenameConfiguration = rootPath + SITE_CONFIGURATION;
 const contentContainerFolder = rootPath + CONTENT_FOLDER;
 
 var warnings = [];
 var youtube = videos.youtube;
-var images = imagesDep.imagesGen(contentContainerFolder, filenameConfiguration, rootPath);
+var images = imagesDep.imagesGen(contentContainerFolder, filenameConfiguration);
 
 function getRootPathFromArgs() {
-  return process.argv.filter(arg => arg.substring(0, arg.indexOf("=")) === 'root-path')[0]
+  function isRootPAth(arg) {
+    return arg.substring(0, arg.indexOf("=")) === 'root-path';
+  }
+  const argv = process.argv;
+  return (argv.length > 0)
+    && argv.some(arg => isRootPAth(arg))
+    && argv.filter(arg => isRootPAth(arg))[0]
     .substring(arg.indexOf("="));
 }
 
@@ -33,7 +39,7 @@ function readConfigData(path) {
 
 function state(data) {
   return new Promise(resolve => {
-    fs.writeFile(`${rootPath}state/state.js`, data, function (err) {
+    fs.writeFile("state/state.js", data, function (err) {
       if (err) {
         return console.log(err);
       }
@@ -97,7 +103,7 @@ function config(projtsJson) {
         }
       }
 
-      fs.writeFile(`${rootPath}src/es6/icons.es6`, icons, function (err) {
+      fs.writeFile("src/es6/icons.es6", icons, function (err) {
         if (err) {
           reject("FAil JS DEPENDENCES configuration");
         }
@@ -143,7 +149,7 @@ function config(projtsJson) {
                             </html>`;
 
 
-      fs.writeFile(`${rootPath}index.html`, indexHtml, function (err) {
+      fs.writeFile("./index.html", indexHtml, function (err) {
         if (err) {
           reject("FAil HTML configuration");
         }
