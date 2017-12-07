@@ -28,12 +28,12 @@ function readConfigData(path) {
 }
 
 function state(data) {
-  return new Promise(sendJson => {
+  return new Promise(resolve => {
     fs.writeFile("state/state.js", data, function (err) {
       if (err) {
         return console.log(err);
       }
-      sendJson("The code was written!")
+      resolve("The code was written!")
     });
   });
 }
@@ -53,7 +53,7 @@ function filterArgsCommands(projtsJson) {
 function config(projtsJson) {
   function stylesPromise() {
     /* STYLES CSS */
-    return new Promise((ok, fail) => {
+    return new Promise((resolve, reject) => {
       const styles = `.home {
                       background: resolve("background/${projtsJson.meta.background}") no-repeat center center fixed;
                       -webkit-background-size: cover;
@@ -63,11 +63,11 @@ function config(projtsJson) {
 
       fs.writeFile("src/styles/config.pcss", styles, function (err) {
         if (err) {
-          fail("FAil Styles configuration");
+          reject("FAil Styles configuration");
         }
 
         console.log("Styles was written!");
-        ok();
+        resolve();
       });
     });
 
@@ -75,7 +75,7 @@ function config(projtsJson) {
 
   function jsDependenciesPromise() {
     /* JS DEPENDENCES */
-    return new Promise((ok, fail) => {
+    return new Promise((resolve, reject) => {
       const iconsMap = {
         MaterialDesignIcons: 'react-icons/lib/md',
         FontAwesome: 'react-icons/lib/fa',
@@ -96,10 +96,10 @@ function config(projtsJson) {
 
       fs.writeFile("src/es6/icons.es6", icons, function (err) {
         if (err) {
-          fail("FAil JS DEPENDENCES configuration");
+          reject("FAil JS DEPENDENCES configuration");
         }
 
-        ok();
+        resolve();
 
       });
     });
@@ -107,7 +107,7 @@ function config(projtsJson) {
 
   function htmlAndThenPromise() {
     /* HTML AND THEN */
-    return new Promise((ok, fail) => {
+    return new Promise((resolve, reject) => {
       const gaCode = (projtsJson.meta.google_analytics_id) ? `<script>
                                     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                                             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -142,9 +142,9 @@ function config(projtsJson) {
 
       fs.writeFile("./index.html", indexHtml, function (err) {
         if (err) {
-          fail("FAil HTML configuration");
+          reject("FAil HTML configuration");
         }
-        ok();
+        resolve();
       });
     });
   }
