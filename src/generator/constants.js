@@ -1,5 +1,5 @@
 module.exports = {
-  IMAGESCONTAINERFOLDER: "images",
-  CONTENTCONTAINERFOLDER: "content",
-  FILENAMECONFIGURATION: "reallery_conf.json"
+  IMAGES_FOLDER: "images",
+  CONTENT_FOLDER: "content",
+  SITE_CONFIGURATION: "reallery_conf.json"
 };

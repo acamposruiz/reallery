@@ -4,16 +4,20 @@ var videos = require('./src/generator/videos');
 var imagesDep = require('./src/generator/images');
 
 const constants = require('./src/generator/constants');
-
-const {FILENAMECONFIGURATION,
-  CONTENTCONTAINERFOLDER} = constants;
-
-const filenameConfiguration = process.argv[0] || FILENAMECONFIGURATION;
-const contentContainerFolder = process.argv[1] || CONTENTCONTAINERFOLDER;
+const {SITE_CONFIGURATION,
+  CONTENT_FOLDER} = constants;
+const rootPath = getRootPathFromArgs() || "./";
+const filenameConfiguration = rootPath + SITE_CONFIGURATION;
+const contentContainerFolder = rootPath + CONTENT_FOLDER;
 
 var warnings = [];
 var youtube = videos.youtube;
-var images = imagesDep.imagesGen(contentContainerFolder, filenameConfiguration);
+var images = imagesDep.imagesGen(contentContainerFolder, filenameConfiguration, rootPath);
+
+function getRootPathFromArgs() {
+  return process.argv.filter(arg => arg.substring(0, arg.indexOf("=")) === 'root-path')[0]
+    .substring(arg.indexOf("="));
+}
 
 function filterByValue(paramName, valueParam, rawObj, invert) {
   var depObjt = {};
@@ -29,7 +33,7 @@ function readConfigData(path) {
 
 function state(data) {
   return new Promise(resolve => {
-    fs.writeFile("state/state.js", data, function (err) {
+    fs.writeFile(`${rootPath}state/state.js`, data, function (err) {
       if (err) {
         return console.log(err);
       }
@@ -46,7 +50,6 @@ function filterArgsCommands(projtsJson) {
     });
     return depObjt;
   }
-
   return new Promise(sendJson => sendJson(!process.argv[2] ? projtsJson : processArgs(projtsJson)));
 }
 
@@ -94,7 +97,7 @@ function config(projtsJson) {
         }
       }
 
-      fs.writeFile("src/es6/icons.es6", icons, function (err) {
+      fs.writeFile(`${rootPath}src/es6/icons.es6`, icons, function (err) {
         if (err) {
           reject("FAil JS DEPENDENCES configuration");
         }
@@ -140,7 +143,7 @@ function config(projtsJson) {
                             </html>`;
 
 
-      fs.writeFile("./index.html", indexHtml, function (err) {
+      fs.writeFile(`${rootPath}index.html`, indexHtml, function (err) {
         if (err) {
           reject("FAil HTML configuration");
         }

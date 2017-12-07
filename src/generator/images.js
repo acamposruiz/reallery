@@ -6,9 +6,9 @@ var lwip = require('lwip');
 var path = require('path');
 
 
-function imagesGen(contentContainerFolder, filenameConfiguration) {
+function imagesGen(contentContainerFolder, filenameConfiguration, rootPath) {
 
-  const ROOTPATH = __dirname + "/../../";
+  const ROOTPATH = __dirname + `/../../${rootPath}`;
   const {lstatSync, readdirSync} = fs;
   const {join} = path;
 
