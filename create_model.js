@@ -22,7 +22,7 @@ function getRootPathFromArgs() {
   return (argv.length > 0)
     && argv.some(arg => isRootPAth(arg))
     && argv.filter(arg => isRootPAth(arg))[0]
-    .substring(arg.indexOf("="));
+    .substring(argv.filter(arg => isRootPAth(arg))[0].indexOf("=") + 1) + "/";
 }
 
 function filterByValue(paramName, valueParam, rawObj, invert) {
@@ -64,7 +64,7 @@ function config(projtsJson) {
     /* STYLES CSS */
     return new Promise((resolve, reject) => {
       const styles = `.home {
-                      background: resolve("background/${projtsJson.meta.background}") no-repeat center center fixed;
+                      background: resolve("${rootPath}content/background/${projtsJson.meta.background}") no-repeat center center fixed;
                       -webkit-background-size: cover;
                       -moz-background-size: cover;
                       -o-background-size: cover;
@@ -170,7 +170,7 @@ function config(projtsJson) {
 
 readConfigData(filenameConfiguration)
   .then(config)
-  .then(filterArgsCommands)
+  //.then(filterArgsCommands)
   .then(youtube)
   .then(images)
   .then(state)

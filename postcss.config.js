@@ -10,7 +10,9 @@ function getAssetsLoadPaths() {
         return keysPrjts;
     }
 
-    let loadPaths = ['projts', 'content']
+    let loadPaths = ['projts', 'content', 'tests/e2e/mocks/site/content']
+        .concat(getKeysPrjts().map(key => `tests/e2e/mocks/site/content/${key}/images`))
+        .concat(getKeysPrjts().map(key => `tests/e2e/mocks/site/content/${key}/images_src`))
         .concat(getKeysPrjts().map(key => `content/${key}/images`))
         .concat(getKeysPrjts().map(key => `content/${key}/images_src`));
 
