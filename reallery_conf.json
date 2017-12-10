@@ -1,24 +1,126 @@
 {
   "meta": {
-    "title": "",
-    "email": "",
-    "tlf": "",
-    "google_analytics_id": "",
-    "youTubeKey": "",
-    "background": ""
+    "title": "Michelangelo Buonarroti",
+    "email": "mbuonarroti@reallery.com",
+    "tlf": "555-555-555",
+    "background": "bg.jpg",
+    "google_analytics_id": "UA-98183956-2",
+    "youTubeKey": "AIzaSyAPPDBVqSMFkX9UqTj1Nc_roz7oIKqowQc",
+    "github": "https://github.com/acamposruiz/reallery",
+    "languages": {
+      "en": "English",
+      "es": "Spanish"
+    },
+    "languageDefault": "en"
   },
-  "section_key_1": {
-    "name": "",
-    "color": "",
+  "paintings": {
+    "name": {
+      "en": "Paintings",
+      "es": "Pinturas"
+    },
+    "color": "F0B67F",
     "icon": {
-      "family": "",
-      "icon": ""
+      "family": "FontAwesome",
+      "icon": "FaPaintBrush"
     },
     "videos": {
-      "en": []
+      "en": [
+        "EXyay2VKtaA",
+        "m29OuZfsorA",
+        "IQ4hGFWZ7vM",
+        "57FDqlXpE24"
+      ],
+      "es": [
+        "zsGaJa3nKp8",
+        "LwxXShzlhG4",
+        "xnWpEHLB5ho",
+        "GV7oglVpJOU"
+      ]
     },
     "articles": {
-      "en": []
+      "en": [
+        "Lorem very carrots, enhanced ecological environment. However, blockage, it is not a weekend, from chili pregnant itself of football pain scores or football. Com will gateway fears. Present running my man with sad, developers soccer developer of time. in an urn or outdoor carton targeted in the tank. jasmine and laoreet no, will need sapien. the Bureau of carrots running mattis.Aenean members of the targeted region carrots convenience. lorem software is free to live deductible leakage. Clinical and trigger the fear of antioxidants vulputate . Warcraft players and soft rice and sugar. Chinese football bananas pain. Cell Phones alarm makeup of the valley. ",
+        "The man has not lion vehicles bows of the propaganda. Chat sit put players need members. Orci various Penatibus Super Bowl mountains instantly. Each manufacturing Mauris in football sometimes, and CNN only brought about. Hell casino feel submissions cras magnis dis parturient montes, orci nibh accumsan risus. Suspendisse cursus sapien eu nor of the throat, or being pregnant eu pharetra. Donec auctor bibendum lectus, consectetuer consequat lorem sagittis porta. ",
+        "Clinical and propaganda at ultricies sterilized and economy. PakSoft at lift him pull skirt. Before the very first taste clinical mourning and basketball set their care, the borders of the macro not only ecological libero. Present grief but Ligula the quiver that of lakes weekend. the latest life skills level. jasmine just sightseeing, eu and just the throat at school. even ecological that chili or developers. however, members of the mass clinical, notebook developers salad taste like. Each vulputate to save and invest. however mourning sad element. "
+      ],
+      "es": [
+        "El hombre no tiene vehículos león arcos de la propaganda. Chatea sientan ponen los jugadores necesitan miembros. Orci varias montañas Penatibus Super Bowl al instante. Cada fabricación Mauris veces en el fútbol, ​​y CNN única provocada. Infierno casino siente presentaciones cras Magnis dis parturienta montes, Orci nibh accumsan RISUS. Suspendisse cursus sapiens UE ni de la garganta, o estar embarazada pharetra UE. Donec auctor bibendum lectus consectetuer consequat lorem sagittis porta.",
+        "Clínica y la propaganda en ultricies esterilizados y economía. PakSoft al ascensor le tire de la falda. Antes del duelo clínico primer sabor y de baloncesto fijan su atención, las fronteras de la macro no sólo libero ecológico. Aflicción presente, pero el temblor que Ligula de lagos fin de semana. la última habilidades para la vida nivel. jazmín acaba de hacer turismo, la UE y sólo la garganta en la escuela. incluso ecológico que chile o desarrolladores. Sin embargo, los miembros de la masa clínicos, desarrolladores portátiles ensalada de sabor. Cada vulputate a ahorrar e invertir. Sin embargo luto triste elemento "
+      ]
+    },
+    "publish": true
+  },
+  "sculptures": {
+    "name": {
+      "en": "Sculptures",
+      "es": "Esculturas"
+    },
+    "color": "D6D1B1",
+    "icon": {
+      "family": "FontAwesome",
+      "icon": "FaCube"
+    },
+    "videos": {
+      "en": [
+        "EXyay2VKtaA",
+        "m29OuZfsorA",
+        "IQ4hGFWZ7vM",
+        "57FDqlXpE24"
+      ],
+      "es": [
+        "zsGaJa3nKp8",
+        "LwxXShzlhG4",
+        "xnWpEHLB5ho",
+        "GV7oglVpJOU"
+      ]
+    },
+    "articles": {
+      "en": [
+        "Lorem very carrots, enhanced ecological environment. However, blockage, it is not a weekend, from chili pregnant itself of football pain scores or football. Com will gateway fears. Present running my man with sad, developers soccer developer of time. in an urn or outdoor carton targeted in the tank. jasmine and laoreet no, will need sapien. the Bureau of carrots running mattis.Aenean members of the targeted region carrots convenience. lorem software is free to live deductible leakage. Clinical and trigger the fear of antioxidants vulputate . Warcraft players and soft rice and sugar. Chinese football bananas pain. Cell Phones alarm makeup of the valley. ",
+        "The man has not lion vehicles bows of the propaganda. Chat sit put players need members. Orci various Penatibus Super Bowl mountains instantly. Each manufacturing Mauris in football sometimes, and CNN only brought about. Hell casino feel submissions cras magnis dis parturient montes, orci nibh accumsan risus. Suspendisse cursus sapien eu nor of the throat, or being pregnant eu pharetra. Donec auctor bibendum lectus, consectetuer consequat lorem sagittis porta. ",
+        "Clinical and propaganda at ultricies sterilized and economy. PakSoft at lift him pull skirt. Before the very first taste clinical mourning and basketball set their care, the borders of the macro not only ecological libero. Present grief but Ligula the quiver that of lakes weekend. the latest life skills level. jasmine just sightseeing, eu and just the throat at school. even ecological that chili or developers. however, members of the mass clinical, notebook developers salad taste like. Each vulputate to save and invest. however mourning sad element. "
+      ],
+      "es": [
+        "El hombre no tiene vehículos león arcos de la propaganda. Chatea sientan ponen los jugadores necesitan miembros. Orci varias montañas Penatibus Super Bowl al instante. Cada fabricación Mauris veces en el fútbol, ​​y CNN única provocada. Infierno casino siente presentaciones cras Magnis dis parturienta montes, Orci nibh accumsan RISUS. Suspendisse cursus sapiens UE ni de la garganta, o estar embarazada pharetra UE. Donec auctor bibendum lectus consectetuer consequat lorem sagittis porta.",
+        "Clínica y la propaganda en ultricies esterilizados y economía. PakSoft al ascensor le tire de la falda. Antes del duelo clínico primer sabor y de baloncesto fijan su atención, las fronteras de la macro no sólo libero ecológico. Aflicción presente, pero el temblor que Ligula de lagos fin de semana. la última habilidades para la vida nivel. jazmín acaba de hacer turismo, la UE y sólo la garganta en la escuela. incluso ecológico que chile o desarrolladores. Sin embargo, los miembros de la masa clínicos, desarrolladores portátiles ensalada de sabor. Cada vulputate a ahorrar e invertir. Sin embargo luto triste elemento "
+      ]
+    },
+    "publish": true
+  },
+  "architecture": {
+    "name": {
+      "en": "Architecture",
+      "es": "Arquitectura"
+    },
+    "color": "C7EFCF",
+    "icon": {
+      "family": "FontAwesome",
+      "icon": "FaBank"
+    },
+    "videos": {
+      "en": [
+        "EXyay2VKtaA",
+        "m29OuZfsorA",
+        "IQ4hGFWZ7vM",
+        "57FDqlXpE24"
+      ],
+      "es": [
+        "zsGaJa3nKp8",
+        "LwxXShzlhG4",
+        "xnWpEHLB5ho",
+        "GV7oglVpJOU"
+      ]
+    },
+    "articles": {
+      "en": [
+        "Lorem very carrots, enhanced ecological environment. However, blockage, it is not a weekend, from chili pregnant itself of football pain scores or football. Com will gateway fears. Present running my man with sad, developers soccer developer of time. in an urn or outdoor carton targeted in the tank. jasmine and laoreet no, will need sapien. the Bureau of carrots running mattis.Aenean members of the targeted region carrots convenience. lorem software is free to live deductible leakage. Clinical and trigger the fear of antioxidants vulputate . Warcraft players and soft rice and sugar. Chinese football bananas pain. Cell Phones alarm makeup of the valley. ",
+        "The man has not lion vehicles bows of the propaganda. Chat sit put players need members. Orci various Penatibus Super Bowl mountains instantly. Each manufacturing Mauris in football sometimes, and CNN only brought about. Hell casino feel submissions cras magnis dis parturient montes, orci nibh accumsan risus. Suspendisse cursus sapien eu nor of the throat, or being pregnant eu pharetra. Donec auctor bibendum lectus, consectetuer consequat lorem sagittis porta. ",
+        "Clinical and propaganda at ultricies sterilized and economy. PakSoft at lift him pull skirt. Before the very first taste clinical mourning and basketball set their care, the borders of the macro not only ecological libero. Present grief but Ligula the quiver that of lakes weekend. the latest life skills level. jasmine just sightseeing, eu and just the throat at school. even ecological that chili or developers. however, members of the mass clinical, notebook developers salad taste like. Each vulputate to save and invest. however mourning sad element. "
+      ],
+      "es": [
+        "El hombre no tiene vehículos león arcos de la propaganda. Chatea sientan ponen los jugadores necesitan miembros. Orci varias montañas Penatibus Super Bowl al instante. Cada fabricación Mauris veces en el fútbol, ​​y CNN única provocada. Infierno casino siente presentaciones cras Magnis dis parturienta montes, Orci nibh accumsan RISUS. Suspendisse cursus sapiens UE ni de la garganta, o estar embarazada pharetra UE. Donec auctor bibendum lectus consectetuer consequat lorem sagittis porta.",
+        "Clínica y la propaganda en ultricies esterilizados y economía. PakSoft al ascensor le tire de la falda. Antes del duelo clínico primer sabor y de baloncesto fijan su atención, las fronteras de la macro no sólo libero ecológico. Aflicción presente, pero el temblor que Ligula de lagos fin de semana. la última habilidades para la vida nivel. jazmín acaba de hacer turismo, la UE y sólo la garganta en la escuela. incluso ecológico que chile o desarrolladores. Sin embargo, los miembros de la masa clínicos, desarrolladores portátiles ensalada de sabor. Cada vulputate a ahorrar e invertir. Sin embargo luto triste elemento "
+      ]
     },
     "publish": true
   }
