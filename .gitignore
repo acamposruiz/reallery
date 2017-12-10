@@ -4,3 +4,11 @@ node_modules
 build
 projts
 !vendors/lwip/build
+
+src/es6/icons.es6
+src/styles/config.pcss
+state/state.js
+
+**/images_src
+**/images_en_src
+**/images_es_src
