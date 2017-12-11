@@ -81,6 +81,7 @@
   },
   "scripts": {
     "create": "node create_model.js",
+    "cypress:open": "./node_modules/.bin/cypress open",
     "test": "jest"
   },
   "test": "jest",
