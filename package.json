@@ -25,6 +25,7 @@
     "bindings": "file:./vendors/bindings",
     "colors": "^1.1.2",
     "css-loader": "^0.28.7",
+    "cypress": "^1.1.4",
     "decree": "file:./vendors/decree",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
