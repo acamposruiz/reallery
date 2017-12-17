@@ -1,5 +1,6 @@
 describe('Basic functionality', function() {
   it('Visits the default language page', function() {
+    //cy.viewport(500, 500);
     cy.visit('http://127.0.0.1:8080/');
     cy.contains('Michelangelo Buonarroti');
     cy.contains('Paintings');
@@ -11,7 +12,7 @@ describe('Basic functionality', function() {
     cy.get('.home-project-button-architecture>a').click();
     cy.url().should('include', 'en/project/view/architecture');
     cy.contains('Lorem very carrots, enhanced ecological environment. ');
-    cy.contains('Michelangelo Buonarroti').click();
+    cy.contains('Michelangelo').click();
     cy.url().should('include', 'en');
     cy.contains('Paintings');
   });
