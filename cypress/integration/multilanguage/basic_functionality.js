@@ -1,12 +1,11 @@
 var commons = require('../commons');
 
 describe('Basic functionality', function() {
-  commons.runOnEachViewport(function (tasks) {
-    tasks.forEach(data => {
-      describe(`Viewport: ${data.prefixInCase}`, function() {
+  commons.runOnEachViewport(viewportCases => {
+    viewportCases.forEach(data => {
+      describe(`Viewport: ${data.describe}`, function() {
         beforeEach(function() {
-          data.tasks(cy);
-          cy.pause();
+          data.beforeEach(cy);
         });
         it(`Visits the default language page`, function() {
           cy.visit('http://127.0.0.1:8080/');
