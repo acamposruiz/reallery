@@ -4,12 +4,12 @@ var path = require('path');
 module.exports = {
     devtool: "source-map",
     resolve: {
-        extensions: ['.jsx', '.js', 'es6', 'css', 'pcss'],
+        extensions: ['.jsx', '.js', '.es6', '.css', '.pcss'],
         alias: {
             Styles: path.resolve(__dirname, 'src/styles/')
         }
     },
-    entry:  './src/es6/app.es6',
+    entry:  './src/es6/app',
     output: {
         path: __dirname + '/build',
         filename:'app.js'
