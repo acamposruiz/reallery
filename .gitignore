@@ -8,6 +8,7 @@ content
 !tests/e2e/mocks/site/content
 package-lock.json
 ./package-lock.json
+./yarn.lock
 
 src/es6/icons.es6
 src/styles/config.pcss
