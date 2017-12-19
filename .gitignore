@@ -9,6 +9,7 @@ content
 package-lock.json
 ./package-lock.json
 ./yarn.lock
+cypress/screenshots
 
 src/es6/icons.es6
 src/styles/config.pcss
