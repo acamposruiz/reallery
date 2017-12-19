@@ -29,8 +29,8 @@ class ProjectGallery extends React.Component {
         };
 
         this.handleScroll = this.handleScroll.bind(this);
-        this.handleResize = this.handleResize.bind(this);
-        this.loadMoreItems = this.loadMoreItems.bind(this);
+        this.loadMoreItems = _.debounce(this.loadMoreItems.bind(this), mainTimeLapse);
+        this.handleResize = _.debounce(this.handleResize.bind(this), mainTimeLapse);
         this.closeLightbox = this.closeLightbox.bind(this);
         this.openLightbox = this.openLightbox.bind(this);
         this.gotoNext = this.gotoNext.bind(this);
@@ -74,15 +74,18 @@ class ProjectGallery extends React.Component {
                 cols: this.getCols()
             });
             this.loadMoreItems();
+
         } else {
             this.setState({loadedAll: false, photos: [], videos: [], itemsStore: []});
         }
 
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        this.handleScroll();
+    }
+
     componentDidMount() {
-        this.loadMoreItems = _.debounce(this.loadMoreItems, mainTimeLapse);
-        this.handleResize = _.debounce(this.handleResize, mainTimeLapse);
         window.addEventListener('scroll', this.handleScroll);
         window.addEventListener("resize", this.handleResize);
     }
@@ -97,9 +100,11 @@ class ProjectGallery extends React.Component {
     handleScroll() {
         let scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
         if (this.props.project && !this.state.loadedAll
-            && (window.innerHeight + scrollY) >= (document.body.offsetHeight - 50)) {
+            && (window.innerHeight + scrollY) >= Math.min((document.body.offsetHeight - 50),
+            document.getElementById('msg-loading-more').getBoundingClientRect().height)) {
             this.loadMoreItems();
         }
+
     }
 
     getCols() {
@@ -179,9 +184,9 @@ class ProjectGallery extends React.Component {
                     isOpen={this.state.lightboxIsOpen}
                     width={1600}
                 />
-                {!this.state.loadedAll
-                && <div className="loading-msg" id="msg-loading-more"><Loading type='cylon' color='#d2d2d2' width="85"/>
-                    <span className="loading-msg-text">Loading</span></div>}
+              {!this.state.loadedAll
+              && <div className="loading-msg" id="msg-loading-more"><Loading ref='loadingElement'  type='cylon' color='#d2d2d2' width="85"/>
+                <span className="loading-msg-text">Loading</span></div>}
             </div>
         );
 
