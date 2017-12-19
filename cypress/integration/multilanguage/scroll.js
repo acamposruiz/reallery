@@ -7,14 +7,17 @@ describe('Scroll', function() {
         beforeEach(function() {
           data.beforeEach(cy);
         });
+        function isBigScreen() {
+          return data.describe == '1780x3000';
+        }
         it('Visits some page content', function() {
           cy.visit('http://127.0.0.1:8080/');
           cy.contains('Michelangelo Buonarroti');
           cy.get('.home-project-button-architecture>a').click();
-          cy.get('#Gallery > div[data-type]').should('have.length', 10);
+          cy.get('#Gallery > div[data-type]').should('have.length', isBigScreen()? 15: 10);
           cy.get('#Gallery > div[data-type="article"]').should('have.length', 3);
-          cy.get('#Gallery > div[data-type="photo"]').should('have.length', 5);
-          cy.get('#Gallery > div[data-type="video"]').should('have.length', 2);
+          cy.get('#Gallery > div[data-type="photo"]').should('have.length',  isBigScreen()? 8: 5);
+          cy.get('#Gallery > div[data-type="video"]').should('have.length',  isBigScreen()? 4: 2);
           cy.get('#Gallery > div:nth-child(10)').trigger('mousedown');
           cy.wait(500);
           cy.get('#Gallery > div[data-type]').should('have.length', 15);
@@ -26,11 +29,11 @@ describe('Scroll', function() {
           cy.visit('http://127.0.0.1:8080/');
           cy.contains('Michelangelo Buonarroti');
           cy.get('.home-project-button-paintings>a').click();
-          cy.get('#Gallery > div[data-type]').should('have.length', 10);
-          cy.get('#Gallery > div:nth-child(10)').trigger('mousedown');
+          cy.get('#Gallery > div[data-type]').should('have.length', isBigScreen()? 20: 10);
+          cy.get(`#Gallery > div:nth-child(${ isBigScreen()? 20: 10})`).trigger('mousedown');
           cy.wait(500);
-          cy.get('#Gallery > div[data-type]').should('have.length', 20);
-          cy.get('#Gallery > div:nth-child(20)').trigger('mousedown');
+          cy.get('#Gallery > div[data-type]').should('have.length',  isBigScreen()? 27: 20);
+          cy.get(`#Gallery > div:nth-child(${ isBigScreen()? 27: 20})`).trigger('mousedown');
           cy.wait(500);
           cy.get('#Gallery > div[data-type]').should('have.length', 27);
           cy.get('#Gallery > div:nth-child(27)').trigger('mousedown');
