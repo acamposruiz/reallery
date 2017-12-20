@@ -8,7 +8,7 @@ describe('Basic functionality', function() {
           data.beforeEach(cy);
         });
         it(`Visits the default language page`, function() {
-          cy.visit('http://127.0.0.1:8080/');
+          cy.visit('http://127.0.0.1:8989/');
           cy.contains('Michelangelo Buonarroti');
           cy.contains('Paintings');
           cy.contains('Sculptures');
@@ -24,7 +24,7 @@ describe('Basic functionality', function() {
           cy.contains('Paintings');
         });
         it(`Visits the spanish language page`, function() {
-          cy.visit('http://127.0.0.1:8080/#/es');
+          cy.visit('http://127.0.0.1:8989/#/es');
           cy.contains('Michelangelo Buonarroti');
           cy.contains('Pinturas');
           cy.contains('Esculturas');

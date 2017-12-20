@@ -8,7 +8,7 @@ describe('Lists navegation', function() {
           data.beforeEach(cy);
         });
         it('Navegates betwwen the lists', function() {
-          cy.visit('http://127.0.0.1:8080/');
+          cy.visit('http://127.0.0.1:8989/');
           cy.get('.home-project-button-paintings>a').click();
           cy.url().should('include', 'paintings');
           cy.get('div.project-button-container.home-project-button-paintings').should('have.class', 'active');

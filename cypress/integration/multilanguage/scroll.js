@@ -11,7 +11,7 @@ describe('Scroll', function() {
           return data.describe == '1780x3000';
         }
         it('Visits some page content', function() {
-          cy.visit('http://127.0.0.1:8080/');
+          cy.visit('http://127.0.0.1:8989/');
           cy.screenshot(data.describe+'_homepage');
           cy.contains('Michelangelo Buonarroti');
           cy.get('.home-project-button-paintings>a').click();
