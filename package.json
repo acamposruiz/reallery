@@ -34,6 +34,7 @@
     "lodash-node": "file:./vendors/lodash-node",
     "lwip": "acamposruiz/lwip",
     "node-sass": "^4.6.1",
+    "on-build-webpack": "^0.1.0",
     "path": "^0.12.7",
     "postcss-assets": "^5.0.0",
     "postcss-at-rules-variables": "0.1.1",
@@ -47,6 +48,7 @@
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "postcss-scss": "^1.0.2",
+    "pre-build-webpack": "^0.1.0",
     "precss": "^2.0.0",
     "prop-types": "file:./vendors/prop-types",
     "radium-loader": "^1.0.10",
@@ -55,7 +57,9 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
-    "webpack": "^3.8.1"
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
     "@researchgate/react-intersection-observer": "^0.5.0",
@@ -68,6 +72,7 @@
     "istanbul": "^0.4.5",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
+    "node-cmd": "^3.0.0",
     "raf": "^3.4.0",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
@@ -83,7 +88,11 @@
   },
   "scripts": {
     "create": "node create_model.js",
+    "create:dev": "node create_model.js root-path=tests/e2e/mocks/site",
     "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:run": "./node_modules/.bin/cypress run --browser chrome",
+    "start:dev": "webpack-dev-server",
+    "start:server": "http-server -p 8989 -c1",
     "test": "jest"
   },
   "test": "jest",
