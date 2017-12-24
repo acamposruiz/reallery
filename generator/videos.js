@@ -2,6 +2,7 @@ var YouTube = require('youtube-node');
 
 
 function anyVideo(dataJSON) {
+  console.log("anyVideo()");
 
   var videos = [];
 
@@ -16,6 +17,7 @@ function anyVideo(dataJSON) {
 
 
 function getIdPromise(lang, projectKey, arrayPromises, youTube) {
+  console.log("getIdPromise()");
   return function (youtubeId, index) {
 
     arrayPromises.push(new Promise(resolve => {
@@ -57,6 +59,7 @@ function getIdPromise(lang, projectKey, arrayPromises, youTube) {
 
 
 function getVideos(youTubeKey, dataJSON) {
+  console.log("getVideos()");
 
   return new Promise(resolve => {
 
@@ -91,6 +94,7 @@ function getVideos(youTubeKey, dataJSON) {
 }
 
 function youtube(dataJSON) {
+  console.log("youtube()");
 
   const youTubeKey = dataJSON.meta.youTubeKey;
 

@@ -7,6 +7,7 @@ var path = require('path');
 
 
 function imagesGen(contentContainerFolder, filenameConfiguration) {
+  console.log("imagesGen()");
 
   const ROOTPATH = __dirname + "/../../";
   const {lstatSync, readdirSync} = fs;
@@ -18,12 +19,14 @@ function imagesGen(contentContainerFolder, filenameConfiguration) {
 
 
   function getFoldersNames(key, isSource) {
+    console.log("getFoldersNames()");
     const source = path.resolve(ROOTPATH, `${[contentContainerFolder, key].join('/')}/`);
     return getDirectories(source).filter(directoryName => (isSource?/_src/:/images/).test(directoryName));
   }
 
   /* Generate responsive images */
   function generateSourceResponsive(file, imagesFolder, dmsns, sourceImagesDir) {
+    console.log("generateSourceResponsive()");
     return new Promise(resolve => {
       var dimensions = [2880, 1240, 620, 310, 160];
       var srcsetPromises = [];
@@ -63,6 +66,7 @@ function imagesGen(contentContainerFolder, filenameConfiguration) {
   }
 
   function generateProject(key, data) {
+    console.log("generateProject()");
 
     return function () {
       return new Promise(resolve => {
@@ -127,6 +131,7 @@ function imagesGen(contentContainerFolder, filenameConfiguration) {
   }
 
   function cleanImages(data) {
+    console.log("cleanImages()");
     return new Promise(resolve => {
       Promise.all(_.flatten(Object.keys(data).filter(key => key !== 'meta')
         .map(projtKey => getFoldersNames(projtKey, true)))
@@ -137,6 +142,7 @@ function imagesGen(contentContainerFolder, filenameConfiguration) {
 
 
   function createImages(data) {
+    console.log("createImages()");
     return new Promise(resolve => {
       var rawState = [];
       Object.keys(data).filter(key => key !== 'meta').forEach(key => rawState.push(generateProject(key, data)));
@@ -145,6 +151,7 @@ function imagesGen(contentContainerFolder, filenameConfiguration) {
   }
 
   function generateState(rawState) {
+    console.log("generateState()");
     return new Promise(resolve => {
       var rawData;
       (function promRecur(index) {
