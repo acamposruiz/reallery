@@ -9,7 +9,7 @@ var path = require('path');
 function imagesGen(contentContainerFolder, filenameConfiguration) {
   console.log("imagesGen()");
 
-  const ROOTPATH = __dirname + "/../../";
+  const ROOTPATH = __dirname + "/../";
   const {lstatSync, readdirSync} = fs;
   const {join} = path;
 
