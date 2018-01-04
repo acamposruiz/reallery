@@ -89,8 +89,8 @@
   },
   "scripts": {
     "watch:generator": "watch 'npm run create:dev && npm run webpack:once' ./generator --interval=60",
-    "create": "node ./generator/generator",
-    "create:dev": "node ./generator/generator root-path=tests/e2e/mocks/site",
+    "create": "node ./generator/index",
+    "create:dev": "node ./generator/index root-path=tests/e2e/mocks/site",
     "cypress:open": "./node_modules/.bin/cypress open",
     "cypress:run": "./node_modules/.bin/cypress run --browser chrome",
     "start:dev": "webpack-dev-server",
