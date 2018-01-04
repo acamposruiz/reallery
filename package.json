@@ -96,6 +96,7 @@
     "start:dev": "webpack-dev-server",
     "start:server": "http-server -p 8989 -c1",
     "webpack:once": "webpack --config webpack.config.once.js",
+    "gitignore:update": "git rm -r --cached . && git add . && git commit -am 'Remove ignored files'",
     "test": "jest"
   },
   "test": "jest",

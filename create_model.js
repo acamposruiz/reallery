@@ -1,9 +1,9 @@
 /* Import modules */
 var fs = require("fs");
-var videos = require('./src/generator/videos');
-var imagesDep = require('./src/generator/images');
+var videos = require('./generator/videos');
+var imagesDep = require('./generator/images');
 
-const constants = require('./src/generator/constants');
+const constants = require('./generator/constants');
 const {SITE_CONFIGURATION,
   CONTENT_FOLDER} = constants;
 const rootPath = getRootPathFromArgs() || "";
@@ -15,6 +15,7 @@ var youtube = videos.youtube;
 var images = imagesDep.imagesGen(contentContainerFolder, filenameConfiguration);
 
 function getRootPathFromArgs() {
+  console.log("getRootPathFromArgs()");
   function isRootPAth(arg) {
     return arg.substring(0, arg.indexOf("=")) === 'root-path';
   }
@@ -26,6 +27,7 @@ function getRootPathFromArgs() {
 }
 
 function filterByValue(paramName, valueParam, rawObj, invert) {
+  console.log("filterByValue()");
   var depObjt = {};
   Object.keys(rawObj).forEach(value => {
     if ((invert ? rawObj[value][paramName] != valueParam : rawObj[value][paramName] == valueParam)) depObjt[value] = rawObj[value];
@@ -34,10 +36,12 @@ function filterByValue(paramName, valueParam, rawObj, invert) {
 }
 
 function readConfigData(path) {
+  console.log("readConfigData()");
   return new Promise(sendJson => sendJson(filterByValue("hide", true, JSON.parse(fs.readFileSync(path, "utf8")), true)));
 }
 
 function state(data) {
+  console.log("state()");
   return new Promise(resolve => {
     fs.writeFile("state/state.js", data, function (err) {
       if (err) {
@@ -49,6 +53,7 @@ function state(data) {
 }
 
 function filterArgsCommands(projtsJson) {
+  console.log("filterArgsCommands()");
   function processArgs(projtsJson) {
     let depObjt = {};
     process.argv.slice(2).forEach(value => {
@@ -60,6 +65,7 @@ function filterArgsCommands(projtsJson) {
 }
 
 function config(projtsJson) {
+  console.log("config()");
   function stylesPromise() {
     /* STYLES CSS */
     return new Promise((resolve, reject) => {
@@ -83,6 +89,7 @@ function config(projtsJson) {
   }
 
   function jsDependenciesPromise() {
+    console.log("jsDependenciesPromise()");
     /* JS DEPENDENCES */
     return new Promise((resolve, reject) => {
       const iconsMap = {
@@ -115,6 +122,7 @@ function config(projtsJson) {
   }
 
   function htmlAndThenPromise() {
+    console.log("htmlAndThenPromise()");
     /* HTML AND THEN */
     return new Promise((resolve, reject) => {
       const gaCode = (projtsJson.meta.google_analytics_id) ? `<script>
