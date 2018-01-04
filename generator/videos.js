@@ -1,4 +1,5 @@
 var YouTube = require('youtube-node');
+var _ = require('lodash');
 
 
 function anyVideo(dataJSON) {
@@ -27,9 +28,9 @@ function getIdPromise(lang, projectKey, arrayPromises, youTube) {
         if (error) {
           console.log(error);
         }
-        else {
-          const thumbnails = result.items[0].snippet.thumbnails;
-          const data = {
+        else if (_.get(result, 'items[0].snippet.thumbnails')) {
+          const thumbnails = _.get(result, 'items[0].snippet.thumbnails');
+          var data = {
             src: thumbnails.high.url,
             srcset: [
               `${thumbnails.high.url} 1024w`,
@@ -42,13 +43,15 @@ function getIdPromise(lang, projectKey, arrayPromises, youTube) {
             content: youtubeId,
             type: 'video',
           };
-          resolve({
-            index: index,
-            lang: lang,
-            projectKey: projectKey,
-            data: data
-          });
+        } else {
+          var data = {};
         }
+        resolve({
+          index: index,
+          lang: lang,
+          projectKey: projectKey,
+          data: data
+        });
 
       });
 
