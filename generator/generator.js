@@ -1,9 +1,8 @@
-/* Import modules */
 var fs = require("fs");
-var videos = require('./generator/videos');
-var imagesDep = require('./generator/images');
+var videos = require('./videos');
+var imagesDep = require('./images');
 
-const constants = require('./generator/constants');
+const constants = require('./constants');
 const {SITE_CONFIGURATION,
   CONTENT_FOLDER} = constants;
 const rootPath = getRootPathFromArgs() || "";
@@ -23,7 +22,7 @@ function getRootPathFromArgs() {
   return (argv.length > 0)
     && argv.some(arg => isRootPAth(arg))
     && argv.filter(arg => isRootPAth(arg))[0]
-    .substring(argv.filter(arg => isRootPAth(arg))[0].indexOf("=") + 1) + "/";
+      .substring(argv.filter(arg => isRootPAth(arg))[0].indexOf("=") + 1) + "/";
 }
 
 function filterByValue(paramName, valueParam, rawObj, invert) {
@@ -178,7 +177,6 @@ function config(projtsJson) {
 
 readConfigData(filenameConfiguration)
   .then(config)
-  //.then(filterArgsCommands)
   .then(youtube)
   .then(images)
   .then(state)
@@ -187,4 +185,3 @@ readConfigData(filenameConfiguration)
   }).catch(error => {
   console.log((error).red);
 });
-
