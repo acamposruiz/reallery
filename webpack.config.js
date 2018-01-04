@@ -56,7 +56,7 @@ module.exports = CompilationPlugin;
 module.exports = {
   watch: true,
   watchOptions: {
-    aggregateTimeout: 300000
+    poll: 300000
   },
   devtool: "source-map",
   resolve: {
