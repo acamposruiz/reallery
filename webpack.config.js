@@ -55,6 +55,9 @@ module.exports = CompilationPlugin;
 
 module.exports = {
   watch: true,
+  watchOptions: {
+    aggregateTimeout: 300000
+  },
   devtool: "source-map",
   resolve: {
     extensions: ['.jsx', '.js', '.es6', '.css', '.pcss'],
