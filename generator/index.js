@@ -175,13 +175,15 @@ function config(projtsJson) {
   });
 }
 
-readConfigData(filenameConfiguration)
-  .then(config)
-  .then(youtube)
-  .then(images)
-  .then(state)
-  .then(function () {
-    warnings.forEach(warning => console.log((warning).red));
-  }).catch(error => {
+[
+  config,
+  youtube,
+  images,
+  state,
+].reduce((promiseChain, currentTask) => {
+  return promiseChain.then(currentTask);
+}, readConfigData(filenameConfiguration)).then(function () {
+  warnings.forEach(warning => console.log((warning).red));
+}).catch(error => {
   console.log((error).red);
 });
