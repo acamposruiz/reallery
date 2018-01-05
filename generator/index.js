@@ -4,16 +4,22 @@ var imagesDep = require('./images');
 var config = require('./config');
 
 const {SITE_CONFIGURATION, CONTENT_FOLDER} =  require('./constants');
+
 const rootPath = (function getRootPathFromArgs() {
-  function isRootPAth(arg) {
-    return arg.substring(0, arg.indexOf("=")) === 'root-path';
-  }
   const argv = process.argv;
-  return (argv.length > 0)
-    && argv.some(arg => isRootPAth(arg))
-    && argv.filter(arg => isRootPAth(arg))[0]
-      .substring(argv.filter(arg => isRootPAth(arg))[0].indexOf("=") + 1) + "/";
+
+  if (!(argv.length > 0)) return false;
+
+  function isRootPAth(arg) {
+    return arg.indexOf("root-path=") === 0;
+  }
+
+  let argValue = argv.filter(arg => isRootPAth(arg))[0];
+
+  return argValue? argValue.substring(argValue.indexOf("=") + 1) + "/": false;
+
 })() || "";
+
 const filenameConfiguration = rootPath + SITE_CONFIGURATION;
 const contentContainerFolder = rootPath + CONTENT_FOLDER;
 const youtube = videos.youtube;
