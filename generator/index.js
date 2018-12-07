@@ -7,6 +7,7 @@ const {SITE_CONFIGURATION, CONTENT_FOLDER} =  require('./constants');
 
 const rootPath = (function getRootPathFromArgs() {
   const argv = process.argv;
+  let argValue;
 
   if (!(argv.length > 0)) return false;
 
@@ -14,9 +15,8 @@ const rootPath = (function getRootPathFromArgs() {
     return arg.indexOf("root-path=") === 0;
   }
 
-  let argValue = argv.filter(arg => isRootPAth(arg))[0];
-
-  return argValue? argValue.substring(argValue.indexOf("=") + 1) + "/": false;
+  return (argValue = argv.filter(arg => isRootPAth(arg))[0])?
+    argValue.substring(argValue.indexOf("=") + 1) + "/": false;
 
 })() || "";
 
