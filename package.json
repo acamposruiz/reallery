@@ -92,6 +92,7 @@
     "create": "node ./generator/index",
     "create:dev": "node ./generator/index root-path=tests/e2e/mocks/site",
     "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:open:debug": "DEBUG=cypress:* ./node_modules/.bin/cypress open",
     "cypress:run": "./node_modules/.bin/cypress run --browser chrome",
     "start:dev": "webpack-dev-server",
     "start:server": "http-server -p 8989 -c1",
