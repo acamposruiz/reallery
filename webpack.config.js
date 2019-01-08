@@ -62,10 +62,13 @@ module.exports = {
   plugins: [
     //new WebpackShellPlugin({onBuildStart:['npm run test', 'npm run create:dev'], onBuildEnd:['npm run cypress:run']}),
     new webpack.ProgressPlugin(function(percentage, msg) {
-      console.log('.............................' + percentage + '..................................');
-      console.log(msg);
+      const percentageToPrint = Math.trunc(100 * percentage);
+      if (percentageToPrint % 5 === 0 && previousPercentage !== percentageToPrint) {
+        console.log(yellow,`progress ${percentageToPrint}% : ${msg}`);
+      }
+      previousPercentage = percentageToPrint;
     }),
-    new CompilationPlugin({options: true})
+    new CompilationPlugin()
   ],
   devServer: {
     port: 8989
