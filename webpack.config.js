@@ -1,57 +1,11 @@
 const path = require('path');
 var cmd = require('node-cmd');
 const webpack = require('webpack');
+const {yellow} = require('./internals/utils.js').colors;
+const CompilationPlugin = require("./internals/bundleConf/compilationPlugin.js");
 
 
-function CompilationPlugin(options) {
-}
-
-CompilationPlugin.prototype.apply = function (compiler) {
-
-
-  compiler.plugin('compile', function () {
-    console.log('Hello World!, compile');
-    cmd.get(
-      'npm run test',
-      function (err, data, stderr) {
-        console.log(data);
-        console.log(stderr);
-        console.log(err);
-      }
-    );
-    /*cmd.get(
-      'npm run create:dev',
-      function (err, data, stderr) {
-        console.log(data)
-      }
-    );*/
-  });
-
-  compiler.plugin('done', function () {
-    console.log('Hello World!, done');
-    cmd.get(
-      'npm run cypress:run',
-      function (err, data, stderr) {
-        console.log(data);
-        console.log(stderr);
-        console.log(err);
-      }
-    );
-  });
-  // Setup callback for accessing a compilation:
-  /*compiler.plugin("compilation", function(compilation) {
-
-    // Now setup callbacks for accessing compilation steps:
-    compilation.plugin("before-hash", function() {
-      console.log("Assets are being before-hash.");
-    });
-    compilation.plugin("finish-modules", function() {
-      console.log("Assets are being finish-modules.");
-    });
-  });*/
-};
-
-module.exports = CompilationPlugin;
+let previousPercentage;
 
 module.exports = {
   watch: true,
