@@ -35,13 +35,6 @@ module.exports = class CompilationPlugin {
           }
         );
       }
-
-      cmd.get(
-        "ls -lhS  build/* | awk '{print  $5, $9}'",
-        function (err, data, stderr) {
-          console.log(cyan, data, stderr, err);
-        }
-      );
     });
 
   }

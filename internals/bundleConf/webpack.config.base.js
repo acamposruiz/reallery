@@ -1,29 +1,18 @@
 const path = require('path');
-var cmd = require('node-cmd');
-const webpack = require('webpack');
-const {yellow} = require('./internals/utils.js').colors;
-const CompilationPlugin = require("./internals/bundleConf/compilationPlugin.js");
-
-
-let previousPercentage;
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const CompilationPlugin = require("./compilationPlugin.js");
 
 module.exports = {
-  mode: 'production',
-  watch: true,
-  watchOptions: {
-    poll: 300000
-  },
-  devtool: "source-map",
   resolve: {
-    extensions: ['.jsx', '.js', '.es6', '.css', '.pcss'],
-    alias: {
-      Styles: path.resolve(__dirname, 'src/styles/')
-    }
+    extensions: ['.jsx', '.js', '.es6', '.css', '.pcss']
   },
-  entry: './src/es6/app',
+  entry: {
+    app: './src/es6/app',
+    styles: './src/styles/styles.pcss'
+  },
   output: {
-    path: __dirname + '/build',
-    filename: 'app.js'
+    path: path.join(__dirname, '../../build'),
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -62,16 +51,9 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    //new WebpackShellPlugin({onBuildStart:['npm run test', 'npm run create:dev'], onBuildEnd:['npm run cypress:run']}),
-    new webpack.ProgressPlugin(function(percentage, msg) {
-      const percentageToPrint = Math.trunc(100 * percentage);
-      if (percentageToPrint % 5 === 0 && previousPercentage !== percentageToPrint) {
-        console.log(yellow,`progress ${percentageToPrint}% : ${msg}`);
-      }
-      previousPercentage = percentageToPrint;
-    }),
-    new CompilationPlugin()
+  plugins: (mode) => [
+    new ProgressBarPlugin(),
+    new CompilationPlugin(mode === 'production' ? {test: true} : {})
   ],
   devServer: {
     port: 8989
