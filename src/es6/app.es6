@@ -4,15 +4,14 @@
 /*jshint newcap:false */
 /*global React, Router*/
 
-import styles from 'Styles/styles.pcss';
 import state from '../../state/state';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import WorksApp from './worksApp.es6';
 
 ReactDOM.render(
-	<WorksApp meta={state.meta} model={state.projects}/>,
-    document.getElementsByClassName('mainpage')[0]
+  <WorksApp meta={state.meta} model={state.projects}/>,
+  document.getElementsByClassName('mainpage')[0]
 );
 
 
