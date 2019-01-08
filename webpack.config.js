@@ -8,6 +8,7 @@ const CompilationPlugin = require("./internals/bundleConf/compilationPlugin.js")
 let previousPercentage;
 
 module.exports = {
+  mode: 'production',
   watch: true,
   watchOptions: {
     poll: 300000
@@ -25,16 +26,18 @@ module.exports = {
     filename: 'app.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /(\.js|\.jsx|\.es6)$/,
-        loader: 'babel-loader',
-        query: {
-          plugins: ['transform-decorators-legacy', "transform-class-properties", "syntax-decorators"],
-          presets: ['babel-preset-es2015', 'babel-preset-stage-0', 'babel-preset-react']
-        }
+        use: [{
+          loader: 'babel-loader',
+          query: {
+            plugins: ['transform-decorators-legacy', "transform-class-properties", "syntax-decorators"],
+            presets: ['babel-preset-es2015', 'babel-preset-stage-0', 'babel-preset-react']
+          }
+        }]
       },
-      {test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/, exclude: /node_modules/, loader: 'url-loader?limit=100000'},
+      {test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/, exclude: /node_modules/, use: 'url-loader?limit=100000'},
       {
         test: /(\.css|\.pcss)$/,
         exclude: /node_modules/,
