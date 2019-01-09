@@ -1,9 +1,9 @@
-const merge = require('webpack-merge');
-const baseConfig = require('./webpack.config.dev');
+const merge = require("webpack-merge");
+const baseConfig = require("./webpack.config.dev");
 
 module.exports = merge(baseConfig, {
   watch: true,
   watchOptions: {
-    poll: 300000
-  }
+    poll: 300000,
+  },
 });
