@@ -21,6 +21,12 @@ module.exports = class CompilationPlugin {
     }
 
     compiler.plugin('beforeRun', function (...args) {
+      cmd.get(
+        `rm -rf ${args[0].options.output.path}`,
+        function (err, data, stderr) {
+          console.log(data, stderr, err);
+        }
+      );
       console.log(cyan, `MODE => ${args[0].options.mode}`);
     });
 

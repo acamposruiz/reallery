@@ -1,5 +1,6 @@
 const path = require('path');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompilationPlugin = require("./compilationPlugin.js");
 
 module.exports = {
@@ -12,7 +13,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '../../build'),
-    filename: '[name].js'
+    filename: '[name]-[hash].js'
   },
   module: {
     rules: [
@@ -53,6 +54,9 @@ module.exports = {
     ]
   },
   plugins: (mode) => [
+    new HtmlWebpackPlugin({
+      template: './src/indexTpl.html'
+    }),
     new ProgressBarPlugin(),
     new CompilationPlugin(mode === 'production' ? {test: true} : {})
   ],

@@ -42,6 +42,7 @@
     "decree": "file:./vendors/decree",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^3.2.0",
     "image-size": "^0.6.1",
     "jest": "^21.2.1",
     "lodash-node": "file:./vendors/lodash-node",
