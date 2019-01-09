@@ -20,9 +20,10 @@ module.exports = {
         test: /(\.js|\.jsx|\.es6)$/,
         use: [{
           loader: 'babel-loader',
-          query: {
-            plugins: ['transform-decorators-legacy', "transform-class-properties", "syntax-decorators"],
-            presets: ['babel-preset-es2015', 'babel-preset-stage-0', 'babel-preset-react']
+          options: {
+            /*plugins: [["@babel/plugin-proposal-decorators", {"legacy": true}],
+              "@babel/plugin-proposal-class-properties", ["@babel/plugin-syntax-decorators", {"legacy": true}]],*/
+            presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }]
       },
