@@ -57,6 +57,18 @@ module.exports = {
       },
     ],
   },
+  optimization: (mode) => ({
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+        },
+      },
+    },
+    minimize: mode === "production",
+  }),
   plugins: (mode) => [
     new HtmlWebpackPlugin({
       template: "./src/indexTpl.html",

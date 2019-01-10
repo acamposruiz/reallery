@@ -4,5 +4,6 @@ const mode = "production";
 
 module.exports = merge(baseConfig, {
   mode,
+  optimization: baseConfig.optimization(mode),
   plugins: baseConfig.plugins(mode),
 });
