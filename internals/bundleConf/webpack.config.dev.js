@@ -7,10 +7,13 @@ module.exports = merge(baseConfig, {
   optimization: {
     minimize: false,
   },
-  watch: true,
   watchOptions: {
     aggregateTimeout: 300,
     poll: 1000,
+  },
+  devServer: {
+    open: true,
+    port: 8989,
   },
   devtool: "inline-source-map",
   plugins: baseConfig.plugins(mode),

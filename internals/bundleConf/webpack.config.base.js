@@ -64,7 +64,4 @@ module.exports = {
     new ProgressBarPlugin(),
     new CompilationPlugin(mode === "production" ? { test: true } : {}),
   ],
-  devServer: {
-    port: 8989,
-  },
 };
