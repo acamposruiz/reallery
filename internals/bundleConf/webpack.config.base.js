@@ -1,5 +1,6 @@
 const path = require("path");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CompilationPlugin = require("./compilationPlugin.js");
 
@@ -59,10 +60,28 @@ module.exports = {
   },
   optimization: (mode) => ({
     splitChunks: {
+      maxInitialRequests: 5,
+      minSize: 60000,
       cacheGroups: {
-        commons: {
+        vendors: {
+          enforce: true,
+          priority: 5,
           test: /[\\/]node_modules[\\/]/,
           name: "vendors",
+          chunks: "all",
+        },
+        vendorsSplitMore: {
+          priority: 10,
+          test: /[\\/]node_modules[\\/]/,
+          name: (module) => {
+            const context = module.context.includes("/")
+              ? module.context.split("/")
+              : module.context.split("\\");
+
+            return context.find(function(element, index) {
+              return context[index - 1] === "node_modules";
+            });
+          },
           chunks: "all",
         },
       },
@@ -74,6 +93,7 @@ module.exports = {
       template: "./src/indexTpl.html",
     }),
     new ProgressBarPlugin(),
-    new CompilationPlugin(mode === "production" ? { test: true } : {}),
+    new BundleAnalyzerPlugin(),
+    new CompilationPlugin(mode === "production" ? { test: false } : {}),
   ],
 };

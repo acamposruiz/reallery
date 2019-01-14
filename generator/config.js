@@ -31,10 +31,10 @@ function config(rootPath) {
       /* JS DEPENDENCES */
       return new Promise((resolve, reject) => {
         const iconsMap = {
-          MaterialDesignIcons: "react-icons/lib/md",
-          FontAwesome: "react-icons/lib/fa",
-          Typicons: "react-icons/lib/ti",
-          GithubOcticons: "react-icons/lib/go",
+          MaterialDesignIcons: "react-icons/md",
+          FontAwesome: "@fortawesome/free-solid-svg-icons",
+          Typicons: "react-icons/ti",
+          GithubOcticons: "react-icons/go",
         };
 
         let icons = "";

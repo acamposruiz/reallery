@@ -7,18 +7,16 @@ import React from "react";
 import ProjectButton from "./projectButton.es6";
 import ProjectGallery from "./projectGallery.es6";
 import Director from "../../node_modules/director/build/director.js";
-import FaEnvelope from "react-icons/lib/fa/envelope";
-import FaPhone from "react-icons/lib/fa/phone";
-import FaGithubAlt from "react-icons/lib/fa/github-alt";
-import FaTwitter from "react-icons/lib/fa/twitter";
-import FaInstagram from "react-icons/lib/fa/instagram";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import utils from "./utils.es6";
 
 const Router = Director.Router;
 
 class worksApp extends React.Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     this.state = {
       meta: props.meta || {},
       project: null,
@@ -106,7 +104,7 @@ class worksApp extends React.Component {
           type={project.type}
           publish={project.publish}
           state={project.state}
-          active={project.name == projectSt.name}
+          active={project.name === projectSt.name}
         />
       );
     }, this);
@@ -138,21 +136,21 @@ class worksApp extends React.Component {
           {meta.github ? (
             <a target="_blank" href={meta.github}>
               <span className="mail-data">
-                <FaGithubAlt />
+                <FontAwesomeIcon icon={faGithub} />
                 <span className="data">View on github</span>
               </span>
             </a>
           ) : null}
           <a href={`mailto:${meta.email}`}>
             <span className="mail-data">
-              <FaEnvelope />
+              <FontAwesomeIcon icon={faEnvelope} />
               <span className="data">{meta.email}</span>
             </span>
           </a>
           &nbsp; &nbsp; &nbsp;
           <a href={`tel:${meta.tlf}`}>
             <span className="mail-data">
-              <FaPhone />
+              <FontAwesomeIcon icon={faPhone} />
               <span className="data">{meta.tlf}</span>
             </span>
           </a>

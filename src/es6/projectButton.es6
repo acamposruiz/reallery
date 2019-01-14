@@ -7,8 +7,8 @@ import React from "react";
 import ContentIcons from "./contentIcons.es6";
 
 class ProjectButton extends React.Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -29,9 +29,9 @@ class ProjectButton extends React.Component {
             <ContentIcons dataicon={{ family: icon.family, icon: icon.icon }} />
           </div>
 
-          {this.props.view == "project" ? buttonText : null}
+          {this.props.view === "project" ? buttonText : null}
         </a>
-        {this.props.view == "home" ? buttonText : null}
+        {this.props.view === "home" ? buttonText : null}
       </div>
     );
   }
