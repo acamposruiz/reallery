@@ -21,7 +21,7 @@
     "color": "F0B67F",
     "icon": {
       "family": "FontAwesome",
-      "icon": "FaPaintBrush"
+      "icon": "faPaintBrush"
     },
     "videos": {
       "en": [
@@ -58,7 +58,7 @@
     "color": "D6D1B1",
     "icon": {
       "family": "FontAwesome",
-      "icon": "FaCube"
+      "icon": "faCube"
     },
     "videos": {
       "en": [
@@ -95,7 +95,7 @@
     "color": "C7EFCF",
     "icon": {
       "family": "FontAwesome",
-      "icon": "FaBank"
+      "icon": "faUniversity"
     },
     "videos": {
       "en": [

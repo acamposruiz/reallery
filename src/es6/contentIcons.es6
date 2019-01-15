@@ -3,19 +3,18 @@
 /*jshint trailing: false */
 /*jshint newcap: false */
 /*global React */
-import React from 'react';
-import * as icons from './icons.es6'
-
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as icons from "./icons.es6";
 
 class ContentIcons extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-    constructor(props, context) {
-        super(props, context);
-    }
-
-    render() {
-        return React.createElement(icons[this.props.dataicon.icon], null);
-    }
-};
+  render() {
+    return <FontAwesomeIcon icon={icons[this.props.dataicon.icon]} />;
+  }
+}
 
 export default ContentIcons;

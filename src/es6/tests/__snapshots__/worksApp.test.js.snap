@@ -34,7 +34,7 @@ exports[`WorksApp 1`] = `
       icon={
         Object {
           "family": "FontAwesome",
-          "icon": "FaPaintBrush",
+          "icon": "faPaintBrush",
         }
       }
       key2="paintings"
@@ -51,7 +51,7 @@ exports[`WorksApp 1`] = `
       icon={
         Object {
           "family": "FontAwesome",
-          "icon": "FaCube",
+          "icon": "faCube",
         }
       }
       key2="sculptures"
@@ -68,7 +68,7 @@ exports[`WorksApp 1`] = `
       icon={
         Object {
           "family": "FontAwesome",
-          "icon": "FaBank",
+          "icon": "faUniversity",
         }
       }
       key2="architecture"

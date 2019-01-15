@@ -1,5 +1,5 @@
 # Reallery
-Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need for data services. Responsive and very very fast. It's focusing on develop gallery applications.
+Reallery is a Mobile First Framework over ReactJS. Easy configuration. No need for data services. Responsive and very very fast. It's focus in develop gallery applications.
 
 
   View online demo on [demo.reallery.com](http://www.demo.reallery.com/)
@@ -7,7 +7,7 @@ Reallery is a MobileFirst Framework over ReactJS. Easy configuration. No need fo
 
 # Steps to build your project
 1. Clone this repository
-1. yarn install
+1. nvm use 8.12 && yarn install
 1. Config your project on ./reallery_conf.json
 1. Save your images in ./content/<SECTION_KEY_X>/images/
     - Name each folder (<SECTION_KEY_X>) as the name key of the section and put the images
