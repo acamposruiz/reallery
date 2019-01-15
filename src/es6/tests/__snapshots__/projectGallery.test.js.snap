@@ -5,7 +5,6 @@ exports[`ProjectGallery 1`] = `
   className="App"
 >
   <Gallery
-    cols={undefined}
     items={Array []}
     margin={4}
     onClickItem={[Function]}

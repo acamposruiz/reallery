@@ -23,11 +23,6 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
-            options: {
-              /*plugins: [["@babel/plugin-proposal-decorators", {"legacy": true}],
-              "@babel/plugin-proposal-class-properties", ["@babel/plugin-syntax-decorators", {"legacy": true}]],*/
-              presets: ["@babel/preset-env", "@babel/preset-react"],
-            },
           },
         ],
       },
