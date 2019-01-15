@@ -89,6 +89,6 @@ module.exports = {
     }),
     new ProgressBarPlugin(),
     new BundleAnalyzerPlugin(),
-    new CompilationPlugin(mode === "production" ? { test: false } : {}),
+    new CompilationPlugin(),
   ],
 };

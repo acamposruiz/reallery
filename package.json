@@ -121,10 +121,14 @@
     "cypress:open:debug": "DEBUG=cypress:* ./node_modules/.bin/cypress open",
     "cypress:run": "./node_modules/.bin/cypress run --browser chrome",
     "build": "webpack --config internals/bundleConf/webpack.config.pro.js",
+    "build:tests": "npm run build && npm run test",
     "build:dev": "webpack --config internals/bundleConf/webpack.config.dev.js",
     "start:dev": "webpack-dev-server --config internals/bundleConf/webpack.config.dev.js",
+    "test": "npm run test:unit && npm run test:e2e:server",
     "test:unit": "jest",
-    "test:e2e": "npm run cypress:run"
+    "test:e2e": "npm run cypress:run",
+    "test:server": "npx http-server -s -p 8989 -c1 ./build &",
+    "test:e2e:server": "npm run test:server && npm run test:e2e"
   },
   "test": "jest",
   "jest": {
