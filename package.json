@@ -123,7 +123,8 @@
     "build": "webpack --config internals/bundleConf/webpack.config.pro.js",
     "build:dev": "webpack --config internals/bundleConf/webpack.config.dev.js",
     "start:dev": "webpack-dev-server --config internals/bundleConf/webpack.config.dev.js",
-    "test": "jest"
+    "test:unit": "jest",
+    "test:e2e": "npm run cypress:run"
   },
   "test": "jest",
   "jest": {

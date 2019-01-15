@@ -10,7 +10,7 @@ module.exports = class CompilationPlugin {
     if (this.options.test) {
       compiler.plugin("compile", function() {
         console.log(cyan, "RUNNING UNIT TESTS......");
-        cmd.get("npm run test", function(err, data, stderr) {
+        cmd.get("npm run test:unit", function(err, data, stderr) {
           console.log(data, stderr, err);
         });
       });
@@ -26,7 +26,7 @@ module.exports = class CompilationPlugin {
     compiler.plugin("done", () => {
       if (this.options.test) {
         console.log(cyan, "RUNNING E2E TESTS......");
-        cmd.get("npm run cypress:run", function(err, data, stderr) {
+        cmd.get("npm run test:e2e", function(err, data, stderr) {
           console.log(data, stderr, err);
         });
       }
