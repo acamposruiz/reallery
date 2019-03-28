@@ -5,6 +5,7 @@ build
 projts
 !vendors/lwip/build
 content
+!docs/tests/e2e/mocks/site/content
 !tests/e2e/mocks/site/content
 package-lock.json
 ./package-lock.json
