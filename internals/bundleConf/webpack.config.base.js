@@ -3,6 +3,7 @@ const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CompilationPlugin = require("./compilationPlugin.js");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   resolve: {
@@ -27,7 +28,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ["file-loader"],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf)$/,
         exclude: /node_modules/,
         use: "url-loader?limit=100000",
       },
@@ -90,5 +95,6 @@ module.exports = {
     new ProgressBarPlugin(),
     new BundleAnalyzerPlugin(),
     new CompilationPlugin(),
+    new CopyWebpackPlugin([{ from: "tests", to: "tests" }]),
   ],
 };

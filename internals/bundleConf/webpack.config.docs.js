@@ -1,19 +1,14 @@
+const path = require("path");
 const merge = require("webpack-merge");
 const baseConfig = require("./webpack.config.base");
-const mode = "development";
+const mode = "production";
 
 module.exports = merge(baseConfig, {
+  output: {
+    path: path.join(__dirname, "../../docs"),
+    filename: "[name]-[hash].js",
+  },
   mode,
-  watchOptions: {
-    aggregateTimeout: 300,
-    poll: 1000,
-  },
-  devServer: {
-    host: "192.168.1.83",
-    open: true,
-    port: 8989,
-  },
-  devtool: "inline-source-map",
   optimization: baseConfig.optimization(mode),
   plugins: baseConfig.plugins(mode),
 });
