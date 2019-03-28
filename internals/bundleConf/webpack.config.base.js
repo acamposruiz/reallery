@@ -95,6 +95,6 @@ module.exports = {
     new ProgressBarPlugin(),
     new BundleAnalyzerPlugin(),
     new CompilationPlugin(),
-    new CopyWebpackPlugin([{ from: "tests", to: "tests" }]),
+    new CopyWebpackPlugin([{ from: "tests", to: "reallery/tests" }]),
   ],
 };
