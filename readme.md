@@ -99,7 +99,7 @@ Reallery is a Mobile First Framework over ReactJS. Easy configuration. No need f
 Create a folder for each section of your gallery inside ./content/<SECTION_KEY_X>/images/. Make sure the name of the folder <SECTION_KEY_X> is the same as the key you put in the Json. Inside this folder you have to copy all the images files.
 
 # Run Example
-If you want to run [demo.reallery.com](http://www.demo.reallery.com/) locally it's simple.
+If you want to run [demo.reallery.com](https://acamposruiz.github.io/reallery) locally it's simple.
 1. Switch branch: **git checkout example/mbuonarroti**
 1. Run yarn install; npm run create; webpack; on console
 1. Start any server on local finder. As for example http-server npm package or anything else.
