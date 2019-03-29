@@ -1221,7 +1221,7 @@
               value: function() {
                 var e = "icon-ico_" + this.props.key2,
                   t =
-                    "/#/" +
+                    "/reallery/#/" +
                     (this.props.lng ? this.props.lng + "/" : "") +
                     "project/view/" +
                     this.props.key2,
@@ -1735,7 +1735,7 @@
                 var e = X.is_mobile("any") ? "mobile" : "no-mobile",
                   t = this.state.project ? "project" : "home",
                   s = this.state.lng,
-                  a = "/#/" + (s || ""),
+                  a = "/reallery/#/" + (s || ""),
                   i = this.props.model,
                   n = this.state.project || {},
                   o = this.props.meta || {},

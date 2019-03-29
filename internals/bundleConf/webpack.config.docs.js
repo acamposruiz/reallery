@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const path = require("path");
 const merge = require("webpack-merge");
 const baseConfig = require("./webpack.config.base");
@@ -10,5 +11,9 @@ module.exports = merge(baseConfig, {
   },
   mode,
   optimization: baseConfig.optimization(mode),
-  plugins: baseConfig.plugins(mode),
+  plugins: baseConfig.plugins(mode).concat([
+    new webpack.EnvironmentPlugin({
+      PUBLICPATH: "reallery", // use 'development' unless process.env.NODE_ENV is defined
+    }),
+  ]),
 });
