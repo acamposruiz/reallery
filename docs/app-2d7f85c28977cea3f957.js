@@ -1,51 +1,51 @@
 !(function(e) {
   function t(t) {
-    for (var a, o, c = t[0], r = t[1], l = t[2], g = 0, p = []; g < c.length; g++)
-      (o = c[g]), i[o] && p.push(i[o][0]), (i[o] = 0);
-    for (a in r) Object.prototype.hasOwnProperty.call(r, a) && (e[a] = r[a]);
+    for (var a, n, o = t[0], c = t[1], l = t[2], g = 0, p = []; g < o.length; g++)
+      (n = o[g]), i[n] && p.push(i[n][0]), (i[n] = 0);
+    for (a in c) Object.prototype.hasOwnProperty.call(c, a) && (e[a] = c[a]);
     for (m && m(t); p.length; ) p.shift()();
-    return n.push.apply(n, l || []), s();
+    return r.push.apply(r, l || []), s();
   }
   function s() {
-    for (var e, t = 0; t < n.length; t++) {
-      for (var s = n[t], a = !0, c = 1; c < s.length; c++) {
-        var r = s[c];
-        0 !== i[r] && (a = !1);
+    for (var e, t = 0; t < r.length; t++) {
+      for (var s = r[t], a = !0, o = 1; o < s.length; o++) {
+        var c = s[o];
+        0 !== i[c] && (a = !1);
       }
-      a && (n.splice(t--, 1), (e = o((o.s = s[0]))));
+      a && (r.splice(t--, 1), (e = n((n.s = s[0]))));
     }
     return e;
   }
   var a = {},
     i = { 2: 0 },
-    n = [];
-  function o(t) {
+    r = [];
+  function n(t) {
     if (a[t]) return a[t].exports;
     var s = (a[t] = { i: t, l: !1, exports: {} });
-    return e[t].call(s.exports, s, s.exports, o), (s.l = !0), s.exports;
+    return e[t].call(s.exports, s, s.exports, n), (s.l = !0), s.exports;
   }
-  (o.m = e),
-    (o.c = a),
-    (o.d = function(e, t, s) {
-      o.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: s });
+  (n.m = e),
+    (n.c = a),
+    (n.d = function(e, t, s) {
+      n.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: s });
     }),
-    (o.r = function(e) {
+    (n.r = function(e) {
       "undefined" != typeof Symbol &&
         Symbol.toStringTag &&
         Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(e, "__esModule", { value: !0 });
     }),
-    (o.t = function(e, t) {
-      if ((1 & t && (e = o(e)), 8 & t)) return e;
+    (n.t = function(e, t) {
+      if ((1 & t && (e = n(e)), 8 & t)) return e;
       if (4 & t && "object" == typeof e && e && e.__esModule) return e;
       var s = Object.create(null);
       if (
-        (o.r(s),
+        (n.r(s),
         Object.defineProperty(s, "default", { enumerable: !0, value: e }),
         2 & t && "string" != typeof e)
       )
         for (var a in e)
-          o.d(
+          n.d(
             s,
             a,
             function(t) {
@@ -54,7 +54,7 @@
           );
       return s;
     }),
-    (o.n = function(e) {
+    (n.n = function(e) {
       var t =
         e && e.__esModule
           ? function() {
@@ -63,18 +63,18 @@
           : function() {
               return e;
             };
-      return o.d(t, "a", t), t;
+      return n.d(t, "a", t), t;
     }),
-    (o.o = function(e, t) {
+    (n.o = function(e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (o.p = "/reallery/");
-  var c = (window.webpackJsonp = window.webpackJsonp || []),
-    r = c.push.bind(c);
-  (c.push = t), (c = c.slice());
-  for (var l = 0; l < c.length; l++) t(c[l]);
-  var m = r;
-  n.push([206, 5, 1, 4, 3, 0]), s();
+    (n.p = "/reallery/");
+  var o = (window.webpackJsonp = window.webpackJsonp || []),
+    c = o.push.bind(o);
+  (o.push = t), (o = o.slice());
+  for (var l = 0; l < o.length; l++) t(o[l]);
+  var m = c;
+  r.push([206, 5, 1, 4, 3, 0]), s();
 })({
   206: function(e, t, s) {
     "use strict";
@@ -186,11 +186,11 @@
           {
             type: "photo",
             path:
-              "tests/e2e/mocks/site/content/paintings/images/0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel.jpg",
+              "reallery/tests/e2e/mocks/site/content/paintings/images/0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel/620_0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel/310_0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel/160_0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel/620_0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel/310_0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel/160_0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel.jpg 160w",
             ],
             width: 736,
             height: 1203,
@@ -198,23 +198,23 @@
           {
             type: "photo",
             path:
-              "tests/e2e/mocks/site/content/paintings/images/1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti).jpg",
+              "reallery/tests/e2e/mocks/site/content/paintings/images/1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti).jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti)/620_1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti).jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti)/310_1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti).jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti)/160_1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti).jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti)/620_1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti).jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti)/310_1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti).jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti)/160_1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti).jpg 160w",
             ],
             width: 1200,
             height: 1111,
           },
           {
             type: "photo",
-            path: "tests/e2e/mocks/site/content/paintings/images/200812314411973499.jpg",
+            path: "reallery/tests/e2e/mocks/site/content/paintings/images/200812314411973499.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/200812314411973499/1240_200812314411973499.jpg 1240w",
-              "tests/e2e/mocks/site/content/paintings/images_src/200812314411973499/620_200812314411973499.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/200812314411973499/310_200812314411973499.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/200812314411973499/160_200812314411973499.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/200812314411973499/1240_200812314411973499.jpg 1240w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/200812314411973499/620_200812314411973499.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/200812314411973499/310_200812314411973499.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/200812314411973499/160_200812314411973499.jpg 160w",
             ],
             width: 1404,
             height: 924,
@@ -222,11 +222,11 @@
           {
             type: "photo",
             path:
-              "tests/e2e/mocks/site/content/paintings/images/53de19f3b29e6a642617a00fafbb1b7f.jpg",
+              "reallery/tests/e2e/mocks/site/content/paintings/images/53de19f3b29e6a642617a00fafbb1b7f.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/53de19f3b29e6a642617a00fafbb1b7f/620_53de19f3b29e6a642617a00fafbb1b7f.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/53de19f3b29e6a642617a00fafbb1b7f/310_53de19f3b29e6a642617a00fafbb1b7f.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/53de19f3b29e6a642617a00fafbb1b7f/160_53de19f3b29e6a642617a00fafbb1b7f.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/53de19f3b29e6a642617a00fafbb1b7f/620_53de19f3b29e6a642617a00fafbb1b7f.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/53de19f3b29e6a642617a00fafbb1b7f/310_53de19f3b29e6a642617a00fafbb1b7f.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/53de19f3b29e6a642617a00fafbb1b7f/160_53de19f3b29e6a642617a00fafbb1b7f.jpg 160w",
             ],
             width: 1237,
             height: 1024,
@@ -234,56 +234,57 @@
           {
             type: "photo",
             path:
-              "tests/e2e/mocks/site/content/paintings/images/8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works.jpg",
+              "reallery/tests/e2e/mocks/site/content/paintings/images/8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works/620_8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works/310_8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works/160_8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works/620_8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works/310_8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works/160_8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works.jpg 160w",
             ],
             width: 736,
             height: 1126,
           },
           {
             type: "photo",
-            path: "tests/e2e/mocks/site/content/paintings/images/Doni-Tondo.jpg",
+            path: "reallery/tests/e2e/mocks/site/content/paintings/images/Doni-Tondo.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/Doni-Tondo/620_Doni-Tondo.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/Doni-Tondo/310_Doni-Tondo.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/Doni-Tondo/160_Doni-Tondo.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/Doni-Tondo/620_Doni-Tondo.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/Doni-Tondo/310_Doni-Tondo.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/Doni-Tondo/160_Doni-Tondo.jpg 160w",
             ],
             width: 1020,
             height: 1024,
           },
           {
             type: "photo",
-            path: "tests/e2e/mocks/site/content/paintings/images/Michelangelo_Buonarroti_047.jpg",
+            path:
+              "reallery/tests/e2e/mocks/site/content/paintings/images/Michelangelo_Buonarroti_047.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/Michelangelo_Buonarroti_047/1240_Michelangelo_Buonarroti_047.jpg 1240w",
-              "tests/e2e/mocks/site/content/paintings/images_src/Michelangelo_Buonarroti_047/620_Michelangelo_Buonarroti_047.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/Michelangelo_Buonarroti_047/310_Michelangelo_Buonarroti_047.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/Michelangelo_Buonarroti_047/160_Michelangelo_Buonarroti_047.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/Michelangelo_Buonarroti_047/1240_Michelangelo_Buonarroti_047.jpg 1240w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/Michelangelo_Buonarroti_047/620_Michelangelo_Buonarroti_047.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/Michelangelo_Buonarroti_047/310_Michelangelo_Buonarroti_047.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/Michelangelo_Buonarroti_047/160_Michelangelo_Buonarroti_047.jpg 160w",
             ],
             width: 1576,
             height: 1109,
           },
           {
             type: "photo",
-            path: "tests/e2e/mocks/site/content/paintings/images/Simoni05.jpg",
+            path: "reallery/tests/e2e/mocks/site/content/paintings/images/Simoni05.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/Simoni05/620_Simoni05.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/Simoni05/310_Simoni05.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/Simoni05/160_Simoni05.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/Simoni05/620_Simoni05.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/Simoni05/310_Simoni05.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/Simoni05/160_Simoni05.jpg 160w",
             ],
             width: 823,
             height: 1050,
           },
           {
             type: "photo",
-            path: "tests/e2e/mocks/site/content/paintings/images/Simoni46.jpg",
+            path: "reallery/tests/e2e/mocks/site/content/paintings/images/Simoni46.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/Simoni46/620_Simoni46.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/Simoni46/310_Simoni46.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/Simoni46/160_Simoni46.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/Simoni46/620_Simoni46.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/Simoni46/310_Simoni46.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/Simoni46/160_Simoni46.jpg 160w",
             ],
             width: 890,
             height: 1010,
@@ -291,22 +292,22 @@
           {
             type: "photo",
             path:
-              "tests/e2e/mocks/site/content/paintings/images/c47930bbcf0e316b116734da17792e82.jpg",
+              "reallery/tests/e2e/mocks/site/content/paintings/images/c47930bbcf0e316b116734da17792e82.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/c47930bbcf0e316b116734da17792e82/620_c47930bbcf0e316b116734da17792e82.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/c47930bbcf0e316b116734da17792e82/310_c47930bbcf0e316b116734da17792e82.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/c47930bbcf0e316b116734da17792e82/160_c47930bbcf0e316b116734da17792e82.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/c47930bbcf0e316b116734da17792e82/620_c47930bbcf0e316b116734da17792e82.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/c47930bbcf0e316b116734da17792e82/310_c47930bbcf0e316b116734da17792e82.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/c47930bbcf0e316b116734da17792e82/160_c47930bbcf0e316b116734da17792e82.jpg 160w",
             ],
             width: 772,
             height: 1051,
           },
           {
             type: "photo",
-            path: "tests/e2e/mocks/site/content/paintings/images/delphic-sibyl.jpg",
+            path: "reallery/tests/e2e/mocks/site/content/paintings/images/delphic-sibyl.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/delphic-sibyl/620_delphic-sibyl.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/delphic-sibyl/310_delphic-sibyl.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/delphic-sibyl/160_delphic-sibyl.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/delphic-sibyl/620_delphic-sibyl.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/delphic-sibyl/310_delphic-sibyl.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/delphic-sibyl/160_delphic-sibyl.jpg 160w",
             ],
             width: 990,
             height: 1363,
@@ -314,11 +315,11 @@
           {
             type: "photo",
             path:
-              "tests/e2e/mocks/site/content/paintings/images/e2582284ea2764f1d2ca5fbec62ce1be.jpg",
+              "reallery/tests/e2e/mocks/site/content/paintings/images/e2582284ea2764f1d2ca5fbec62ce1be.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/e2582284ea2764f1d2ca5fbec62ce1be/620_e2582284ea2764f1d2ca5fbec62ce1be.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/e2582284ea2764f1d2ca5fbec62ce1be/310_e2582284ea2764f1d2ca5fbec62ce1be.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/e2582284ea2764f1d2ca5fbec62ce1be/160_e2582284ea2764f1d2ca5fbec62ce1be.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/e2582284ea2764f1d2ca5fbec62ce1be/620_e2582284ea2764f1d2ca5fbec62ce1be.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/e2582284ea2764f1d2ca5fbec62ce1be/310_e2582284ea2764f1d2ca5fbec62ce1be.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/e2582284ea2764f1d2ca5fbec62ce1be/160_e2582284ea2764f1d2ca5fbec62ce1be.jpg 160w",
             ],
             width: 832,
             height: 1070,
@@ -326,44 +327,45 @@
           {
             type: "photo",
             path:
-              "tests/e2e/mocks/site/content/paintings/images/f72cf39fa78b232b371c0d7ea53986d7.jpg",
+              "reallery/tests/e2e/mocks/site/content/paintings/images/f72cf39fa78b232b371c0d7ea53986d7.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/f72cf39fa78b232b371c0d7ea53986d7/620_f72cf39fa78b232b371c0d7ea53986d7.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/f72cf39fa78b232b371c0d7ea53986d7/310_f72cf39fa78b232b371c0d7ea53986d7.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/f72cf39fa78b232b371c0d7ea53986d7/160_f72cf39fa78b232b371c0d7ea53986d7.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/f72cf39fa78b232b371c0d7ea53986d7/620_f72cf39fa78b232b371c0d7ea53986d7.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/f72cf39fa78b232b371c0d7ea53986d7/310_f72cf39fa78b232b371c0d7ea53986d7.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/f72cf39fa78b232b371c0d7ea53986d7/160_f72cf39fa78b232b371c0d7ea53986d7.jpg 160w",
             ],
             width: 856,
             height: 990,
           },
           {
             type: "photo",
-            path: "tests/e2e/mocks/site/content/paintings/images/la-creacion-de-adan_ee36a05b.png",
+            path:
+              "reallery/tests/e2e/mocks/site/content/paintings/images/la-creacion-de-adan_ee36a05b.png",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/la-creacion-de-adan_ee36a05b/620_la-creacion-de-adan_ee36a05b.png 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/la-creacion-de-adan_ee36a05b/310_la-creacion-de-adan_ee36a05b.png 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/la-creacion-de-adan_ee36a05b/160_la-creacion-de-adan_ee36a05b.png 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/la-creacion-de-adan_ee36a05b/620_la-creacion-de-adan_ee36a05b.png 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/la-creacion-de-adan_ee36a05b/310_la-creacion-de-adan_ee36a05b.png 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/la-creacion-de-adan_ee36a05b/160_la-creacion-de-adan_ee36a05b.png 160w",
             ],
             width: 1115,
             height: 868,
           },
           {
             type: "photo",
-            path: "tests/e2e/mocks/site/content/paintings/images/larger.jpg",
+            path: "reallery/tests/e2e/mocks/site/content/paintings/images/larger.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/larger/620_larger.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/larger/310_larger.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/larger/160_larger.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/larger/620_larger.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/larger/310_larger.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/larger/160_larger.jpg 160w",
             ],
             width: 952,
             height: 1024,
           },
           {
             type: "photo",
-            path: "tests/e2e/mocks/site/content/paintings/images/ma1.jpg",
+            path: "reallery/tests/e2e/mocks/site/content/paintings/images/ma1.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/ma1/620_ma1.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/ma1/310_ma1.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/ma1/160_ma1.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/ma1/620_ma1.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/ma1/310_ma1.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/ma1/160_ma1.jpg 160w",
             ],
             width: 1e3,
             height: 1375,
@@ -371,23 +373,24 @@
           {
             type: "photo",
             path:
-              "tests/e2e/mocks/site/content/paintings/images/michelangelo_8_martyrdom_of_st_peter.jpg",
+              "reallery/tests/e2e/mocks/site/content/paintings/images/michelangelo_8_martyrdom_of_st_peter.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_8_martyrdom_of_st_peter/1240_michelangelo_8_martyrdom_of_st_peter.jpg 1240w",
-              "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_8_martyrdom_of_st_peter/620_michelangelo_8_martyrdom_of_st_peter.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_8_martyrdom_of_st_peter/310_michelangelo_8_martyrdom_of_st_peter.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_8_martyrdom_of_st_peter/160_michelangelo_8_martyrdom_of_st_peter.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/michelangelo_8_martyrdom_of_st_peter/1240_michelangelo_8_martyrdom_of_st_peter.jpg 1240w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/michelangelo_8_martyrdom_of_st_peter/620_michelangelo_8_martyrdom_of_st_peter.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/michelangelo_8_martyrdom_of_st_peter/310_michelangelo_8_martyrdom_of_st_peter.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/michelangelo_8_martyrdom_of_st_peter/160_michelangelo_8_martyrdom_of_st_peter.jpg 160w",
             ],
             width: 1299,
             height: 1200,
           },
           {
             type: "photo",
-            path: "tests/e2e/mocks/site/content/paintings/images/michelangelo_kruisiging_grt.jpg",
+            path:
+              "reallery/tests/e2e/mocks/site/content/paintings/images/michelangelo_kruisiging_grt.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_kruisiging_grt/620_michelangelo_kruisiging_grt.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_kruisiging_grt/310_michelangelo_kruisiging_grt.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_kruisiging_grt/160_michelangelo_kruisiging_grt.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/michelangelo_kruisiging_grt/620_michelangelo_kruisiging_grt.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/michelangelo_kruisiging_grt/310_michelangelo_kruisiging_grt.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/michelangelo_kruisiging_grt/160_michelangelo_kruisiging_grt.jpg 160w",
             ],
             width: 895,
             height: 1374,
@@ -395,11 +398,11 @@
           {
             type: "photo",
             path:
-              "tests/e2e/mocks/site/content/paintings/images/michelangelo_offer_van_noach_grt.jpg",
+              "reallery/tests/e2e/mocks/site/content/paintings/images/michelangelo_offer_van_noach_grt.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_offer_van_noach_grt/620_michelangelo_offer_van_noach_grt.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_offer_van_noach_grt/310_michelangelo_offer_van_noach_grt.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_offer_van_noach_grt/160_michelangelo_offer_van_noach_grt.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/michelangelo_offer_van_noach_grt/620_michelangelo_offer_van_noach_grt.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/michelangelo_offer_van_noach_grt/310_michelangelo_offer_van_noach_grt.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/michelangelo_offer_van_noach_grt/160_michelangelo_offer_van_noach_grt.jpg 160w",
             ],
             width: 1100,
             height: 758,
@@ -407,11 +410,11 @@
           {
             type: "photo",
             path:
-              "tests/e2e/mocks/site/content/paintings/images/the-last-judgement-jan-ii-provost.jpg",
+              "reallery/tests/e2e/mocks/site/content/paintings/images/the-last-judgement-jan-ii-provost.jpg",
             srcset: [
-              "tests/e2e/mocks/site/content/paintings/images_src/the-last-judgement-jan-ii-provost/620_the-last-judgement-jan-ii-provost.jpg 620w",
-              "tests/e2e/mocks/site/content/paintings/images_src/the-last-judgement-jan-ii-provost/310_the-last-judgement-jan-ii-provost.jpg 310w",
-              "tests/e2e/mocks/site/content/paintings/images_src/the-last-judgement-jan-ii-provost/160_the-last-judgement-jan-ii-provost.jpg 160w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/the-last-judgement-jan-ii-provost/620_the-last-judgement-jan-ii-provost.jpg 620w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/the-last-judgement-jan-ii-provost/310_the-last-judgement-jan-ii-provost.jpg 310w",
+              "reallery/tests/e2e/mocks/site/content/paintings/images_src/the-last-judgement-jan-ii-provost/160_the-last-judgement-jan-ii-provost.jpg 160w",
             ],
             width: 900,
             height: 866,
@@ -514,11 +517,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy/620_22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy/310_22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy/160_22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy/620_22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy/310_22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy/160_22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy.jpg 160w",
               ],
               width: 736,
               height: 1121,
@@ -526,11 +529,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance/620_39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance/310_39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance/160_39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance/620_39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance/310_39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance/160_39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance.jpg 160w",
               ],
               width: 670,
               height: 1515,
@@ -538,22 +541,23 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/45bf890b1e3896ba6f48377b803df002.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/45bf890b1e3896ba6f48377b803df002.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/45bf890b1e3896ba6f48377b803df002/620_45bf890b1e3896ba6f48377b803df002.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/45bf890b1e3896ba6f48377b803df002/310_45bf890b1e3896ba6f48377b803df002.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/45bf890b1e3896ba6f48377b803df002/160_45bf890b1e3896ba6f48377b803df002.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/45bf890b1e3896ba6f48377b803df002/620_45bf890b1e3896ba6f48377b803df002.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/45bf890b1e3896ba6f48377b803df002/310_45bf890b1e3896ba6f48377b803df002.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/45bf890b1e3896ba6f48377b803df002/160_45bf890b1e3896ba6f48377b803df002.jpg 160w",
               ],
               width: 835,
               height: 1200,
             },
             {
               type: "photo",
-              path: "tests/e2e/mocks/site/content/sculptures/images/49961-87537-66022-4.jpg",
+              path:
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/49961-87537-66022-4.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/49961-87537-66022-4/620_49961-87537-66022-4.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/49961-87537-66022-4/310_49961-87537-66022-4.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/49961-87537-66022-4/160_49961-87537-66022-4.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/49961-87537-66022-4/620_49961-87537-66022-4.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/49961-87537-66022-4/310_49961-87537-66022-4.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/49961-87537-66022-4/160_49961-87537-66022-4.jpg 160w",
               ],
               width: 1050,
               height: 1299,
@@ -561,11 +565,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork/620_7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork/310_7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork/160_7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork/620_7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork/310_7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork/160_7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork.jpg 160w",
               ],
               width: 670,
               height: 1254,
@@ -573,11 +577,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo/620_817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo/310_817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo/160_817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo/620_817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo/310_817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo/160_817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo.jpg 160w",
               ],
               width: 736,
               height: 1099,
@@ -585,11 +589,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/Michelangelo_Buonarroti_sculpture_ml0012.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/Michelangelo_Buonarroti_sculpture_ml0012.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0012/620_Michelangelo_Buonarroti_sculpture_ml0012.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0012/310_Michelangelo_Buonarroti_sculpture_ml0012.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0012/160_Michelangelo_Buonarroti_sculpture_ml0012.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0012/620_Michelangelo_Buonarroti_sculpture_ml0012.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0012/310_Michelangelo_Buonarroti_sculpture_ml0012.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0012/160_Michelangelo_Buonarroti_sculpture_ml0012.jpg 160w",
               ],
               width: 1024,
               height: 768,
@@ -597,11 +601,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/Michelangelo_Buonarroti_sculpture_ml0013.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/Michelangelo_Buonarroti_sculpture_ml0013.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0013/620_Michelangelo_Buonarroti_sculpture_ml0013.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0013/310_Michelangelo_Buonarroti_sculpture_ml0013.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0013/160_Michelangelo_Buonarroti_sculpture_ml0013.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0013/620_Michelangelo_Buonarroti_sculpture_ml0013.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0013/310_Michelangelo_Buonarroti_sculpture_ml0013.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0013/160_Michelangelo_Buonarroti_sculpture_ml0013.jpg 160w",
               ],
               width: 1024,
               height: 768,
@@ -609,11 +613,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/Michelangelo_Buonarroti_statua.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/Michelangelo_Buonarroti_statua.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_statua/620_Michelangelo_Buonarroti_statua.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_statua/310_Michelangelo_Buonarroti_statua.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_statua/160_Michelangelo_Buonarroti_statua.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_statua/620_Michelangelo_Buonarroti_statua.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_statua/310_Michelangelo_Buonarroti_statua.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_statua/160_Michelangelo_Buonarroti_statua.jpg 160w",
               ],
               width: 1066,
               height: 1976,
@@ -621,11 +625,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo/620_a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo/310_a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo/160_a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo/620_a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo/310_a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo/160_a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo.jpg 160w",
               ],
               width: 736,
               height: 1279,
@@ -633,11 +637,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/a83be9e9988993ad025c980f785c7805.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/a83be9e9988993ad025c980f785c7805.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/a83be9e9988993ad025c980f785c7805/620_a83be9e9988993ad025c980f785c7805.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/a83be9e9988993ad025c980f785c7805/310_a83be9e9988993ad025c980f785c7805.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/a83be9e9988993ad025c980f785c7805/160_a83be9e9988993ad025c980f785c7805.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/a83be9e9988993ad025c980f785c7805/620_a83be9e9988993ad025c980f785c7805.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/a83be9e9988993ad025c980f785c7805/310_a83be9e9988993ad025c980f785c7805.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/a83be9e9988993ad025c980f785c7805/160_a83be9e9988993ad025c980f785c7805.jpg 160w",
               ],
               width: 908,
               height: 1200,
@@ -645,11 +649,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/b1f4505742ab003d5bfe5dba61495542.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/b1f4505742ab003d5bfe5dba61495542.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/b1f4505742ab003d5bfe5dba61495542/620_b1f4505742ab003d5bfe5dba61495542.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/b1f4505742ab003d5bfe5dba61495542/310_b1f4505742ab003d5bfe5dba61495542.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/b1f4505742ab003d5bfe5dba61495542/160_b1f4505742ab003d5bfe5dba61495542.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/b1f4505742ab003d5bfe5dba61495542/620_b1f4505742ab003d5bfe5dba61495542.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/b1f4505742ab003d5bfe5dba61495542/310_b1f4505742ab003d5bfe5dba61495542.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/b1f4505742ab003d5bfe5dba61495542/160_b1f4505742ab003d5bfe5dba61495542.jpg 160w",
               ],
               width: 1024,
               height: 768,
@@ -657,11 +661,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/battle-of-centaurs-michelangelo-sculpture-sm.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/battle-of-centaurs-michelangelo-sculpture-sm.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/battle-of-centaurs-michelangelo-sculpture-sm/620_battle-of-centaurs-michelangelo-sculpture-sm.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/battle-of-centaurs-michelangelo-sculpture-sm/310_battle-of-centaurs-michelangelo-sculpture-sm.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/battle-of-centaurs-michelangelo-sculpture-sm/160_battle-of-centaurs-michelangelo-sculpture-sm.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/battle-of-centaurs-michelangelo-sculpture-sm/620_battle-of-centaurs-michelangelo-sculpture-sm.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/battle-of-centaurs-michelangelo-sculpture-sm/310_battle-of-centaurs-michelangelo-sculpture-sm.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/battle-of-centaurs-michelangelo-sculpture-sm/160_battle-of-centaurs-michelangelo-sculpture-sm.jpg 160w",
               ],
               width: 940,
               height: 852,
@@ -669,12 +673,12 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/d399d349cb5f5d2d9d5823b6c689c6c5.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/d399d349cb5f5d2d9d5823b6c689c6c5.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/d399d349cb5f5d2d9d5823b6c689c6c5/1240_d399d349cb5f5d2d9d5823b6c689c6c5.jpg 1240w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/d399d349cb5f5d2d9d5823b6c689c6c5/620_d399d349cb5f5d2d9d5823b6c689c6c5.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/d399d349cb5f5d2d9d5823b6c689c6c5/310_d399d349cb5f5d2d9d5823b6c689c6c5.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/d399d349cb5f5d2d9d5823b6c689c6c5/160_d399d349cb5f5d2d9d5823b6c689c6c5.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/d399d349cb5f5d2d9d5823b6c689c6c5/1240_d399d349cb5f5d2d9d5823b6c689c6c5.jpg 1240w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/d399d349cb5f5d2d9d5823b6c689c6c5/620_d399d349cb5f5d2d9d5823b6c689c6c5.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/d399d349cb5f5d2d9d5823b6c689c6c5/310_d399d349cb5f5d2d9d5823b6c689c6c5.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/d399d349cb5f5d2d9d5823b6c689c6c5/160_d399d349cb5f5d2d9d5823b6c689c6c5.jpg 160w",
               ],
               width: 2400,
               height: 2400,
@@ -682,11 +686,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/e3114751f436b7938e96f69e99c3eac8.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/e3114751f436b7938e96f69e99c3eac8.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/e3114751f436b7938e96f69e99c3eac8/620_e3114751f436b7938e96f69e99c3eac8.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/e3114751f436b7938e96f69e99c3eac8/310_e3114751f436b7938e96f69e99c3eac8.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/e3114751f436b7938e96f69e99c3eac8/160_e3114751f436b7938e96f69e99c3eac8.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/e3114751f436b7938e96f69e99c3eac8/620_e3114751f436b7938e96f69e99c3eac8.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/e3114751f436b7938e96f69e99c3eac8/310_e3114751f436b7938e96f69e99c3eac8.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/e3114751f436b7938e96f69e99c3eac8/160_e3114751f436b7938e96f69e99c3eac8.jpg 160w",
               ],
               width: 1e3,
               height: 1334,
@@ -694,11 +698,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art/620_e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art/310_e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art/160_e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art/620_e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art/310_e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art/160_e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art.jpg 160w",
               ],
               width: 736,
               height: 1227,
@@ -706,22 +710,23 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/ee4993507f121125fd8a30dde564703d.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/ee4993507f121125fd8a30dde564703d.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/ee4993507f121125fd8a30dde564703d/620_ee4993507f121125fd8a30dde564703d.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/ee4993507f121125fd8a30dde564703d/310_ee4993507f121125fd8a30dde564703d.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/ee4993507f121125fd8a30dde564703d/160_ee4993507f121125fd8a30dde564703d.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/ee4993507f121125fd8a30dde564703d/620_ee4993507f121125fd8a30dde564703d.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/ee4993507f121125fd8a30dde564703d/310_ee4993507f121125fd8a30dde564703d.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/ee4993507f121125fd8a30dde564703d/160_ee4993507f121125fd8a30dde564703d.jpg 160w",
               ],
               width: 1077,
               height: 1500,
             },
             {
               type: "photo",
-              path: "tests/e2e/mocks/site/content/sculptures/images/michelangelos_david.jpg",
+              path:
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/michelangelos_david.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/michelangelos_david/620_michelangelos_david.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/michelangelos_david/310_michelangelos_david.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/michelangelos_david/160_michelangelos_david.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/michelangelos_david/620_michelangelos_david.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/michelangelos_david/310_michelangelos_david.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/michelangelos_david/160_michelangelos_david.jpg 160w",
               ],
               width: 1200,
               height: 1600,
@@ -729,11 +734,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/sculptures/images/moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY.jpg",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images/moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/sculptures/images_src/moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY/620_moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY.jpg 620w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY/310_moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY.jpg 310w",
-                "tests/e2e/mocks/site/content/sculptures/images_src/moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY/160_moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY/620_moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY/310_moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/sculptures/images_src/moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY/160_moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY.jpg 160w",
               ],
               width: 866,
               height: 1390,
@@ -836,11 +841,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/architecture/images/6a00d8345293e069e201901c481049970b-800wi.jpg",
+                "reallery/tests/e2e/mocks/site/content/architecture/images/6a00d8345293e069e201901c481049970b-800wi.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_src/6a00d8345293e069e201901c481049970b-800wi/620_6a00d8345293e069e201901c481049970b-800wi.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_src/6a00d8345293e069e201901c481049970b-800wi/310_6a00d8345293e069e201901c481049970b-800wi.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_src/6a00d8345293e069e201901c481049970b-800wi/160_6a00d8345293e069e201901c481049970b-800wi.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_src/6a00d8345293e069e201901c481049970b-800wi/620_6a00d8345293e069e201901c481049970b-800wi.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_src/6a00d8345293e069e201901c481049970b-800wi/310_6a00d8345293e069e201901c481049970b-800wi.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_src/6a00d8345293e069e201901c481049970b-800wi/160_6a00d8345293e069e201901c481049970b-800wi.jpg 160w",
               ],
               width: 800,
               height: 1327,
@@ -848,11 +853,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/architecture/images/7d2d42eff423402e7f904a4d927a31bd.jpg",
+                "reallery/tests/e2e/mocks/site/content/architecture/images/7d2d42eff423402e7f904a4d927a31bd.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_src/7d2d42eff423402e7f904a4d927a31bd/620_7d2d42eff423402e7f904a4d927a31bd.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_src/7d2d42eff423402e7f904a4d927a31bd/310_7d2d42eff423402e7f904a4d927a31bd.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_src/7d2d42eff423402e7f904a4d927a31bd/160_7d2d42eff423402e7f904a4d927a31bd.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_src/7d2d42eff423402e7f904a4d927a31bd/620_7d2d42eff423402e7f904a4d927a31bd.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_src/7d2d42eff423402e7f904a4d927a31bd/310_7d2d42eff423402e7f904a4d927a31bd.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_src/7d2d42eff423402e7f904a4d927a31bd/160_7d2d42eff423402e7f904a4d927a31bd.jpg 160w",
               ],
               width: 1100,
               height: 1288,
@@ -861,12 +866,13 @@
           en: [
             {
               type: "photo",
-              path: "tests/e2e/mocks/site/content/architecture/images_en/Michelangelo's_grave4.jpg",
+              path:
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en/Michelangelo's_grave4.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_en_src/Michelangelo's_grave4/1240_Michelangelo's_grave4.jpg 1240w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/Michelangelo's_grave4/620_Michelangelo's_grave4.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/Michelangelo's_grave4/310_Michelangelo's_grave4.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/Michelangelo's_grave4/160_Michelangelo's_grave4.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/Michelangelo's_grave4/1240_Michelangelo's_grave4.jpg 1240w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/Michelangelo's_grave4/620_Michelangelo's_grave4.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/Michelangelo's_grave4/310_Michelangelo's_grave4.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/Michelangelo's_grave4/160_Michelangelo's_grave4.jpg 160w",
               ],
               width: 1818,
               height: 2802,
@@ -874,11 +880,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/architecture/images_en/michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79.jpg",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en/michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79/620_michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79/310_michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79/160_michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79/620_michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79/310_michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79/160_michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79.jpg 160w",
               ],
               width: 1027,
               height: 1315,
@@ -886,11 +892,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/architecture/images_en/michelangelo-sistine_chapel.jpg",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en/michelangelo-sistine_chapel.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-sistine_chapel/620_michelangelo-sistine_chapel.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-sistine_chapel/310_michelangelo-sistine_chapel.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-sistine_chapel/160_michelangelo-sistine_chapel.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-sistine_chapel/620_michelangelo-sistine_chapel.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-sistine_chapel/310_michelangelo-sistine_chapel.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-sistine_chapel/160_michelangelo-sistine_chapel.jpg 160w",
               ],
               width: 1055,
               height: 880,
@@ -898,24 +904,25 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/architecture/images_en/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_en_src/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1/1240_piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg 1240w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1/620_piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1/310_piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1/160_piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1/1240_piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg 1240w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1/620_piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1/310_piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1/160_piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg 160w",
               ],
               width: 1300,
               height: 956,
             },
             {
               type: "photo",
-              path: "tests/e2e/mocks/site/content/architecture/images_en/sistine_ceiling.jpg",
+              path:
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en/sistine_ceiling.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_en_src/sistine_ceiling/1240_sistine_ceiling.jpg 1240w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/sistine_ceiling/620_sistine_ceiling.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/sistine_ceiling/310_sistine_ceiling.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/sistine_ceiling/160_sistine_ceiling.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/sistine_ceiling/1240_sistine_ceiling.jpg 1240w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/sistine_ceiling/620_sistine_ceiling.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/sistine_ceiling/310_sistine_ceiling.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/sistine_ceiling/160_sistine_ceiling.jpg 160w",
               ],
               width: 1638,
               height: 951,
@@ -923,11 +930,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/architecture/images_en/tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313.jpg",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en/tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_en_src/tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313/620_tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313/310_tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_en_src/tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313/160_tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313/620_tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313/310_tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_en_src/tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313/160_tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313.jpg 160w",
               ],
               width: 1061,
               height: 1300,
@@ -936,12 +943,13 @@
           es: [
             {
               type: "photo",
-              path: "tests/e2e/mocks/site/content/architecture/images_es/07sistineceilinglarge.jpg",
+              path:
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es/07sistineceilinglarge.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_es_src/07sistineceilinglarge/1240_07sistineceilinglarge.jpg 1240w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/07sistineceilinglarge/620_07sistineceilinglarge.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/07sistineceilinglarge/310_07sistineceilinglarge.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/07sistineceilinglarge/160_07sistineceilinglarge.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/07sistineceilinglarge/1240_07sistineceilinglarge.jpg 1240w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/07sistineceilinglarge/620_07sistineceilinglarge.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/07sistineceilinglarge/310_07sistineceilinglarge.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/07sistineceilinglarge/160_07sistineceilinglarge.jpg 160w",
               ],
               width: 1500,
               height: 759,
@@ -949,12 +957,12 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/architecture/images_es/9876ae707735b309c2e7c87885f2452b.jpg",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es/9876ae707735b309c2e7c87885f2452b.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_es_src/9876ae707735b309c2e7c87885f2452b/1240_9876ae707735b309c2e7c87885f2452b.jpg 1240w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/9876ae707735b309c2e7c87885f2452b/620_9876ae707735b309c2e7c87885f2452b.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/9876ae707735b309c2e7c87885f2452b/310_9876ae707735b309c2e7c87885f2452b.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/9876ae707735b309c2e7c87885f2452b/160_9876ae707735b309c2e7c87885f2452b.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/9876ae707735b309c2e7c87885f2452b/1240_9876ae707735b309c2e7c87885f2452b.jpg 1240w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/9876ae707735b309c2e7c87885f2452b/620_9876ae707735b309c2e7c87885f2452b.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/9876ae707735b309c2e7c87885f2452b/310_9876ae707735b309c2e7c87885f2452b.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/9876ae707735b309c2e7c87885f2452b/160_9876ae707735b309c2e7c87885f2452b.jpg 160w",
               ],
               width: 1920,
               height: 1080,
@@ -962,11 +970,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/architecture/images_es/Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome.jpg",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es/Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome/620_Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome/310_Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome/160_Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome/620_Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome/310_Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome/160_Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome.jpg 160w",
               ],
               width: 1024,
               height: 768,
@@ -974,12 +982,12 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/architecture/images_es/Michelangelo_Buonarroti_014.jpg",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es/Michelangelo_Buonarroti_014.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo_Buonarroti_014/1240_Michelangelo_Buonarroti_014.jpg 1240w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo_Buonarroti_014/620_Michelangelo_Buonarroti_014.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo_Buonarroti_014/310_Michelangelo_Buonarroti_014.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo_Buonarroti_014/160_Michelangelo_Buonarroti_014.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo_Buonarroti_014/1240_Michelangelo_Buonarroti_014.jpg 1240w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo_Buonarroti_014/620_Michelangelo_Buonarroti_014.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo_Buonarroti_014/310_Michelangelo_Buonarroti_014.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo_Buonarroti_014/160_Michelangelo_Buonarroti_014.jpg 160w",
               ],
               width: 2536,
               height: 3397,
@@ -987,12 +995,12 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/architecture/images_es/cffe2e409f7ba55e1d994073adbe3c91.jpg",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es/cffe2e409f7ba55e1d994073adbe3c91.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_es_src/cffe2e409f7ba55e1d994073adbe3c91/1240_cffe2e409f7ba55e1d994073adbe3c91.jpg 1240w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/cffe2e409f7ba55e1d994073adbe3c91/620_cffe2e409f7ba55e1d994073adbe3c91.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/cffe2e409f7ba55e1d994073adbe3c91/310_cffe2e409f7ba55e1d994073adbe3c91.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/cffe2e409f7ba55e1d994073adbe3c91/160_cffe2e409f7ba55e1d994073adbe3c91.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/cffe2e409f7ba55e1d994073adbe3c91/1240_cffe2e409f7ba55e1d994073adbe3c91.jpg 1240w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/cffe2e409f7ba55e1d994073adbe3c91/620_cffe2e409f7ba55e1d994073adbe3c91.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/cffe2e409f7ba55e1d994073adbe3c91/310_cffe2e409f7ba55e1d994073adbe3c91.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/cffe2e409f7ba55e1d994073adbe3c91/160_cffe2e409f7ba55e1d994073adbe3c91.jpg 160w",
               ],
               width: 2270,
               height: 3512,
@@ -1000,11 +1008,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/architecture/images_es/cupulasanpedromiguelangel.jpg",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es/cupulasanpedromiguelangel.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_es_src/cupulasanpedromiguelangel/620_cupulasanpedromiguelangel.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/cupulasanpedromiguelangel/310_cupulasanpedromiguelangel.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/cupulasanpedromiguelangel/160_cupulasanpedromiguelangel.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/cupulasanpedromiguelangel/620_cupulasanpedromiguelangel.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/cupulasanpedromiguelangel/310_cupulasanpedromiguelangel.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/cupulasanpedromiguelangel/160_cupulasanpedromiguelangel.jpg 160w",
               ],
               width: 1e3,
               height: 1375,
@@ -1012,12 +1020,12 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/architecture/images_es/e59aa54e9ca3d468b4de9c6ba45c3471.jpg",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es/e59aa54e9ca3d468b4de9c6ba45c3471.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_es_src/e59aa54e9ca3d468b4de9c6ba45c3471/1240_e59aa54e9ca3d468b4de9c6ba45c3471.jpg 1240w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/e59aa54e9ca3d468b4de9c6ba45c3471/620_e59aa54e9ca3d468b4de9c6ba45c3471.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/e59aa54e9ca3d468b4de9c6ba45c3471/310_e59aa54e9ca3d468b4de9c6ba45c3471.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/e59aa54e9ca3d468b4de9c6ba45c3471/160_e59aa54e9ca3d468b4de9c6ba45c3471.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/e59aa54e9ca3d468b4de9c6ba45c3471/1240_e59aa54e9ca3d468b4de9c6ba45c3471.jpg 1240w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/e59aa54e9ca3d468b4de9c6ba45c3471/620_e59aa54e9ca3d468b4de9c6ba45c3471.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/e59aa54e9ca3d468b4de9c6ba45c3471/310_e59aa54e9ca3d468b4de9c6ba45c3471.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/e59aa54e9ca3d468b4de9c6ba45c3471/160_e59aa54e9ca3d468b4de9c6ba45c3471.jpg 160w",
               ],
               width: 1270,
               height: 900,
@@ -1025,11 +1033,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/architecture/images_es/ee178817c994d3224eb461259fd5d86f.jpg",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es/ee178817c994d3224eb461259fd5d86f.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_es_src/ee178817c994d3224eb461259fd5d86f/620_ee178817c994d3224eb461259fd5d86f.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/ee178817c994d3224eb461259fd5d86f/310_ee178817c994d3224eb461259fd5d86f.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/ee178817c994d3224eb461259fd5d86f/160_ee178817c994d3224eb461259fd5d86f.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/ee178817c994d3224eb461259fd5d86f/620_ee178817c994d3224eb461259fd5d86f.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/ee178817c994d3224eb461259fd5d86f/310_ee178817c994d3224eb461259fd5d86f.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/ee178817c994d3224eb461259fd5d86f/160_ee178817c994d3224eb461259fd5d86f.jpg 160w",
               ],
               width: 1024,
               height: 768,
@@ -1037,11 +1045,11 @@
             {
               type: "photo",
               path:
-                "tests/e2e/mocks/site/content/architecture/images_es/michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083.jpg",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es/michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083.jpg",
               srcset: [
-                "tests/e2e/mocks/site/content/architecture/images_es_src/michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083/620_michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083.jpg 620w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083/310_michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083.jpg 310w",
-                "tests/e2e/mocks/site/content/architecture/images_es_src/michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083/160_michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083.jpg 160w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083/620_michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083.jpg 620w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083/310_michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083.jpg 310w",
+                "reallery/tests/e2e/mocks/site/content/architecture/images_es_src/michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083/160_michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083.jpg 160w",
               ],
               width: 1203,
               height: 1300,
@@ -1049,7 +1057,7 @@
           ],
         },
       });
-    var n = {
+    var r = {
         meta: {
           title: "Michelangelo Buonarroti",
           email: "mbuonarroti@reallery.com",
@@ -1063,12 +1071,12 @@
         },
         projects: i,
       },
-      o = s(0),
-      c = s.n(o),
-      r = s(28),
-      l = s.n(r),
+      n = s(0),
+      o = s.n(n),
+      c = s(28),
+      l = s.n(c),
       m = s(19),
-      g = s(9);
+      g = s(5);
     function p(e) {
       return (p =
         "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
@@ -1125,7 +1133,7 @@
           u(this, d(t).call(this, e))
         );
       }
-      var s, i, n;
+      var s, i, r;
       return (
         (function(e, t) {
           if ("function" != typeof t && null !== t)
@@ -1134,17 +1142,17 @@
             constructor: { value: e, writable: !0, configurable: !0 },
           })),
             t && f(e, t);
-        })(t, c.a.Component),
+        })(t, o.a.Component),
         (s = t),
         (i = [
           {
             key: "render",
             value: function() {
-              return c.a.createElement(m.a, { icon: a[this.props.dataicon.icon] });
+              return o.a.createElement(m.a, { icon: a[this.props.dataicon.icon] });
             },
           },
         ]) && h(s.prototype, i),
-        n && h(s, n),
+        r && h(s, r),
         t
       );
     })();
@@ -1163,7 +1171,7 @@
                 : typeof e;
             })(e);
     }
-    function w(e, t) {
+    function y(e, t) {
       for (var s = 0; s < t.length; s++) {
         var a = t[s];
         (a.enumerable = a.enumerable || !1),
@@ -1172,7 +1180,7 @@
           Object.defineProperty(e, a.key, a);
       }
     }
-    function y(e, t) {
+    function w(e, t) {
       return !t || ("object" !== _(t) && "function" != typeof t)
         ? (function(e) {
             if (void 0 === e)
@@ -1201,7 +1209,7 @@
             (function(e, t) {
               if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
             })(this, t),
-            y(this, j(t).call(this, e))
+            w(this, j(t).call(this, e))
           );
         }
         var s, a, i;
@@ -1213,7 +1221,7 @@
               constructor: { value: e, writable: !0, configurable: !0 },
             })),
               t && v(e, t);
-          })(t, c.a.Component),
+          })(t, o.a.Component),
           (s = t),
           (a = [
             {
@@ -1225,22 +1233,22 @@
                     (this.props.lng ? this.props.lng + "/" : "") +
                     "project/view/" +
                     this.props.key2,
-                  s = c.a.createElement("div", { className: "text title" }, this.props.name),
+                  s = o.a.createElement("div", { className: "text title" }, this.props.name),
                   a = this.props.icon || { family: "FontAwesome", icon: "FaAsterisk" };
-                return c.a.createElement(
+                return o.a.createElement(
                   "div",
                   {
                     className: "project-button-container "
                       .concat(this.props.active ? " active" : " no-active", " home-project-button-")
                       .concat(this.props.key2),
                   },
-                  c.a.createElement(
+                  o.a.createElement(
                     "a",
                     { href: t },
-                    c.a.createElement(
+                    o.a.createElement(
                       "div",
                       { className: "project-icon color-".concat(this.props.color, "  ").concat(e) },
-                      c.a.createElement(b, { dataicon: { family: a.family, icon: a.icon } }),
+                      o.a.createElement(b, { dataicon: { family: a.family, icon: a.icon } }),
                     ),
                     "project" === this.props.view ? s : null,
                   ),
@@ -1248,8 +1256,8 @@
                 );
               },
             },
-          ]) && w(s.prototype, a),
-          i && w(s, i),
+          ]) && y(s.prototype, a),
+          i && y(s, i),
           t
         );
       })(),
@@ -1270,20 +1278,20 @@
           var s = [],
             a = !0,
             i = !1,
-            n = void 0;
+            r = void 0;
           try {
             for (
-              var o, c = e[Symbol.iterator]();
-              !(a = (o = c.next()).done) && (s.push(o.value), !t || s.length !== t);
+              var n, o = e[Symbol.iterator]();
+              !(a = (n = o.next()).done) && (s.push(n.value), !t || s.length !== t);
               a = !0
             );
           } catch (e) {
-            (i = !0), (n = e);
+            (i = !0), (r = e);
           } finally {
             try {
-              a || null == c.return || c.return();
+              a || null == o.return || o.return();
             } finally {
-              if (i) throw n;
+              if (i) throw r;
             }
           }
           return s;
@@ -1327,18 +1335,18 @@
               s = [],
               a = C(e.length > t.length ? [e, t] : [t, e], 2),
               i = a[0],
-              n = a[1],
-              o = Math.floor(i.length / n.length),
-              c = 0,
-              r = 0;
-            c < i.length;
-            c += o, r++
+              r = a[1],
+              n = Math.floor(i.length / r.length),
+              o = 0,
+              c = 0;
+            o < i.length;
+            o += n, c++
           ) {
-            if (r >= n.length) {
-              s = s.concat(i.slice(c));
+            if (c >= r.length) {
+              s = s.concat(i.slice(o));
               break;
             }
-            s.push(n[r]), (s = s.concat(i.slice(c, c + o)));
+            s.push(r[c]), (s = s.concat(i.slice(o, o + n)));
           }
           return s;
         },
@@ -1442,7 +1450,7 @@
               constructor: { value: e, writable: !0, configurable: !0 },
             })),
               t && Z(e, t);
-          })(t, c.a.Component),
+          })(t, o.a.Component),
           (s = t),
           (a = [
             {
@@ -1565,16 +1573,16 @@
               key: "render",
               value: function() {
                 return this.props.project
-                  ? c.a.createElement(
+                  ? o.a.createElement(
                       "div",
                       { className: "App" },
-                      c.a.createElement(S.a, {
+                      o.a.createElement(S.a, {
                         margin: 4,
                         items: this.state.items,
                         cols: this.state.cols,
                         onClickItem: this.openLightbox,
                       }),
-                      c.a.createElement(M.a, {
+                      o.a.createElement(M.a, {
                         items: this.state.itemsLightbox,
                         backdropClosesModal: !0,
                         onClose: this.closeLightbox,
@@ -1585,19 +1593,19 @@
                         width: 1600,
                       }),
                       !this.state.loadedAll &&
-                        c.a.createElement(
+                        o.a.createElement(
                           "div",
                           { className: "loading-msg", id: "msg-loading-more" },
-                          c.a.createElement(B.a, {
+                          o.a.createElement(B.a, {
                             ref: "loadingElement",
                             type: "cylon",
                             color: "#d2d2d2",
                             width: "85",
                           }),
-                          c.a.createElement("span", { className: "loading-msg-text" }, "Loading"),
+                          o.a.createElement("span", { className: "loading-msg-text" }, "Loading"),
                         ),
                     )
-                  : c.a.createElement("div", null);
+                  : o.a.createElement("div", null);
               },
             },
           ]) && F(s.prototype, a),
@@ -1677,7 +1685,7 @@
               constructor: { value: e, writable: !0, configurable: !0 },
             })),
               t && ee(e, t);
-          })(t, c.a.Component),
+          })(t, o.a.Component),
           (s = t),
           (a = [
             {
@@ -1737,91 +1745,91 @@
                   s = this.state.lng,
                   a = "/reallery/#/" + (s || ""),
                   i = this.props.model,
-                  n = this.state.project || {},
-                  o = this.props.meta || {},
-                  r = Object.keys(i)
+                  r = this.state.project || {},
+                  n = this.props.meta || {},
+                  c = Object.keys(i)
                     .map(function(e) {
                       return i[e];
                     })
                     .map(function(e, a) {
                       e.state = e.state || "";
-                      var o = s ? e.name[s] : e.name;
-                      return c.a.createElement(k, {
+                      var n = s ? e.name[s] : e.name;
+                      return o.a.createElement(k, {
                         icon: e.icon,
                         view: t,
                         lng: s,
                         key: a,
                         key2: Object.keys(i)[a],
-                        name: o,
+                        name: n,
                         color: e.color,
                         type: e.type,
                         publish: e.publish,
                         state: e.state,
-                        active: e.name === n.name,
+                        active: e.name === r.name,
                       });
                     }, this),
-                  l = c.a.createElement(K, { lng: s, project: this.state.project });
-                return c.a.createElement(
+                  l = o.a.createElement(K, { lng: s, project: this.state.project });
+                return o.a.createElement(
                   "div",
                   { className: "container ".concat(t, " ").concat(e) },
-                  c.a.createElement(
+                  o.a.createElement(
                     "header",
                     { className: "container-header" },
-                    c.a.createElement(
+                    o.a.createElement(
                       "h1",
                       { className: "title-header" },
-                      c.a.createElement("a", { className: "main-title", href: a }, o.title),
+                      o.a.createElement("a", { className: "main-title", href: a }, n.title),
                     ),
-                    c.a.createElement(
+                    o.a.createElement(
                       "section",
                       { className: "menu menu-header" },
                       " ",
-                      this.state.project ? r : null,
+                      this.state.project ? c : null,
                       " ",
                     ),
                   ),
-                  c.a.createElement(
+                  o.a.createElement(
                     "section",
                     { className: "menu menu-content" },
                     " ",
-                    this.state.project ? null : r,
+                    this.state.project ? null : c,
                     " ",
                   ),
-                  c.a.createElement("section", { className: "gallery" }, " ", l, " "),
-                  c.a.createElement(
+                  o.a.createElement("section", { className: "gallery" }, " ", l, " "),
+                  o.a.createElement(
                     "footer",
                     { className: "contact" },
-                    o.github
-                      ? c.a.createElement(
+                    n.github
+                      ? o.a.createElement(
                           "a",
-                          { target: "_blank", href: o.github },
-                          c.a.createElement(
+                          { target: "_blank", href: n.github },
+                          o.a.createElement(
                             "span",
                             { className: "mail-data" },
-                            c.a.createElement(m.a, { icon: R.a }),
-                            c.a.createElement("span", { className: "data" }, "View on github"),
+                            o.a.createElement(m.a, { icon: R.a }),
+                            o.a.createElement("span", { className: "data" }, "View on github"),
                           ),
                         )
                       : null,
-                    c.a.createElement(
+                    o.a.createElement(
                       "a",
-                      { href: "mailto:".concat(o.email) },
-                      c.a.createElement(
+                      { href: "mailto:".concat(n.email) },
+                      o.a.createElement(
                         "span",
                         { className: "mail-data" },
-                        c.a.createElement(m.a, { icon: g.b }),
-                        c.a.createElement("span", { className: "data" }, o.email),
+                        o.a.createElement(m.a, { icon: g.b }),
+                        o.a.createElement("span", { className: "data" }, n.email),
                       ),
                     ),
                     "     ",
-                    c.a.createElement(
+                    o.a.createElement(
                       "a",
-                      { href: "tel:".concat(o.tlf) },
-                      c.a.createElement(
+                      { href: "tel:".concat(n.tlf) },
+                      o.a.createElement(
                         "span",
                         { className: "mail-data" },
-                        c.a.createElement(m.a, { icon: g.d }),
-                        c.a.createElement("span", { className: "data" }, o.tlf),
+                        o.a.createElement(m.a, { icon: g.d }),
+                        o.a.createElement("span", { className: "data" }, n.tlf),
                       ),
                     ),
                   ),
@@ -1834,7 +1842,7 @@
         );
       })();
     l.a.render(
-      c.a.createElement(se, { meta: n.meta, model: n.projects }),
+      o.a.createElement(se, { meta: r.meta, model: r.projects }),
       document.getElementsByClassName("mainpage")[0],
     );
   },
