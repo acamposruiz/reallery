@@ -2,7 +2,7 @@
 Reallery is a Mobile First Framework over ReactJS. Easy configuration. No need for data services. Responsive and very very fast. It's focus in develop gallery applications.
 
 
-  View online demo on [demo.reallery.com](http://www.demo.reallery.com/)
+  View online demo on [demo.reallery.com](https://acamposruiz.github.io/reallery)
 
 
 # Steps to build your project
