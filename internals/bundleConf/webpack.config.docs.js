@@ -7,7 +7,6 @@ const mode = "production";
 module.exports = merge(baseConfig, {
   output: {
     path: path.join(__dirname, "../../docs"),
-    publicPath: "/reallery/",
     filename: "[name]-[hash].js",
   },
   mode,
