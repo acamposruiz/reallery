@@ -16,10 +16,6 @@ src/es6/icons.es6
 src/styles/config.pcss
 state/state.js
 
-!docs/**/images_src
-!docs/**/images_en_src
-!docs/**/images_es_src
-
 **/images_src
 **/images_en_src
 **/images_es_src
