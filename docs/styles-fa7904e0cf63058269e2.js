@@ -68,7 +68,7 @@
     (C.o = function(n, t) {
       return Object.prototype.hasOwnProperty.call(n, t);
     }),
-    (C.p = "");
+    (C.p = "/reallery/");
   var i = (window.webpackJsonp = window.webpackJsonp || []),
     I = i.push.bind(i);
   (i.push = t), (i = i.slice());
