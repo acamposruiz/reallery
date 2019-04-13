@@ -13,8 +13,13 @@ class ProjectButton extends React.Component {
 
   render() {
     const classNameIcon = "icon-ico_" + this.props.key2;
+    const pathPrefix = process.env.PUBLICPATH ? "/" + process.env.PUBLICPATH : "";
     const path =
-      "/#/" + (this.props.lng ? this.props.lng + "/" : "") + "project/view/" + this.props.key2;
+      pathPrefix +
+      "/#/" +
+      (this.props.lng ? this.props.lng + "/" : "") +
+      "project/view/" +
+      this.props.key2;
     const buttonText = <div className="text title">{this.props.name}</div>;
     const icon = this.props.icon || { family: "FontAwesome", icon: "FaAsterisk" };
 

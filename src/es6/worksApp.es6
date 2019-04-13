@@ -80,7 +80,8 @@ class worksApp extends React.Component {
     const mobile = utils.is_mobile("any") ? "mobile" : "no-mobile";
     const section = !this.state.project ? "home" : "project";
     const lng = this.state.lng;
-    const homePath = "/#/" + (lng || "");
+    const pathPrefix = process.env.PUBLICPATH ? "/" + process.env.PUBLICPATH : "";
+    const homePath = pathPrefix + "/#/" + (lng || "");
     let projects = this.props.model;
     let projectSt = this.state.project || {};
     let meta = this.props.meta || {};
