@@ -35,6 +35,7 @@ function readConfigData(path) {
     });
     return depObjt;
   }
+
   return new Promise((resolve) =>
     resolve(filterByValue("hide", true, JSON.parse(fs.readFileSync(path, "utf8")), true)),
   );
@@ -51,14 +52,27 @@ function state(data) {
   });
 }
 
-[config.config(rootPath), youtube, images, state]
-  .reduce((promiseChain, currentTask) => {
-    return promiseChain.then(currentTask);
-  }, readConfigData(filenameConfiguration))
-  .then((msg) => {
-    console.log(msg.green);
-    //todo Handle warnings
-  })
-  .catch((error) => {
-    console.log(error.red);
-  });
+(async function runGenerator() {
+  const step0 = await readConfigData(filenameConfiguration);
+  stepDone(0);
+  const step1 = await config.config(rootPath)(step0);
+  stepDone(1);
+  const step2 = await youtube(step1);
+  stepDone(2);
+  const step3 = await images(step2);
+  stepDone(3);
+  state(step3)
+    .then((msg) => {
+      console.log(msg.green);
+      //todo Handle warnings
+    })
+    .catch((error) => {
+      console.log(error.red);
+    });
+})();
+
+function stepDone(step) {
+  console.log("*********************************");
+  console.log(`********** STEP ${step} DONE!! ********`);
+  console.log("*********************************");
+}
