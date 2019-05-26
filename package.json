@@ -47,6 +47,7 @@
     "html-webpack-plugin": "^3.2.0",
     "image-size": "^0.6.1",
     "jest": "^23.6.0",
+    "jimp": "^0.6.4",
     "lodash-node": "file:./vendors/lodash-node",
     "lwip": "acamposruiz/lwip",
     "node-sass": "^4.6.1",

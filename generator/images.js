@@ -2,7 +2,7 @@ var fs = require("fs");
 var _ = require("lodash");
 var rmdir = require("rmdir");
 var sizeOf = require("image-size");
-var lwip = require("lwip");
+var Jimp = require("jimp");
 var path = require("path");
 
 function imagesGen(contentContainerFolder, filenameConfiguration) {
@@ -48,22 +48,15 @@ function imagesGen(contentContainerFolder, filenameConfiguration) {
             var dim = dimensions[i];
             var sourceImageDirFile = sourceImageDir + dim + "_" + file;
 
-            lwip.open(
-              imagesFolder + file,
-              function(err, image) {
-                console.log(`Generating ->  ${imagesFolder + file} to width = ${this.dim}`);
-
-                image
-                  .batch()
-                  .resize(this.dim, (this.dim / dmsns.width) * dmsns.height)
-                  .writeFile(
-                    this.sourceImageDirFile,
-                    function(err) {
-                      resolve(this.sourceImageDirFile + " " + this.dim + "w");
-                    }.bind({ sourceImageDirFile: this.sourceImageDirFile, dim: this.dim }),
-                  );
-              }.bind({ sourceImageDirFile: sourceImageDirFile, dim: dim }),
-            );
+            Jimp.read(imagesFolder + file, (err, lenna) => {
+              console.log(`Generating ->  ${imagesFolder + file} to width = ${dim}`);
+              if (err) throw err;
+              lenna
+                .resize(dim, (dim / dmsns.width) * dmsns.height) // resize
+                .quality(60) // set JPEG quality
+                .write(sourceImageDirFile); // save
+              resolve(sourceImageDirFile + " " + dim + "w");
+            });
           }),
         );
       }
