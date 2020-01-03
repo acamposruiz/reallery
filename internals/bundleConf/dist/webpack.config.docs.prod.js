@@ -1,0 +1,1 @@
+"use strict";var webpack=require("webpack"),path=require("path"),merge=require("webpack-merge"),baseConfig=require("./webpack.config.base"),mode="production";module.exports=merge(baseConfig,{output:{path:path.join(__dirname,"../../docs"),filename:"[name]-[hash].js"},mode:mode,optimization:baseConfig.optimization(mode),plugins:baseConfig.plugins(mode).concat([])});
