@@ -4,6 +4,7 @@
 /*jshint newcap: false */
 /*global React */
 import React from "react";
+
 import ContentIcons from "./contentIcons.es6";
 
 class ProjectButton extends React.Component {

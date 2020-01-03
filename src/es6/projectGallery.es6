@@ -3,15 +3,16 @@
 /*jshint trailing: false */
 /*jshint newcap: false */
 /*global React */
-import "raf/polyfill";
+import _ from "lodash";
 import "core-js/es6/map";
 import "core-js/es6/set";
-import React from "react";
+import "raf/polyfill";
 import Gallery from "react-multimedia-gallery";
 import Lightbox from "react-images-texts-videos";
 import Loading from "react-loading";
+import React from "react";
+
 import utils from "./utils.es6";
-import _ from "lodash";
 
 const mainTimeLapse = 200;
 const itemsSetLoad = utils.is_mobile("phone") ? 5 : 10;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WorksApp 1`] = `
+exports[`AppContainer 1`] = `
 <div
   className="container home no-mobile"
 >

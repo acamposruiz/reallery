@@ -4,12 +4,10 @@
 /*jshint newcap:false */
 /*global React, Router*/
 
-import state from "../../state/state";
 import React from "react";
 import ReactDOM from "react-dom";
-import WorksApp from "./worksApp.es6";
 
-ReactDOM.render(
-  <WorksApp meta={state.meta} model={state.projects} />,
-  document.getElementsByClassName("mainpage")[0],
-);
+import AppContainer from "./appContainer.es6";
+import { PROJECT_DOM_ROOT_ID } from "./constants.es6";
+
+ReactDOM.render(<AppContainer />, document.getElementById(PROJECT_DOM_ROOT_ID));
