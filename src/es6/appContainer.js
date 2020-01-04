@@ -6,31 +6,13 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Director from "director/build/director";
 import React from "react";
 
-import Director from "director/build/director";
-
-import ProjectButton from "./projectButton.es6";
-import ProjectGallery from "./projectGallery.es6";
-import utils from "./utils.es6";
+import { AppState } from "./contexts";
+import { Content, SelectCombo } from "./content.js";
 import contextState from "../../state/state";
-
-export const AppState = React.createContext({
-  meta: contextState.meta || {},
-  project: null,
-});
-
-class Content extends React.Component {
-  static contextType = AppState;
-  render() {
-    const { projectsButtonList, gallery } = this.props;
-    return !this.context.project ? (
-      <section className="menu menu-content"> {projectsButtonList} </section>
-    ) : (
-      <section className="gallery"> {gallery} </section>
-    );
-  }
-}
+import utils from "./utils.js";
 
 const Router = Director.Router;
 
@@ -104,35 +86,7 @@ class AppContainer extends React.Component {
     const lng = this.state.lng || contextState.meta.languageDefault;
     const pathPrefix = process.env.PUBLICPATH ? "/" + process.env.PUBLICPATH : "";
     const homePath = pathPrefix + "/#/" + (lng || "");
-    let projects = contextState.projects;
-    let projectSt = this.state.project || {};
     let meta = contextState.meta || {};
-    let ObjVals = Object.keys(projects).map(function(key) {
-      return projects[key];
-    });
-
-    let projectsButtonList = ObjVals.map(function(project, index) {
-      project.state = project.state || "";
-      const name = !lng ? project.name : project.name[lng];
-
-      return (
-        <ProjectButton
-          icon={project.icon}
-          view={section}
-          lng={lng}
-          key={index}
-          key2={Object.keys(projects)[index]}
-          name={name}
-          color={project.color}
-          type={project.type}
-          publish={project.publish}
-          state={project.state}
-          active={project.name === projectSt.name}
-        />
-      );
-    }, this);
-
-    const gallery = <ProjectGallery lng={lng} project={this.state.project} />;
 
     return (
       <AppState.Provider value={this.state}>
@@ -143,13 +97,10 @@ class AppContainer extends React.Component {
                 {meta.title}
               </a>
             </h1>
-            <section className="menu menu-header">
-              {" "}
-              {this.state.project ? projectsButtonList : null}{" "}
-            </section>
+            {this.state.project ? <SelectCombo /> : null}
           </header>
 
-          <Content projectsButtonList={projectsButtonList} gallery={gallery} />
+          <Content />
 
           <footer className="contact">
             {meta.github ? (

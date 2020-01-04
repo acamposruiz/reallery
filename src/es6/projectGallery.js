@@ -12,7 +12,7 @@ import Lightbox from "react-images-texts-videos";
 import Loading from "react-loading";
 import React from "react";
 
-import utils from "./utils.es6";
+import utils from "./utils.js";
 
 const mainTimeLapse = 200;
 const itemsSetLoad = utils.is_mobile("phone") ? 5 : 10;

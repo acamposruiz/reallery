@@ -7,7 +7,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import AppContainer from "./appContainer.es6";
-import { PROJECT_DOM_ROOT_ID } from "./constants.es6";
+import AppContainer from "./appContainer.js";
+import { PROJECT_DOM_ROOT_ID } from "./constants.js";
 
 ReactDOM.render(<AppContainer />, document.getElementById(PROJECT_DOM_ROOT_ID));

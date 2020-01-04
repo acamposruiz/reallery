@@ -5,7 +5,7 @@
 /*global React */
 import React from "react";
 
-import ContentIcons from "./contentIcons.es6";
+import ContentIcons from "./contentIcons.js";
 
 class ProjectButton extends React.Component {
   constructor(props) {
