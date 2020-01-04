@@ -8,10 +8,6 @@ import React from "react";
 import ContentIcons from "./contentIcons.js";
 
 class ProjectButton extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const classNameIcon = "icon-ico_" + this.props.key2;
     const pathPrefix = process.env.PUBLICPATH ? "/" + process.env.PUBLICPATH : "";
