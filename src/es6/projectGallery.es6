@@ -89,6 +89,7 @@ class ProjectGallery extends React.Component {
   }
 
   componentDidMount() {
+    this.componentWillReceiveProps(this.props);
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("resize", this.handleResize);
   }

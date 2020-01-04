@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-var state = state || {};
+var contextState = contextState || {};
 
 (function () {
   "use strict";
@@ -536,11 +536,11 @@ var state = state || {};
       }]
     }
   };
-  state = {
+  contextState = {
     meta: meta,
     projects: projects
   };
 })();
 
-var _default = state;
+var _default = contextState;
 exports["default"] = _default;
