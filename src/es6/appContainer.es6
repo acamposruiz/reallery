@@ -15,7 +15,10 @@ import ProjectGallery from "./projectGallery.es6";
 import utils from "./utils.es6";
 import contextState from "../../state/state";
 
-export const AppState = React.createContext(contextState);
+export const AppState = React.createContext({
+  meta: contextState.meta || {},
+  project: null,
+});
 
 class Content extends React.Component {
   static contextType = AppState;
@@ -35,7 +38,6 @@ class AppContainer extends React.Component {
   constructor() {
     super();
     this.state = {
-      contextState,
       meta: contextState.meta || {},
       project: null,
     };
