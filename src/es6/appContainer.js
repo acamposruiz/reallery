@@ -3,9 +3,6 @@
 /*jshint trailing:false */
 /*jshint newcap:false */
 /*global React, Router*/
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Director from "director/build/director";
 import React from "react";
 
@@ -13,6 +10,7 @@ import { AppState } from "./contexts";
 import { Content, SelectCombo } from "./content.js";
 import contextState from "../../state/state";
 import utils from "./utils.js";
+import { Footer } from "./footer";
 
 const Router = Director.Router;
 
@@ -102,33 +100,7 @@ class AppContainer extends React.Component {
 
           <Content />
 
-          <footer className="contact">
-            {meta.github ? (
-              <a target="_blank" href={meta.github}>
-                <span className="mail-data">
-                  <FontAwesomeIcon icon={faGithub} />
-                  <span className="data">View on github</span>
-                </span>
-              </a>
-            ) : null}
-            <a href={`mailto:${meta.email}`}>
-              <span className="mail-data">
-                <FontAwesomeIcon icon={faEnvelope} />
-                <span className="data">{meta.email}</span>
-              </span>
-            </a>
-            &nbsp; &nbsp; &nbsp;
-            <a href={`tel:${meta.tlf}`}>
-              <span className="mail-data">
-                <FontAwesomeIcon icon={faPhone} />
-                <span className="data">{meta.tlf}</span>
-              </span>
-            </a>
-            {/*<i class="material-icons">phone</i>
-                             <span className="twitter-data"><FaTwitter /><span className="data">@acwrks</span></span>
-                             <span className="instagram-data"><FaInstagram /><span className="data">acwrks</span></span>
-                             */}
-          </footer>
+          <Footer />
         </div>
       </AppState.Provider>
     );
