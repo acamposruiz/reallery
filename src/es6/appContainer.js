@@ -7,10 +7,11 @@ import Director from "director/build/director";
 import React from "react";
 
 import { AppState } from "./contexts";
-import { Content, SelectCombo } from "./content.js";
+import { Content } from "./content.js";
+import { Footer } from "./footer";
+import { Header } from "./header";
 import contextState from "../../state/state";
 import utils from "./utils.js";
-import { Footer } from "./footer";
 
 const Router = Director.Router;
 
@@ -76,27 +77,13 @@ class AppContainer extends React.Component {
   }
 
   render() {
-    if (!contextState.meta || !contextState.projects || !this.state) {
-      return <div>error</div>;
-    }
     const mobile = utils.is_mobile("any") ? "mobile" : "no-mobile";
     const section = !this.state.project ? "home" : "project";
-    const lng = this.state.lng || contextState.meta.languageDefault;
-    const pathPrefix = process.env.PUBLICPATH ? "/" + process.env.PUBLICPATH : "";
-    const homePath = pathPrefix + "/#/" + (lng || "");
-    let meta = contextState.meta || {};
 
     return (
       <AppState.Provider value={this.state}>
         <div className={`container ${section} ${mobile}`}>
-          <header className="container-header">
-            <h1 className="title-header">
-              <a className="main-title" href={homePath}>
-                {meta.title}
-              </a>
-            </h1>
-            {this.state.project ? <SelectCombo /> : null}
-          </header>
+          <Header />
 
           <Content />
 
