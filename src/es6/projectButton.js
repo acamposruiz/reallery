@@ -5,35 +5,40 @@
 /*global React */
 import React from "react";
 
+import { AppState } from "./contexts";
 import ContentIcons from "./contentIcons.js";
 
 class ProjectButton extends React.Component {
+  static contextType = AppState;
   render() {
-    const classNameIcon = "icon-ico_" + this.props.key2;
+    const { buttonProject } = this.props;
+    const { icon: iconFromProps, color } = buttonProject;
+    const view = !this.context.project ? "home" : "project";
+    const lng = this.context.lng || contextState.meta.languageDefault;
+    const name = !lng ? buttonProject.name : buttonProject.name[lng];
+    const classNameIcon = "icon-ico_" + this.props.projectKey;
     const pathPrefix = process.env.PUBLICPATH ? "/" + process.env.PUBLICPATH : "";
     const path =
-      pathPrefix +
-      "/#/" +
-      (this.props.lng ? this.props.lng + "/" : "") +
-      "project/view/" +
-      this.props.key2;
-    const buttonText = <div className="text title">{this.props.name}</div>;
-    const icon = this.props.icon || { family: "FontAwesome", icon: "FaAsterisk" };
+      pathPrefix + "/#/" + (lng ? lng + "/" : "") + "project/view/" + this.props.projectKey;
+    const buttonText = <div className="text title">{name}</div>;
+    const icon = iconFromProps || { family: "FontAwesome", icon: "FaAsterisk" };
+    let projectSt = this.context.project || {};
+    const active = buttonProject.name === projectSt.name;
 
     return (
       <div
         className={`project-button-container ${
-          this.props.active ? " active" : " no-active"
-        } home-project-button-${this.props.key2}`}
+          active ? " active" : " no-active"
+        } home-project-button-${this.props.projectKey}`}
       >
         <a href={path}>
-          <div className={`project-icon color-${this.props.color}  ${classNameIcon}`}>
+          <div className={`project-icon color-${color}  ${classNameIcon}`}>
             <ContentIcons dataicon={{ family: icon.family, icon: icon.icon }} />
           </div>
 
-          {this.props.view === "project" ? buttonText : null}
+          {view === "project" ? buttonText : null}
         </a>
-        {this.props.view === "home" ? buttonText : null}
+        {view === "home" ? buttonText : null}
       </div>
     );
   }
