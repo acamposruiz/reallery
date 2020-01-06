@@ -9,25 +9,21 @@ import "core-js/es6/set";
 import "raf/polyfill";
 import Gallery from "react-multimedia-gallery";
 import Lightbox from "react-images-texts-videos";
-import Loading from "react-loading";
 import React from "react";
 
+import { AppState } from "./contexts";
 import utils from "./utils.js";
 
 const mainTimeLapse = 200;
 const itemsSetLoad = utils.is_mobile("phone") ? 5 : 10;
 
 class ProjectGallery extends React.Component {
+  static contextType = AppState;
   constructor(props) {
     super(props);
 
     this.state = {
-      loadedAll: false,
-      photos: [],
-      videos: [],
-      articles: [],
-      items: [],
-      itemsStore: [],
+      lastIndex: itemsSetLoad,
       itemsLightbox: {
         type: "images",
         items: [],
@@ -43,53 +39,12 @@ class ProjectGallery extends React.Component {
     this.gotoPrevious = this.gotoPrevious.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.project) {
-      const photos = _.get(nextProps, `project.images.all`)
-        .concat(nextProps.lng ? _.get(nextProps, `project.images.${nextProps.lng}`) : [])
-        .map((image) => _.pick(image, ["src", "srcset", "width", "height", "type"]));
-
-      const videos = nextProps.lng
-        ? nextProps.project.videos[nextProps.lng]
-        : nextProps.project.videos;
-
-      const articles = (nextProps.lng
-        ? nextProps.project.articles[nextProps.lng]
-        : nextProps.project.articles
-      ).map((text) => {
-        return {
-          type: "article",
-          content: text,
-        };
-      });
-
-      const itemsStore = utils.merge(utils.merge(articles, videos), photos);
-
-      this.setState({
-        loadedAll: false,
-        photos: photos,
-        videos: videos,
-        articles: articles,
-        items: [],
-        itemsStore: itemsStore,
-        itemsLightbox: {
-          type: "images",
-          items: [],
-        },
-        cols: this.getCols(),
-      });
-      this.loadMoreItems();
-    } else {
-      this.setState({ loadedAll: false, photos: [], videos: [], itemsStore: [] });
-    }
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    this.handleScroll();
+  componentWillUpdate() {
+    this.state.lastIndex = itemsSetLoad;
+    this.state.loadedAll = false;
   }
 
   componentDidMount() {
-    this.componentWillReceiveProps(this.props);
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("resize", this.handleResize);
   }
@@ -103,7 +58,7 @@ class ProjectGallery extends React.Component {
   handleScroll() {
     let scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
     if (
-      this.props.project &&
+      this.context.project &&
       !this.state.loadedAll &&
       window.innerHeight + scrollY >=
         Math.min(
@@ -127,14 +82,12 @@ class ProjectGallery extends React.Component {
   }
 
   loadMoreItems() {
-    let newItems = this.state.itemsStore.slice(0, itemsSetLoad);
-    let newStore = this.state.itemsStore.slice(itemsSetLoad);
-    let loadedAll = newStore.length ? false : true;
+    const lastIndex = this.state.lastIndex + itemsSetLoad;
+    const loadedAll = this.context.storeLength <= lastIndex;
 
     this.setState({
-      items: this.state.items.concat(newItems),
-      itemsStore: newStore,
-      loadedAll: loadedAll,
+      lastIndex,
+      loadedAll,
     });
 
     //if (!loadedAll) utils.preload.gallery(newStore);
@@ -148,8 +101,8 @@ class ProjectGallery extends React.Component {
         type: typeItem == "photos" ? "images" : typeItem == "articles" ? "texts" : "videos",
         items:
           typeItem == "photos"
-            ? this.state[typeItem]
-            : this.state[typeItem].map((item) => item.content),
+            ? this.context[typeItem]
+            : this.context[typeItem].map((item) => item.content),
       },
       currentItem: index,
       lightboxIsOpen: true,
@@ -176,13 +129,16 @@ class ProjectGallery extends React.Component {
   }
 
   render() {
-    if (!this.props.project) return <div />;
-
+    if (!this.context.project) return null;
+    const items = utils.merge(
+      utils.merge(this.context.articles, this.context.videos),
+      this.context.photos,
+    );
     return (
-      <div className="App">
+      <div className="App galleryContainer">
         <Gallery
           margin={4}
-          items={this.state.items}
+          items={items.slice(0, this.state.lastIndex)}
           cols={this.state.cols}
           onClickItem={this.openLightbox}
         />
@@ -198,8 +154,9 @@ class ProjectGallery extends React.Component {
         />
         {!this.state.loadedAll && (
           <div className="loading-msg" id="msg-loading-more">
-            <Loading ref="loadingElement" type="cylon" color="#d2d2d2" width="85" />
-            <span className="loading-msg-text">Loading</span>
+            <span className="see-more-button" onClick={this.loadMoreItems}>
+              {this.context.lng === "en" ? "See more" : "Ver más"}
+            </span>
           </div>
         )}
       </div>

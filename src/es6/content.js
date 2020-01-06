@@ -11,7 +11,7 @@ export class Content extends React.Component {
       <SelectCombo />
     ) : (
       <section className="gallery">
-        <ProjectGallery lng={this.context.lng} project={this.context.project} />
+        <ProjectGallery />
       </section>
     );
   }
