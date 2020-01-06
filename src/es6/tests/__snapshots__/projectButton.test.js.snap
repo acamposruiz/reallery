@@ -2,13 +2,13 @@
 
 exports[`ProjectButton 1`] = `
 <div
-  className="project-button-container  no-active home-project-button-001"
+  className="project-button-container  no-active home-project-button-undefined"
 >
   <a
-    href="/#/en/project/view/001"
+    href="/#/en/project/view/undefined"
   >
     <div
-      className="project-icon color-red  icon-ico_001"
+      className="project-icon color-red  icon-ico_undefined"
     >
       <ContentIcons
         dataicon={

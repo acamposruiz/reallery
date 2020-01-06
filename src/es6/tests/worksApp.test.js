@@ -1,5 +1,5 @@
 import React from "react";
-import WorksApp from "../worksApp";
+import AppContainer from "../AppContainer";
 import renderer from "react-test-renderer";
 import state from "./mocks/state";
 
@@ -13,8 +13,8 @@ jest.mock("react-multimedia-gallery", () => {
   return "Gallery";
 });
 
-test("WorksApp", () => {
-  const component = renderer.create(<WorksApp meta={state.meta} model={state.projects} />);
+test("AppContainer", () => {
+  const component = renderer.create(<AppContainer meta={state.meta} model={state.projects} />);
   let tree = component.toJSON();
 
   expect(tree).toMatchSnapshot();
