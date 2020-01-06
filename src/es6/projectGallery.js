@@ -9,7 +9,7 @@ import "core-js/es6/set";
 import "raf/polyfill";
 import Gallery from "react-multimedia-gallery";
 import Lightbox from "react-images-texts-videos";
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 import { AppState } from "./contexts";
 import utils from "./utils.js";
@@ -17,55 +17,17 @@ import utils from "./utils.js";
 const mainTimeLapse = 200;
 const itemsSetLoad = utils.is_mobile("phone") ? 5 : 10;
 
-class ProjectGallery extends React.Component {
-  static contextType = AppState;
-  constructor(props) {
-    super(props);
+const ProjectGallery = () => {
+  const context = useContext(AppState);
+  const [state, setState] = useState({
+    lastIndex: itemsSetLoad,
+    itemsLightbox: {
+      type: "images",
+      items: [],
+    },
+  });
 
-    this.state = {
-      lastIndex: itemsSetLoad,
-      itemsLightbox: {
-        type: "images",
-        items: [],
-      },
-    };
-
-    this.loadMoreItems = _.debounce(this.loadMoreItems, mainTimeLapse);
-    this.handleResize = _.debounce(this.handleResize, mainTimeLapse);
-  }
-
-  componentWillUpdate = () => {
-    this.state.lastIndex = itemsSetLoad;
-    this.state.loadedAll = false;
-  };
-
-  componentDidMount = () => {
-    window.addEventListener("scroll", this.handleScroll);
-    window.addEventListener("resize", this.handleResize);
-  };
-
-  handleResize = () => {
-    var cols = this.getCols();
-
-    this.setState({ cols });
-  };
-
-  handleScroll = () => {
-    let scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-    if (
-      this.context.project &&
-      !this.state.loadedAll &&
-      window.innerHeight + scrollY >=
-        Math.min(
-          document.body.offsetHeight - 50,
-          document.getElementById("msg-loading-more").getBoundingClientRect().height,
-        )
-    ) {
-      this.loadMoreItems();
-    }
-  };
-
-  getCols = () => {
+  const getCols = () => {
     var cols = 1;
     if (window.innerWidth >= 480) {
       cols = 2;
@@ -76,84 +38,108 @@ class ProjectGallery extends React.Component {
     return cols;
   };
 
-  loadMoreItems = () => {
-    const lastIndex = this.state.lastIndex + itemsSetLoad;
-    const loadedAll = this.context.storeLength <= lastIndex;
+  const handleResize = _.debounce(() => {
+    var cols = getCols();
+    setState({ ...state, cols });
+  }, mainTimeLapse);
 
-    this.setState({
+  const loadMoreItems = _.debounce(() => {
+    const lastIndex = state.lastIndex + itemsSetLoad;
+    const loadedAll = context.storeLength <= lastIndex;
+
+    setState({
+      ...state,
       lastIndex,
       loadedAll,
     });
+  }, mainTimeLapse);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    state.lastIndex = itemsSetLoad;
+    state.loadedAll = false;
+  });
+
+  const handleScroll = () => {
+    let scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+    if (
+      context.project &&
+      !state.loadedAll &&
+      window.innerHeight + scrollY >=
+        Math.min(
+          document.body.offsetHeight - 50,
+          document.getElementById("msg-loading-more").getBoundingClientRect().height,
+        )
+    ) {
+      loadMoreItems();
+    }
   };
 
-  openLightbox = (index, event, typeItem) => {
+  const openLightbox = (index, event, typeItem) => {
     event.preventDefault();
 
-    this.setState({
+    setState({
       itemsLightbox: {
         type: typeItem == "photos" ? "images" : typeItem == "articles" ? "texts" : "videos",
         items:
-          typeItem == "photos"
-            ? this.context[typeItem]
-            : this.context[typeItem].map((item) => item.content),
+          typeItem == "photos" ? context[typeItem] : context[typeItem].map((item) => item.content),
       },
       currentItem: index,
       lightboxIsOpen: true,
     });
   };
 
-  closeLightbox = () => {
-    this.setState({
+  const closeLightbox = () => {
+    setState({
       currentItem: 0,
       lightboxIsOpen: false,
     });
   };
 
-  gotoPrevious = () => {
-    this.setState({
-      currentItem: this.state.currentItem - 1,
+  const gotoPrevious = () => {
+    setState({
+      currentItem: state.currentItem - 1,
     });
   };
 
-  gotoNext = () => {
-    this.setState({
-      currentItem: this.state.currentItem + 1,
+  const gotoNext = () => {
+    setState({
+      currentItem: state.currentItem + 1,
     });
   };
 
-  render() {
-    if (!this.context.project) return null;
-    const items = utils.merge(
-      utils.merge(this.context.articles, this.context.videos),
-      this.context.photos,
-    );
-    return (
-      <div className="App galleryContainer">
-        <Gallery
-          margin={4}
-          items={items.slice(0, this.state.lastIndex)}
-          cols={this.state.cols}
-          onClickItem={this.openLightbox}
-        />
-        <Lightbox
-          items={this.state.itemsLightbox}
-          backdropClosesModal={true}
-          onClose={this.closeLightbox}
-          onClickPrev={this.gotoPrevious}
-          onClickNext={this.gotoNext}
-          currentItem={this.state.currentItem}
-          isOpen={this.state.lightboxIsOpen}
-          width={1600}
-        />
-        {!this.state.loadedAll && (
-          <div className="loading-msg" id="msg-loading-more">
-            <span className="see-more-button" onClick={this.loadMoreItems}>
-              {this.context.lng === "en" ? "See more" : "Ver más"}
-            </span>
-          </div>
-        )}
-      </div>
-    );
-  }
-}
+  if (!context.project) return null;
+  const items = utils.merge(utils.merge(context.articles, context.videos), context.photos);
+  return (
+    <div className="App galleryContainer">
+      <Gallery
+        margin={4}
+        items={items.slice(0, state.lastIndex)}
+        cols={state.cols}
+        onClickItem={openLightbox}
+      />
+      <Lightbox
+        items={state.itemsLightbox}
+        backdropClosesModal={true}
+        onClose={closeLightbox}
+        onClickPrev={gotoPrevious}
+        onClickNext={gotoNext}
+        currentItem={state.currentItem}
+        isOpen={state.lightboxIsOpen}
+        width={1600}
+      />
+      {!state.loadedAll && (
+        <div className="loading-msg" id="msg-loading-more">
+          <span className="see-more-button" onClick={loadMoreItems}>
+            {context.lng === "en" ? "See more" : "Ver más"}
+          </span>
+        </div>
+      )}
+    </div>
+  );
+};
 export default ProjectGallery;
