@@ -9,8 +9,6 @@ var _director = _interopRequireDefault(require("director/build/director"));
 
 var _lodash = _interopRequireDefault(require("lodash"));
 
-var _utils = _interopRequireDefault(require("./utils.js"));
-
 var _state = _interopRequireDefault(require("../../state/state"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -24,21 +22,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var Router = _director["default"].Router;
 
 var configRoute = function configRoute(_ref) {
-  var setState = _ref.setState;
+  var state = _ref.state,
+      setState = _ref.setState;
   var projects = _state["default"].projects;
   var lngParam = _state["default"].meta.languageDefault;
 
   if (lngParam) {
     var router = Router({
       "/:lng/": [function (lng) {
-        setState({
+        setState(_objectSpread({}, state, {
           project: null,
           itemsStore: null,
           lng: lng
-        });
+        }));
       }, logPageView],
       "/:lng/project/view/:projectId": [function (lng, projectId) {
-        setState(_objectSpread({
+        setState(_objectSpread({}, state, {
           project: projects[projectId],
           lng: lng
         }, getItems(projects[projectId], lng)));
@@ -48,13 +47,13 @@ var configRoute = function configRoute(_ref) {
   } else {
     var _router = Router({
       "/": [function () {
-        setState({
+        setState(_objectSpread({}, state, {
           project: null,
           itemsStore: null
-        });
+        }));
       }, logPageView],
       "/project/view/:projectId": [function (projectId) {
-        setState(_objectSpread({
+        setState(_objectSpread({}, state, {
           project: projects[projectId]
         }, getItems(projects[projectId])));
       }, logPageView]

@@ -3,7 +3,7 @@
 /*jshint trailing:false */
 /*jshint newcap:false */
 /*global React, Router*/
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { AppState } from "./contexts";
 import { configRoute } from "./confRoute";
@@ -13,33 +13,31 @@ import { Header } from "./header";
 import contextState from "../../state/state";
 import utils from "./utils.js";
 
-class AppContainer extends React.Component {
-  state = {
+const AppContainer = () => {
+  const [state, setState] = useState({
     meta: contextState.meta || {},
     lng: contextState.meta.languageDefault ? contextState.meta.languageDefault : null,
     project: null,
-  };
+  });
 
-  componentDidMount() {
-    configRoute({ setState: this.setState.bind(this) });
-  }
+  useEffect(() => {
+    configRoute({ state, setState });
+  }, []);
 
-  render() {
-    const mobile = utils.is_mobile("any") ? "mobile" : "no-mobile";
-    const section = !this.state.project ? "home" : "project";
+  const mobile = utils.is_mobile("any") ? "mobile" : "no-mobile";
+  const section = !state.project ? "home" : "project";
 
-    return (
-      <AppState.Provider value={this.state}>
-        <div className={`container ${section} ${mobile}`}>
-          <Header />
+  return (
+    <AppState.Provider value={state}>
+      <div className={`container ${section} ${mobile}`}>
+        <Header />
 
-          <Content />
+        <Content />
 
-          <Footer />
-        </div>
-      </AppState.Provider>
-    );
-  }
-}
+        <Footer />
+      </div>
+    </AppState.Provider>
+  );
+};
 
 export default AppContainer;
