@@ -17,74 +17,963 @@ exports[`AppContainer 1`] = `
         Michelangelo Buonarroti
       </a>
     </h1>
-    <section
-      className="menu menu-header"
-    >
-       
-       
-    </section>
   </header>
   <section
     className="menu menu-content"
   >
      
     <ProjectButton
-      active={false}
-      color="F0B67F"
-      icon={
+      buttonProject={
         Object {
-          "family": "FontAwesome",
-          "icon": "faPaintBrush",
+          "articles": Object {
+            "en": Array [
+              "Lorem very carrots, enhanced ecological environment. However, blockage, it is not a weekend, from chili pregnant itself of football pain scores or football. Com will gateway fears. Present running my man with sad, developers soccer developer of time. in an urn or outdoor carton targeted in the tank. jasmine and laoreet no, will need sapien. the Bureau of carrots running mattis.Aenean members of the targeted region carrots convenience. lorem software is free to live deductible leakage. Clinical and trigger the fear of antioxidants vulputate . Warcraft players and soft rice and sugar. Chinese football bananas pain. Cell Phones alarm makeup of the valley. ",
+              "The man has not lion vehicles bows of the propaganda. Chat sit put players need members. Orci various Penatibus Super Bowl mountains instantly. Each manufacturing Mauris in football sometimes, and CNN only brought about. Hell casino feel submissions cras magnis dis parturient montes, orci nibh accumsan risus. Suspendisse cursus sapien eu nor of the throat, or being pregnant eu pharetra. Donec auctor bibendum lectus, consectetuer consequat lorem sagittis porta. ",
+              "Clinical and propaganda at ultricies sterilized and economy. PakSoft at lift him pull skirt. Before the very first taste clinical mourning and basketball set their care, the borders of the macro not only ecological libero. Present grief but Ligula the quiver that of lakes weekend. the latest life skills level. jasmine just sightseeing, eu and just the throat at school. even ecological that chili or developers. however, members of the mass clinical, notebook developers salad taste like. Each vulputate to save and invest. however mourning sad element. ",
+            ],
+            "es": Array [
+              "El hombre no tiene vehículos león arcos de la propaganda. Chatea sientan ponen los jugadores necesitan miembros. Orci varias montañas Penatibus Super Bowl al instante. Cada fabricación Mauris veces en el fútbol, ​​y CNN única provocada. Infierno casino siente presentaciones cras Magnis dis parturienta montes, Orci nibh accumsan RISUS. Suspendisse cursus sapiens UE ni de la garganta, o estar embarazada pharetra UE. Donec auctor bibendum lectus consectetuer consequat lorem sagittis porta.",
+              "Clínica y la propaganda en ultricies esterilizados y economía. PakSoft al ascensor le tire de la falda. Antes del duelo clínico primer sabor y de baloncesto fijan su atención, las fronteras de la macro no sólo libero ecológico. Aflicción presente, pero el temblor que Ligula de lagos fin de semana. la última habilidades para la vida nivel. jazmín acaba de hacer turismo, la UE y sólo la garganta en la escuela. incluso ecológico que chile o desarrolladores. Sin embargo, los miembros de la masa clínicos, desarrolladores portátiles ensalada de sabor. Cada vulputate a ahorrar e invertir. Sin embargo luto triste elemento ",
+            ],
+          },
+          "color": "F0B67F",
+          "icon": Object {
+            "family": "FontAwesome",
+            "icon": "faPaintBrush",
+          },
+          "images": Object {
+            "all": Array [
+              Object {
+                "height": 1203,
+                "path": "tests/e2e/mocks/site/content/paintings/images/0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel/620_0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel/310_0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel/160_0c54b6e70a5ceed397004a94fc53fa5d--michelangelo-paintings-sistine-chapel.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 736,
+              },
+              Object {
+                "height": 1111,
+                "path": "tests/e2e/mocks/site/content/paintings/images/1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti).jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti)/620_1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti).jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti)/310_1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti).jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti)/160_1200px-Conversion_of_Saint_Paul_(Michelangelo_Buonarroti).jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1200,
+              },
+              Object {
+                "height": 924,
+                "path": "tests/e2e/mocks/site/content/paintings/images/200812314411973499.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/200812314411973499/1240_200812314411973499.jpg 1240w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/200812314411973499/620_200812314411973499.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/200812314411973499/310_200812314411973499.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/200812314411973499/160_200812314411973499.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1404,
+              },
+              Object {
+                "height": 1024,
+                "path": "tests/e2e/mocks/site/content/paintings/images/53de19f3b29e6a642617a00fafbb1b7f.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/53de19f3b29e6a642617a00fafbb1b7f/620_53de19f3b29e6a642617a00fafbb1b7f.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/53de19f3b29e6a642617a00fafbb1b7f/310_53de19f3b29e6a642617a00fafbb1b7f.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/53de19f3b29e6a642617a00fafbb1b7f/160_53de19f3b29e6a642617a00fafbb1b7f.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1237,
+              },
+              Object {
+                "height": 1126,
+                "path": "tests/e2e/mocks/site/content/paintings/images/8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works/620_8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works/310_8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works/160_8b37fd07dfc7b2ee868d445f72c1124c--michelangelo-paintings-michelangelo-works.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 736,
+              },
+              Object {
+                "height": 1024,
+                "path": "tests/e2e/mocks/site/content/paintings/images/Doni-Tondo.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/Doni-Tondo/620_Doni-Tondo.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/Doni-Tondo/310_Doni-Tondo.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/Doni-Tondo/160_Doni-Tondo.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1020,
+              },
+              Object {
+                "height": 1109,
+                "path": "tests/e2e/mocks/site/content/paintings/images/Michelangelo_Buonarroti_047.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/Michelangelo_Buonarroti_047/1240_Michelangelo_Buonarroti_047.jpg 1240w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/Michelangelo_Buonarroti_047/620_Michelangelo_Buonarroti_047.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/Michelangelo_Buonarroti_047/310_Michelangelo_Buonarroti_047.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/Michelangelo_Buonarroti_047/160_Michelangelo_Buonarroti_047.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1576,
+              },
+              Object {
+                "height": 1050,
+                "path": "tests/e2e/mocks/site/content/paintings/images/Simoni05.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/Simoni05/620_Simoni05.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/Simoni05/310_Simoni05.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/Simoni05/160_Simoni05.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 823,
+              },
+              Object {
+                "height": 1010,
+                "path": "tests/e2e/mocks/site/content/paintings/images/Simoni46.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/Simoni46/620_Simoni46.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/Simoni46/310_Simoni46.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/Simoni46/160_Simoni46.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 890,
+              },
+              Object {
+                "height": 1051,
+                "path": "tests/e2e/mocks/site/content/paintings/images/c47930bbcf0e316b116734da17792e82.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/c47930bbcf0e316b116734da17792e82/620_c47930bbcf0e316b116734da17792e82.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/c47930bbcf0e316b116734da17792e82/310_c47930bbcf0e316b116734da17792e82.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/c47930bbcf0e316b116734da17792e82/160_c47930bbcf0e316b116734da17792e82.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 772,
+              },
+              Object {
+                "height": 1363,
+                "path": "tests/e2e/mocks/site/content/paintings/images/delphic-sibyl.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/delphic-sibyl/620_delphic-sibyl.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/delphic-sibyl/310_delphic-sibyl.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/delphic-sibyl/160_delphic-sibyl.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 990,
+              },
+              Object {
+                "height": 1070,
+                "path": "tests/e2e/mocks/site/content/paintings/images/e2582284ea2764f1d2ca5fbec62ce1be.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/e2582284ea2764f1d2ca5fbec62ce1be/620_e2582284ea2764f1d2ca5fbec62ce1be.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/e2582284ea2764f1d2ca5fbec62ce1be/310_e2582284ea2764f1d2ca5fbec62ce1be.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/e2582284ea2764f1d2ca5fbec62ce1be/160_e2582284ea2764f1d2ca5fbec62ce1be.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 832,
+              },
+              Object {
+                "height": 990,
+                "path": "tests/e2e/mocks/site/content/paintings/images/f72cf39fa78b232b371c0d7ea53986d7.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/f72cf39fa78b232b371c0d7ea53986d7/620_f72cf39fa78b232b371c0d7ea53986d7.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/f72cf39fa78b232b371c0d7ea53986d7/310_f72cf39fa78b232b371c0d7ea53986d7.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/f72cf39fa78b232b371c0d7ea53986d7/160_f72cf39fa78b232b371c0d7ea53986d7.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 856,
+              },
+              Object {
+                "height": 868,
+                "path": "tests/e2e/mocks/site/content/paintings/images/la-creacion-de-adan_ee36a05b.png",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/la-creacion-de-adan_ee36a05b/620_la-creacion-de-adan_ee36a05b.png 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/la-creacion-de-adan_ee36a05b/310_la-creacion-de-adan_ee36a05b.png 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/la-creacion-de-adan_ee36a05b/160_la-creacion-de-adan_ee36a05b.png 160w",
+                ],
+                "type": "photo",
+                "width": 1115,
+              },
+              Object {
+                "height": 1024,
+                "path": "tests/e2e/mocks/site/content/paintings/images/larger.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/larger/620_larger.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/larger/310_larger.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/larger/160_larger.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 952,
+              },
+              Object {
+                "height": 1375,
+                "path": "tests/e2e/mocks/site/content/paintings/images/ma1.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/ma1/620_ma1.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/ma1/310_ma1.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/ma1/160_ma1.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1000,
+              },
+              Object {
+                "height": 1200,
+                "path": "tests/e2e/mocks/site/content/paintings/images/michelangelo_8_martyrdom_of_st_peter.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_8_martyrdom_of_st_peter/1240_michelangelo_8_martyrdom_of_st_peter.jpg 1240w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_8_martyrdom_of_st_peter/620_michelangelo_8_martyrdom_of_st_peter.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_8_martyrdom_of_st_peter/310_michelangelo_8_martyrdom_of_st_peter.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_8_martyrdom_of_st_peter/160_michelangelo_8_martyrdom_of_st_peter.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1299,
+              },
+              Object {
+                "height": 1374,
+                "path": "tests/e2e/mocks/site/content/paintings/images/michelangelo_kruisiging_grt.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_kruisiging_grt/620_michelangelo_kruisiging_grt.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_kruisiging_grt/310_michelangelo_kruisiging_grt.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_kruisiging_grt/160_michelangelo_kruisiging_grt.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 895,
+              },
+              Object {
+                "height": 758,
+                "path": "tests/e2e/mocks/site/content/paintings/images/michelangelo_offer_van_noach_grt.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_offer_van_noach_grt/620_michelangelo_offer_van_noach_grt.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_offer_van_noach_grt/310_michelangelo_offer_van_noach_grt.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/michelangelo_offer_van_noach_grt/160_michelangelo_offer_van_noach_grt.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1100,
+              },
+              Object {
+                "height": 866,
+                "path": "tests/e2e/mocks/site/content/paintings/images/the-last-judgement-jan-ii-provost.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/paintings/images_src/the-last-judgement-jan-ii-provost/620_the-last-judgement-jan-ii-provost.jpg 620w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/the-last-judgement-jan-ii-provost/310_the-last-judgement-jan-ii-provost.jpg 310w",
+                  "tests/e2e/mocks/site/content/paintings/images_src/the-last-judgement-jan-ii-provost/160_the-last-judgement-jan-ii-provost.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 900,
+              },
+            ],
+          },
+          "name": Object {
+            "en": "Paintings",
+            "es": "Pinturas",
+          },
+          "publish": true,
+          "state": "",
+          "videos": Object {
+            "en": Array [
+              Object {
+                "content": "EXyay2VKtaA",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+              Object {
+                "content": "m29OuZfsorA",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+              Object {
+                "content": "IQ4hGFWZ7vM",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+              Object {
+                "content": "57FDqlXpE24",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+            ],
+            "es": Array [
+              Object {},
+              Object {
+                "content": "LwxXShzlhG4",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+              Object {},
+              Object {},
+            ],
+          },
         }
       }
-      key2="paintings"
-      lng="en"
-      name="Paintings"
-      publish={true}
-      state=""
-      view="home"
+      projectKey="paintings"
     />
     <ProjectButton
-      active={false}
-      color="D6D1B1"
-      icon={
+      buttonProject={
         Object {
-          "family": "FontAwesome",
-          "icon": "faCube",
+          "articles": Object {
+            "en": Array [
+              "Lorem very carrots, enhanced ecological environment. However, blockage, it is not a weekend, from chili pregnant itself of football pain scores or football. Com will gateway fears. Present running my man with sad, developers soccer developer of time. in an urn or outdoor carton targeted in the tank. jasmine and laoreet no, will need sapien. the Bureau of carrots running mattis.Aenean members of the targeted region carrots convenience. lorem software is free to live deductible leakage. Clinical and trigger the fear of antioxidants vulputate . Warcraft players and soft rice and sugar. Chinese football bananas pain. Cell Phones alarm makeup of the valley. ",
+              "The man has not lion vehicles bows of the propaganda. Chat sit put players need members. Orci various Penatibus Super Bowl mountains instantly. Each manufacturing Mauris in football sometimes, and CNN only brought about. Hell casino feel submissions cras magnis dis parturient montes, orci nibh accumsan risus. Suspendisse cursus sapien eu nor of the throat, or being pregnant eu pharetra. Donec auctor bibendum lectus, consectetuer consequat lorem sagittis porta. ",
+              "Clinical and propaganda at ultricies sterilized and economy. PakSoft at lift him pull skirt. Before the very first taste clinical mourning and basketball set their care, the borders of the macro not only ecological libero. Present grief but Ligula the quiver that of lakes weekend. the latest life skills level. jasmine just sightseeing, eu and just the throat at school. even ecological that chili or developers. however, members of the mass clinical, notebook developers salad taste like. Each vulputate to save and invest. however mourning sad element. ",
+            ],
+            "es": Array [
+              "El hombre no tiene vehículos león arcos de la propaganda. Chatea sientan ponen los jugadores necesitan miembros. Orci varias montañas Penatibus Super Bowl al instante. Cada fabricación Mauris veces en el fútbol, ​​y CNN única provocada. Infierno casino siente presentaciones cras Magnis dis parturienta montes, Orci nibh accumsan RISUS. Suspendisse cursus sapiens UE ni de la garganta, o estar embarazada pharetra UE. Donec auctor bibendum lectus consectetuer consequat lorem sagittis porta.",
+              "Clínica y la propaganda en ultricies esterilizados y economía. PakSoft al ascensor le tire de la falda. Antes del duelo clínico primer sabor y de baloncesto fijan su atención, las fronteras de la macro no sólo libero ecológico. Aflicción presente, pero el temblor que Ligula de lagos fin de semana. la última habilidades para la vida nivel. jazmín acaba de hacer turismo, la UE y sólo la garganta en la escuela. incluso ecológico que chile o desarrolladores. Sin embargo, los miembros de la masa clínicos, desarrolladores portátiles ensalada de sabor. Cada vulputate a ahorrar e invertir. Sin embargo luto triste elemento ",
+            ],
+          },
+          "color": "D6D1B1",
+          "icon": Object {
+            "family": "FontAwesome",
+            "icon": "faCube",
+          },
+          "images": Object {
+            "all": Array [
+              Object {
+                "height": 1121,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy/620_22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy/310_22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy/160_22423fe666d268284c979bb19f6ec4f9--michelangelo-pieta-florence-italy.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 736,
+              },
+              Object {
+                "height": 1515,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance/620_39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance/310_39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance/160_39774443ade095e975a44ede7d1dd99c--medici-italian-renaissance.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 670,
+              },
+              Object {
+                "height": 1200,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/45bf890b1e3896ba6f48377b803df002.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/45bf890b1e3896ba6f48377b803df002/620_45bf890b1e3896ba6f48377b803df002.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/45bf890b1e3896ba6f48377b803df002/310_45bf890b1e3896ba6f48377b803df002.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/45bf890b1e3896ba6f48377b803df002/160_45bf890b1e3896ba6f48377b803df002.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 835,
+              },
+              Object {
+                "height": 1299,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/49961-87537-66022-4.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/49961-87537-66022-4/620_49961-87537-66022-4.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/49961-87537-66022-4/310_49961-87537-66022-4.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/49961-87537-66022-4/160_49961-87537-66022-4.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1050,
+              },
+              Object {
+                "height": 1254,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork/620_7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork/310_7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork/160_7b76be34413598682a432ad43ca8d9cb--florence-italy-artwork.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 670,
+              },
+              Object {
+                "height": 1099,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo/620_817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo/310_817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo/160_817ba0e90f4715d019a164c2efd68585--renaissance-art-michelangelo.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 736,
+              },
+              Object {
+                "height": 768,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/Michelangelo_Buonarroti_sculpture_ml0012.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0012/620_Michelangelo_Buonarroti_sculpture_ml0012.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0012/310_Michelangelo_Buonarroti_sculpture_ml0012.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0012/160_Michelangelo_Buonarroti_sculpture_ml0012.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1024,
+              },
+              Object {
+                "height": 768,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/Michelangelo_Buonarroti_sculpture_ml0013.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0013/620_Michelangelo_Buonarroti_sculpture_ml0013.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0013/310_Michelangelo_Buonarroti_sculpture_ml0013.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_sculpture_ml0013/160_Michelangelo_Buonarroti_sculpture_ml0013.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1024,
+              },
+              Object {
+                "height": 1976,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/Michelangelo_Buonarroti_statua.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_statua/620_Michelangelo_Buonarroti_statua.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_statua/310_Michelangelo_Buonarroti_statua.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/Michelangelo_Buonarroti_statua/160_Michelangelo_Buonarroti_statua.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1066,
+              },
+              Object {
+                "height": 1279,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo/620_a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo/310_a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo/160_a4b77972a664aba476718997448c9014--famous-sculptures-michelangelo.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 736,
+              },
+              Object {
+                "height": 1200,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/a83be9e9988993ad025c980f785c7805.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/a83be9e9988993ad025c980f785c7805/620_a83be9e9988993ad025c980f785c7805.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/a83be9e9988993ad025c980f785c7805/310_a83be9e9988993ad025c980f785c7805.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/a83be9e9988993ad025c980f785c7805/160_a83be9e9988993ad025c980f785c7805.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 908,
+              },
+              Object {
+                "height": 768,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/b1f4505742ab003d5bfe5dba61495542.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/b1f4505742ab003d5bfe5dba61495542/620_b1f4505742ab003d5bfe5dba61495542.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/b1f4505742ab003d5bfe5dba61495542/310_b1f4505742ab003d5bfe5dba61495542.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/b1f4505742ab003d5bfe5dba61495542/160_b1f4505742ab003d5bfe5dba61495542.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1024,
+              },
+              Object {
+                "height": 852,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/battle-of-centaurs-michelangelo-sculpture-sm.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/battle-of-centaurs-michelangelo-sculpture-sm/620_battle-of-centaurs-michelangelo-sculpture-sm.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/battle-of-centaurs-michelangelo-sculpture-sm/310_battle-of-centaurs-michelangelo-sculpture-sm.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/battle-of-centaurs-michelangelo-sculpture-sm/160_battle-of-centaurs-michelangelo-sculpture-sm.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 940,
+              },
+              Object {
+                "height": 2400,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/d399d349cb5f5d2d9d5823b6c689c6c5.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/d399d349cb5f5d2d9d5823b6c689c6c5/1240_d399d349cb5f5d2d9d5823b6c689c6c5.jpg 1240w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/d399d349cb5f5d2d9d5823b6c689c6c5/620_d399d349cb5f5d2d9d5823b6c689c6c5.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/d399d349cb5f5d2d9d5823b6c689c6c5/310_d399d349cb5f5d2d9d5823b6c689c6c5.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/d399d349cb5f5d2d9d5823b6c689c6c5/160_d399d349cb5f5d2d9d5823b6c689c6c5.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 2400,
+              },
+              Object {
+                "height": 1334,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/e3114751f436b7938e96f69e99c3eac8.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/e3114751f436b7938e96f69e99c3eac8/620_e3114751f436b7938e96f69e99c3eac8.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/e3114751f436b7938e96f69e99c3eac8/310_e3114751f436b7938e96f69e99c3eac8.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/e3114751f436b7938e96f69e99c3eac8/160_e3114751f436b7938e96f69e99c3eac8.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1000,
+              },
+              Object {
+                "height": 1227,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art/620_e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art/310_e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art/160_e7b9e0e1a6b6144b8cef662bd4927f7b--high-renaissance-italian-art.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 736,
+              },
+              Object {
+                "height": 1500,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/ee4993507f121125fd8a30dde564703d.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/ee4993507f121125fd8a30dde564703d/620_ee4993507f121125fd8a30dde564703d.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/ee4993507f121125fd8a30dde564703d/310_ee4993507f121125fd8a30dde564703d.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/ee4993507f121125fd8a30dde564703d/160_ee4993507f121125fd8a30dde564703d.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1077,
+              },
+              Object {
+                "height": 1600,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/michelangelos_david.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/michelangelos_david/620_michelangelos_david.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/michelangelos_david/310_michelangelos_david.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/michelangelos_david/160_michelangelos_david.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1200,
+              },
+              Object {
+                "height": 1390,
+                "path": "tests/e2e/mocks/site/content/sculptures/images/moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/sculptures/images_src/moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY/620_moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY.jpg 620w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY/310_moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY.jpg 310w",
+                  "tests/e2e/mocks/site/content/sculptures/images_src/moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY/160_moses-of-michelangelo-marble-sculpture-by-michelangelo-buonarroti-BG8TAY.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 866,
+              },
+            ],
+          },
+          "name": Object {
+            "en": "Sculptures",
+            "es": "Esculturas",
+          },
+          "publish": true,
+          "state": "",
+          "videos": Object {
+            "en": Array [
+              Object {
+                "content": "EXyay2VKtaA",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+              Object {
+                "content": "m29OuZfsorA",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+              Object {
+                "content": "IQ4hGFWZ7vM",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+              Object {
+                "content": "57FDqlXpE24",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+            ],
+            "es": Array [
+              Object {},
+              Object {
+                "content": "LwxXShzlhG4",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+              Object {},
+              Object {},
+            ],
+          },
         }
       }
-      key2="sculptures"
-      lng="en"
-      name="Sculptures"
-      publish={true}
-      state=""
-      view="home"
+      projectKey="sculptures"
     />
     <ProjectButton
-      active={false}
-      color="C7EFCF"
-      icon={
+      buttonProject={
         Object {
-          "family": "FontAwesome",
-          "icon": "faUniversity",
+          "articles": Object {
+            "en": Array [
+              "Lorem very carrots, enhanced ecological environment. However, blockage, it is not a weekend, from chili pregnant itself of football pain scores or football. Com will gateway fears. Present running my man with sad, developers soccer developer of time. in an urn or outdoor carton targeted in the tank. jasmine and laoreet no, will need sapien. the Bureau of carrots running mattis.Aenean members of the targeted region carrots convenience. lorem software is free to live deductible leakage. Clinical and trigger the fear of antioxidants vulputate . Warcraft players and soft rice and sugar. Chinese football bananas pain. Cell Phones alarm makeup of the valley. ",
+              "The man has not lion vehicles bows of the propaganda. Chat sit put players need members. Orci various Penatibus Super Bowl mountains instantly. Each manufacturing Mauris in football sometimes, and CNN only brought about. Hell casino feel submissions cras magnis dis parturient montes, orci nibh accumsan risus. Suspendisse cursus sapien eu nor of the throat, or being pregnant eu pharetra. Donec auctor bibendum lectus, consectetuer consequat lorem sagittis porta. ",
+              "Clinical and propaganda at ultricies sterilized and economy. PakSoft at lift him pull skirt. Before the very first taste clinical mourning and basketball set their care, the borders of the macro not only ecological libero. Present grief but Ligula the quiver that of lakes weekend. the latest life skills level. jasmine just sightseeing, eu and just the throat at school. even ecological that chili or developers. however, members of the mass clinical, notebook developers salad taste like. Each vulputate to save and invest. however mourning sad element. ",
+            ],
+            "es": Array [
+              "El hombre no tiene vehículos león arcos de la propaganda. Chatea sientan ponen los jugadores necesitan miembros. Orci varias montañas Penatibus Super Bowl al instante. Cada fabricación Mauris veces en el fútbol, ​​y CNN única provocada. Infierno casino siente presentaciones cras Magnis dis parturienta montes, Orci nibh accumsan RISUS. Suspendisse cursus sapiens UE ni de la garganta, o estar embarazada pharetra UE. Donec auctor bibendum lectus consectetuer consequat lorem sagittis porta.",
+              "Clínica y la propaganda en ultricies esterilizados y economía. PakSoft al ascensor le tire de la falda. Antes del duelo clínico primer sabor y de baloncesto fijan su atención, las fronteras de la macro no sólo libero ecológico. Aflicción presente, pero el temblor que Ligula de lagos fin de semana. la última habilidades para la vida nivel. jazmín acaba de hacer turismo, la UE y sólo la garganta en la escuela. incluso ecológico que chile o desarrolladores. Sin embargo, los miembros de la masa clínicos, desarrolladores portátiles ensalada de sabor. Cada vulputate a ahorrar e invertir. Sin embargo luto triste elemento ",
+            ],
+          },
+          "color": "C7EFCF",
+          "icon": Object {
+            "family": "FontAwesome",
+            "icon": "faUniversity",
+          },
+          "images": Object {
+            "all": Array [
+              Object {
+                "height": 1327,
+                "path": "tests/e2e/mocks/site/content/architecture/images/6a00d8345293e069e201901c481049970b-800wi.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_src/6a00d8345293e069e201901c481049970b-800wi/620_6a00d8345293e069e201901c481049970b-800wi.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_src/6a00d8345293e069e201901c481049970b-800wi/310_6a00d8345293e069e201901c481049970b-800wi.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_src/6a00d8345293e069e201901c481049970b-800wi/160_6a00d8345293e069e201901c481049970b-800wi.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 800,
+              },
+              Object {
+                "height": 1288,
+                "path": "tests/e2e/mocks/site/content/architecture/images/7d2d42eff423402e7f904a4d927a31bd.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_src/7d2d42eff423402e7f904a4d927a31bd/620_7d2d42eff423402e7f904a4d927a31bd.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_src/7d2d42eff423402e7f904a4d927a31bd/310_7d2d42eff423402e7f904a4d927a31bd.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_src/7d2d42eff423402e7f904a4d927a31bd/160_7d2d42eff423402e7f904a4d927a31bd.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1100,
+              },
+            ],
+            "en": Array [
+              Object {
+                "height": 2802,
+                "path": "tests/e2e/mocks/site/content/architecture/images_en/Michelangelo's_grave4.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/Michelangelo's_grave4/1240_Michelangelo's_grave4.jpg 1240w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/Michelangelo's_grave4/620_Michelangelo's_grave4.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/Michelangelo's_grave4/310_Michelangelo's_grave4.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/Michelangelo's_grave4/160_Michelangelo's_grave4.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1818,
+              },
+              Object {
+                "height": 1315,
+                "path": "tests/e2e/mocks/site/content/architecture/images_en/michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79/620_michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79/310_michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79/160_michelangelo-readrm-LaurentLib-56a02b9a5f9b58eba4af3e79.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1027,
+              },
+              Object {
+                "height": 880,
+                "path": "tests/e2e/mocks/site/content/architecture/images_en/michelangelo-sistine_chapel.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-sistine_chapel/620_michelangelo-sistine_chapel.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-sistine_chapel/310_michelangelo-sistine_chapel.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/michelangelo-sistine_chapel/160_michelangelo-sistine_chapel.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1055,
+              },
+              Object {
+                "height": 956,
+                "path": "tests/e2e/mocks/site/content/architecture/images_en/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1/1240_piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg 1240w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1/620_piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1/310_piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1/160_piazza-di-campidoglio-rome-view-of-steps-towards-museum-architect-EDAGJ1.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1300,
+              },
+              Object {
+                "height": 951,
+                "path": "tests/e2e/mocks/site/content/architecture/images_en/sistine_ceiling.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/sistine_ceiling/1240_sistine_ceiling.jpg 1240w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/sistine_ceiling/620_sistine_ceiling.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/sistine_ceiling/310_sistine_ceiling.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/sistine_ceiling/160_sistine_ceiling.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1638,
+              },
+              Object {
+                "height": 1300,
+                "path": "tests/e2e/mocks/site/content/architecture/images_en/tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313/620_tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313/310_tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_en_src/tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313/160_tumba-de-michelangelo-buonarroti-en-la-basílica-de-santa-croce-florencia-76395313.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1061,
+              },
+            ],
+            "es": Array [
+              Object {
+                "height": 759,
+                "path": "tests/e2e/mocks/site/content/architecture/images_es/07sistineceilinglarge.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/07sistineceilinglarge/1240_07sistineceilinglarge.jpg 1240w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/07sistineceilinglarge/620_07sistineceilinglarge.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/07sistineceilinglarge/310_07sistineceilinglarge.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/07sistineceilinglarge/160_07sistineceilinglarge.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1500,
+              },
+              Object {
+                "height": 1080,
+                "path": "tests/e2e/mocks/site/content/architecture/images_es/9876ae707735b309c2e7c87885f2452b.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/9876ae707735b309c2e7c87885f2452b/1240_9876ae707735b309c2e7c87885f2452b.jpg 1240w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/9876ae707735b309c2e7c87885f2452b/620_9876ae707735b309c2e7c87885f2452b.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/9876ae707735b309c2e7c87885f2452b/310_9876ae707735b309c2e7c87885f2452b.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/9876ae707735b309c2e7c87885f2452b/160_9876ae707735b309c2e7c87885f2452b.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1920,
+              },
+              Object {
+                "height": 768,
+                "path": "tests/e2e/mocks/site/content/architecture/images_es/Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome/620_Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome/310_Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome/160_Michelangelo-Buonarroti-1564-st-peter-s-basilica-dome.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1024,
+              },
+              Object {
+                "height": 3397,
+                "path": "tests/e2e/mocks/site/content/architecture/images_es/Michelangelo_Buonarroti_014.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo_Buonarroti_014/1240_Michelangelo_Buonarroti_014.jpg 1240w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo_Buonarroti_014/620_Michelangelo_Buonarroti_014.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo_Buonarroti_014/310_Michelangelo_Buonarroti_014.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/Michelangelo_Buonarroti_014/160_Michelangelo_Buonarroti_014.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 2536,
+              },
+              Object {
+                "height": 3512,
+                "path": "tests/e2e/mocks/site/content/architecture/images_es/cffe2e409f7ba55e1d994073adbe3c91.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/cffe2e409f7ba55e1d994073adbe3c91/1240_cffe2e409f7ba55e1d994073adbe3c91.jpg 1240w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/cffe2e409f7ba55e1d994073adbe3c91/620_cffe2e409f7ba55e1d994073adbe3c91.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/cffe2e409f7ba55e1d994073adbe3c91/310_cffe2e409f7ba55e1d994073adbe3c91.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/cffe2e409f7ba55e1d994073adbe3c91/160_cffe2e409f7ba55e1d994073adbe3c91.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 2270,
+              },
+              Object {
+                "height": 1375,
+                "path": "tests/e2e/mocks/site/content/architecture/images_es/cupulasanpedromiguelangel.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/cupulasanpedromiguelangel/620_cupulasanpedromiguelangel.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/cupulasanpedromiguelangel/310_cupulasanpedromiguelangel.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/cupulasanpedromiguelangel/160_cupulasanpedromiguelangel.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1000,
+              },
+              Object {
+                "height": 900,
+                "path": "tests/e2e/mocks/site/content/architecture/images_es/e59aa54e9ca3d468b4de9c6ba45c3471.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/e59aa54e9ca3d468b4de9c6ba45c3471/1240_e59aa54e9ca3d468b4de9c6ba45c3471.jpg 1240w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/e59aa54e9ca3d468b4de9c6ba45c3471/620_e59aa54e9ca3d468b4de9c6ba45c3471.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/e59aa54e9ca3d468b4de9c6ba45c3471/310_e59aa54e9ca3d468b4de9c6ba45c3471.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/e59aa54e9ca3d468b4de9c6ba45c3471/160_e59aa54e9ca3d468b4de9c6ba45c3471.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1270,
+              },
+              Object {
+                "height": 768,
+                "path": "tests/e2e/mocks/site/content/architecture/images_es/ee178817c994d3224eb461259fd5d86f.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/ee178817c994d3224eb461259fd5d86f/620_ee178817c994d3224eb461259fd5d86f.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/ee178817c994d3224eb461259fd5d86f/310_ee178817c994d3224eb461259fd5d86f.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/ee178817c994d3224eb461259fd5d86f/160_ee178817c994d3224eb461259fd5d86f.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1024,
+              },
+              Object {
+                "height": 1300,
+                "path": "tests/e2e/mocks/site/content/architecture/images_es/michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083.jpg",
+                "srcset": Array [
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083/620_michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083.jpg 620w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083/310_michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083.jpg 310w",
+                  "tests/e2e/mocks/site/content/architecture/images_es_src/michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083/160_michelangelo-moses-tomb-pope-julius-ii-rome-marbled-sculptural-architectural-ensemble-buonarroti-church-san-58722083.jpg 160w",
+                ],
+                "type": "photo",
+                "width": 1203,
+              },
+            ],
+          },
+          "name": Object {
+            "en": "Architecture",
+            "es": "Arquitectura",
+          },
+          "publish": true,
+          "state": "",
+          "videos": Object {
+            "en": Array [
+              Object {
+                "content": "EXyay2VKtaA",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/EXyay2VKtaA/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+              Object {
+                "content": "m29OuZfsorA",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/m29OuZfsorA/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+              Object {
+                "content": "IQ4hGFWZ7vM",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/IQ4hGFWZ7vM/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+              Object {
+                "content": "57FDqlXpE24",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/57FDqlXpE24/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+            ],
+            "es": Array [
+              Object {},
+              Object {
+                "content": "LwxXShzlhG4",
+                "height": 360,
+                "src": "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg",
+                "srcset": Array [
+                  "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg 1024w",
+                  "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg 800w",
+                  "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg 500w",
+                  "https://i.ytimg.com/vi/LwxXShzlhG4/hqdefault.jpg 320w",
+                ],
+                "type": "video",
+                "width": 480,
+              },
+              Object {},
+              Object {},
+            ],
+          },
         }
       }
-      key2="architecture"
-      lng="en"
-      name="Architecture"
-      publish={true}
-      state=""
-      view="home"
-    />
-     
-  </section>
-  <section
-    className="gallery"
-  >
-     
-    <ProjectGallery
-      lng="en"
-      project={null}
+      projectKey="architecture"
     />
      
   </section>
@@ -103,6 +992,7 @@ exports[`AppContainer 1`] = `
           className="svg-inline--fa fa-github fa-w-16 "
           data-icon="github"
           data-prefix="fab"
+          focusable="false"
           role="img"
           style={Object {}}
           viewBox="0 0 496 512"
@@ -132,6 +1022,7 @@ exports[`AppContainer 1`] = `
           className="svg-inline--fa fa-envelope fa-w-16 "
           data-icon="envelope"
           data-prefix="fas"
+          focusable="false"
           role="img"
           style={Object {}}
           viewBox="0 0 512 512"
@@ -162,6 +1053,7 @@ exports[`AppContainer 1`] = `
           className="svg-inline--fa fa-phone fa-w-16 "
           data-icon="phone"
           data-prefix="fas"
+          focusable="false"
           role="img"
           style={Object {}}
           viewBox="0 0 512 512"

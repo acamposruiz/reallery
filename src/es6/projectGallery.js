@@ -30,32 +30,27 @@ class ProjectGallery extends React.Component {
       },
     };
 
-    this.handleScroll = this.handleScroll.bind(this);
-    this.loadMoreItems = _.debounce(this.loadMoreItems.bind(this), mainTimeLapse);
-    this.handleResize = _.debounce(this.handleResize.bind(this), mainTimeLapse);
-    this.closeLightbox = this.closeLightbox.bind(this);
-    this.openLightbox = this.openLightbox.bind(this);
-    this.gotoNext = this.gotoNext.bind(this);
-    this.gotoPrevious = this.gotoPrevious.bind(this);
+    this.loadMoreItems = _.debounce(this.loadMoreItems, mainTimeLapse);
+    this.handleResize = _.debounce(this.handleResize, mainTimeLapse);
   }
 
-  componentWillUpdate() {
+  componentWillUpdate = () => {
     this.state.lastIndex = itemsSetLoad;
     this.state.loadedAll = false;
-  }
+  };
 
-  componentDidMount() {
+  componentDidMount = () => {
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("resize", this.handleResize);
-  }
+  };
 
-  handleResize() {
+  handleResize = () => {
     var cols = this.getCols();
 
     this.setState({ cols });
-  }
+  };
 
-  handleScroll() {
+  handleScroll = () => {
     let scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
     if (
       this.context.project &&
@@ -68,9 +63,9 @@ class ProjectGallery extends React.Component {
     ) {
       this.loadMoreItems();
     }
-  }
+  };
 
-  getCols() {
+  getCols = () => {
     var cols = 1;
     if (window.innerWidth >= 480) {
       cols = 2;
@@ -79,9 +74,9 @@ class ProjectGallery extends React.Component {
       cols = 3;
     }
     return cols;
-  }
+  };
 
-  loadMoreItems() {
+  loadMoreItems = () => {
     const lastIndex = this.state.lastIndex + itemsSetLoad;
     const loadedAll = this.context.storeLength <= lastIndex;
 
@@ -89,11 +84,9 @@ class ProjectGallery extends React.Component {
       lastIndex,
       loadedAll,
     });
+  };
 
-    //if (!loadedAll) utils.preload.gallery(newStore);
-  }
-
-  openLightbox(index, event, typeItem) {
+  openLightbox = (index, event, typeItem) => {
     event.preventDefault();
 
     this.setState({
@@ -107,26 +100,26 @@ class ProjectGallery extends React.Component {
       currentItem: index,
       lightboxIsOpen: true,
     });
-  }
+  };
 
-  closeLightbox() {
+  closeLightbox = () => {
     this.setState({
       currentItem: 0,
       lightboxIsOpen: false,
     });
-  }
+  };
 
-  gotoPrevious() {
+  gotoPrevious = () => {
     this.setState({
       currentItem: this.state.currentItem - 1,
     });
-  }
+  };
 
-  gotoNext() {
+  gotoNext = () => {
     this.setState({
       currentItem: this.state.currentItem + 1,
     });
-  }
+  };
 
   render() {
     if (!this.context.project) return null;
