@@ -17,6 +17,8 @@ import utils from "./utils.js";
 const mainTimeLapse = 200;
 const itemsSetLoad = utils.is_mobile("phone") ? 5 : 10;
 
+let projectName;
+
 const ProjectGallery = () => {
   const context = useContext(AppState);
   const [state, setState] = useState({
@@ -26,6 +28,8 @@ const ProjectGallery = () => {
       items: [],
     },
   });
+
+  const getProjtName = () => context.project.name.en || context.project.name;
 
   const getCols = () => {
     var cols = 1;
@@ -55,13 +59,17 @@ const ProjectGallery = () => {
   }, mainTimeLapse);
 
   useEffect(() => {
+    projectName = getProjtName();
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
-    state.lastIndex = itemsSetLoad;
-    state.loadedAll = false;
+    if (projectName != getProjtName()) {
+      projectName = getProjtName();
+      state.lastIndex = itemsSetLoad;
+      state.loadedAll = false;
+    }
   });
 
   const handleScroll = () => {
