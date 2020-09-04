@@ -50,7 +50,7 @@
     "jimp": "^0.6.4",
     "lodash-node": "file:./vendors/lodash-node",
     "lwip": "acamposruiz/lwip",
-    "node-sass": "^4.6.1",
+    "node-sass": "^4.13.1",
     "on-build-webpack": "^0.1.0",
     "path": "^0.12.7",
     "postcss-assets": "^5.0.0",
